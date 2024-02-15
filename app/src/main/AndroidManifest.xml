@@ -35,7 +35,7 @@
         <!-- Optional: Add it to automatically download ML model to device after
           your app is installed.-->
         <meta-data
-            android:name="com.teamten.visionfit.DEPENDENCIES"
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
             android:value="barcode,face,ocr,ocr_chinese,ocr_devanagari,ocr_japanese,ocr_korean,ica,custom_ica,subject_segment"/>
 
         <activity
@@ -58,53 +58,6 @@
             android:exported="false"
             android:theme="@style/AppTheme">
         </activity>
-
-        <activity
-            android:name="com.teamten.visionfit.java.CameraXLivePreviewActivity"
-            android:exported="false"
-            android:theme="@style/AppTheme">
-        </activity>
-
-<!--        <activity-->
-<!--            android:name="com.teamten.visionfit.java.CameraXSourceDemoActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/AppTheme">-->
-<!--        </activity>-->
-
-<!--        <activity-->
-<!--            android:name="com.google.mlkit.vision.visionfit.java.StillImageActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/AppTheme">-->
-<!--        </activity>-->
-
-<!--        <activity-->
-<!--            android:name=".kotlin.ChooserActivity"-->
-<!--            android:exported="false">-->
-<!--        </activity>-->
-
-<!--        <activity-->
-<!--            android:name=".kotlin.LivePreviewActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/AppTheme">-->
-<!--        </activity>-->
-
-<!--        <activity-->
-<!--            android:name=".kotlin.CameraXLivePreviewActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/AppTheme">-->
-<!--        </activity>-->
-
-<!--        <activity-->
-<!--            android:name=".kotlin.CameraXSourceDemoActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/AppTheme">-->
-<!--        </activity>-->
-
-<!--        <activity-->
-<!--            android:name=".kotlin.StillImageActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/AppTheme">-->
-<!--        </activity>-->
 
         <activity
             android:name="com.teamten.visionfit.preference.SettingsActivity"

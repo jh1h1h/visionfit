@@ -40,14 +40,6 @@ class EntryChoiceActivity : AppCompatActivity(), ActivityCompat.OnRequestPermiss
       startActivity(intent)
     }
 
-//    findViewById<TextView>(R.id.kotlin_entry_point).setOnClickListener {
-//      val intent =
-//        Intent(
-//          this@EntryChoiceActivity,
-//          com.teamten.visionfit.kotlin.ChooserActivity::class.java
-//        )
-//      startActivity(intent)
-//    }
 
     if (!allRuntimePermissionsGranted()) {
       getRuntimePermissions()

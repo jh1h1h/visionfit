@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.google.gms.google-services'
 //apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -44,6 +45,7 @@ android {
     aaptOptions {
         noCompress "tflite"
     }
+    namespace 'com.teamten.visionfit'
 }
 
 repositories {
@@ -66,6 +68,8 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.guava:guava:27.1-android'
+    implementation 'com.google.firebase:firebase-auth:22.3.1'
+    implementation 'com.google.android.material:material:1.11.0'
 
     // For how to setup gradle dependencies in Android X, see:
     // https://developer.android.com/training/testing/set-up-project#gradle-dependencies

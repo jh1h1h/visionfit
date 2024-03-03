@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943268080581",
+    "project_id": "login-register-firebase-95e2d",
+    "storage_bucket": "login-register-firebase-95e2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943268080581:android:0396e3ab7aa6f5c7c6f9ac",
+        "android_client_info": {
+          "package_name": "com.teamten.visionfit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACXqdps-7h5XLnlFHySlRhD8SsG0hToY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

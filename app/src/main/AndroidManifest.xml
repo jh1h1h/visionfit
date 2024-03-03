@@ -37,7 +37,7 @@
         android:theme="@style/Theme.Material3.Light">
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/acitivity_main" />
+            android:resource="@layout/activity_main" />
 
         <activity
             android:name="com.firebaseAuthentication.Register"

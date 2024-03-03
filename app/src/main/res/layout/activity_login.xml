@@ -55,21 +55,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:layout_marginTop="10dp"
+
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/registerNow"
+        android:text="@string/register_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtForgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
     <Button
         android:id="@+id/btn_login"
-        android:text="@string/login"
+        android:text="@string/Log_in"
         android:layout_width="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:id="@+id/registerNow"
-        android:text="@string/click_to_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 
 </LinearLayout>

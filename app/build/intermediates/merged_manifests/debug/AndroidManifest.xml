@@ -56,7 +56,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat" >
         <activity
-            android:name="com.teamten.visionfit.Login"
+            android:name="com.teamten.visionfit.java.firebaseAuthentication.Login"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <intent-filter>
@@ -64,9 +64,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
-            android:name="com.teamten.visionfit.Register"
+            android:name="com.teamten.visionfit.java.firebaseAuthentication.Register"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <meta-data
@@ -74,7 +78,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.teamten.visionfit.MainActivity"
+            android:name="com.teamten.visionfit.java.firebaseAuthentication.MainActivity"
             android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"

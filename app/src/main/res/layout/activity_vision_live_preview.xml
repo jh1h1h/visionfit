@@ -43,7 +43,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
-        android:background="@layout/toggle_style"
+        android:background="@drawable/toggle_style"
         android:checked="false"
         android:textOff=""
         android:textOn=""/>

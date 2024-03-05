@@ -52,10 +52,6 @@
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-main-73:\\layout\\toggle_style.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-merged_res-71:/layout_activity_login.xml.flat",
-        "source": "com.teamten.visionfit.app-main-73:/layout/activity_login.xml"
-    },
-    {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-merged_res-71:\\drawable-xhdpi_ic_switch_camera_white_48dp.xml.flat",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-main-73:\\drawable-xhdpi\\ic_switch_camera_white_48dp.xml"
     },
@@ -116,10 +112,6 @@
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-main-73:\\layout\\activity_vision_live_preview.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-merged_res-71:/layout_activity_main.xml.flat",
-        "source": "com.teamten.visionfit.app-main-73:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-merged_res-71:\\drawable-mdpi_ic_settings_white_24dp.png.flat",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-main-73:\\drawable-mdpi\\ic_settings_white_24dp.png"
     },
@@ -134,10 +126,6 @@
     {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-merged_res-71:\\drawable-hdpi_ic_switch_camera_white_48dp.xml.flat",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-main-73:\\drawable-hdpi\\ic_switch_camera_white_48dp.xml"
-    },
-    {
-        "merged": "com.teamten.visionfit.app-merged_res-71:/layout_activity_register.xml.flat",
-        "source": "com.teamten.visionfit.app-main-73:/layout/activity_register.xml"
     },
     {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\7.5\\com.teamten.visionfit.app-merged_res-71:\\drawable-xxxhdpi_ic_settings_white_24dp.png.flat",

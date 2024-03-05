@@ -160,7 +160,8 @@
     <string name="pref_group_title_face_mesh" translatable="false">Face Mesh Detection</string>
     <string name="pref_title_face_mesh_use_case" translatable="false">Use Case</string>
     <string name="pref_key_face_mesh_use_case" translatable="false">face_mesh_use_case</string>
-f    <string name="title_activity_login">Login</string>
+    f
+    <string name="title_activity_login">Login</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -170,5 +171,8 @@ f    <string name="title_activity_login">Login</string>
     <string name="register">Register</string>
     <string name="log_in_now">Log in now</string>
     <string name="log_out">Log out</string>
+    <string name="enter_your_email_address">Enter your email address</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
 
 </resources>

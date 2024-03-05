@@ -56,7 +56,18 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat" >
         <activity
+            android:name="com.teamten.visionfit.activity_forgot_password"
+            android:exported="false" />
+        <activity
             android:name="com.teamten.visionfit.java.firebaseAuthentication.Login"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.teamten.visionfit.java.firebaseAuthentication.Register"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <intent-filter>
@@ -70,16 +81,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.teamten.visionfit.java.firebaseAuthentication.Register"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name="com.teamten.visionfit.java.firebaseAuthentication.MainActivity"
-            android:exported="true" >
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

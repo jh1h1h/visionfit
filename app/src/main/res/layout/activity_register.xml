@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,25 +8,26 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".Register">
+    tools:context=".java.firebaseAuthentication.Register">
 
     <ImageView
-        android:id="@+id/imageView"
         android:contentDescription="@string/app_name"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
-        app:srcCompat="@drawable/logo_mlkit"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/logo_mlkit" />
 
     <TextView
         android:text="@string/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textSize="30sp"
+        android:layout_marginBottom="10dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/black" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -51,26 +53,30 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <TextView
-        android:layout_marginTop="10dp"
-        android:textAlignment="textStart"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:id="@+id/loginNow"
         android:text="@string/log_in_now"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:padding="4dp"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/btn_register"
         android:text="@string/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textSize="20sp"
         android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue" />
 
 </LinearLayout>

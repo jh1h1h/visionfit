@@ -1295,6 +1295,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color black
 color blue
 color blue_grey_400
 color bright_foreground_disabled_material_dark
@@ -1378,6 +1379,7 @@ color foreground_material_light
 color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lavender
 color light_green_700
 color light_grey_400
 color m3_appbar_overlay_color
@@ -2941,6 +2943,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable baseline_lock_reset_24
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3073,6 +3076,7 @@ drawable test_level_drawable
 drawable toggle_style
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable white_box
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3170,6 +3174,8 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnCancel
+id btnReset
 id btn_login
 id btn_register
 id buttonPanel
@@ -3215,11 +3221,13 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id desc
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id dialogBox
 id dialog_button
 id dimensions
 id direct
@@ -3241,6 +3249,7 @@ id edge
 id edit_query
 id elastic
 id email
+id emailBox
 id embed
 id end
 id endToStart
@@ -3267,6 +3276,8 @@ id fixed
 id flip
 id floating
 id forever
+id forgotTitle
+id forgot_password
 id fragment_container_view_tag
 id front
 id fullscreen_header
@@ -3711,6 +3722,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_forgot
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3826,6 +3838,7 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string cancel
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3894,6 +3907,7 @@ string dialog
 string download_error
 string dropdown_menu
 string email
+string enter_your_email_address
 string error_a11y_label
 string error_icon_content_description
 string expanded
@@ -4140,6 +4154,7 @@ string range_end
 string range_start
 string register
 string register_now
+string reset
 string search_bar_search
 string search_menu_title
 string searchbar_scrolling_view_behavior

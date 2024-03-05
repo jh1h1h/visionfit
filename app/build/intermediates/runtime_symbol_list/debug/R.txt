@@ -1294,6 +1294,7 @@ int color background_floating_material_dark 0x7f06001d
 int color background_floating_material_light 0x7f06001e
 int color background_material_dark 0x7f06001f
 int color background_material_light 0x7f060020
+int color black 0x7f06031d
 int color blue 0x7f060021
 int color blue_grey_400 0x7f060022
 int color bright_foreground_disabled_material_dark 0x7f060023
@@ -1377,6 +1378,7 @@ int color foreground_material_light 0x7f060070
 int color gray 0x7f060071
 int color highlighted_text_material_dark 0x7f060072
 int color highlighted_text_material_light 0x7f060073
+int color lavender 0x7f06031e
 int color light_green_700 0x7f060074
 int color light_grey_400 0x7f060075
 int color m3_appbar_overlay_color 0x7f060076
@@ -2940,6 +2942,7 @@ int drawable abc_textfield_search_material 0x7f080075
 int drawable abc_vector_test 0x7f080076
 int drawable avd_hide_password 0x7f080077
 int drawable avd_show_password 0x7f080078
+int drawable baseline_lock_reset_24 0x7f0800fd
 int drawable btn_checkbox_checked_mtrl 0x7f080079
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f08007a
 int drawable btn_checkbox_unchecked_mtrl 0x7f08007b
@@ -3072,6 +3075,7 @@ int drawable test_level_drawable 0x7f0800f9
 int drawable toggle_style 0x7f0800fa
 int drawable tooltip_frame_dark 0x7f0800fb
 int drawable tooltip_frame_light 0x7f0800fc
+int drawable white_box 0x7f0800ff
 int id ALT 0x7f090000
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002
@@ -3169,6 +3173,8 @@ int id browser_actions_menu_item_icon 0x7f09005d
 int id browser_actions_menu_item_text 0x7f09005e
 int id browser_actions_menu_items 0x7f09005f
 int id browser_actions_menu_view 0x7f090060
+int id btnCancel 0x7f0901f2
+int id btnReset 0x7f0901f3
 int id btn_login 0x7f090061
 int id btn_register 0x7f090062
 int id buttonPanel 0x7f090063
@@ -3214,11 +3220,13 @@ int id decor_content_parent 0x7f09008a
 int id default_activity_button 0x7f09008b
 int id deltaRelative 0x7f09008c
 int id dependency_ordering 0x7f09008d
+int id desc 0x7f0901f4
 int id design_bottom_sheet 0x7f09008e
 int id design_menu_item_action_area 0x7f09008f
 int id design_menu_item_action_area_stub 0x7f090090
 int id design_menu_item_text 0x7f090091
 int id design_navigation_view 0x7f090092
+int id dialogBox 0x7f0901f5
 int id dialog_button 0x7f090093
 int id dimensions 0x7f090094
 int id direct 0x7f090095
@@ -3240,6 +3248,7 @@ int id edge 0x7f0900a4
 int id edit_query 0x7f0900a5
 int id elastic 0x7f0900a6
 int id email 0x7f0900a7
+int id emailBox 0x7f0901f6
 int id embed 0x7f0900a8
 int id end 0x7f0900a9
 int id endToStart 0x7f0900aa
@@ -3266,6 +3275,8 @@ int id fixed 0x7f0900be
 int id flip 0x7f0900bf
 int id floating 0x7f0900c0
 int id forever 0x7f0900c1
+int id forgotTitle 0x7f0901f7
+int id forgot_password 0x7f0901f8
 int id fragment_container_view_tag 0x7f0900c2
 int id front 0x7f0900c3
 int id fullscreen_header 0x7f0900c4
@@ -3710,6 +3721,7 @@ int layout design_navigation_menu 0x7f0c0031
 int layout design_navigation_menu_item 0x7f0c0032
 int layout design_text_input_end_icon 0x7f0c0033
 int layout design_text_input_start_icon 0x7f0c0034
+int layout dialog_forgot 0x7f0c0074
 int layout m3_alert_dialog 0x7f0c0035
 int layout m3_alert_dialog_actions 0x7f0c0036
 int layout m3_alert_dialog_title 0x7f0c0037
@@ -3825,6 +3837,7 @@ int string call_notification_hang_up_action 0x7f12002c
 int string call_notification_incoming_text 0x7f12002d
 int string call_notification_ongoing_text 0x7f12002e
 int string call_notification_screening_text 0x7f12002f
+int string cancel 0x7f12018b
 int string character_counter_content_description 0x7f120030
 int string character_counter_overflowed_content_description 0x7f120031
 int string character_counter_pattern 0x7f120032
@@ -3893,6 +3906,7 @@ int string dialog 0x7f120070
 int string download_error 0x7f120071
 int string dropdown_menu 0x7f120072
 int string email 0x7f120073
+int string enter_your_email_address 0x7f12018c
 int string error_a11y_label 0x7f120074
 int string error_icon_content_description 0x7f120075
 int string expanded 0x7f120076
@@ -4139,6 +4153,7 @@ int string range_end 0x7f120166
 int string range_start 0x7f120167
 int string register 0x7f120168
 int string register_now 0x7f120169
+int string reset 0x7f12018d
 int string search_bar_search 0x7f12016a
 int string search_menu_title 0x7f12016b
 int string searchbar_scrolling_view_behavior 0x7f12016c

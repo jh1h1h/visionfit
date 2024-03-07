@@ -1,4 +1,4 @@
-package com.example.visionfitv2;
+package com.teamten.visionfit.java.balls2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import java.util.ArrayList;
+
+import com.teamten.visionfit.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

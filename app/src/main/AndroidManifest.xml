@@ -65,22 +65,22 @@
         </activity>
 -->
         <activity
-            android:name=".MyStatisticsActivity"
+            android:name=".java.balls2.MyStatisticsActivity"
             android:exported="false" />
         <activity
-            android:name=".MyRewardsActivity"
+            android:name=".java.balls2.MyRewardsActivity"
             android:exported="false" />
         <activity
-            android:name=".LeaderBoardActivity"
+            android:name=".java.balls2.LeaderBoardActivity"
             android:exported="false" />
         <activity
-            android:name=".DailyChallangeActivity"
+            android:name=".java.balls2.DailyChallangeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".java.balls2.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".java.balls2.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

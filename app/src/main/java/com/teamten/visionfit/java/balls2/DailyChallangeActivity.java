@@ -1,4 +1,4 @@
-package com.example.visionfitv2;
+package com.teamten.visionfit.java.balls2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.teamten.visionfit.R;
 
 import org.w3c.dom.Text;
 

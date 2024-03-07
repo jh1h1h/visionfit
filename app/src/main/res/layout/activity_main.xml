@@ -16,6 +16,20 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:text="Hello Cyril! Have you been slacking off?"
         />
+    <TextView
+        android:id="@+id/user_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ready to get those gains?!?!"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:text="@string/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:layout_width="wrap_content"

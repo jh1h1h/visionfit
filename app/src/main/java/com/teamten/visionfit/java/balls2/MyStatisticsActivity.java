@@ -1,8 +1,10 @@
-package com.example.visionfitv2;
+package com.teamten.visionfit.java.balls2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.teamten.visionfit.R;
 
 public class MyStatisticsActivity extends AppCompatActivity {
 

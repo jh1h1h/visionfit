@@ -19,7 +19,7 @@
     <string name="select_image" translatable="false">Select image</string>
     <string name="custom_object_detection" translatable="false">Custom Object Detector</string>
     <string name="title_activity_home">HomeActivity</string>
-</resources>
+
 
     <!-- Settings related strings. -->
     <string name="pref_screen" translatable="false">ps</string>

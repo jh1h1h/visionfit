@@ -31,13 +31,19 @@
 
     <application
         android:name="androidx.multidex.MultiDexApplication"
-        android:icon="@drawable/logo_mlkit"
+ android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/visionfitlogo"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Material3.Light" >
+        android:roundIcon="@mipmap/visionfitlogo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VisionFitV2"
+        tools:targetApi="31">
         <activity
             android:name="com.firebaseCloudFireStore.TestFirestoreActivity"
             android:exported="false" />
-
+<!--
 
         <meta-data
             android:name="com.google.android.actions"
@@ -57,7 +63,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+-->
+        <activity
+            android:name=".MyStatisticsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyRewardsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LeaderBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DailyChallangeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

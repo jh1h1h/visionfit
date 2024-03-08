@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center"
+tools:context="com.firebaseCloudFireStore.TestFirestoreActivity">
+
+<!--Edittext for getting username-->
+
+    <!--Edittext for getting country-->
+    <EditText
+        android:id="@+id/idEdtUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Username"
+        android:importantForAutofill="no"
+        android:inputType="text" />
+
+    <EditText
+    android:id="@+id/idEdtCountry"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="10dp"
+    android:hint="Country"
+    android:importantForAutofill="no"
+    android:inputType="text" />
+
+<!--Edittext for getting streak-->
+<EditText
+    android:id="@+id/idEdtStreak"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="10dp"
+    android:hint="Streak"
+    android:importantForAutofill="no"
+    android:inputType="number" />
+
+
+<!--Edittext for getting reps today-->
+<EditText
+        android:id="@+id/idEdtRepsToday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Reps Today"
+        android:importantForAutofill="no"
+        android:inputType="number" />
+
+    <!--Edittext for getting Reps of all time-->
+    <EditText
+        android:id="@+id/idEdtRepsAllTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:hint="All-time Reps Record"
+        android:importantForAutofill="no"
+        android:inputType="number" />
+<!--Button for adding fields to Firebase-->
+    <Button
+        android:id="@+id/idBtnSubmitUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Submit User"
+        android:textAllCaps="false" />
+
+</LinearLayout>

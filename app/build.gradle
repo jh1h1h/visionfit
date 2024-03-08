@@ -1,10 +1,12 @@
+
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
 //apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 34
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.teamten.visionfit"
@@ -37,60 +39,49 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     // Do NOT compress tflite model files (need to call out to developers!)
-    aaptOptions {
-        noCompress "tflite"
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
+    namespace 'com.teamten.visionfit'
     buildFeatures {
-        compose true
+        viewBinding true
+        buildConfig true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.5.1'
-    }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
+    androidResources {
+        noCompress 'tflite'
     }
 }
 
 repositories {
     // Depending on AndroidX Snapshot Builds to get the latest CameraX libs.
     maven { url 'https://androidx.dev/snapshots/builds/6787662/artifacts/repository/' }
+
 }
 
 dependencies {
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.multidex:multidex:2.0.1'
-
-
+    implementation platform('com.google.firebase:firebase-bom:32.7.3')
+    // Declare the dependency for the Cloud Firestore library
+    implementation("com.google.firebase:firebase-firestore:24.10.3")
     // Pose detection with default models
     implementation 'com.google.mlkit:pose-detection:18.0.0-beta3'
     // Pose detection with accurate models
     implementation 'com.google.mlkit:pose-detection-accurate:18.0.0-beta3'
-
-
     // -------------------------------------------------------
+    implementation 'com.google.auth:google-auth-library-oauth2-http:0.1.0'
+
 
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.guava:guava:27.1-android'
     implementation 'com.google.firebase:firebase-auth:22.3.1'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
-    implementation 'androidx.activity:activity-compose:1.7.0'
-    implementation platform('androidx.compose:compose-bom:2023.08.00')
-    implementation 'androidx.compose.ui:ui'
-    implementation 'androidx.compose.ui:ui-graphics'
-    implementation 'androidx.compose.ui:ui-tooling-preview'
-    implementation 'androidx.compose.material3:material3'
     implementation 'com.google.android.material:material:1.11.0'
-// compulsory for firebase authentication
+    implementation 'androidx.navigation:navigation-fragment:2.6.0'
+    implementation 'androidx.navigation:navigation-ui:2.6.0'
+    implementation 'androidx.activity:activity:1.8.0'
 
     // For how to setup gradle dependencies in Android X, see:
     // https://developer.android.com/training/testing/set-up-project#gradle-dependencies
@@ -119,11 +110,8 @@ dependencies {
 
     // On Device Machine Learnings
     implementation "com.google.android.odml:image:1.0.0-beta1"
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.08.00')
-    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
-    debugImplementation 'androidx.compose.ui:ui-tooling'
-    debugImplementation 'androidx.compose.ui:ui-test-manifest'
 }
+
 
 configurations {
     // Resolves dependency conflict caused by some dependencies use

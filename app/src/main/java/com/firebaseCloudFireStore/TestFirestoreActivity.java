@@ -31,18 +31,18 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.teamten.visionfit.R;
 
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
 public class TestFirestoreActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
@@ -89,7 +89,7 @@ public class TestFirestoreActivity extends AppCompatActivity {
         });
     }
 
-    private void addDataToFirestore(String username, String country, int streak, int repsToday, int repsAllTime) {
+    public void addDataToFirestore(String username, String country, int streak, int repsToday, int repsAllTime) {
 
         // creating a collection reference
         // for our Firebase Firestore database.
@@ -113,5 +113,75 @@ public class TestFirestoreActivity extends AppCompatActivity {
 
 
         // below method is use to add data to Firebase Firestore.
+    }
+    public User getDataFromFirestore(String username){
+        DocumentReference docRef = db.collection("users").document(username);
+        User user=new User();
+        DocumentSnapshot document=docRef.get().getResult();
+        if (document.exists()){
+            user=document.toObject(User.class);
+        }
+        return user;
+
+    }
+    public void deleteDataInFirestore(String username){
+
+        db.collection("users").document(username)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error deleting document", e);
+                    }
+                });
+    }
+
+    public void updateDataInFirestore(String username, int caseId, String value){
+        DocumentReference docRef=db.collection("users").document(username);
+        DocumentSnapshot document=docRef.get().getResult();
+        switch(caseId) {
+            case 0://update username
+                User user=getDataFromFirestore(username);
+                if(user.repsAllTime==-1){//username not found in db
+                    Log.d(TAG, "User does not exist");
+                }
+                else{
+                    deleteDataInFirestore(username);
+                    addDataToFirestore(value,user.country,user.streak,user.repsToday,user.repsAllTime);
+                }
+
+            case 1://update country
+                if(document.exists()){
+                    docRef.update("country",value);
+                }
+
+            case 2://increment daily streak by 1
+                if(document.exists()){
+                    docRef.update("streak",Integer.valueOf(value));
+                }
+            case 3://increment daily streak by 1
+                if(document.exists()){
+                    docRef.update("streak",Integer.valueOf(value));
+                }
+
+            case 4://update(highest) reps done today
+                if(document.exists()){
+                    docRef.update("repsToday",Integer.valueOf(value));
+                }
+
+            case 5://update record highest reps
+                if(document.exists()){
+                    docRef.update("repsAllTime",Integer.valueOf(value));
+                }
+            default:
+                // code block
+                break;
+        }
     }
 }

@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.teamten.visionfit.R;
+import com.teamten.visionfit.java.balls2.MainActivity;
 
 public class Register extends AppCompatActivity {
 

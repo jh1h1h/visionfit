@@ -7,10 +7,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.firebaseAuthentication.Login;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.teamten.visionfit.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    FirebaseAuth auth;
+    Button button;
+    TextView textView;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,42 +41,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // MY STATISTICS BUTTON
         Button mystatsButton = (Button) findViewById(R.id.mystatsButton);
         mystatsButton.setOnClickListener(this);
-        }
 
+    }
 
     // FUNCTIONS FOR THE BUTTONS
-    public void openDailyChallengeActivity(){
+    public void openDailyChallengeActivity() {
         Intent intent = new Intent(this, DailyChallangeActivity.class);
-        startActivity(intent);}
+        startActivity(intent);
+    }
 
-    public void openMyRewards(){
+    public void openMyRewards() {
         Intent intent = new Intent(this, MyRewardsActivity.class);
-        startActivity(intent);}
+        startActivity(intent);
+    }
 
-    public void openLeaderboard(){
+    public void openLeaderboard() {
         Intent intent = new Intent(this, LeaderBoardActivity.class);
-        startActivity(intent);}
+        startActivity(intent);
+    }
 
-    public void openMyStats(){
+    public void openMyStats() {
         Intent intent = new Intent(this, MyStatisticsActivity.class);
-        startActivity(intent);}
+        startActivity(intent);
+    }
 
     // LOGIC CHECKS FOR WHAT BUTTON IS PRESSED
     @Override
-        public void onClick(View v) {
+    public void onClick(View v) {
 
-            if (v.getId() == R.id.dailychallengeButton) {
-                Log.d("Button Check", "Clicked Successfully");
-                openDailyChallengeActivity();
-            } else if (v.getId() == R.id.rewardsButton) {
-                Log.d("Button Check", "Clicked Successfully");
-                openMyRewards();
-            } else if (v.getId() == R.id.leaderboardButton) {
-                Log.d("Button Check", "Clicked Successfully");
-                openLeaderboard();
-            } else if (v.getId() == R.id.mystatsButton) {
-                Log.d("Button Check", "Clicked Successfully");
-                openMyStats();}
-
-            }
+        if (v.getId() == R.id.dailychallengeButton) {
+            Log.d("Button Check", "Clicked Successfully");
+            openDailyChallengeActivity();
+        } else if (v.getId() == R.id.rewardsButton) {
+            Log.d("Button Check", "Clicked Successfully");
+            openMyRewards();
+        } else if (v.getId() == R.id.leaderboardButton) {
+            Log.d("Button Check", "Clicked Successfully");
+            openLeaderboard();
+        } else if (v.getId() == R.id.mystatsButton) {
+            Log.d("Button Check", "Clicked Successfully");
+            openMyStats();
+        } else {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(MainActivity.this, com.firebaseAuthentication.Login.class);
+            startActivity(intent);
+            finish();
         }
+    }
+}
+
+
+

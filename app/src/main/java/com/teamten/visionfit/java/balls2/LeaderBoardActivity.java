@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+
 import com.teamten.visionfit.R;
 
 public class LeaderBoardActivity extends AppCompatActivity {

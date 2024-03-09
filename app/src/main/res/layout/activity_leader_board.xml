@@ -1,15 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LeaderBoardActivity">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="106dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="4dp"
+
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/splashscreen" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INSERT LEADERBOARD"
-        android:layout_gravity="center"
-        android:textSize="50dp"/>
+        android:id="@+id/leaderboardTitle"
+        android:layout_width="295dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/anton"
+        android:textAlignment="center"
+        android:text="LEADERBOARD"
+        android:textColor="@color/red"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeStepGranularity="2sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/componentA">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:id="@+id/tl_componentA">
+
+
+        </TableLayout>
+
+    </RelativeLayout>
 </LinearLayout>

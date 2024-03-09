@@ -14,6 +14,7 @@ public class User {
 
     public User() {
         // Must have a public no-argument constructor
+        this.repsAllTime=-1;//dummy user
     }
 
     // Initialize all fields of a city

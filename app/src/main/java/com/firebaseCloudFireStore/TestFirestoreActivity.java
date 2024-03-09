@@ -37,6 +37,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.teamten.visionfit.R;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -163,11 +164,11 @@ public class TestFirestoreActivity extends AppCompatActivity {
 
             case 2://increment daily streak by 1
                 if(document.exists()){
-                    docRef.update("streak",Integer.valueOf(value));
+                    docRef.update("streak", FieldValue.increment(1));
                 }
-            case 3://increment daily streak by 1
+            case 3://reset daily streak
                 if(document.exists()){
-                    docRef.update("streak",Integer.valueOf(value));
+                    docRef.update("streak",0);
                 }
 
             case 4://update(highest) reps done today

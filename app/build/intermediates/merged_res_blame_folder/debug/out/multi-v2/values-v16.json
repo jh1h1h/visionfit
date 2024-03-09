@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-69:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\edgar\\.gradle\\caches\\transforms-3\\8f3c8c76b16da7627dcc9f67137d2abf\\transformed\\core-1.10.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\edgar\\.gradle\\caches\\transforms-3\\909270c2e8297138dc6398e6a0593739\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}

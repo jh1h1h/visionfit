@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Patterns;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +37,35 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth auth;
     TextView forgotPassword;
 
+    public void loginFunc(){
+        String email = loginEmail.getText().toString();
+        String pass = loginPassword.getText().toString();
+        if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            if (!pass.isEmpty()) {
+                auth.signInWithEmailAndPassword(email, pass)
+                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Login.this, com.teamten.visionfit.java.balls2.MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            } else {
+                loginPassword.setError("Empty fields are not allowed");
+            }
+        } else if (email.isEmpty()) {
+            loginEmail.setError("Empty fields are not allowed");
+        } else {
+            loginEmail.setError("Please enter correct email");
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,36 +76,21 @@ public class Login extends AppCompatActivity {
         signupRedirectText = findViewById(R.id.registerNow);
         forgotPassword = findViewById(R.id.txtForgotPassword);
         auth = FirebaseAuth.getInstance();
+
+        loginPassword.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
+                //If the keyevent is a key-down event on the "enter" button
+                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    loginFunc();
+                    return true;
+                }
+                return false;
+            }
+        });
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = loginEmail.getText().toString();
-                String pass = loginPassword.getText().toString();
-                if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    if (!pass.isEmpty()) {
-                        auth.signInWithEmailAndPassword(email, pass)
-                                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                                    @Override
-                                    public void onSuccess(AuthResult authResult) {
-                                        Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(Login.this, com.teamten.visionfit.java.balls2.MainActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                    } else {
-                        loginPassword.setError("Empty fields are not allowed");
-                    }
-                } else if (email.isEmpty()) {
-                    loginEmail.setError("Empty fields are not allowed");
-                } else {
-                    loginEmail.setError("Please enter correct email");
-                }
+                loginFunc();
             }
         });
         signupRedirectText.setOnClickListener(new View.OnClickListener() {

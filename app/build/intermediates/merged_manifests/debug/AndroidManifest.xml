@@ -110,10 +110,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.firebaseAuthentication.Login"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name="com.firebaseAuthentication.Register"
+            android:exported="false" >
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <!--
  Optional: Add it to automatically download ML model to device after
           your app is installed.

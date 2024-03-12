@@ -1422,8 +1422,10 @@ color foreground_material_light
 color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lavender
 color light_green_700
 color light_grey_400
+color light_orange
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2077,6 +2079,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2994,6 +2997,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable checkform
+drawable coin_icon
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3018,6 +3022,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dumbbell_icon
 drawable dumbel
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -3038,6 +3043,7 @@ drawable ic_search_black_24
 drawable ic_settings_white_24dp
 drawable ic_switch_camera_white_48dp
 drawable ic_switch_camera_white_48dp_inset
+drawable leaderboard_icon
 drawable list_item_background
 drawable logo_mlkit
 drawable m3_avd_hide_password
@@ -3112,7 +3118,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable push_up_icon
+drawable round_view
+drawable sit_up_icon
 drawable splashscreen
+drawable squats_icon
+drawable statistics_icon
 drawable test_level_drawable
 drawable toggle_style
 drawable tooltip_frame_dark
@@ -3123,6 +3134,9 @@ drawable visionfitlogo
 drawable visionfitlogo_background
 drawable visionfitlogo_foreground
 drawable visionfitlogo_round
+drawable weightlift_icon
+drawable white_box
+font anton
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3206,6 +3220,7 @@ id adjust_width
 id alertTitle
 id aligned
 id all
+id allTime
 id always
 id androidx_window_activity_scope
 id animateToEnd
@@ -3224,12 +3239,15 @@ id beginOnFirstDraw
 id beginning
 id blocking
 id bottom
+id bottomText
 id bounce
 id browser_actions_header_text
 id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnCancel
+id btnReset
 id btn_login
 id btn_register
 id buttonPanel
@@ -3251,6 +3269,7 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id collapseActionView
+id componentA
 id compress
 id confirm_button
 id container
@@ -3274,11 +3293,14 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id desc
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id dialogBox
+id dialogForgot
 id dialog_button
 id dimensions
 id direct
@@ -3300,7 +3322,9 @@ id edge
 id edit_query
 id elastic
 id email
+id emailBox
 id embed
+id encourage
 id end
 id endToStart
 id enterAlways
@@ -3326,6 +3350,7 @@ id fixed
 id flip
 id floating
 id forever
+id forgotTitle
 id fragment_container_view_tag
 id front
 id fullscreen_header
@@ -3335,7 +3360,7 @@ id gone
 id graph
 id graph_wrap
 id graphic_overlay
-id greetingMessage
+id greeting
 id group_divider
 id grouping
 id groups
@@ -3370,6 +3395,7 @@ id jumpToStart
 id labeled
 id layout
 id leaderboardButton
+id leaderboardTitle
 id left
 id leftToRight
 id legacy
@@ -3381,6 +3407,7 @@ id listMode
 id list_item
 id locale
 id loginNow
+id logout
 id ltr
 id m3_side_sheet
 id marquee
@@ -3499,6 +3526,7 @@ id preview_view
 id progressBar
 id progress_circular
 id progress_horizontal
+id pushUpsTab
 id radio
 id ratio
 id rectangles
@@ -3545,6 +3573,7 @@ id showCustom
 id showHome
 id showTitle
 id sin
+id sitUpsTab
 id skipCollapsed
 id slide
 id sliding_pane_detail_container
@@ -3561,6 +3590,7 @@ id split_action_bar
 id spread
 id spread_inside
 id square
+id squatsTab
 id src_atop
 id src_in
 id src_over
@@ -3572,6 +3602,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statistics
 id stop
 id streakMessage
 id stretch
@@ -3614,6 +3645,7 @@ id timer
 id title
 id titleDividerNoCustom
 id title_template
+id tl_componentA
 id toggle
 id top
 id topPanel
@@ -3632,6 +3664,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_details
 id video
 id view_offset_helper
 id view_tree_lifecycle_owner
@@ -3640,6 +3673,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id weightliftTab
 id wide
 id withText
 id with_icon
@@ -3793,6 +3827,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_forgot
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3858,6 +3893,7 @@ layout spinner_style
 layout support_simple_spinner_dropdown_item
 menu camera_button_menu
 mipmap ic_launcher
+mipmap sit_up_icon
 mipmap visionfitlogo
 mipmap visionfitlogo_foreground
 mipmap visionfitlogo_round
@@ -3893,6 +3929,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string android_animations_lib_name
 string androidx_camera_default_config_provider
 string androidx_startup
 string app_name
@@ -3903,6 +3940,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string can_you_keep_your_streak_today
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3927,6 +3965,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
 string custom_object_detection
+string daily_challenges
 string desc_camera_source_activity
 string desc_camerax_live_preview_activity
 string desc_cameraxsource_demo_activity
@@ -3942,6 +3981,7 @@ string fab_transformation_sheet_behavior
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
+string fight_on
 string first_fragment_label
 string forgot_password
 string gcm_defaultSenderId
@@ -3949,11 +3989,15 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string have_you_been_slacking_off
+string hello_user
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
 string java_entry_title
+string keep_it_going
 string kotlin_entry_title
+string leaderboard
 string log_in_now
 string login
 string logout
@@ -4060,6 +4104,8 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string my_rewards
+string my_statistics
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string next
@@ -4173,6 +4219,7 @@ string pref_title_show_text_confidence
 string pref_toast_invalid_min_face_size
 string previous
 string project_id
+string push_ups
 string register
 string register_now
 string search_menu_title
@@ -4183,11 +4230,16 @@ string second_fragment_label
 string select_image
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
+string sit_ups
+string squats
 string start_over
+string statistics
 string status_bar_notification_info_overflow
 string title_activity_home
 string toggle_turn_off
 string toggle_turn_on
+string weightlifts
+string your_all_time_best
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

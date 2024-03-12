@@ -4,25 +4,59 @@ package com.teamten.visionfit.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.teamten.visionfit.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityMyStatisticsBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private ActivityMyStatisticsBinding(@NonNull LinearLayout rootView) {
+  @NonNull
+  public final ConstraintLayout allTime;
+
+  @NonNull
+  public final ConstraintLayout encourage;
+
+  @NonNull
+  public final ConstraintLayout pushUpsTab;
+
+  @NonNull
+  public final ConstraintLayout sitUpsTab;
+
+  @NonNull
+  public final ConstraintLayout squatsTab;
+
+  @NonNull
+  public final ConstraintLayout statistics;
+
+  @NonNull
+  public final ConstraintLayout weightliftTab;
+
+  private ActivityMyStatisticsBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ConstraintLayout allTime, @NonNull ConstraintLayout encourage,
+      @NonNull ConstraintLayout pushUpsTab, @NonNull ConstraintLayout sitUpsTab,
+      @NonNull ConstraintLayout squatsTab, @NonNull ConstraintLayout statistics,
+      @NonNull ConstraintLayout weightliftTab) {
     this.rootView = rootView;
+    this.allTime = allTime;
+    this.encourage = encourage;
+    this.pushUpsTab = pushUpsTab;
+    this.sitUpsTab = sitUpsTab;
+    this.squatsTab = squatsTab;
+    this.statistics = statistics;
+    this.weightliftTab = weightliftTab;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +77,56 @@ public final class ActivityMyStatisticsBinding implements ViewBinding {
 
   @NonNull
   public static ActivityMyStatisticsBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.allTime;
+      ConstraintLayout allTime = ViewBindings.findChildViewById(rootView, id);
+      if (allTime == null) {
+        break missingId;
+      }
 
-    return new ActivityMyStatisticsBinding((LinearLayout) rootView);
+      id = R.id.encourage;
+      ConstraintLayout encourage = ViewBindings.findChildViewById(rootView, id);
+      if (encourage == null) {
+        break missingId;
+      }
+
+      id = R.id.pushUpsTab;
+      ConstraintLayout pushUpsTab = ViewBindings.findChildViewById(rootView, id);
+      if (pushUpsTab == null) {
+        break missingId;
+      }
+
+      id = R.id.sitUpsTab;
+      ConstraintLayout sitUpsTab = ViewBindings.findChildViewById(rootView, id);
+      if (sitUpsTab == null) {
+        break missingId;
+      }
+
+      id = R.id.squatsTab;
+      ConstraintLayout squatsTab = ViewBindings.findChildViewById(rootView, id);
+      if (squatsTab == null) {
+        break missingId;
+      }
+
+      id = R.id.statistics;
+      ConstraintLayout statistics = ViewBindings.findChildViewById(rootView, id);
+      if (statistics == null) {
+        break missingId;
+      }
+
+      id = R.id.weightliftTab;
+      ConstraintLayout weightliftTab = ViewBindings.findChildViewById(rootView, id);
+      if (weightliftTab == null) {
+        break missingId;
+      }
+
+      return new ActivityMyStatisticsBinding((ConstraintLayout) rootView, allTime, encourage,
+          pushUpsTab, sitUpsTab, squatsTab, statistics, weightliftTab);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

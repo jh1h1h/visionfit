@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-115:12
-INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-115:12
-INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-115:12
-INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-115:12
+ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-125:12
+INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-125:12
+INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-125:12
+INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-125:12
 MERGED from [androidx.databinding:viewbinding:8.2.2] C:\Users\User\.gradle\caches\transforms-3\b21972f024dca2ce024ad3206b43b02b\transformed\jetified-viewbinding-8.2.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] C:\Users\User\.gradle\caches\transforms-3\de234857ef98a39b0e13cf169ce15256\transformed\navigation-common-2.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.6.0] C:\Users\User\.gradle\caches\transforms-3\fd86bd245ce18c0ad1a34919238b217a\transformed\navigation-runtime-2.6.0\AndroidManifest.xml:17:1-22:12
@@ -78,6 +78,8 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\User\.gradle\c
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\User\.gradle\caches\transforms-3\d216ec28e3a7b2989885380cf54f7a18\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\User\.gradle\caches\transforms-3\583ec3eaaa423756a7d61c2291a9d659\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\User\.gradle\caches\transforms-3\f98c1a585b0fbf63fe46e6ad4158873b\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.daimajia.easing:library:2.0] C:\Users\User\.gradle\caches\transforms-3\34c74eb48008472b83cea721d6f5826e\transformed\jetified-library-2.0\AndroidManifest.xml:2:1-12:12
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\User\.gradle\caches\transforms-3\07916259a6a62907fb98ac78d5b15888\transformed\jetified-library-2.3\AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\User\.gradle\caches\transforms-3\71b1617548594ca94dc47af2518c550e\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\User\.gradle\caches\transforms-3\ab91023ce9d306779ca302466c1877d3\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\User\.gradle\caches\transforms-3\09a7b937f3c23396d630e0d79f3aaec4\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -152,8 +154,8 @@ ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\
 	android:name
 		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:28:21-70
 application
-ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:32:5-113:19
-INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:32:5-113:19
+ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:32:5-123:19
+INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:32:5-123:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\User\.gradle\caches\transforms-3\27d6d70c4527c1704eac66208cb1e4c7\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\User\.gradle\caches\transforms-3\27d6d70c4527c1704eac66208cb1e4c7\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.firebase:firebase-firestore:24.10.3] C:\Users\User\.gradle\caches\transforms-3\57a67e1257c2c8a9fa1c01d1feabc4b3\transformed\jetified-firebase-firestore-24.10.3\AndroidManifest.xml:13:5-24:19
@@ -292,34 +294,46 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:88:17-77
 	android:name
 		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:88:27-74
+activity#com.firebaseAuthentication.Login
+ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:91:9-94:20
+	android:exported
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:93:13-37
+	android:name
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:92:13-60
+activity#com.firebaseAuthentication.Register
+ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:95:9-98:20
+	android:exported
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:97:13-37
+	android:name
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:96:13-63
 meta-data#com.google.android.gms.version
-ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:91:9-93:69
+ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:99:9-101:69
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\User\.gradle\caches\transforms-3\7bcf34c4b56da0236ae05391396a70f4\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\User\.gradle\caches\transforms-3\7bcf34c4b56da0236ae05391396a70f4\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:93:13-66
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:101:13-66
 	android:name
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:92:13-58
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:100:13-58
 activity#com.teamten.visionfit.java.ChooserActivity
-ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:103:9-105:40
+ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:113:9-115:40
 	android:exported
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:105:13-37
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:115:13-37
 	android:name
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:104:13-49
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:114:13-49
 activity#com.teamten.visionfit.java.LivePreviewActivity
-ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:106:9-109:47
+ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:116:9-119:47
 	android:exported
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:108:13-37
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:118:13-37
 	android:theme
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:109:13-44
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:119:13-44
 	android:name
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:107:13-53
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:117:13-53
 activity#com.teamten.visionfit.preference.SettingsActivity
-ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:110:9-112:40
+ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:120:9-122:40
 	android:exported
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:112:13-37
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:122:13-37
 	android:name
-		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:111:13-56
+		ADDED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml:121:13-56
 uses-sdk
 INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\main\AndroidManifest.xml
@@ -472,6 +486,10 @@ MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\User\.gradle\caches\tran
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\User\.gradle\caches\transforms-3\583ec3eaaa423756a7d61c2291a9d659\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\User\.gradle\caches\transforms-3\f98c1a585b0fbf63fe46e6ad4158873b\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:5:5-44
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\User\.gradle\caches\transforms-3\f98c1a585b0fbf63fe46e6ad4158873b\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:5:5-44
+MERGED from [com.daimajia.easing:library:2.0] C:\Users\User\.gradle\caches\transforms-3\34c74eb48008472b83cea721d6f5826e\transformed\jetified-library-2.0\AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.easing:library:2.0] C:\Users\User\.gradle\caches\transforms-3\34c74eb48008472b83cea721d6f5826e\transformed\jetified-library-2.0\AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\User\.gradle\caches\transforms-3\07916259a6a62907fb98ac78d5b15888\transformed\jetified-library-2.3\AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\User\.gradle\caches\transforms-3\07916259a6a62907fb98ac78d5b15888\transformed\jetified-library-2.3\AndroidManifest.xml:8:5-10:41
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\User\.gradle\caches\transforms-3\71b1617548594ca94dc47af2518c550e\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\User\.gradle\caches\transforms-3\71b1617548594ca94dc47af2518c550e\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\User\.gradle\caches\transforms-3\ab91023ce9d306779ca302466c1877d3\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44

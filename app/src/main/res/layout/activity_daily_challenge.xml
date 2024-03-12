@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyStatisticsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/daily_challengeTab"
+        android:layout_width="362dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/daily_challenges"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/daily_challengeTab"
+            app:layout_constraintLeft_toLeftOf="@+id/daily_challengeTab"
+            app:layout_constraintRight_toRightOf="@+id/daily_challengeTab"
+            app:layout_constraintTop_toTopOf="@+id/daily_challengeTab" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/sitUpButton"
+        android:layout_width="174dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:gravity="center|bottom"
+        android:text="@string/sit_ups"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:drawableTop="@drawable/dumbbell_icon"
+        android:paddingTop="@dimen/padding_standard"
+        android:drawablePadding="-1000dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daily_challengeTab" />
+
+    <Button
+        android:id="@+id/pushUpButton"
+        android:layout_width="174dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:gravity="center|bottom"
+        android:text="@string/push_ups"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:drawableTop="@drawable/leaderboard_icon"
+        android:paddingTop="@dimen/padding_standard"
+        android:drawablePadding="-100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daily_challengeTab" />
+
+    <Button
+        android:id="@+id/squatsButton"
+        android:layout_width="174dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:gravity="center|bottom"
+        android:text="@string/my_rewards"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:drawableTop="@drawable/coin_icon"
+        android:paddingTop="@dimen/padding_standard"
+        android:drawablePadding="-100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sitUpButton" />
+
+    <Button
+        android:id="@+id/weightliftButton"
+        android:layout_width="174dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:gravity="center|bottom"
+        android:text="@string/my_statistics"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:drawableTop="@drawable/statistics_icon"
+        android:paddingTop="@dimen/padding_standard"
+        android:drawablePadding="-100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pushUpButton" />
+
+    <TextView
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:text="You are almost done, fight on!"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="@+id/squatsButton"
+        app:layout_constraintRight_toRightOf="@+id/weightliftButton"
+        app:layout_constraintTop_toBottomOf="@id/squatsButton"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:text="I'm READY!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="158dp"
+        android:layout_above="@+id/Instructions"
+        android:id="@+id/startButton"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="63dp"
+        android:id="@+id/timer"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="40sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

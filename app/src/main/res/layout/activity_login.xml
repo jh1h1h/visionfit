@@ -13,11 +13,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="325dp"
+        android:layout_height="325dp"
         android:background="@color/white"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/splashscreen" />
+        app:srcCompat="@drawable/visionfit" />
 
     <TextView
         android:text="@string/Log_in"

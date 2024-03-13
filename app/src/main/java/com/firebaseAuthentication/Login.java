@@ -72,6 +72,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         loginEmail = findViewById(R.id.email);
         loginPassword = findViewById(R.id.password);
+
         loginButton = findViewById(R.id.btn_login);
         signupRedirectText = findViewById(R.id.registerNow);
         forgotPassword = findViewById(R.id.txtForgotPassword);

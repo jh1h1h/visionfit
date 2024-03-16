@@ -228,5 +228,9 @@
     <string name="leaderboard">Leaderboard</string>
     <string name="my_rewards">My Rewards</string>
     <string name="my_statistics">My Statistics</string>
+    <string name="username">Username</string>
+    <string name="rank">Rank</string>
+    <string name="reps">Reps</string>
+    <string name="remember_me">Remember me</string>
 
 </resources>

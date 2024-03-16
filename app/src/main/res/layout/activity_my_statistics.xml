@@ -115,6 +115,8 @@
             android:layout_width="117dp"
             android:layout_height="106dp"
             android:src="@drawable/sit_up_icon"
+            android:paddingTop="@dimen/padding_standard"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="@id/sitUpsTab"
             app:layout_constraintRight_toRightOf="@id/sitUpsTab"
             app:layout_constraintTop_toTopOf="@id/sitUpsTab" />
@@ -149,6 +151,8 @@
             android:layout_width="117dp"
             android:layout_height="106dp"
             android:src="@drawable/push_up_icon"
+            android:paddingTop="@dimen/padding_standard"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="@id/pushUpsTab"
             app:layout_constraintRight_toRightOf="@id/pushUpsTab"
             app:layout_constraintTop_toTopOf="@id/pushUpsTab" />
@@ -183,7 +187,8 @@
             android:layout_width="127dp"
             android:layout_height="121dp"
             android:src="@drawable/squats_icon"
-            app:layout_constraintHorizontal_bias="0.511"
+            android:paddingTop="@dimen/padding_standard"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="@id/squatsTab"
             app:layout_constraintRight_toRightOf="@id/squatsTab"
             app:layout_constraintTop_toTopOf="@id/squatsTab" />
@@ -218,7 +223,8 @@
             android:layout_width="92dp"
             android:layout_height="92dp"
             android:src="@drawable/weightlift_icon"
-            app:layout_constraintHorizontal_bias="0.511"
+            android:paddingTop="10dp"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="@id/weightliftTab"
             app:layout_constraintRight_toRightOf="@id/weightliftTab"
             app:layout_constraintTop_toTopOf="@id/weightliftTab" />
@@ -233,6 +239,7 @@
         android:textSize="40sp"
         app:layout_constraintLeft_toLeftOf="@+id/squatsTab"
         app:layout_constraintRight_toRightOf="@+id/weightliftTab"
-        app:layout_constraintTop_toBottomOf="@id/weightliftTab" />
+        app:layout_constraintTop_toBottomOf="@id/weightliftTab"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

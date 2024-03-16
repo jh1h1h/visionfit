@@ -13,7 +13,10 @@ import android.widget.Toast;
 import com.firebaseAuthentication.Login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.teamten.visionfit.EntryChoiceActivity;
 import com.teamten.visionfit.R;
+import com.teamten.visionfit.java.ChooserActivity;
+import com.teamten.visionfit.java.LivePreviewActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,6 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button logoutButton = (Button) findViewById(R.id.logout);
         logoutButton.setOnClickListener(this);
 
+        // CAMERA BUTTON
+        Button cameraButton = (Button) findViewById(R.id.cameraButton);
+        cameraButton.setOnClickListener(this);
+
+
     }
 
     // FUNCTIONS FOR THE BUTTONS
@@ -71,6 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    public void openCamera() {
+        //Intent intent = new Intent(this, LivePreviewActivity.class);
+        Intent intent = new Intent(this, LivePreviewActivity.class);
+        startActivity(intent);
+    }
+
 
     // LOGIC CHECKS FOR WHAT BUTTON IS PRESSED
     @Override
@@ -88,7 +102,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.mystatsButton) {
             Log.d("Button Check", "Clicked Successfully");
             openMyStats();
-        } else if(v.getId() == R.id.logout) {
+        } else if (v.getId() == R.id.cameraButton) {
+            Log.d("Button Check", "Clicked Successfully");
+            openCamera();
+
+        } else if (v.getId() == R.id.logout) {
             Toast.makeText(MainActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(MainActivity.this, com.firebaseAuthentication.Login.class);

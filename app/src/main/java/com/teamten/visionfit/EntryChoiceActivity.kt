@@ -36,6 +36,7 @@ class EntryChoiceActivity : AppCompatActivity(), ActivityCompat.OnRequestPermiss
     setContentView(R.layout.activity_vision_entry_choice)
 
     findViewById<TextView>(R.id.java_entry_point).setOnClickListener {
+      Log.i("Debug", "In Entry Choice")
       val intent = Intent(this@EntryChoiceActivity, ChooserActivity::class.java)
       startActivity(intent)
     }

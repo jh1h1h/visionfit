@@ -27,6 +27,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 import com.google.android.gms.common.annotation.KeepName;
@@ -34,14 +35,8 @@ import com.teamten.visionfit.CameraSource;
 import com.teamten.visionfit.CameraSourcePreview;
 import com.teamten.visionfit.GraphicOverlay;
 import com.teamten.visionfit.R;
-//import com.teamten.visionfit.java.barcodescanner.BarcodeScannerProcessor;
-//import com.teamten.visionfit.java.facedetector.FaceDetectorProcessor;
-//import com.teamten.visionfit.java.facemeshdetector.FaceMeshDetectorProcessor;
-//import com.teamten.visionfit.java.labeldetector.LabelDetectorProcessor;
-//import com.teamten.visionfit.java.objectdetector.ObjectDetectorProcessor;
 import com.teamten.visionfit.java.posedetector.PoseDetectorProcessor;
-//import com.teamten.visionfit.java.segmenter.SegmenterProcessor;
-//import com.teamten.visionfit.java.textdetector.TextRecognitionProcessor;
+import com.teamten.visionfit.java.posedetector.classification.PoseClassifierProcessor;
 import com.teamten.visionfit.preference.PreferenceUtils;
 import com.teamten.visionfit.preference.SettingsActivity;
 import com.google.mlkit.vision.pose.PoseDetectorOptionsBase;
@@ -64,6 +59,11 @@ public final class LivePreviewActivity extends AppCompatActivity
   private GraphicOverlay graphicOverlay;
   private String selectedModel = POSE_DETECTION;
 
+  private TextView repCountText;
+  private String repCountStr;
+  private String exerciseTypeStr;
+
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -80,31 +80,63 @@ public final class LivePreviewActivity extends AppCompatActivity
       Log.d(TAG, "graphicOverlay is null");
     }
 
-    Spinner spinner = findViewById(R.id.spinner);
-    List<String> options = new ArrayList<>();
-    options.add(POSE_DETECTION);
 
-    // Creating adapter for spinner
-    ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, R.layout.spinner_style, options);
-    // Drop down layout style - list view with radio button
-    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    // attaching data adapter to spinner
-    spinner.setAdapter(dataAdapter);
-    spinner.setOnItemSelectedListener(this);
+
+//    Spinner spinner = findViewById(R.id.spinner);
+//    List<String> options = new ArrayList<>();
+//    options.add(POSE_DETECTION);
+//
+//    // Creating adapter for spinner
+//    ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, R.layout.spinner_style, options);
+//    // Drop down layout style - list view with radio button
+//    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//    // attaching data adapter to spinner
+//    spinner.setAdapter(dataAdapter);
+//    spinner.setOnItemSelectedListener(this);
 
     ToggleButton facingSwitch = findViewById(R.id.facing_switch);
     facingSwitch.setOnCheckedChangeListener(this);
 
-    ImageView settingsButton = findViewById(R.id.settings_button);
-    settingsButton.setOnClickListener(
-        v -> {
-          Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-          intent.putExtra(
-              SettingsActivity.EXTRA_LAUNCH_SOURCE, SettingsActivity.LaunchSource.LIVE_PREVIEW);
-          startActivity(intent);
-        });
+//    ImageView settingsButton = findViewById(R.id.settings_button);
+//    settingsButton.setOnClickListener(
+//        v -> {
+//          Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+//          intent.putExtra(
+//              SettingsActivity.EXTRA_LAUNCH_SOURCE, SettingsActivity.LaunchSource.LIVE_PREVIEW);
+//          startActivity(intent);
+//        });
 
     createCameraSource(selectedModel);
+
+
+    //Get the rep counter to update every 0.2 seconds
+    repCountText = findViewById(R.id.exercise_count_text);
+
+    Thread thread = new Thread() {
+      @Override
+      public void run() {
+        try {
+          while (!isInterrupted()) {
+            Thread.sleep(200);
+            runOnUiThread(new Runnable() {
+              @Override
+              public void run() {
+                repCountStr = PoseClassifierProcessor.repCountForText;
+                exerciseTypeStr = PoseClassifierProcessor.exerciseTypeForText;
+                if ((repCountStr != null) && (exerciseTypeStr != null)) {
+                  repCountText.setText(exerciseTypeStr+"\nReps:"+repCountStr);
+                } else {
+                  Log.d("MyMessage", "rep count and/or exercise type is null");
+                }
+              }
+            });
+          }
+        } catch (InterruptedException ex) {
+          repCountText.setText("Squats\nReps:0");
+        }
+      }
+    };
+    thread.start();
   }
 
   @Override

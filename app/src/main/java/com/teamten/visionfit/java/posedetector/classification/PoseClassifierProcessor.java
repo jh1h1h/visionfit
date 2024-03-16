@@ -21,6 +21,8 @@ import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.TextView;
+
 import androidx.annotation.WorkerThread;
 import com.google.common.base.Preconditions;
 import com.google.mlkit.vision.pose.Pose;
@@ -53,6 +55,10 @@ public class PoseClassifierProcessor {
   private List<RepetitionCounter> repCounters;
   private PoseClassifier poseClassifier;
   private String lastRepResult;
+
+  public static String repCountForText;
+  public static String exerciseTypeForText;
+  private String detectedClassName;
 
   @WorkerThread
   public PoseClassifierProcessor(Context context, boolean isStreamMode) {
@@ -119,12 +125,23 @@ public class PoseClassifierProcessor {
       for (RepetitionCounter repCounter : repCounters) {
         int repsBefore = repCounter.getNumRepeats();
         int repsAfter = repCounter.addClassificationResult(classification);
+
         if (repsAfter > repsBefore) {
+          // Update the text view of rep count and exercise type
+          repCountForText = String.valueOf(repsAfter);
+          detectedClassName = repCounter.getClassName();
+          if (detectedClassName.equals("squats_down")) {
+            exerciseTypeForText = "Squats";
+          } else if (detectedClassName.equals("pushups_down")) {
+            exerciseTypeForText = "Push Ups";
+          }
+
           // Play a fun beep when rep counter updates.
           ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);
           tg.startTone(ToneGenerator.TONE_PROP_BEEP);
-          lastRepResult = String.format(
-              Locale.US, "%s : %d reps", repCounter.getClassName(), repsAfter);
+//          lastRepResult = String.format(
+//              Locale.US, "%s : %d reps", repCounter.getClassName(), repsAfter);
+          lastRepResult = "";
           break;
         }
       }

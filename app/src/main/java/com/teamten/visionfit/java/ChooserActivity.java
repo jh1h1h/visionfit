@@ -39,22 +39,12 @@ public final class ChooserActivity extends AppCompatActivity
     implements AdapterView.OnItemClickListener {
   private static final String TAG = "ChooserActivity";
 
-  @SuppressWarnings("NewApi") // CameraX is only available on API 21+
-  private static final Class<?>[] CLASSES =
-      VERSION.SDK_INT < VERSION_CODES.LOLLIPOP
-          ? new Class<?>[] {
-            LivePreviewActivity.class
-          }
-          : new Class<?>[] {
+
+  private static final Class<?>[] CLASSES = new Class<?>[] {
             LivePreviewActivity.class
           };
 
-  private static final int[] DESCRIPTION_IDS =
-      VERSION.SDK_INT < VERSION_CODES.LOLLIPOP
-          ? new int[] {
-            R.string.desc_camera_source_activity,
-          }
-          : new int[] {
+  private static final int[] DESCRIPTION_IDS = new int[] {
             R.string.desc_camera_source_activity,
           };
 

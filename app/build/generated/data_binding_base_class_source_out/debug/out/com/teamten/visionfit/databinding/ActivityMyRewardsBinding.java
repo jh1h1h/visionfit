@@ -4,25 +4,128 @@ package com.teamten.visionfit.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.Button;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.teamten.visionfit.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityMyRewardsBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private ActivityMyRewardsBinding(@NonNull LinearLayout rootView) {
+  @NonNull
+  public final TextView MyRewardsTitle;
+
+  @NonNull
+  public final TextView MyWallet;
+
+  @NonNull
+  public final ConstraintLayout constraint1;
+
+  @NonNull
+  public final TextView constraint1Type;
+
+  @NonNull
+  public final TextView constraint1Value;
+
+  @NonNull
+  public final ConstraintLayout constraint2;
+
+  @NonNull
+  public final TextView constraint2Type;
+
+  @NonNull
+  public final TextView constraint2Value;
+
+  @NonNull
+  public final ConstraintLayout constraint3;
+
+  @NonNull
+  public final TextView constraint3Type;
+
+  @NonNull
+  public final TextView constraint3Value;
+
+  @NonNull
+  public final ConstraintLayout constraint4;
+
+  @NonNull
+  public final TextView constraint4Type;
+
+  @NonNull
+  public final TextView constraint4Value;
+
+  @NonNull
+  public final TextView earnings;
+
+  @NonNull
+  public final TextView lifetimeRewards;
+
+  @NonNull
+  public final TextView lifettimeEarnings;
+
+  @NonNull
+  public final Button redeemButton;
+
+  @NonNull
+  public final ConstraintLayout rewards;
+
+  @NonNull
+  public final ConstraintLayout rewardsHistory;
+
+  @NonNull
+  public final Button rewardsHistoryButton;
+
+  @NonNull
+  public final ConstraintLayout wallet;
+
+  private ActivityMyRewardsBinding(@NonNull ConstraintLayout rootView,
+      @NonNull TextView MyRewardsTitle, @NonNull TextView MyWallet,
+      @NonNull ConstraintLayout constraint1, @NonNull TextView constraint1Type,
+      @NonNull TextView constraint1Value, @NonNull ConstraintLayout constraint2,
+      @NonNull TextView constraint2Type, @NonNull TextView constraint2Value,
+      @NonNull ConstraintLayout constraint3, @NonNull TextView constraint3Type,
+      @NonNull TextView constraint3Value, @NonNull ConstraintLayout constraint4,
+      @NonNull TextView constraint4Type, @NonNull TextView constraint4Value,
+      @NonNull TextView earnings, @NonNull TextView lifetimeRewards,
+      @NonNull TextView lifettimeEarnings, @NonNull Button redeemButton,
+      @NonNull ConstraintLayout rewards, @NonNull ConstraintLayout rewardsHistory,
+      @NonNull Button rewardsHistoryButton, @NonNull ConstraintLayout wallet) {
     this.rootView = rootView;
+    this.MyRewardsTitle = MyRewardsTitle;
+    this.MyWallet = MyWallet;
+    this.constraint1 = constraint1;
+    this.constraint1Type = constraint1Type;
+    this.constraint1Value = constraint1Value;
+    this.constraint2 = constraint2;
+    this.constraint2Type = constraint2Type;
+    this.constraint2Value = constraint2Value;
+    this.constraint3 = constraint3;
+    this.constraint3Type = constraint3Type;
+    this.constraint3Value = constraint3Value;
+    this.constraint4 = constraint4;
+    this.constraint4Type = constraint4Type;
+    this.constraint4Value = constraint4Value;
+    this.earnings = earnings;
+    this.lifetimeRewards = lifetimeRewards;
+    this.lifettimeEarnings = lifettimeEarnings;
+    this.redeemButton = redeemButton;
+    this.rewards = rewards;
+    this.rewardsHistory = rewardsHistory;
+    this.rewardsHistoryButton = rewardsHistoryButton;
+    this.wallet = wallet;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +146,149 @@ public final class ActivityMyRewardsBinding implements ViewBinding {
 
   @NonNull
   public static ActivityMyRewardsBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.MyRewardsTitle;
+      TextView MyRewardsTitle = ViewBindings.findChildViewById(rootView, id);
+      if (MyRewardsTitle == null) {
+        break missingId;
+      }
 
-    return new ActivityMyRewardsBinding((LinearLayout) rootView);
+      id = R.id.MyWallet;
+      TextView MyWallet = ViewBindings.findChildViewById(rootView, id);
+      if (MyWallet == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_1;
+      ConstraintLayout constraint1 = ViewBindings.findChildViewById(rootView, id);
+      if (constraint1 == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_1_type;
+      TextView constraint1Type = ViewBindings.findChildViewById(rootView, id);
+      if (constraint1Type == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_1_value;
+      TextView constraint1Value = ViewBindings.findChildViewById(rootView, id);
+      if (constraint1Value == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_2;
+      ConstraintLayout constraint2 = ViewBindings.findChildViewById(rootView, id);
+      if (constraint2 == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_2_type;
+      TextView constraint2Type = ViewBindings.findChildViewById(rootView, id);
+      if (constraint2Type == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_2_value;
+      TextView constraint2Value = ViewBindings.findChildViewById(rootView, id);
+      if (constraint2Value == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_3;
+      ConstraintLayout constraint3 = ViewBindings.findChildViewById(rootView, id);
+      if (constraint3 == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_3_type;
+      TextView constraint3Type = ViewBindings.findChildViewById(rootView, id);
+      if (constraint3Type == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_3_value;
+      TextView constraint3Value = ViewBindings.findChildViewById(rootView, id);
+      if (constraint3Value == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_4;
+      ConstraintLayout constraint4 = ViewBindings.findChildViewById(rootView, id);
+      if (constraint4 == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_4_type;
+      TextView constraint4Type = ViewBindings.findChildViewById(rootView, id);
+      if (constraint4Type == null) {
+        break missingId;
+      }
+
+      id = R.id.constraint_4_value;
+      TextView constraint4Value = ViewBindings.findChildViewById(rootView, id);
+      if (constraint4Value == null) {
+        break missingId;
+      }
+
+      id = R.id.earnings;
+      TextView earnings = ViewBindings.findChildViewById(rootView, id);
+      if (earnings == null) {
+        break missingId;
+      }
+
+      id = R.id.lifetime_rewards;
+      TextView lifetimeRewards = ViewBindings.findChildViewById(rootView, id);
+      if (lifetimeRewards == null) {
+        break missingId;
+      }
+
+      id = R.id.lifettime_earnings;
+      TextView lifettimeEarnings = ViewBindings.findChildViewById(rootView, id);
+      if (lifettimeEarnings == null) {
+        break missingId;
+      }
+
+      id = R.id.redeem_button;
+      Button redeemButton = ViewBindings.findChildViewById(rootView, id);
+      if (redeemButton == null) {
+        break missingId;
+      }
+
+      id = R.id.rewards;
+      ConstraintLayout rewards = ViewBindings.findChildViewById(rootView, id);
+      if (rewards == null) {
+        break missingId;
+      }
+
+      id = R.id.rewards_history;
+      ConstraintLayout rewardsHistory = ViewBindings.findChildViewById(rootView, id);
+      if (rewardsHistory == null) {
+        break missingId;
+      }
+
+      id = R.id.rewards_history_button;
+      Button rewardsHistoryButton = ViewBindings.findChildViewById(rootView, id);
+      if (rewardsHistoryButton == null) {
+        break missingId;
+      }
+
+      id = R.id.wallet;
+      ConstraintLayout wallet = ViewBindings.findChildViewById(rootView, id);
+      if (wallet == null) {
+        break missingId;
+      }
+
+      return new ActivityMyRewardsBinding((ConstraintLayout) rootView, MyRewardsTitle, MyWallet,
+          constraint1, constraint1Type, constraint1Value, constraint2, constraint2Type,
+          constraint2Value, constraint3, constraint3Type, constraint3Value, constraint4,
+          constraint4Type, constraint4Value, earnings, lifetimeRewards, lifettimeEarnings,
+          redeemButton, rewards, rewardsHistory, rewardsHistoryButton, wallet);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

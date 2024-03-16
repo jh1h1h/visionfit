@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -27,6 +28,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final Button btnLogin;
 
   @NonNull
+  public final CheckBox checkBoxRememberMe;
+
+  @NonNull
   public final TextInputEditText email;
 
   @NonNull
@@ -45,11 +49,13 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextView txtForgotPassword;
 
   private ActivityLoginBinding(@NonNull LinearLayout rootView, @NonNull Button btnLogin,
-      @NonNull TextInputEditText email, @NonNull ImageView imageView,
-      @NonNull TextInputEditText password, @NonNull ProgressBar progressBar,
-      @NonNull TextView registerNow, @NonNull TextView txtForgotPassword) {
+      @NonNull CheckBox checkBoxRememberMe, @NonNull TextInputEditText email,
+      @NonNull ImageView imageView, @NonNull TextInputEditText password,
+      @NonNull ProgressBar progressBar, @NonNull TextView registerNow,
+      @NonNull TextView txtForgotPassword) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
+    this.checkBoxRememberMe = checkBoxRememberMe;
     this.email = email;
     this.imageView = imageView;
     this.password = password;
@@ -91,6 +97,12 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.checkBoxRememberMe;
+      CheckBox checkBoxRememberMe = ViewBindings.findChildViewById(rootView, id);
+      if (checkBoxRememberMe == null) {
+        break missingId;
+      }
+
       id = R.id.email;
       TextInputEditText email = ViewBindings.findChildViewById(rootView, id);
       if (email == null) {
@@ -127,8 +139,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((LinearLayout) rootView, btnLogin, email, imageView, password,
-          progressBar, registerNow, txtForgotPassword);
+      return new ActivityLoginBinding((LinearLayout) rootView, btnLogin, checkBoxRememberMe, email,
+          imageView, password, progressBar, registerNow, txtForgotPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

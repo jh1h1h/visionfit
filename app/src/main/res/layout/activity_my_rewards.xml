@@ -5,8 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MyRewardsActivity">
+    android:orientation="vertical">
+
+    <!--    Title Constraint-->
+
+    <!--    My Wallet Constraint-->
+
+    <!-- History Button and Redeem Button Constraint -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rewards"
@@ -15,22 +20,319 @@
         android:layout_marginStart="@dimen/activity_vertical_margin"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/black"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="6dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/my_rewards"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="@+id/rewards"
-        app:layout_constraintRight_toRightOf="@+id/rewards"
-        app:layout_constraintTop_toTopOf="@+id/rewards"
-        app:layout_constraintBottom_toBottomOf="@+id/rewards" />
+        <TextView
+            android:id="@+id/MyRewardsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+            android:text="@string/my_rewards"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/rewards"
+            app:layout_constraintLeft_toLeftOf="@+id/rewards"
+            app:layout_constraintRight_toRightOf="@+id/rewards"
+            app:layout_constraintTop_toTopOf="@+id/rewards" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rewards_history"
+        android:layout_width="361dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wallet">
+
+
+        <Button
+            android:id="@+id/rewards_history_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="68dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/shadow_button_layout"
+            android:elevation="20dp"
+            android:text="History"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/rewards_history"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/redeem_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/shadow_button_layout"
+            android:text="Redeem"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/rewards_history"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wallet"
+        android:layout_width="362dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rewards">
+
+        <TextView
+            android:id="@+id/MyWallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="My Wallet"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/wallet"
+            app:layout_constraintLeft_toLeftOf="@+id/wallet"
+            app:layout_constraintTop_toTopOf="@+id/wallet"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <TextView
+            android:id="@+id/earnings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="32dp"
+            android:text="$0.90"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/wallet"
+            app:layout_constraintRight_toRightOf="@+id/wallet"
+            app:layout_constraintTop_toTopOf="@+id/wallet"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <TextView
+            android:id="@+id/lifetime_rewards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Lifetime Earnings"
+            android:textColor="#636363"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/wallet"
+            app:layout_constraintLeft_toLeftOf="@+id/wallet"
+            app:layout_constraintTop_toBottomOf="@id/wallet"
+            app:layout_constraintTop_toTopOf="@+id/wallet"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/lifettime_earnings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="44dp"
+            android:text="$7.90"
+            android:textColor="#636363"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/wallet"
+            app:layout_constraintRight_toRightOf="@+id/wallet"
+            app:layout_constraintTop_toBottomOf="@id/earnings"
+            app:layout_constraintTop_toTopOf="@+id/wallet"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_1"
+        android:layout_width="319dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#DEDEDE"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rewards_history">
+
+
+        <TextView
+            android:id="@+id/constraint_1_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="3 Days Data Roaming"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_1"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/constraint_1_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="20dp"
+            android:text="-$6.00"
+            android:textColor="@color/red"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_1"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_2"
+        android:layout_width="319dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#DEDEDE"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_1">
+
+
+        <TextView
+            android:id="@+id/constraint_2_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Daily Challenge Day 6"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_2"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/constraint_2_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="20dp"
+            android:text="$0.35"
+            android:textColor="@color/light_green_700"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_2"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_3"
+        android:layout_width="319dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#DEDEDE"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_2">
+
+
+        <TextView
+            android:id="@+id/constraint_3_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Daily Challenge Day 5"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_3"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/constraint_3_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="20dp"
+            android:text="$0.30"
+            android:textColor="@color/light_green_700"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_3"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_4"
+        android:layout_width="319dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#DEDEDE"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_3">
+
+
+        <TextView
+            android:id="@+id/constraint_4_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Daily Challenge Day 4"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_4"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/constraint_4_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="20dp"
+            android:text="$0.25"
+            android:textColor="@color/light_green_700"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_4"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

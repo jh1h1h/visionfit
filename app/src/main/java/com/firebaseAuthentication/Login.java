@@ -7,6 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.util.Patterns;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +38,11 @@ public class Login extends AppCompatActivity {
     private Button loginButton;
     private FirebaseAuth auth;
     TextView forgotPassword;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    Boolean savelogin;
+    CheckBox savelogindetails;
+
 
     public void loginFunc(){
         String email = loginEmail.getText().toString();
@@ -47,6 +54,12 @@ public class Login extends AppCompatActivity {
                             @Override
                             public void onSuccess(AuthResult authResult) {
                                 Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                if(savelogindetails.isChecked()) {
+                                    editor.putBoolean("savelogin", true);
+                                    editor.putString("email", email);
+                                    editor.putString("password", pass);
+                                    editor.commit();
+                                }
                                 Intent intent = new Intent(Login.this, com.teamten.visionfit.java.balls2.MainActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -72,10 +85,27 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         loginEmail = findViewById(R.id.email);
         loginPassword = findViewById(R.id.password);
+
         loginButton = findViewById(R.id.btn_login);
         signupRedirectText = findViewById(R.id.registerNow);
         forgotPassword = findViewById(R.id.txtForgotPassword);
         auth = FirebaseAuth.getInstance();
+
+        sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
+        savelogindetails = (CheckBox) findViewById(R.id.checkBoxRememberMe);
+        editor = sharedPreferences.edit();
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginFunc();
+            }
+        });
+        savelogin=sharedPreferences.getBoolean("savelogin", true);
+        if(savelogin==true) {
+            loginEmail.setText(sharedPreferences.getString("email", null));
+            loginPassword.setText(sharedPreferences.getString("password", null));
+        }
 
         loginPassword.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
@@ -87,12 +117,7 @@ public class Login extends AppCompatActivity {
                 return false;
             }
         });
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            loginFunc();
-            }
-        });
+
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -213,5 +213,24 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="statistics">Statistics</string>
+    <string name="keep_it_going">Keep it going!</string>
+    <string name="your_all_time_best">Your all time best:</string>
+    <string name="sit_ups">Sit Ups</string>
+    <string name="push_ups">Push Ups</string>
+    <string name="squats">Squats</string>
+    <string name="weightlifts">Weightlifts</string>
+    <string name="fight_on">Fight on!</string>
+    <string name="hello_user">Hello, USER!</string>
+    <string name="have_you_been_slacking_off">Have you been slacking off?</string>
+    <string name="can_you_keep_your_streak_today">Can you keep your streak today?</string>
+    <string name="daily_challenges">Daily Challenges</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="my_rewards">My Rewards</string>
+    <string name="my_statistics">My Statistics</string>
+    <string name="username">Username</string>
+    <string name="rank">Rank</string>
+    <string name="reps">Reps</string>
+    <string name="remember_me">Remember me</string>
 
 </resources>

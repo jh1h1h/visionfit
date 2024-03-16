@@ -1,16 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MyStatisticsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/statistics"
+        android:layout_width="362dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INSERT STATISTICS"
-        android:layout_gravity="center"
-        android:textSize="50dp"/>
+        android:text="@string/statistics"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/statistics"
+        app:layout_constraintRight_toRightOf="@+id/statistics"
+        app:layout_constraintTop_toTopOf="@+id/statistics"
+        app:layout_constraintBottom_toBottomOf="@+id/statistics" />
 
-</LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/encourage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statistics"
+        app:layout_constraintBottom_toTopOf="@id/allTime" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/keep_it_going"
+            android:textColor="@color/black"
+            android:textSize="47sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/encourage"
+            app:layout_constraintRight_toRightOf="@+id/encourage"
+            app:layout_constraintTop_toTopOf="@+id/encourage"
+            app:layout_constraintBottom_toBottomOf="@+id/encourage"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/allTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/light_orange"
+        android:orientation="vertical"
+        android:padding="7dp"
+        app:layout_constraintTop_toBottomOf="@id/encourage"
+        tools:ignore="MissingConstraints" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_all_time_best"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/allTime"
+            app:layout_constraintRight_toRightOf="@+id/allTime"
+            app:layout_constraintTop_toTopOf="@+id/allTime"
+            app:layout_constraintBottom_toBottomOf="@+id/allTime"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sitUpsTab"
+        android:layout_width="174dp"
+        android:layout_height="163dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:orientation="vertical"
+        android:padding="7dp"
+        app:layout_constraintTop_toBottomOf="@id/allTime"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sit_ups"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/sitUpsTab"
+            app:layout_constraintRight_toRightOf="@+id/sitUpsTab"
+            app:layout_constraintBottom_toBottomOf="@+id/sitUpsTab" />
+
+        <ImageView
+            android:layout_width="117dp"
+            android:layout_height="106dp"
+            android:src="@drawable/sit_up_icon"
+            android:paddingTop="@dimen/padding_standard"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="@id/sitUpsTab"
+            app:layout_constraintRight_toRightOf="@id/sitUpsTab"
+            app:layout_constraintTop_toTopOf="@id/sitUpsTab" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pushUpsTab"
+        android:layout_width="174dp"
+        android:layout_height="163dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:orientation="vertical"
+        android:padding="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/allTime">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/push_ups"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/pushUpsTab"
+            app:layout_constraintRight_toRightOf="@+id/pushUpsTab"
+            app:layout_constraintBottom_toBottomOf="@+id/pushUpsTab" />
+
+        <ImageView
+            android:layout_width="117dp"
+            android:layout_height="106dp"
+            android:src="@drawable/push_up_icon"
+            android:paddingTop="@dimen/padding_standard"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="@id/pushUpsTab"
+            app:layout_constraintRight_toRightOf="@id/pushUpsTab"
+            app:layout_constraintTop_toTopOf="@id/pushUpsTab" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/squatsTab"
+        android:layout_width="174dp"
+        android:layout_height="163dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:orientation="vertical"
+        android:padding="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sitUpsTab">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/squats"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/squatsTab"
+            app:layout_constraintRight_toRightOf="@+id/squatsTab"
+            app:layout_constraintBottom_toBottomOf="@+id/squatsTab" />
+
+        <ImageView
+            android:layout_width="127dp"
+            android:layout_height="121dp"
+            android:src="@drawable/squats_icon"
+            android:paddingTop="@dimen/padding_standard"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="@id/squatsTab"
+            app:layout_constraintRight_toRightOf="@id/squatsTab"
+            app:layout_constraintTop_toTopOf="@id/squatsTab" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weightliftTab"
+        android:layout_width="174dp"
+        android:layout_height="163dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/orange"
+        android:orientation="vertical"
+        android:padding="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pushUpsTab" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/weightlifts"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/weightliftTab"
+            app:layout_constraintRight_toRightOf="@+id/weightliftTab"
+            app:layout_constraintBottom_toBottomOf="@+id/weightliftTab"/>
+
+        <ImageView
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/weightlift_icon"
+            android:paddingTop="10dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="@id/weightliftTab"
+            app:layout_constraintRight_toRightOf="@id/weightliftTab"
+            app:layout_constraintTop_toTopOf="@id/weightliftTab" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fight_on"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="@+id/squatsTab"
+        app:layout_constraintRight_toRightOf="@+id/weightliftTab"
+        app:layout_constraintTop_toBottomOf="@id/weightliftTab"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

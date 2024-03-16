@@ -83,7 +83,7 @@
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:gravity="center|bottom"
-        android:text="@string/my_rewards"
+        android:text="@string/squats"
         android:textStyle="bold"
         android:textSize="17sp"
         android:drawableTop="@drawable/coin_icon"

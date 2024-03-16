@@ -148,17 +148,17 @@ public class PoseClassifierProcessor {
       result.add(lastRepResult);
     }
 
-    // Add maxConfidence class of current frame to result if pose is found.
-    if (!pose.getAllPoseLandmarks().isEmpty()) {
-      String maxConfidenceClass = classification.getMaxConfidenceClass();
-      String maxConfidenceClassResult = String.format(
-          Locale.US,
-          "%s : %.2f confidence",
-          maxConfidenceClass,
-          classification.getClassConfidence(maxConfidenceClass)
-              / poseClassifier.confidenceRange());
-      result.add(maxConfidenceClassResult);
-    }
+//    // Add maxConfidence class of current frame to result if pose is found.
+//    if (!pose.getAllPoseLandmarks().isEmpty()) {
+//      String maxConfidenceClass = classification.getMaxConfidenceClass();
+//      String maxConfidenceClassResult = String.format(
+//          Locale.US,
+//          "%s : %.2f confidence",
+//          maxConfidenceClass,
+//          classification.getClassConfidence(maxConfidenceClass)
+//              / poseClassifier.confidenceRange());
+//      result.add(maxConfidenceClassResult);
+//    }
 
     return result;
   }

@@ -229,5 +229,6 @@
     <string name="leaderboard">Leaderboard</string>
     <string name="my_rewards">My Rewards</string>
     <string name="my_statistics">My Statistics</string>
+    <string name="class_type">ClassType</string>
 
 </resources>

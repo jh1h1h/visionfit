@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // FUNCTIONS FOR THE BUTTONS
     public void openDailyChallengeActivity() {
-        Intent intent = new Intent(this, DailyChallangeActivity.class);
+        Intent intent = new Intent(this, DailyChallengeActivity.class);
         startActivity(intent);
     }
 
@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void openCamera() {
         //Intent intent = new Intent(this, LivePreviewActivity.class);
         Intent intent = new Intent(this, LivePreviewActivity.class);
+        intent.putExtra("ClassType", "Free Style");
         startActivity(intent);
     }
 

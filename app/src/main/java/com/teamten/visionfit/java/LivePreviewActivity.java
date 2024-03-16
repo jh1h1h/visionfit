@@ -61,8 +61,9 @@ public final class LivePreviewActivity extends AppCompatActivity
 
   private TextView repCountText;
   private String repCountStr;
+  //exerciseTypeStr and classType should be the same, will need to do comparisons between them to check for matching classes
   private String exerciseTypeStr;
-
+  public static String classType;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,10 @@ public final class LivePreviewActivity extends AppCompatActivity
     Log.d(TAG, "onCreate");
 
     setContentView(R.layout.activity_vision_live_preview);
+
+    //Get intent to retrieve class type (determine which entrypoint)
+    Intent intent = getIntent();
+    classType = intent.getStringExtra("ClassType");
 
     preview = findViewById(R.id.preview_view);
     if (preview == null) {
@@ -111,6 +116,7 @@ public final class LivePreviewActivity extends AppCompatActivity
 
     //Get the rep counter to update every 0.2 seconds
     repCountText = findViewById(R.id.exercise_count_text);
+    repCountText.setText(classType+"\nRep:0");
 
     Thread thread = new Thread() {
       @Override
@@ -124,7 +130,12 @@ public final class LivePreviewActivity extends AppCompatActivity
                 repCountStr = PoseClassifierProcessor.repCountForText;
                 exerciseTypeStr = PoseClassifierProcessor.exerciseTypeForText;
                 if ((repCountStr != null) && (exerciseTypeStr != null)) {
-                  repCountText.setText(exerciseTypeStr+"\nReps:"+repCountStr);
+                  //If they are doing a specific type of exercise (not freestyle), then only consider reps of that exercise
+                  if (classType.equals("Free Style")) {
+                    repCountText.setText(exerciseTypeStr+"\nReps:"+repCountStr);
+                  } else if (classType.equals(exerciseTypeStr)) {
+                    repCountText.setText(exerciseTypeStr+"\nReps:"+repCountStr);
+                  }
                 } else {
                   Log.d("MyMessage", "rep count and/or exercise type is null");
                 }
@@ -132,7 +143,7 @@ public final class LivePreviewActivity extends AppCompatActivity
             });
           }
         } catch (InterruptedException ex) {
-          repCountText.setText("Squats\nReps:0");
+          repCountText.setText(classType);
         }
       }
     };

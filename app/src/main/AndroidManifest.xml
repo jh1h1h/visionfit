@@ -74,7 +74,7 @@
             android:name=".java.balls2.LeaderBoardActivity"
             android:exported="false" />
         <activity
-            android:name=".java.balls2.DailyChallangeActivity"
+            android:name=".java.balls2.DailyChallengeActivity"
             android:exported="false" />
         <activity
             android:name=".java.balls2.MainActivity"

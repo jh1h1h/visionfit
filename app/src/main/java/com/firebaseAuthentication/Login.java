@@ -43,6 +43,7 @@ public class Login extends AppCompatActivity {
     Boolean savelogin;
     CheckBox savelogindetails;
 
+
     public void loginFunc(){
         String email = loginEmail.getText().toString();
         String pass = loginPassword.getText().toString();

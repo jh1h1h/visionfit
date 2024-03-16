@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button logoutButton = (Button) findViewById(R.id.logout);
         logoutButton.setOnClickListener(this);
 
+
     }
 
     // FUNCTIONS FOR THE BUTTONS

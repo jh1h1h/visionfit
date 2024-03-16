@@ -13,9 +13,7 @@ import android.widget.Toast;
 import com.firebaseAuthentication.Login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.teamten.visionfit.EntryChoiceActivity;
 import com.teamten.visionfit.R;
-import com.teamten.visionfit.java.ChooserActivity;
 import com.teamten.visionfit.java.LivePreviewActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

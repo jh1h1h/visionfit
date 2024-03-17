@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // FUNCTIONS FOR THE BUTTONS
     public void openDailyChallengeActivity() {
-        Intent intent = new Intent(this, DailyChallangeActivity.class);
+        Intent intent = new Intent(this, DailyChallengeActivity.class);
         startActivity(intent);
     }
 

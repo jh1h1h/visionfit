@@ -57,8 +57,19 @@
             app:layout_constraintLeft_toLeftOf="@+id/encourage"
             app:layout_constraintRight_toRightOf="@+id/encourage"
             app:layout_constraintTop_toTopOf="@+id/encourage"
-            app:layout_constraintBottom_toBottomOf="@+id/encourage"/>
+            app:layout_constraintBottom_toBottomOf="@+id/streakBar" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/streakBar"
+            android:layout_width="300dp"
+            android:layout_height="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/encourage"
+            app:layout_constraintEnd_toEndOf="@id/encourage"
+            app:layout_constraintStart_toStartOf="@id/encourage"
+            android:background="@drawable/round_view"
+            android:backgroundTint="@color/light_grey_400" >
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.teamten.visionfit.R;
 
-public class DailyChallangeActivity extends AppCompatActivity{
+public class DailyChallengeActivity extends AppCompatActivity{
     public int counter = 3;
 
     @Override

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-53:/values-or/values-or.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-54:/values-or/values-or.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Henry\\.gradle\\caches\\transforms-3\\156f6f5a68e52a7b16948803dc98251a\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-or\\values.xml",

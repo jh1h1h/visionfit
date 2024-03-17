@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-53:/values-v21/values-v21.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-54:/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Henry\\.gradle\\caches\\transforms-3\\0a8bef08dc78084a24020dfef4ba38aa\\transformed\\core-1.9.0\\res\\values-v21\\values-v21.xml",

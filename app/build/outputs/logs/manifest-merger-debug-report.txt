@@ -78,6 +78,8 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\Henry\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\Henry\.gradle\caches\transforms-3\68515cf9f863932bbc327065d188b8da\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Henry\.gradle\caches\transforms-3\c575c4ebdf255f1e8446973c2f25bada\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Henry\.gradle\caches\transforms-3\0c3731bac57411c4b6ca8f3ca6ffdde4\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.daimajia.easing:library:2.0] C:\Users\Henry\.gradle\caches\transforms-3\ecba21b6d452d0484f26b5f8ab134fd5\transformed\jetified-library-2.0\AndroidManifest.xml:2:1-12:12
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Henry\.gradle\caches\transforms-3\40ac1f948ade2bbdf6fb838dd86fe917\transformed\jetified-library-2.3\AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Henry\.gradle\caches\transforms-3\9e974e6bccad44cbfd9cdf0400d0f283\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Henry\.gradle\caches\transforms-3\e1bfbc841383cf35334f0dd8fad1e5b2\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Henry\.gradle\caches\transforms-3\3ef17c19313bea283921063ab56aa225\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -484,6 +486,10 @@ MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Henry\.gradle\caches\tra
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Henry\.gradle\caches\transforms-3\c575c4ebdf255f1e8446973c2f25bada\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Henry\.gradle\caches\transforms-3\0c3731bac57411c4b6ca8f3ca6ffdde4\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:5:5-44
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Henry\.gradle\caches\transforms-3\0c3731bac57411c4b6ca8f3ca6ffdde4\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:5:5-44
+MERGED from [com.daimajia.easing:library:2.0] C:\Users\Henry\.gradle\caches\transforms-3\ecba21b6d452d0484f26b5f8ab134fd5\transformed\jetified-library-2.0\AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.easing:library:2.0] C:\Users\Henry\.gradle\caches\transforms-3\ecba21b6d452d0484f26b5f8ab134fd5\transformed\jetified-library-2.0\AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Henry\.gradle\caches\transforms-3\40ac1f948ade2bbdf6fb838dd86fe917\transformed\jetified-library-2.3\AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Henry\.gradle\caches\transforms-3\40ac1f948ade2bbdf6fb838dd86fe917\transformed\jetified-library-2.3\AndroidManifest.xml:8:5-10:41
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Henry\.gradle\caches\transforms-3\9e974e6bccad44cbfd9cdf0400d0f283\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Henry\.gradle\caches\transforms-3\9e974e6bccad44cbfd9cdf0400d0f283\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Henry\.gradle\caches\transforms-3\e1bfbc841383cf35334f0dd8fad1e5b2\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44

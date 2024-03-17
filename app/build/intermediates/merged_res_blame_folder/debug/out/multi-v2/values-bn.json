@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-53:/values-bn/values-bn.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-54:/values-bn/values-bn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Henry\\.gradle\\caches\\transforms-3\\95f68d9de2b2619ba55011cc51bdb45c\\transformed\\browser-1.4.0\\res\\values-bn\\values-bn.xml",

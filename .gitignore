@@ -71,3 +71,5 @@ out/
 
 # Ignore local.properties file
 local.properties
+
+# Add this line to .gitignore

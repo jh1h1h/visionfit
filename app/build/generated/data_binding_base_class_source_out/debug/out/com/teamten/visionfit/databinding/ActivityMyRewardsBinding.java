@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teamten.visionfit.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -25,6 +26,9 @@ public final class ActivityMyRewardsBinding implements ViewBinding {
 
   @NonNull
   public final TextView MyWallet;
+
+  @NonNull
+  public final BottomNavigationView bottomNavigation;
 
   @NonNull
   public final ConstraintLayout constraint1;
@@ -88,19 +92,21 @@ public final class ActivityMyRewardsBinding implements ViewBinding {
 
   private ActivityMyRewardsBinding(@NonNull ConstraintLayout rootView,
       @NonNull TextView MyRewardsTitle, @NonNull TextView MyWallet,
-      @NonNull ConstraintLayout constraint1, @NonNull TextView constraint1Type,
-      @NonNull TextView constraint1Value, @NonNull ConstraintLayout constraint2,
-      @NonNull TextView constraint2Type, @NonNull TextView constraint2Value,
-      @NonNull ConstraintLayout constraint3, @NonNull TextView constraint3Type,
-      @NonNull TextView constraint3Value, @NonNull ConstraintLayout constraint4,
-      @NonNull TextView constraint4Type, @NonNull TextView constraint4Value,
-      @NonNull TextView earnings, @NonNull TextView lifetimeRewards,
-      @NonNull TextView lifettimeEarnings, @NonNull Button redeemButton,
-      @NonNull ConstraintLayout rewards, @NonNull ConstraintLayout rewardsHistory,
-      @NonNull Button rewardsHistoryButton, @NonNull ConstraintLayout wallet) {
+      @NonNull BottomNavigationView bottomNavigation, @NonNull ConstraintLayout constraint1,
+      @NonNull TextView constraint1Type, @NonNull TextView constraint1Value,
+      @NonNull ConstraintLayout constraint2, @NonNull TextView constraint2Type,
+      @NonNull TextView constraint2Value, @NonNull ConstraintLayout constraint3,
+      @NonNull TextView constraint3Type, @NonNull TextView constraint3Value,
+      @NonNull ConstraintLayout constraint4, @NonNull TextView constraint4Type,
+      @NonNull TextView constraint4Value, @NonNull TextView earnings,
+      @NonNull TextView lifetimeRewards, @NonNull TextView lifettimeEarnings,
+      @NonNull Button redeemButton, @NonNull ConstraintLayout rewards,
+      @NonNull ConstraintLayout rewardsHistory, @NonNull Button rewardsHistoryButton,
+      @NonNull ConstraintLayout wallet) {
     this.rootView = rootView;
     this.MyRewardsTitle = MyRewardsTitle;
     this.MyWallet = MyWallet;
+    this.bottomNavigation = bottomNavigation;
     this.constraint1 = constraint1;
     this.constraint1Type = constraint1Type;
     this.constraint1Value = constraint1Value;
@@ -159,6 +165,12 @@ public final class ActivityMyRewardsBinding implements ViewBinding {
       id = R.id.MyWallet;
       TextView MyWallet = ViewBindings.findChildViewById(rootView, id);
       if (MyWallet == null) {
+        break missingId;
+      }
+
+      id = R.id.bottomNavigation;
+      BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
+      if (bottomNavigation == null) {
         break missingId;
       }
 
@@ -283,10 +295,10 @@ public final class ActivityMyRewardsBinding implements ViewBinding {
       }
 
       return new ActivityMyRewardsBinding((ConstraintLayout) rootView, MyRewardsTitle, MyWallet,
-          constraint1, constraint1Type, constraint1Value, constraint2, constraint2Type,
-          constraint2Value, constraint3, constraint3Type, constraint3Value, constraint4,
-          constraint4Type, constraint4Value, earnings, lifetimeRewards, lifettimeEarnings,
-          redeemButton, rewards, rewardsHistory, rewardsHistoryButton, wallet);
+          bottomNavigation, constraint1, constraint1Type, constraint1Value, constraint2,
+          constraint2Type, constraint2Value, constraint3, constraint3Type, constraint3Value,
+          constraint4, constraint4Type, constraint4Value, earnings, lifetimeRewards,
+          lifettimeEarnings, redeemButton, rewards, rewardsHistory, rewardsHistoryButton, wallet);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

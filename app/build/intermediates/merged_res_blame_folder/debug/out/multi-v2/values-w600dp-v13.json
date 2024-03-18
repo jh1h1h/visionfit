@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-3:/values-w600dp-v13/values-w600dp-v13.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-54:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\SUTD Academics\\2024_Term4\\InfoSys\\fitness-pose-estimation\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
+                    "source": "C:\\Users\\cjht0\\OneDrive\\Desktop\\school\\hw\\t4 java\\fitness-pose-estimation\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

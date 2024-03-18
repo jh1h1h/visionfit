@@ -15,9 +15,8 @@
         android:id="@+id/imageView"
         android:layout_width="325dp"
         android:layout_height="325dp"
-        android:background="@color/white"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/visionfit" />
+        android:src="@drawable/visionfit_new" />
 
     <TextView
         android:text="@string/Log_in"

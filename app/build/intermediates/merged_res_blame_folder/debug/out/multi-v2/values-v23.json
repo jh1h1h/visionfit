@@ -1,29 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-3:/values-v23/values-v23.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-54:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\SUTD Academics\\2024_Term4\\InfoSys\\fitness-pose-estimation\\app\\src\\main\\res\\values-v23\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "66",
-                        "endLines": "7",
-                        "endColumns": "12",
-                        "endOffsets": "451"
-                    },
-                    "to": {
-                        "startLines": "55",
-                        "startColumns": "4",
-                        "startOffsets": "3511",
-                        "endLines": "60",
-                        "endColumns": "12",
-                        "endOffsets": "3841"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\27d6d70c4527c1704eac66208cb1e4c7\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\cjht0\\.gradle\\caches\\transforms-3\\27d6d70c4527c1704eac66208cb1e4c7\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -42,17 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\b38447ed3af6e29d7edfaddb3133c3b4\\transformed\\work-runtime-2.7.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,121",
-                        "endColumns": "65,62",
-                        "endOffsets": "116,179"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\50fb5c0e353d06100262f3b35cadebfe\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\cjht0\\.gradle\\caches\\transforms-3\\50fb5c0e353d06100262f3b35cadebfe\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -71,7 +42,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\09a7b937f3c23396d630e0d79f3aaec4\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\cjht0\\OneDrive\\Desktop\\school\\hw\\t4 java\\fitness-pose-estimation\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "66",
+                        "endLines": "7",
+                        "endColumns": "12",
+                        "endOffsets": "451"
+                    },
+                    "to": {
+                        "startLines": "55",
+                        "startColumns": "4",
+                        "startOffsets": "3511",
+                        "endLines": "60",
+                        "endColumns": "12",
+                        "endOffsets": "3841"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cjht0\\.gradle\\caches\\transforms-3\\09a7b937f3c23396d630e0d79f3aaec4\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -87,6 +77,16 @@
                         "endLines": "54",
                         "endColumns": "12",
                         "endOffsets": "3506"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cjht0\\.gradle\\caches\\transforms-3\\b38447ed3af6e29d7edfaddb3133c3b4\\transformed\\work-runtime-2.7.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
                     }
                 }
             ]

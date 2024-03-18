@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teamten.visionfit.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -21,7 +22,13 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final BottomNavigationView bottomNavigation;
+
+  @NonNull
   public final TextView bottomText;
+
+  @NonNull
+  public final Button cameraButton;
 
   @NonNull
   public final Button dailychallengeButton;
@@ -31,9 +38,6 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public final Button leaderboardButton;
-
-  @NonNull
-  public final Button logout;
 
   @NonNull
   public final Button mystatsButton;
@@ -47,17 +51,19 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView userDetails;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView bottomText,
-      @NonNull Button dailychallengeButton, @NonNull ConstraintLayout greeting,
-      @NonNull Button leaderboardButton, @NonNull Button logout, @NonNull Button mystatsButton,
-      @NonNull Button rewardsButton, @NonNull ConstraintLayout streakMessage,
-      @NonNull TextView userDetails) {
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+      @NonNull BottomNavigationView bottomNavigation, @NonNull TextView bottomText,
+      @NonNull Button cameraButton, @NonNull Button dailychallengeButton,
+      @NonNull ConstraintLayout greeting, @NonNull Button leaderboardButton,
+      @NonNull Button mystatsButton, @NonNull Button rewardsButton,
+      @NonNull ConstraintLayout streakMessage, @NonNull TextView userDetails) {
     this.rootView = rootView;
+    this.bottomNavigation = bottomNavigation;
     this.bottomText = bottomText;
+    this.cameraButton = cameraButton;
     this.dailychallengeButton = dailychallengeButton;
     this.greeting = greeting;
     this.leaderboardButton = leaderboardButton;
-    this.logout = logout;
     this.mystatsButton = mystatsButton;
     this.rewardsButton = rewardsButton;
     this.streakMessage = streakMessage;
@@ -91,9 +97,21 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.bottomNavigation;
+      BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
+      if (bottomNavigation == null) {
+        break missingId;
+      }
+
       id = R.id.bottomText;
       TextView bottomText = ViewBindings.findChildViewById(rootView, id);
       if (bottomText == null) {
+        break missingId;
+      }
+
+      id = R.id.cameraButton;
+      Button cameraButton = ViewBindings.findChildViewById(rootView, id);
+      if (cameraButton == null) {
         break missingId;
       }
 
@@ -112,12 +130,6 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.leaderboardButton;
       Button leaderboardButton = ViewBindings.findChildViewById(rootView, id);
       if (leaderboardButton == null) {
-        break missingId;
-      }
-
-      id = R.id.logout;
-      Button logout = ViewBindings.findChildViewById(rootView, id);
-      if (logout == null) {
         break missingId;
       }
 
@@ -145,9 +157,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, bottomText, dailychallengeButton,
-          greeting, leaderboardButton, logout, mystatsButton, rewardsButton, streakMessage,
-          userDetails);
+      return new ActivityMainBinding((ConstraintLayout) rootView, bottomNavigation, bottomText,
+          cameraButton, dailychallengeButton, greeting, leaderboardButton, mystatsButton,
+          rewardsButton, streakMessage, userDetails);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

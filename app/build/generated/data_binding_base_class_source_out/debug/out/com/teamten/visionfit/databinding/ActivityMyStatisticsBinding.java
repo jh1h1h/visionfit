@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teamten.visionfit.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,6 +21,9 @@ public final class ActivityMyStatisticsBinding implements ViewBinding {
 
   @NonNull
   public final ConstraintLayout allTime;
+
+  @NonNull
+  public final BottomNavigationView bottomNavigation;
 
   @NonNull
   public final ConstraintLayout encourage;
@@ -40,12 +44,13 @@ public final class ActivityMyStatisticsBinding implements ViewBinding {
   public final ConstraintLayout weightliftTab;
 
   private ActivityMyStatisticsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout allTime, @NonNull ConstraintLayout encourage,
-      @NonNull ConstraintLayout pushUpsTab, @NonNull ConstraintLayout sitUpsTab,
-      @NonNull ConstraintLayout squatsTab, @NonNull ConstraintLayout statistics,
-      @NonNull ConstraintLayout weightliftTab) {
+      @NonNull ConstraintLayout allTime, @NonNull BottomNavigationView bottomNavigation,
+      @NonNull ConstraintLayout encourage, @NonNull ConstraintLayout pushUpsTab,
+      @NonNull ConstraintLayout sitUpsTab, @NonNull ConstraintLayout squatsTab,
+      @NonNull ConstraintLayout statistics, @NonNull ConstraintLayout weightliftTab) {
     this.rootView = rootView;
     this.allTime = allTime;
+    this.bottomNavigation = bottomNavigation;
     this.encourage = encourage;
     this.pushUpsTab = pushUpsTab;
     this.sitUpsTab = sitUpsTab;
@@ -87,6 +92,12 @@ public final class ActivityMyStatisticsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.bottomNavigation;
+      BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
+      if (bottomNavigation == null) {
+        break missingId;
+      }
+
       id = R.id.encourage;
       ConstraintLayout encourage = ViewBindings.findChildViewById(rootView, id);
       if (encourage == null) {
@@ -123,8 +134,8 @@ public final class ActivityMyStatisticsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMyStatisticsBinding((ConstraintLayout) rootView, allTime, encourage,
-          pushUpsTab, sitUpsTab, squatsTab, statistics, weightliftTab);
+      return new ActivityMyStatisticsBinding((ConstraintLayout) rootView, allTime, bottomNavigation,
+          encourage, pushUpsTab, sitUpsTab, squatsTab, statistics, weightliftTab);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

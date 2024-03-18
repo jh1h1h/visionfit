@@ -28,6 +28,7 @@ anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
 anim fragment_fast_out_extra_slow_in
+anim left_to_right
 anim linear_indeterminate_line1_head_interpolator
 anim linear_indeterminate_line1_tail_interpolator
 anim linear_indeterminate_line2_head_interpolator
@@ -47,6 +48,8 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim slide_in_right
+anim slide_out_left
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -2988,6 +2991,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bottom_background
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3044,6 +3048,11 @@ drawable ic_search_black_24
 drawable ic_settings_white_24dp
 drawable ic_switch_camera_white_48dp
 drawable ic_switch_camera_white_48dp_inset
+drawable icon_logout
+drawable icon_mainpage
+drawable icon_setting
+drawable icon_user
+drawable item_selector
 drawable leaderboard_icon
 drawable list_item_background
 drawable logo_mlkit
@@ -3135,6 +3144,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable visionfit
 drawable visionfit_logo
+drawable visionfit_new
 drawable visionfitlogo
 drawable visionfitlogo_background
 drawable visionfitlogo_foreground
@@ -3150,7 +3160,6 @@ id CTRL
 id FUNCTION
 id First2Fragment
 id FirstFragment
-id Instructions
 id META
 id MyRewardsTitle
 id MyWallet
@@ -3209,6 +3218,7 @@ id SHOW_PROGRESS
 id SYM
 id Second2Fragment
 id SecondFragment
+id Settings
 id TOP_END
 id TOP_START
 id Username
@@ -3294,7 +3304,12 @@ id beginOnFirstDraw
 id beginning
 id blocking
 id bottom
+id bottomNavigation
 id bottomText
+id bottom_home
+id bottom_logout
+id bottom_settings
+id bottom_userProfile
 id bounce
 id browser_actions_header_text
 id browser_actions_menu_item_icon
@@ -3307,6 +3322,7 @@ id btn_login
 id btn_register
 id buttonPanel
 id cache_measures
+id cameraButton
 id cancel_button
 id center
 id centerCrop
@@ -3485,7 +3501,6 @@ id listMode
 id list_item
 id locale
 id loginNow
-id logout
 id ltr
 id m3_side_sheet
 id marquee
@@ -3547,6 +3562,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id myProfile
 id mystatsButton
 id nav_controller_view_tag
 id nav_graph
@@ -3689,7 +3705,6 @@ id src_in
 id src_over
 id standard
 id start
-id startButton
 id startHorizontal
 id startToEnd
 id startVertical
@@ -3737,7 +3752,6 @@ id textinput_suffix_text
 id thirdPlace
 id thirteenthPlace
 id time
-id timer
 id title
 id titleDividerNoCustom
 id titleTab
@@ -3907,6 +3921,7 @@ layout activity_login
 layout activity_main
 layout activity_my_rewards
 layout activity_my_statistics
+layout activity_profile
 layout activity_register
 layout activity_settings
 layout activity_splash
@@ -3995,9 +4010,9 @@ layout select_dialog_singlechoice_material
 layout settings_style
 layout spinner_style
 layout support_simple_spinner_dropdown_item
+menu bottom_menu
 menu camera_button_menu
 mipmap ic_launcher
-mipmap sit_up_icon
 mipmap visionfitlogo
 mipmap visionfitlogo_foreground
 mipmap visionfitlogo_round
@@ -4208,6 +4223,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string my_profile
 string my_rewards
 string my_statistics
 string nav_app_bar_navigate_up_description
@@ -4335,6 +4351,7 @@ string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string second_fragment_label
 string select_image
+string settings
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string sit_ups
@@ -4753,6 +4770,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
+style SlideActivityAnimation
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2

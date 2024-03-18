@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teamten.visionfit.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -166,6 +167,9 @@ public final class ActivityLeaderBoardBinding implements ViewBinding {
   public final TextView Username;
 
   @NonNull
+  public final BottomNavigationView bottomNavigation;
+
+  @NonNull
   public final ConstraintLayout eightPlace;
 
   @NonNull
@@ -260,19 +264,19 @@ public final class ActivityLeaderBoardBinding implements ViewBinding {
       @NonNull TextView Rep4, @NonNull TextView Rep5, @NonNull TextView Rep6,
       @NonNull TextView Rep7, @NonNull TextView Rep8, @NonNull TextView Rep9,
       @NonNull TextView Repetitions, @NonNull TextView Username,
-      @NonNull ConstraintLayout eightPlace, @NonNull ConstraintLayout eleventhPlace,
-      @NonNull ConstraintLayout fifteenthPlace, @NonNull ConstraintLayout fifthPlace,
-      @NonNull ConstraintLayout firstPlace, @NonNull ConstraintLayout fourteenthPlace,
-      @NonNull ConstraintLayout fourthPlace, @NonNull ConstraintLayout leaderboardTitle,
-      @NonNull ConstraintLayout ninthPlace, @NonNull Button pushUpLeaderBoardBtn,
-      @NonNull ScrollView scrolling, @NonNull ConstraintLayout secondPlace,
-      @NonNull ConstraintLayout seventhPlace, @NonNull Button sitUpLeaderBoardBtn,
-      @NonNull ConstraintLayout sixthPlace, @NonNull Button squatsLeaderBoardBtn,
-      @NonNull ConstraintLayout tenthPlace, @NonNull ConstraintLayout thirdPlace,
-      @NonNull ConstraintLayout thirteenthPlace, @NonNull ConstraintLayout titleTab,
-      @NonNull ConstraintLayout twelfthPlace, @NonNull Button weightliftLeaderBoardBtn,
-      @NonNull TextView yourName, @NonNull ConstraintLayout yourPlace, @NonNull TextView yourRank,
-      @NonNull TextView yourRep) {
+      @NonNull BottomNavigationView bottomNavigation, @NonNull ConstraintLayout eightPlace,
+      @NonNull ConstraintLayout eleventhPlace, @NonNull ConstraintLayout fifteenthPlace,
+      @NonNull ConstraintLayout fifthPlace, @NonNull ConstraintLayout firstPlace,
+      @NonNull ConstraintLayout fourteenthPlace, @NonNull ConstraintLayout fourthPlace,
+      @NonNull ConstraintLayout leaderboardTitle, @NonNull ConstraintLayout ninthPlace,
+      @NonNull Button pushUpLeaderBoardBtn, @NonNull ScrollView scrolling,
+      @NonNull ConstraintLayout secondPlace, @NonNull ConstraintLayout seventhPlace,
+      @NonNull Button sitUpLeaderBoardBtn, @NonNull ConstraintLayout sixthPlace,
+      @NonNull Button squatsLeaderBoardBtn, @NonNull ConstraintLayout tenthPlace,
+      @NonNull ConstraintLayout thirdPlace, @NonNull ConstraintLayout thirteenthPlace,
+      @NonNull ConstraintLayout titleTab, @NonNull ConstraintLayout twelfthPlace,
+      @NonNull Button weightliftLeaderBoardBtn, @NonNull TextView yourName,
+      @NonNull ConstraintLayout yourPlace, @NonNull TextView yourRank, @NonNull TextView yourRep) {
     this.rootView = rootView;
     this.Name1 = Name1;
     this.Name10 = Name10;
@@ -322,6 +326,7 @@ public final class ActivityLeaderBoardBinding implements ViewBinding {
     this.Rep9 = Rep9;
     this.Repetitions = Repetitions;
     this.Username = Username;
+    this.bottomNavigation = bottomNavigation;
     this.eightPlace = eightPlace;
     this.eleventhPlace = eleventhPlace;
     this.fifteenthPlace = fifteenthPlace;
@@ -665,6 +670,12 @@ public final class ActivityLeaderBoardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.bottomNavigation;
+      BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
+      if (bottomNavigation == null) {
+        break missingId;
+      }
+
       id = R.id.eightPlace;
       ConstraintLayout eightPlace = ViewBindings.findChildViewById(rootView, id);
       if (eightPlace == null) {
@@ -825,9 +836,9 @@ public final class ActivityLeaderBoardBinding implements ViewBinding {
           Name12, Name13, Name14, Name15, Name2, Name3, Name4, Name5, Name6, Name7, Name8, Name9,
           Rank1, Rank10, Rank11, Rank12, Rank13, Rank14, Rank15, Rank2, Rank3, Rank4, Rank5, Rank6,
           Rank7, Rank8, Rank9, Ranking, Rep1, Rep10, Rep11, Rep12, Rep13, Rep14, Rep15, Rep2, Rep3,
-          Rep4, Rep5, Rep6, Rep7, Rep8, Rep9, Repetitions, Username, eightPlace, eleventhPlace,
-          fifteenthPlace, fifthPlace, firstPlace, fourteenthPlace, fourthPlace, leaderboardTitle,
-          ninthPlace, pushUpLeaderBoardBtn, scrolling, secondPlace, seventhPlace,
+          Rep4, Rep5, Rep6, Rep7, Rep8, Rep9, Repetitions, Username, bottomNavigation, eightPlace,
+          eleventhPlace, fifteenthPlace, fifthPlace, firstPlace, fourteenthPlace, fourthPlace,
+          leaderboardTitle, ninthPlace, pushUpLeaderBoardBtn, scrolling, secondPlace, seventhPlace,
           sitUpLeaderBoardBtn, sixthPlace, squatsLeaderBoardBtn, tenthPlace, thirdPlace,
           thirteenthPlace, titleTab, twelfthPlace, weightliftLeaderBoardBtn, yourName, yourPlace,
           yourRank, yourRep);

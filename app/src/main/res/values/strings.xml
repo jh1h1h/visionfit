@@ -232,5 +232,7 @@
     <string name="rank">Rank</string>
     <string name="reps">Reps</string>
     <string name="remember_me">Remember me</string>
+    <string name="my_profile">My Profile</string>
+    <string name="settings">Settings</string>
 
 </resources>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".java.balls2.DailyChallengeActivity">
+    tools:context=".java.balls2.DailyChallangeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/daily_challengeTab"
@@ -122,30 +122,5 @@
         app:layout_constraintRight_toRightOf="@+id/weightliftButton"
         app:layout_constraintTop_toBottomOf="@id/squatsButton"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/Instructions"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="I'm READY!"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="442dp" />
-
-    <TextView
-        android:id="@+id/timer"
-        android:text="hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/startButton"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="40sp"
-        tools:layout_editor_absoluteX="197dp"
-        tools:layout_editor_absoluteY="442dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

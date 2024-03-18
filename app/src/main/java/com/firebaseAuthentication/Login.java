@@ -56,6 +56,7 @@ public class Login extends AppCompatActivity {
                                 }
                                 Intent intent = new Intent(Login.this, com.teamten.visionfit.java.balls2.MainActivity.class);
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 finish();
                             }
                         }).addOnFailureListener(new OnFailureListener() {

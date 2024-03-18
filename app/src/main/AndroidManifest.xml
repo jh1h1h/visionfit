@@ -80,6 +80,12 @@
             android:name=".java.balls2.MainActivity"
             android:exported="false" />
         <activity
+            android:name=".java.balls2.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".java.balls2.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".java.balls2.SplashActivity"
             android:exported="true">
             <intent-filter>

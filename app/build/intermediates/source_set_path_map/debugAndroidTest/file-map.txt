@@ -1,7 +1,0 @@
-com.teamten.visionfit.test.app-androidTest-0 C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\build\generated\res\resValues\androidTest\debug
-com.teamten.visionfit.test.app-androidTest-1 C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\build\generated\res\rs\androidTest\debug
-com.teamten.visionfit.test.app-mergeDebugAndroidTestResources-2 C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.teamten.visionfit.test.app-mergeDebugAndroidTestResources-3 C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.teamten.visionfit.test.app-merged_res-4 C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\build\intermediates\merged_res\debugAndroidTest
-com.teamten.visionfit.test.app-androidTest-5 C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\androidTest\res
-com.teamten.visionfit.test.app-androidTestDebug-6 C:\SUTD Academics\2024_Term4\InfoSys\fitness-pose-estimation\app\src\androidTestDebug\res

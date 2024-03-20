@@ -59,7 +59,7 @@ buildNumber.properties
 
 # Gradle
 .gradle/
-build/
+app/build/
 
 # Other common build directories
 out/

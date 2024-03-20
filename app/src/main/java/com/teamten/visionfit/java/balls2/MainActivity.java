@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         leaderboardButton.setOnClickListener(this);
 
         // MY STATISTICS BUTTON
-//        Button mystatsButton = (Button) findViewById(R.id.mystatsButton);
-//        mystatsButton.setOnClickListener(this);
+        Button mystatsButton = (Button) findViewById(R.id.mystatsButton);
+        mystatsButton.setOnClickListener(this);
 
         // LOGOUT BUTTON
 //         Button logoutButton = (Button) findViewById(R.id.logout);

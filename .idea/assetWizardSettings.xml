@@ -321,7 +321,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/settings/baseline_settings_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/privacy_tip/baseline_privacy_tip_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -331,8 +331,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="icon_setting" />
+                            <entry key="outputName" value="privacy_icon" />
                             <entry key="sourceFile" value="C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation" />
                           </map>
                         </option>

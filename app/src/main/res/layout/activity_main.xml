@@ -75,7 +75,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dailychallengeButton"
         android:layout_width="174dp"
         android:layout_height="163dp"
@@ -88,13 +88,14 @@
         android:text="@string/daily_challenges"
         android:textStyle="bold"
         android:textSize="17sp"
+        android:textColor="@color/black"
         android:drawableTop="@drawable/dumbbell_icon"
         android:paddingTop="@dimen/padding_standard"
         android:drawablePadding="-100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/streakMessage" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/leaderboardButton"
         android:layout_width="174dp"
         android:layout_height="163dp"
@@ -107,13 +108,14 @@
         android:text="@string/leaderboard"
         android:textStyle="bold"
         android:textSize="17sp"
+        android:textColor="@color/black"
         android:drawableTop="@drawable/leaderboard_icon"
         android:paddingTop="@dimen/padding_standard"
         android:drawablePadding="-100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/streakMessage" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/rewardsButton"
         android:layout_width="174dp"
         android:layout_height="163dp"
@@ -126,13 +128,14 @@
         android:text="@string/my_rewards"
         android:textStyle="bold"
         android:textSize="17sp"
+        android:textColor="@color/black"
         android:drawableTop="@drawable/coin_icon"
         android:paddingTop="@dimen/padding_standard"
         android:drawablePadding="-100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dailychallengeButton" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/mystatsButton"
         android:layout_width="174dp"
         android:layout_height="163dp"
@@ -145,6 +148,7 @@
         android:text="@string/my_statistics"
         android:textStyle="bold"
         android:textSize="17sp"
+        android:textColor="@color/black"
         android:drawableTop="@drawable/statistics_icon"
         android:paddingTop="@dimen/padding_standard"
         android:drawablePadding="-100dp"

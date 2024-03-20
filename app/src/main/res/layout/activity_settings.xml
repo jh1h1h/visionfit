@@ -34,6 +34,336 @@
         app:layout_constraintTop_toTopOf="@+id/Settings"
         app:layout_constraintBottom_toBottomOf="@+id/Settings" />
 
+    <ImageView
+        android:id="@+id/userImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/profile_icon"
+        app:layout_constraintTop_toBottomOf="@id/Settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/username_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THE ROCK"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        style="@style/TextColor"
+        app:layout_constraintTop_toBottomOf="@id/userImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollingSettings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username_settings" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:background="@drawable/round_back_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="15dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account Settings"
+                    android:textSize="15sp"
+                    style="@style/TextColor"
+                    android:layout_marginBottom="@dimen/padding_standard" />
+
+                <!-- edit profile -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_back_night_mode">
+
+                    <ImageView
+                        android:id="@+id/edit_profile"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/user_icon"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/edit_profile"
+                        android:textSize="17sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/edit_profile" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/right_arrow_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="17dp"/>
+                </RelativeLayout>
+
+                <!-- change password -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_back_night_mode"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/changePasswordIcon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/change_password_icon"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/change_password"
+                        android:textSize="17sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/changePasswordIcon" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/right_arrow_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="17dp"/>
+                </RelativeLayout>
+
+                <!-- add payment method -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_back_night_mode"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/paymentIcon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/payment_icon"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/add_payment_method"
+                        android:textSize="17sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/paymentIcon" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/add_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="17dp"/>
+                </RelativeLayout>
+
+                <!-- night mode -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_back_night_mode"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/nightModeIcon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/night_mode_icon"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/night_mode"
+                        android:textSize="17sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/nightModeIcon" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:layout_marginEnd="12dp"
+                        android:theme="@style/nightModeSwitch" />
+                </RelativeLayout>
+
+                <!-- notifications -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_back_notifications"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/notificationIcon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/notifications_icon"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/notifications"
+                        android:textSize="17sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/notificationIcon" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:layout_marginEnd="12dp"
+                        android:theme="@style/notificationSwitch" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/round_back_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="15dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More Details"
+                    android:textSize="15sp"
+                    style="@style/TextColor"
+                    android:layout_marginBottom="@dimen/padding_standard" />
+
+                <!-- About Us -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_back_night_mode">
+
+                    <ImageView
+                        android:id="@+id/aboutUsIcon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/about_us_icon"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/about_us"
+                        android:textSize="17sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/aboutUsIcon"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/right_arrow_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="17dp"/>
+                </RelativeLayout>
+
+                <!-- Privacy Policy -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_back_night_mode"
+                    android:layout_marginTop="5dp" >
+
+                    <ImageView
+                        android:id="@+id/PrivacyIcon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/privacy_icon"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/privacy_policy"
+                        android:textSize="17sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/PrivacyIcon"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/right_arrow_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="17dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"

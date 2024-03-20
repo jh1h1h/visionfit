@@ -10,4 +10,23 @@
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
         <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
     </style>
+
+    <style name="ScreenBackground"><item name="android:background">@color/white</item></style>
+    <style name="BackgroundStyle"><item name="android:backgroundTint">@color/black</item></style>
+    <style name="TabBackground"><item name="android:background">@color/black</item></style>
+    <style name="TextColor"><item name="android:textColor">@color/black</item></style>
+
+    <!-- Theme style for night switch -->
+    <style name="nightModeSwitch" parent="Theme.AppCompat.Light" >
+        <item name = "colorControlActivated">@color/night_mode</item>
+        <item name = "colorSwitchThumbNormal">@color/darkGray</item>
+
+    </style>
+
+    <!-- Theme style for notifications switch-->
+    <style name="notificationSwitch" parent="Theme.AppCompat.Light" >
+        <item name = "colorControlActivated">@color/notification</item>
+        <item name = "colorSwitchThumbNormal">@color/darkGray</item>
+
+    </style>
 </resources>

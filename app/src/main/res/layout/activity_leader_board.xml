@@ -35,7 +35,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sitUpLeaderBoardBtn"
         android:layout_width="85dp"
         android:layout_height="85dp"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/pushUpLeaderBoardBtn"
         android:layout_width="85dp"
         android:layout_height="85dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
         app:layout_constraintStart_toEndOf="@id/sitUpLeaderBoardBtn"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/squatsLeaderBoardBtn"
         android:layout_width="85dp"
         android:layout_height="85dp"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
         app:layout_constraintStart_toEndOf="@id/pushUpLeaderBoardBtn"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/weightliftLeaderBoardBtn"
         android:layout_width="85dp"
         android:layout_height="85dp"
@@ -143,7 +143,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:id="@+id/scrolling"
+        android:id="@+id/scrollingLeaderboard"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/yourPlace"
@@ -167,7 +167,7 @@
                 android:orientation="vertical"
                 android:padding="7dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/scrolling" >
+                app:layout_constraintTop_toBottomOf="@id/scrollingLeaderboard" >
 
                 <TextView
                     android:id="@+id/Rank1"

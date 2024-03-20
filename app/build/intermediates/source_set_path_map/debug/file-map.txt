@@ -1,58 +1,60 @@
-com.teamten.visionfit.app-work-runtime-2.7.0-0 C:\Users\cjht0\.gradle\caches\transforms-3\03b56a395886fac616212c29f9cc6b52\transformed\work-runtime-2.7.0\res
-com.teamten.visionfit.app-core-1.9.0-1 C:\Users\cjht0\.gradle\caches\transforms-3\0a8bef08dc78084a24020dfef4ba38aa\transformed\core-1.9.0\res
-com.teamten.visionfit.app-jetified-lifecycle-runtime-ktx-2.6.1-2 C:\Users\cjht0\.gradle\caches\transforms-3\0b8e1e82e07f46976241b72f1d679c7a\transformed\jetified-lifecycle-runtime-ktx-2.6.1\res
-com.teamten.visionfit.app-jetified-play-services-basement-18.1.0-3 C:\Users\cjht0\.gradle\caches\transforms-3\156f6f5a68e52a7b16948803dc98251a\transformed\jetified-play-services-basement-18.1.0\res
-com.teamten.visionfit.app-work-runtime-ktx-2.7.0-4 C:\Users\cjht0\.gradle\caches\transforms-3\16fb0cd8db88147333caa3aac067a277\transformed\work-runtime-ktx-2.7.0\res
-com.teamten.visionfit.app-navigation-runtime-2.6.0-5 C:\Users\cjht0\.gradle\caches\transforms-3\18f3fb3815f1d68e4ebbbbc4a2febef2\transformed\navigation-runtime-2.6.0\res
-com.teamten.visionfit.app-jetified-savedstate-ktx-1.2.1-6 C:\Users\cjht0\.gradle\caches\transforms-3\1aa91265add332107e631d0e123c4c12\transformed\jetified-savedstate-ktx-1.2.1\res
-com.teamten.visionfit.app-jetified-appcompat-resources-1.6.1-7 C:\Users\cjht0\.gradle\caches\transforms-3\202c1c6228e785e26b0903a94247f82d\transformed\jetified-appcompat-resources-1.6.1\res
-com.teamten.visionfit.app-jetified-startup-runtime-1.1.1-8 C:\Users\cjht0\.gradle\caches\transforms-3\24cfda7bf8408203e4c765f81a3f8f9e\transformed\jetified-startup-runtime-1.1.1\res
-com.teamten.visionfit.app-jetified-firebase-common-20.4.2-9 C:\Users\cjht0\.gradle\caches\transforms-3\27de2189ae526f346d8c15d832093e09\transformed\jetified-firebase-common-20.4.2\res
-com.teamten.visionfit.app-jetified-viewpager2-1.0.0-10 C:\Users\cjht0\.gradle\caches\transforms-3\2af6211fbbd749d3ecedc2ede8ecd490\transformed\jetified-viewpager2-1.0.0\res
-com.teamten.visionfit.app-appcompat-1.6.1-11 C:\Users\cjht0\.gradle\caches\transforms-3\32dc310365d7741b7535cf43a360bb40\transformed\appcompat-1.6.1\res
-com.teamten.visionfit.app-jetified-play-services-base-18.1.0-12 C:\Users\cjht0\.gradle\caches\transforms-3\35ea9634c94404ef543094ec94c0e8d9\transformed\jetified-play-services-base-18.1.0\res
-com.teamten.visionfit.app-lifecycle-runtime-2.6.1-13 C:\Users\cjht0\.gradle\caches\transforms-3\3e4f235bcf070414bee9e4894867145b\transformed\lifecycle-runtime-2.6.1\res
-com.teamten.visionfit.app-jetified-annotation-experimental-1.3.0-14 C:\Users\cjht0\.gradle\caches\transforms-3\3e8608044f0d1fcc1d7f345a650b45f7\transformed\jetified-annotation-experimental-1.3.0\res
-com.teamten.visionfit.app-cardview-1.0.0-15 C:\Users\cjht0\.gradle\caches\transforms-3\3ef17c19313bea283921063ab56aa225\transformed\cardview-1.0.0\res
-com.teamten.visionfit.app-coordinatorlayout-1.1.0-16 C:\Users\cjht0\.gradle\caches\transforms-3\3efc709b93ff5b42bfd363094feecc99\transformed\coordinatorlayout-1.1.0\res
-com.teamten.visionfit.app-jetified-library-2.3-17 C:\Users\cjht0\.gradle\caches\transforms-3\40ac1f948ade2bbdf6fb838dd86fe917\transformed\jetified-library-2.3\res
-com.teamten.visionfit.app-jetified-work-multiprocess-2.7.0-18 C:\Users\cjht0\.gradle\caches\transforms-3\4901fecfb94c91498f0c7af1ddb86838\transformed\jetified-work-multiprocess-2.7.0\res
-com.teamten.visionfit.app-core-runtime-2.2.0-19 C:\Users\cjht0\.gradle\caches\transforms-3\4b2c1e661649142baa387be42e0aff42\transformed\core-runtime-2.2.0\res
-com.teamten.visionfit.app-jetified-camera-core-1.0.0-SNAPSHOT-20 C:\Users\cjht0\.gradle\caches\transforms-3\4fa065b664fc005e36a350966688db10\transformed\jetified-camera-core-1.0.0-SNAPSHOT\res
-com.teamten.visionfit.app-transition-1.4.1-21 C:\Users\cjht0\.gradle\caches\transforms-3\5bf0646289bbb45d8ba841bc55c7adf0\transformed\transition-1.4.1\res
-com.teamten.visionfit.app-recyclerview-1.1.0-22 C:\Users\cjht0\.gradle\caches\transforms-3\61a4f2763211e2cd104bb2d7cb5ee2aa\transformed\recyclerview-1.1.0\res
-com.teamten.visionfit.app-jetified-lifecycle-viewmodel-savedstate-2.6.1-23 C:\Users\cjht0\.gradle\caches\transforms-3\68515cf9f863932bbc327065d188b8da\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\res
-com.teamten.visionfit.app-jetified-lifecycle-service-2.6.1-24 C:\Users\cjht0\.gradle\caches\transforms-3\6d4cb5bd7881930dd33fe6d0f9208b57\transformed\jetified-lifecycle-service-2.6.1\res
-com.teamten.visionfit.app-jetified-activity-ktx-1.8.0-25 C:\Users\cjht0\.gradle\caches\transforms-3\70d9f2ac3271cfca1817ae8f08a9e658\transformed\jetified-activity-ktx-1.8.0\res
-com.teamten.visionfit.app-lifecycle-livedata-2.6.1-26 C:\Users\cjht0\.gradle\caches\transforms-3\8188d1e0d983ea28dd512077427cca5f\transformed\lifecycle-livedata-2.6.1\res
-com.teamten.visionfit.app-jetified-profileinstaller-1.3.0-27 C:\Users\cjht0\.gradle\caches\transforms-3\84d80473812b55be1ba9f48628010e9d\transformed\jetified-profileinstaller-1.3.0\res
-com.teamten.visionfit.app-drawerlayout-1.1.1-28 C:\Users\cjht0\.gradle\caches\transforms-3\8752375a1e2c926e4ea244ca3733cb0c\transformed\drawerlayout-1.1.1\res
-com.teamten.visionfit.app-fragment-1.6.0-29 C:\Users\cjht0\.gradle\caches\transforms-3\894939153e03489ec16d93856ad7508f\transformed\fragment-1.6.0\res
-com.teamten.visionfit.app-navigation-fragment-2.6.0-30 C:\Users\cjht0\.gradle\caches\transforms-3\8a52760ca16e36fddb4b6bd5df6aceba\transformed\navigation-fragment-2.6.0\res
-com.teamten.visionfit.app-jetified-lifecycle-viewmodel-ktx-2.6.1-31 C:\Users\cjht0\.gradle\caches\transforms-3\8e9a49cf9532e8546c93a420b39e929d\transformed\jetified-lifecycle-viewmodel-ktx-2.6.1\res
-com.teamten.visionfit.app-constraintlayout-2.0.4-32 C:\Users\cjht0\.gradle\caches\transforms-3\8f966595ab042bb6fec0bf718cf2966b\transformed\constraintlayout-2.0.4\res
-com.teamten.visionfit.app-jetified-emoji2-1.2.0-33 C:\Users\cjht0\.gradle\caches\transforms-3\94dc122d6b1f435fd7bbe4d2b0ff7c4f\transformed\jetified-emoji2-1.2.0\res
-com.teamten.visionfit.app-browser-1.4.0-34 C:\Users\cjht0\.gradle\caches\transforms-3\95f68d9de2b2619ba55011cc51bdb45c\transformed\browser-1.4.0\res
-com.teamten.visionfit.app-jetified-camera-camera2-1.0.0-SNAPSHOT-35 C:\Users\cjht0\.gradle\caches\transforms-3\9a559035c4f8ba2394de8c5f6aefea20\transformed\jetified-camera-camera2-1.0.0-SNAPSHOT\res
-com.teamten.visionfit.app-jetified-core-ktx-1.9.0-36 C:\Users\cjht0\.gradle\caches\transforms-3\9cce0ee2db65b2868d7e4e7a658b48e6\transformed\jetified-core-ktx-1.9.0\res
-com.teamten.visionfit.app-jetified-window-1.0.0-37 C:\Users\cjht0\.gradle\caches\transforms-3\a145593400c5c6e6295b38c26de54137\transformed\jetified-window-1.0.0\res
-com.teamten.visionfit.app-navigation-ui-2.6.0-38 C:\Users\cjht0\.gradle\caches\transforms-3\a20a1d30ec0ec0272b8e99f9f78a1413\transformed\navigation-ui-2.6.0\res
-com.teamten.visionfit.app-jetified-camera-view-1.0.0-SNAPSHOT-39 C:\Users\cjht0\.gradle\caches\transforms-3\a63de547a1b190aad6a571a8236fb800\transformed\jetified-camera-view-1.0.0-SNAPSHOT\res
-com.teamten.visionfit.app-lifecycle-livedata-core-2.6.1-40 C:\Users\cjht0\.gradle\caches\transforms-3\b0637e32e5f4c9519e996f8beeaca96c\transformed\lifecycle-livedata-core-2.6.1\res
-com.teamten.visionfit.app-jetified-lifecycle-process-2.6.1-41 C:\Users\cjht0\.gradle\caches\transforms-3\bac317a988fac19f5bb4918c34e760a5\transformed\jetified-lifecycle-process-2.6.1\res
-com.teamten.visionfit.app-slidingpanelayout-1.2.0-42 C:\Users\cjht0\.gradle\caches\transforms-3\bac5bd8965cebd9230c4b54d111dfd5f\transformed\slidingpanelayout-1.2.0\res
-com.teamten.visionfit.app-jetified-savedstate-1.2.1-43 C:\Users\cjht0\.gradle\caches\transforms-3\c1f1efffa6380b66ff3f72ff391f3461\transformed\jetified-savedstate-1.2.1\res
-com.teamten.visionfit.app-jetified-activity-1.8.0-44 C:\Users\cjht0\.gradle\caches\transforms-3\c5f1cfa24cbab8f4d1245f56fa761315\transformed\jetified-activity-1.8.0\res
-com.teamten.visionfit.app-material-1.11.0-45 C:\Users\cjht0\.gradle\caches\transforms-3\c91acf928f89cc0633a82d1ac7993a16\transformed\material-1.11.0\res
-com.teamten.visionfit.app-jetified-lifecycle-livedata-core-ktx-2.6.1-46 C:\Users\cjht0\.gradle\caches\transforms-3\d88c9cb7e39dec96cca20970a3030464\transformed\jetified-lifecycle-livedata-core-ktx-2.6.1\res
-com.teamten.visionfit.app-jetified-fragment-ktx-1.6.0-47 C:\Users\cjht0\.gradle\caches\transforms-3\dd136e30d347e859aa16a9c5284f9174\transformed\jetified-fragment-ktx-1.6.0\res
-com.teamten.visionfit.app-navigation-common-2.6.0-48 C:\Users\cjht0\.gradle\caches\transforms-3\f41819965656545687eda7537722fa0f\transformed\navigation-common-2.6.0\res
-com.teamten.visionfit.app-jetified-emoji2-views-helper-1.2.0-49 C:\Users\cjht0\.gradle\caches\transforms-3\f41b665c3ee8e2d6bca515403b291a33\transformed\jetified-emoji2-views-helper-1.2.0\res
-com.teamten.visionfit.app-lifecycle-viewmodel-2.6.1-50 C:\Users\cjht0\.gradle\caches\transforms-3\f79168757b59620656d0179f476a8fe4\transformed\lifecycle-viewmodel-2.6.1\res
-com.teamten.visionfit.app-res-51 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\generated\res\processDebugGoogleServices
-com.teamten.visionfit.app-resValues-52 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\generated\res\resValues\debug
-com.teamten.visionfit.app-mergeDebugResources-53 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
-com.teamten.visionfit.app-mergeDebugResources-54 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-com.teamten.visionfit.app-merged_res-55 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\intermediates\merged_res\debug
-com.teamten.visionfit.app-debug-56 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\src\debug\res
-com.teamten.visionfit.app-main-57 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\src\main\res
+com.teamten.visionfit.app-navigation-ui-2.7.7-0 C:\Users\cjht0\.gradle\caches\transforms-3\01608dc248c6eb8691918167ccdbafd4\transformed\navigation-ui-2.7.7\res
+com.teamten.visionfit.app-jetified-camera-core-1.3.2-1 C:\Users\cjht0\.gradle\caches\transforms-3\09953ad857229602f879178b2cb0316b\transformed\jetified-camera-core-1.3.2\res
+com.teamten.visionfit.app-jetified-profileinstaller-1.3.0-2 C:\Users\cjht0\.gradle\caches\transforms-3\0af16d8367b27f080a70a232f9a0af35\transformed\jetified-profileinstaller-1.3.0\res
+com.teamten.visionfit.app-jetified-savedstate-1.2.1-3 C:\Users\cjht0\.gradle\caches\transforms-3\0f04d1a49f72076bb25230f3ae08bc4c\transformed\jetified-savedstate-1.2.1\res
+com.teamten.visionfit.app-jetified-camera-view-1.3.2-4 C:\Users\cjht0\.gradle\caches\transforms-3\19003d0d9c50e27703e3d78aabc5bb0d\transformed\jetified-camera-view-1.3.2\res
+com.teamten.visionfit.app-jetified-activity-1.8.2-5 C:\Users\cjht0\.gradle\caches\transforms-3\19b816396336a8c1c07eca8959cee23a\transformed\jetified-activity-1.8.2\res
+com.teamten.visionfit.app-lifecycle-livedata-core-2.7.0-6 C:\Users\cjht0\.gradle\caches\transforms-3\1b97d605b64efad73ca585cfe1911c32\transformed\lifecycle-livedata-core-2.7.0\res
+com.teamten.visionfit.app-jetified-startup-runtime-1.1.1-7 C:\Users\cjht0\.gradle\caches\transforms-3\1c03ac6cf685a2caaff90be7e0a528ea\transformed\jetified-startup-runtime-1.1.1\res
+com.teamten.visionfit.app-jetified-play-services-basement-18.3.0-8 C:\Users\cjht0\.gradle\caches\transforms-3\2153886a5df14a2d9e27ad53d054f2bc\transformed\jetified-play-services-basement-18.3.0\res
+com.teamten.visionfit.app-navigation-runtime-2.7.7-9 C:\Users\cjht0\.gradle\caches\transforms-3\24ba999bc3f10efdf94adf9e4acd7aba\transformed\navigation-runtime-2.7.7\res
+com.teamten.visionfit.app-core-runtime-2.2.0-10 C:\Users\cjht0\.gradle\caches\transforms-3\25a8a9e82825f8b3fcbaed3480282ea1\transformed\core-runtime-2.2.0\res
+com.teamten.visionfit.app-recyclerview-1.1.0-11 C:\Users\cjht0\.gradle\caches\transforms-3\320f90dee71601b1a33103d304c07543\transformed\recyclerview-1.1.0\res
+com.teamten.visionfit.app-jetified-camera-lifecycle-1.3.2-12 C:\Users\cjht0\.gradle\caches\transforms-3\36263177d8f74c294336206835b338d9\transformed\jetified-camera-lifecycle-1.3.2\res
+com.teamten.visionfit.app-jetified-camera-video-1.3.2-13 C:\Users\cjht0\.gradle\caches\transforms-3\36ff67ac6cf53ecc9b0b380487447eaa\transformed\jetified-camera-video-1.3.2\res
+com.teamten.visionfit.app-cardview-1.0.0-14 C:\Users\cjht0\.gradle\caches\transforms-3\43e034ec303aa2ababb611220e0a255f\transformed\cardview-1.0.0\res
+com.teamten.visionfit.app-lifecycle-livedata-2.7.0-15 C:\Users\cjht0\.gradle\caches\transforms-3\4bc7687d9b89d9ff60bdb20a34b80ac3\transformed\lifecycle-livedata-2.7.0\res
+com.teamten.visionfit.app-browser-1.4.0-16 C:\Users\cjht0\.gradle\caches\transforms-3\5412cdbdd931ff79517f0912c06763c7\transformed\browser-1.4.0\res
+com.teamten.visionfit.app-jetified-lifecycle-runtime-ktx-2.7.0-17 C:\Users\cjht0\.gradle\caches\transforms-3\565f5785adc3d0a9e757926280d2982d\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.teamten.visionfit.app-jetified-window-1.0.0-18 C:\Users\cjht0\.gradle\caches\transforms-3\597cc31d374d997b375d40d54964815a\transformed\jetified-window-1.0.0\res
+com.teamten.visionfit.app-jetified-savedstate-ktx-1.2.1-19 C:\Users\cjht0\.gradle\caches\transforms-3\618640c6e8e7d8a5a709c76dc55e3f88\transformed\jetified-savedstate-ktx-1.2.1\res
+com.teamten.visionfit.app-jetified-camera-camera2-1.3.2-20 C:\Users\cjht0\.gradle\caches\transforms-3\6c496b3aa291125efb68b9d9acb2f071\transformed\jetified-camera-camera2-1.3.2\res
+com.teamten.visionfit.app-material-1.11.0-21 C:\Users\cjht0\.gradle\caches\transforms-3\6d05100b4189b52f926d41a21b8443f3\transformed\material-1.11.0\res
+com.teamten.visionfit.app-lifecycle-viewmodel-2.7.0-22 C:\Users\cjht0\.gradle\caches\transforms-3\7a0bc52c3fcdca827139465ccea324e7\transformed\lifecycle-viewmodel-2.7.0\res
+com.teamten.visionfit.app-jetified-emoji2-1.2.0-23 C:\Users\cjht0\.gradle\caches\transforms-3\7b79d05e1f9a324891ef089e9d223c94\transformed\jetified-emoji2-1.2.0\res
+com.teamten.visionfit.app-jetified-lifecycle-process-2.7.0-24 C:\Users\cjht0\.gradle\caches\transforms-3\7c1f1d927e4c2b9c955c383fffd7d21f\transformed\jetified-lifecycle-process-2.7.0\res
+com.teamten.visionfit.app-coordinatorlayout-1.1.0-25 C:\Users\cjht0\.gradle\caches\transforms-3\80bbb75482e519e77fca4857a66638e6\transformed\coordinatorlayout-1.1.0\res
+com.teamten.visionfit.app-work-runtime-ktx-2.7.0-26 C:\Users\cjht0\.gradle\caches\transforms-3\8c9fb732ff4b31a0b15ddd6156355abc\transformed\work-runtime-ktx-2.7.0\res
+com.teamten.visionfit.app-core-1.9.0-27 C:\Users\cjht0\.gradle\caches\transforms-3\90d00b5d7e961226ce4c72c1d0621185\transformed\core-1.9.0\res
+com.teamten.visionfit.app-fragment-1.6.2-28 C:\Users\cjht0\.gradle\caches\transforms-3\947fb49bff12d4955bfe800afdcecfaf\transformed\fragment-1.6.2\res
+com.teamten.visionfit.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-29 C:\Users\cjht0\.gradle\caches\transforms-3\ab6e742b52f646f8cbf189db508cc17d\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.teamten.visionfit.app-jetified-viewpager2-1.0.0-30 C:\Users\cjht0\.gradle\caches\transforms-3\abc95613eb0a60e45f4cb8969af7ca0e\transformed\jetified-viewpager2-1.0.0\res
+com.teamten.visionfit.app-jetified-library-2.4-31 C:\Users\cjht0\.gradle\caches\transforms-3\aea2610f1be90a385e6885490ce2c6e6\transformed\jetified-library-2.4\res
+com.teamten.visionfit.app-navigation-fragment-2.7.7-32 C:\Users\cjht0\.gradle\caches\transforms-3\b2a8ff4dcccf0296340883c1eeba22c1\transformed\navigation-fragment-2.7.7\res
+com.teamten.visionfit.app-slidingpanelayout-1.2.0-33 C:\Users\cjht0\.gradle\caches\transforms-3\ba51e6d640e00c93e5274b9e1abdd1b2\transformed\slidingpanelayout-1.2.0\res
+com.teamten.visionfit.app-appcompat-1.6.1-34 C:\Users\cjht0\.gradle\caches\transforms-3\c25c90c10b2d75dae8c978ecc829a158\transformed\appcompat-1.6.1\res
+com.teamten.visionfit.app-navigation-common-2.7.7-35 C:\Users\cjht0\.gradle\caches\transforms-3\c5cc5884b2c80eceb9a22bf3d288b8e4\transformed\navigation-common-2.7.7\res
+com.teamten.visionfit.app-jetified-activity-ktx-1.8.2-36 C:\Users\cjht0\.gradle\caches\transforms-3\c7ec254cf5c29e77425d0469e348c89c\transformed\jetified-activity-ktx-1.8.2\res
+com.teamten.visionfit.app-jetified-fragment-ktx-1.6.2-37 C:\Users\cjht0\.gradle\caches\transforms-3\c8cc6b5728b6e95443a725b44d780770\transformed\jetified-fragment-ktx-1.6.2\res
+com.teamten.visionfit.app-jetified-core-ktx-1.9.0-38 C:\Users\cjht0\.gradle\caches\transforms-3\cb80a01d9f251e5b182c205eeec3df37\transformed\jetified-core-ktx-1.9.0\res
+com.teamten.visionfit.app-jetified-annotation-experimental-1.3.1-39 C:\Users\cjht0\.gradle\caches\transforms-3\d5023a6fab983606f59a830dc595cb97\transformed\jetified-annotation-experimental-1.3.1\res
+com.teamten.visionfit.app-jetified-lifecycle-livedata-core-ktx-2.7.0-40 C:\Users\cjht0\.gradle\caches\transforms-3\dea5624ea7021830b81e07e616c63d3e\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.teamten.visionfit.app-jetified-work-multiprocess-2.7.0-41 C:\Users\cjht0\.gradle\caches\transforms-3\def6dc790e2ced959407e2e03ada48f8\transformed\jetified-work-multiprocess-2.7.0\res
+com.teamten.visionfit.app-lifecycle-runtime-2.7.0-42 C:\Users\cjht0\.gradle\caches\transforms-3\e0369f74cef5b02f0ade8d808d0aab8f\transformed\lifecycle-runtime-2.7.0\res
+com.teamten.visionfit.app-drawerlayout-1.1.1-43 C:\Users\cjht0\.gradle\caches\transforms-3\e04a18451d77180ad595124f45132fcd\transformed\drawerlayout-1.1.1\res
+com.teamten.visionfit.app-jetified-play-services-base-18.3.0-44 C:\Users\cjht0\.gradle\caches\transforms-3\e5a07f93d144e90d8b87cb46c7c314f3\transformed\jetified-play-services-base-18.3.0\res
+com.teamten.visionfit.app-jetified-appcompat-resources-1.6.1-45 C:\Users\cjht0\.gradle\caches\transforms-3\e7bdda3f1813ab459d997a5da3f329cc\transformed\jetified-appcompat-resources-1.6.1\res
+com.teamten.visionfit.app-jetified-lifecycle-viewmodel-ktx-2.7.0-46 C:\Users\cjht0\.gradle\caches\transforms-3\e7d1f91950f6c64f83a904e7530c8538\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.teamten.visionfit.app-jetified-lifecycle-service-2.7.0-47 C:\Users\cjht0\.gradle\caches\transforms-3\eae20ef4b5f4aa6ec2bdb3a0b504b2ea\transformed\jetified-lifecycle-service-2.7.0\res
+com.teamten.visionfit.app-jetified-firebase-common-20.4.2-48 C:\Users\cjht0\.gradle\caches\transforms-3\ede71647745ce7ac3c9a6c136bde8085\transformed\jetified-firebase-common-20.4.2\res
+com.teamten.visionfit.app-work-runtime-2.7.0-49 C:\Users\cjht0\.gradle\caches\transforms-3\ee8b5341f23617d46b940368f8d17655\transformed\work-runtime-2.7.0\res
+com.teamten.visionfit.app-constraintlayout-2.1.4-50 C:\Users\cjht0\.gradle\caches\transforms-3\ef0d20c4e7db9e6903c9605d1744a2cf\transformed\constraintlayout-2.1.4\res
+com.teamten.visionfit.app-transition-1.4.1-51 C:\Users\cjht0\.gradle\caches\transforms-3\f70bd42aaebbb32b918b96a0b7e9221e\transformed\transition-1.4.1\res
+com.teamten.visionfit.app-jetified-emoji2-views-helper-1.2.0-52 C:\Users\cjht0\.gradle\caches\transforms-3\fa7a7ed746c70d19dad35f3193f4e522\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.teamten.visionfit.app-res-53 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\generated\res\processDebugGoogleServices
+com.teamten.visionfit.app-resValues-54 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\generated\res\resValues\debug
+com.teamten.visionfit.app-mergeDebugResources-55 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.teamten.visionfit.app-mergeDebugResources-56 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.teamten.visionfit.app-merged_res-57 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\build\intermediates\merged_res\debug
+com.teamten.visionfit.app-debug-58 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\src\debug\res
+com.teamten.visionfit.app-main-59 C:\Users\cjht0\OneDrive\Desktop\school\hw\t4 java\fitness-pose-estimation\app\src\main\res

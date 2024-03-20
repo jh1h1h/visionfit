@@ -16,5 +16,6 @@
       "outputFile": "VisionFit-debug.apk"
     }
   ],
-  "elementType": "File"
+  "elementType": "File",
+  "minSdkVersionForDexing": 24
 }

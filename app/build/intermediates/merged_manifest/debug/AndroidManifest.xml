@@ -206,13 +206,18 @@
                     android:scheme="recaptcha" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.teamten.visionfit.firebaseinitprovider"
-            android:directBootAware="true"
-            android:exported="false"
-            android:initOrder="100" />
+        <!--
+        Service for holding metadata. Cannot be instantiated.
+        Metadata will be merged from other manifests.
+        -->
+        <service
+            android:name="androidx.camera.core.impl.MetadataHolderService"
+            android:enabled="false"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+        </service>
         <!--
              Required for ML Kit Pose Detection GPU acceleration. Applications that target Android
              S+ require explicit declaration of any referenced vendor-provided libraries.
@@ -241,10 +246,6 @@
                 android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
-        <service
-            android:name="com.google.mlkit.acceleration.internal.MlKitRemoteWorkerService"
-            android:exported="false"
-            android:process=":mlkit_acceleration_mini_benchmark" />
 
         <provider
             android:name="com.google.mlkit.common.internal.MlKitInitProvider"
@@ -252,11 +253,22 @@
             android:exported="false"
             android:initOrder="99" />
 
+        <service
+            android:name="com.google.mlkit.acceleration.internal.MlKitRemoteWorkerService"
+            android:exported="false"
+            android:process=":mlkit_acceleration_mini_benchmark" />
+
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.teamten.visionfit.firebaseinitprovider"
+            android:directBootAware="true"
+            android:exported="false"
+            android:initOrder="100" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.teamten.visionfit.androidx-startup"
@@ -398,6 +410,10 @@
         </receiver>
 
         <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
+        <service
             android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
             android:exported="false" >
             <meta-data
@@ -412,11 +428,6 @@
 
         <receiver
             android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-            android:exported="false" />
-
-        <service
-            android:name="androidx.room.MultiInstanceInvalidationService"
-            android:directBootAware="true"
             android:exported="false" />
     </application>
 

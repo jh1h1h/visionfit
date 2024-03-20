@@ -1,6 +1,7 @@
 package com.teamten.visionfit.java.firebaseAuthentication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         auth = FirebaseAuth.getInstance();
-        button = findViewById(R.id.logout);
+//        button = findViewById(R.id.logout);
         textView = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
         if (user == null) {
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
+                sharedPreferences.edit().clear().commit();
                 finish();
             }
         });

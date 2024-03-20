@@ -41,12 +41,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         leaderboardButton.setOnClickListener(this);
 
         // MY STATISTICS BUTTON
-        Button mystatsButton = (Button) findViewById(R.id.mystatsButton);
-        mystatsButton.setOnClickListener(this);
+//        Button mystatsButton = (Button) findViewById(R.id.mystatsButton);
+//        mystatsButton.setOnClickListener(this);
 
         // LOGOUT BUTTON
-        // Button logoutButton = (Button) findViewById(R.id.logout);
-        // logoutButton.setOnClickListener(this);
+//         Button logoutButton = (Button) findViewById(R.id.logout);
+//         logoutButton.setOnClickListener(this);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
@@ -119,12 +119,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.mystatsButton) {
             Log.d("Button Check", "Clicked Successfully");
             openMyStats();
-        //} else if(v.getId() == R.id.logout) {
-            //Toast.makeText(MainActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
-            //FirebaseAuth.getInstance().signOut();
-            //Intent intent = new Intent(MainActivity.this, com.firebaseAuthentication.Login.class);
-            //startActivity(intent);
-            //finish();
+//        } else if(v.getId() == R.id.logout) {
+//            Toast.makeText(MainActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
+//            FirebaseAuth.getInstance().signOut();
+//            Intent intent = new Intent(MainActivity.this, com.firebaseAuthentication.Login.class);
+//            startActivity(intent);
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//            SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
+//            sharedPreferences.edit().clear().commit();
+//            finish();
         }
     }
 }

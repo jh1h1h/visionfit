@@ -4,7 +4,7 @@
             "outputFile": "com.teamten.visionfit.app-mergeDebugResources-54:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Henry\\.gradle\\caches\\transforms-3\\0a8bef08dc78084a24020dfef4ba38aa\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\cjht0\\.gradle\\caches\\transforms-3\\0a8bef08dc78084a24020dfef4ba38aa\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Henry\\.gradle\\caches\\transforms-3\\32dc310365d7741b7535cf43a360bb40\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\cjht0\\.gradle\\caches\\transforms-3\\32dc310365d7741b7535cf43a360bb40\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

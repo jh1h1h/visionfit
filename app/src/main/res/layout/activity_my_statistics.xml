@@ -37,8 +37,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/encourage"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_margin="16dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:orientation="vertical"
@@ -57,8 +59,7 @@
             app:layout_constraintLeft_toLeftOf="@+id/encourage"
             app:layout_constraintRight_toRightOf="@+id/encourage"
             app:layout_constraintTop_toTopOf="@+id/encourage"
-            app:layout_constraintBottom_toBottomOf="@+id/encourage"/>
-
+            app:layout_constraintBottom_toBottomOf="@+id/encourage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -66,7 +67,9 @@
         android:id="@+id/allTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/light_orange"
         android:orientation="vertical"
@@ -92,7 +95,9 @@
         android:id="@+id/sitUpsTab"
         android:layout_width="174dp"
         android:layout_height="163dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:orientation="vertical"
@@ -127,7 +132,9 @@
         android:id="@+id/pushUpsTab"
         android:layout_width="174dp"
         android:layout_height="163dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:orientation="vertical"
@@ -163,7 +170,9 @@
         android:id="@+id/squatsTab"
         android:layout_width="174dp"
         android:layout_height="163dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:orientation="vertical"
@@ -199,7 +208,9 @@
         android:id="@+id/weightliftTab"
         android:layout_width="174dp"
         android:layout_height="163dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:orientation="vertical"
@@ -240,6 +251,25 @@
         app:layout_constraintLeft_toLeftOf="@+id/squatsTab"
         app:layout_constraintRight_toRightOf="@+id/weightliftTab"
         app:layout_constraintTop_toBottomOf="@id/weightliftTab"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bottom_background"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_menu"
+        tools:ignore="MissingConstraints"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

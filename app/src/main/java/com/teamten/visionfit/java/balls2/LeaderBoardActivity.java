@@ -1,8 +1,11 @@
 package com.teamten.visionfit.java.balls2;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +28,10 @@ import com.teamten.visionfit.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class LeaderBoardActivity extends AppCompatActivity {
+    FirebaseAuth auth;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -89,9 +95,41 @@ public class LeaderBoardActivity extends AppCompatActivity {
                     // now do something with the exception
                 });
         setContentView(R.layout.activity_leader_board);
-    }
-}
         /*
          TextView tv=findViewById(R.id.leaderboardTitle);
         YoYo.with(Techniques.SlideInRight).duration(2000).playOn(tv);
         */
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_home:
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_settings:
+                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_userProfile:
+                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_logout:
+                    Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(getApplicationContext(), com.firebaseAuthentication.Login.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
+                    sharedPreferences.edit().clear().commit();
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+    }
+}

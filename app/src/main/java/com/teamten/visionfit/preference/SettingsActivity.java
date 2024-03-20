@@ -51,7 +51,7 @@ public class SettingsActivity extends AppCompatActivity {
     setContentView(R.layout.activity_settings);
 
     LaunchSource launchSource =
-        (LaunchSource) getIntent().getSerializableExtra(EXTRA_LAUNCH_SOURCE);
+            (LaunchSource) getIntent().getSerializableExtra(EXTRA_LAUNCH_SOURCE);
     ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setTitle(launchSource.titleResId);
@@ -59,11 +59,11 @@ public class SettingsActivity extends AppCompatActivity {
 
     try {
       getFragmentManager()
-          .beginTransaction()
-          .replace(
-              R.id.settings_container,
-              launchSource.prefFragmentClass.getDeclaredConstructor().newInstance())
-          .commit();
+              .beginTransaction()
+              .replace(
+                      R.id.settings_container,
+                      launchSource.prefFragmentClass.getDeclaredConstructor().newInstance())
+              .commit();
     } catch (Exception e) {
       throw new RuntimeException(e);
     }

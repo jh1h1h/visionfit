@@ -121,31 +121,25 @@
         app:layout_constraintLeft_toLeftOf="@+id/squatsButton"
         app:layout_constraintRight_toRightOf="@+id/weightliftButton"
         app:layout_constraintTop_toBottomOf="@id/squatsButton"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"/>
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Instructions"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="I'm READY!"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="442dp" />
-
-    <TextView
-        android:id="@+id/timer"
-        android:text="hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/startButton"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="40sp"
-        tools:layout_editor_absoluteX="197dp"
-        tools:layout_editor_absoluteY="442dp" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bottom_background"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_menu"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

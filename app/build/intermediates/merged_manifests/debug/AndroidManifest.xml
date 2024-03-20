@@ -96,10 +96,16 @@
             android:name="com.teamten.visionfit.java.balls2.LeaderBoardActivity"
             android:exported="false" />
         <activity
-            android:name="com.teamten.visionfit.java.balls2.DailyChallangeActivity"
+            android:name="com.teamten.visionfit.java.balls2.DailyChallengeActivity"
             android:exported="false" />
         <activity
             android:name="com.teamten.visionfit.java.balls2.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.teamten.visionfit.java.balls2.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.teamten.visionfit.java.balls2.ProfileActivity"
             android:exported="false" />
         <activity
             android:name="com.teamten.visionfit.java.balls2.SplashActivity"

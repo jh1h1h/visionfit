@@ -114,6 +114,7 @@
                         android:layout_toEndOf="@+id/edit_profile" />
 
                     <ImageView
+                        android:id="@+id/settingsGoProfile"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/right_arrow_icon"
@@ -150,6 +151,7 @@
                         android:layout_toEndOf="@+id/changePasswordIcon" />
 
                     <ImageView
+                        android:id="@+id/settingsGoResetPassword"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/right_arrow_icon"

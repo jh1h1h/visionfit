@@ -57,6 +57,12 @@ public final class ActivitySettingsBinding implements ViewBinding {
   public final ConstraintLayout settingsContainer;
 
   @NonNull
+  public final ImageView settingsGoProfile;
+
+  @NonNull
+  public final ImageView settingsGoResetPassword;
+
+  @NonNull
   public final SwitchCompat switchMode;
 
   @NonNull
@@ -71,7 +77,8 @@ public final class ActivitySettingsBinding implements ViewBinding {
       @NonNull ImageView changePasswordIcon, @NonNull ImageView editProfile,
       @NonNull ImageView nightModeIcon, @NonNull ImageView notificationIcon,
       @NonNull ImageView paymentIcon, @NonNull ScrollView scrollingSettings,
-      @NonNull ConstraintLayout settingsContainer, @NonNull SwitchCompat switchMode,
+      @NonNull ConstraintLayout settingsContainer, @NonNull ImageView settingsGoProfile,
+      @NonNull ImageView settingsGoResetPassword, @NonNull SwitchCompat switchMode,
       @NonNull ImageView userImage, @NonNull TextView usernameSettings) {
     this.rootView = rootView;
     this.PrivacyIcon = PrivacyIcon;
@@ -85,6 +92,8 @@ public final class ActivitySettingsBinding implements ViewBinding {
     this.paymentIcon = paymentIcon;
     this.scrollingSettings = scrollingSettings;
     this.settingsContainer = settingsContainer;
+    this.settingsGoProfile = settingsGoProfile;
+    this.settingsGoResetPassword = settingsGoResetPassword;
     this.switchMode = switchMode;
     this.userImage = userImage;
     this.usernameSettings = usernameSettings;
@@ -179,6 +188,18 @@ public final class ActivitySettingsBinding implements ViewBinding {
 
       ConstraintLayout settingsContainer = (ConstraintLayout) rootView;
 
+      id = R.id.settingsGoProfile;
+      ImageView settingsGoProfile = ViewBindings.findChildViewById(rootView, id);
+      if (settingsGoProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.settingsGoResetPassword;
+      ImageView settingsGoResetPassword = ViewBindings.findChildViewById(rootView, id);
+      if (settingsGoResetPassword == null) {
+        break missingId;
+      }
+
       id = R.id.switchMode;
       SwitchCompat switchMode = ViewBindings.findChildViewById(rootView, id);
       if (switchMode == null) {
@@ -199,8 +220,8 @@ public final class ActivitySettingsBinding implements ViewBinding {
 
       return new ActivitySettingsBinding((ConstraintLayout) rootView, PrivacyIcon, Settings,
           aboutUsIcon, bottomNavigation, changePasswordIcon, editProfile, nightModeIcon,
-          notificationIcon, paymentIcon, scrollingSettings, settingsContainer, switchMode,
-          userImage, usernameSettings);
+          notificationIcon, paymentIcon, scrollingSettings, settingsContainer, settingsGoProfile,
+          settingsGoResetPassword, switchMode, userImage, usernameSettings);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

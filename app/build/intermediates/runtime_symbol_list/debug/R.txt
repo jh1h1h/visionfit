@@ -3812,6 +3812,8 @@ int id select_dialog_listview 0x7f0a0226
 int id select_images_from_local 0x7f0a0227
 int id selected 0x7f0a0228
 int id selection_type 0x7f0a0229
+int id settingsGoProfile 0x7f0a02ba
+int id settingsGoResetPassword 0x7f0a02bb
 int id settings_button 0x7f0a022a
 int id settings_button2 0x7f0a022b
 int id settings_container 0x7f0a022c

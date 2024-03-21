@@ -3813,6 +3813,8 @@ id select_dialog_listview
 id select_images_from_local
 id selected
 id selection_type
+id settingsGoProfile
+id settingsGoResetPassword
 id settings_button
 id settings_button2
 id settings_container

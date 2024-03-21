@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -49,6 +50,24 @@ public class SettingsActivity extends AppCompatActivity {
                     editor.putBoolean("nightMode", true);
                 }
                 editor.apply();
+            }
+        });
+
+        final ImageView settingsToProfile = (ImageView) findViewById(R.id.settingsGoProfile);
+        settingsToProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        final ImageView settingsToReset = (ImageView) findViewById(R.id.settingsGoResetPassword);
+        settingsToReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), com.firebaseAuthentication.Login.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 

@@ -15,19 +15,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rewards"
-        android:layout_width="362dp"
+        android:layout_width="370dp"
         android:layout_height="55dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/black"
-        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_editor_absoluteY="-1dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="6dp">
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/MyRewardsTitle"
@@ -47,7 +41,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rewards_history"
-        android:layout_width="361dp"
+        android:layout_width="370dp"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
@@ -57,49 +51,43 @@
         app:layout_constraintTop_toBottomOf="@id/wallet">
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/rewards_history_button"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="68dp"
-            android:layout_marginBottom="4dp"
             android:background="@drawable/shadow_button_layout"
-            android:elevation="20dp"
             android:text="History"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="17sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/rewards_history"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/redeem_button"
+            tools:ignore="MissingConstraints" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/redeem_button"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="4dp"
             android:background="@drawable/shadow_button_layout"
             android:text="Redeem"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="17sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/rewards_history"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/rewards_history_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wallet"
-        android:layout_width="362dp"
+        android:layout_width="370dp"
         android:layout_height="100dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rewards">
 
@@ -165,16 +153,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_1"
-        android:layout_width="319dp"
+        android:layout_width="370dp"
         android:layout_height="84dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
-        android:layout_marginTop="12dp"
         android:background="@drawable/round_view"
         android:backgroundTint="#DEDEDE"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rewards_history">
 
@@ -208,16 +192,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_2"
-        android:layout_width="319dp"
+        android:layout_width="370dp"
         android:layout_height="84dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/round_view"
         android:backgroundTint="#DEDEDE"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraint_1">
 
@@ -251,16 +232,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_3"
-        android:layout_width="319dp"
+        android:layout_width="370dp"
         android:layout_height="84dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/round_view"
         android:backgroundTint="#DEDEDE"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraint_2">
 
@@ -294,16 +272,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_4"
-        android:layout_width="319dp"
+        android:layout_width="370dp"
         android:layout_height="84dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/round_view"
         android:backgroundTint="#DEDEDE"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraint_3">
 

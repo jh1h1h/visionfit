@@ -9,14 +9,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/leaderboardTitle"
-        android:layout_width="362dp"
+        android:layout_width="375dp"
         android:layout_height="55dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" >
 
@@ -40,54 +37,49 @@
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:layout_marginTop="7dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:drawableTop="@drawable/sit_up_mini"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/leaderboardTitle" />
+        app:layout_constraintStart_toStartOf="@id/leaderboardTitle"
+        app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
+        app:layout_constraintEnd_toStartOf="@id/pushUpLeaderBoardBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/pushUpLeaderBoardBtn"
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:layout_marginTop="7dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:drawableTop="@drawable/push_up_mini"
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
-        app:layout_constraintStart_toEndOf="@id/sitUpLeaderBoardBtn"/>
+        app:layout_constraintStart_toEndOf="@id/sitUpLeaderBoardBtn"
+        app:layout_constraintEnd_toStartOf="@id/squatsLeaderBoardBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/squatsLeaderBoardBtn"
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:layout_marginTop="7dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:drawableTop="@drawable/squats_mini"
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
-        app:layout_constraintStart_toEndOf="@id/pushUpLeaderBoardBtn"/>
+        app:layout_constraintStart_toEndOf="@id/pushUpLeaderBoardBtn"
+        app:layout_constraintEnd_toStartOf="@id/weightliftLeaderBoardBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/weightliftLeaderBoardBtn"
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:layout_marginTop="7dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:drawableTop="@drawable/weightlift_mini"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
         app:layout_constraintStart_toEndOf="@id/squatsLeaderBoardBtn"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="@id/leaderboardTitle"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/titleTab"
@@ -111,7 +103,6 @@
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
-
             app:layout_constraintEnd_toStartOf="@+id/Username"
             app:layout_constraintStart_toStartOf="@+id/titleTab"
             app:layout_constraintTop_toTopOf="@id/titleTab" />
@@ -172,31 +163,26 @@
 
                 <TextView
                     android:id="@+id/Rank1"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name1"
                     app:layout_constraintStart_toStartOf="@+id/firstPlace"
                     app:layout_constraintTop_toTopOf="@id/firstPlace" />
 
                 <TextView
                     android:id="@+id/Name1"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep1"
                     app:layout_constraintStart_toEndOf="@+id/Rank1"
-                    app:layout_constraintTop_toTopOf="@id/firstPlace"
-                    android:singleLine="true" />
+                    app:layout_constraintTop_toTopOf="@id/firstPlace" />
 
                 <TextView
                     android:id="@+id/Rep1"
@@ -227,24 +213,20 @@
 
                 <TextView
                     android:id="@+id/Rank2"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name2"
                     app:layout_constraintStart_toStartOf="@+id/secondPlace"
                     app:layout_constraintTop_toTopOf="@id/secondPlace" />
 
                 <TextView
                     android:id="@+id/Name2"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:paddingEnd="30dp"
@@ -281,25 +263,20 @@
 
                 <TextView
                     android:id="@+id/Rank3"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
-                    android:maxLength="4"
-                    android:gravity="center"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-
                     app:layout_constraintEnd_toStartOf="@+id/Name3"
                     app:layout_constraintStart_toStartOf="@+id/thirdPlace"
                     app:layout_constraintTop_toTopOf="@id/thirdPlace" />
 
                 <TextView
                     android:id="@+id/Name3"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:paddingEnd="30dp"
@@ -336,24 +313,20 @@
 
                 <TextView
                     android:id="@+id/Rank4"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name4"
                     app:layout_constraintStart_toStartOf="@+id/fourthPlace"
                     app:layout_constraintTop_toTopOf="@id/fourthPlace" />
 
                 <TextView
                     android:id="@+id/Name4"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:paddingEnd="30dp"
@@ -390,24 +363,20 @@
 
                 <TextView
                     android:id="@+id/Rank5"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name5"
                     app:layout_constraintStart_toStartOf="@+id/fifthPlace"
                     app:layout_constraintTop_toTopOf="@id/fifthPlace" />
 
                 <TextView
                     android:id="@+id/Name5"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:paddingEnd="30dp"
@@ -444,24 +413,20 @@
 
                 <TextView
                     android:id="@+id/Rank6"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name6"
                     app:layout_constraintStart_toStartOf="@+id/sixthPlace"
                     app:layout_constraintTop_toTopOf="@id/sixthPlace" />
 
                 <TextView
                     android:id="@+id/Name6"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:paddingEnd="30dp"
@@ -498,26 +463,22 @@
 
                 <TextView
                     android:id="@+id/Rank7"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name7"
                     app:layout_constraintStart_toStartOf="@+id/seventhPlace"
                     app:layout_constraintTop_toTopOf="@id/seventhPlace" />
 
                 <TextView
                     android:id="@+id/Name7"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep7"
                     app:layout_constraintStart_toEndOf="@+id/Rank7"
@@ -552,26 +513,22 @@
 
                 <TextView
                     android:id="@+id/Rank8"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name8"
                     app:layout_constraintStart_toStartOf="@+id/eightPlace"
                     app:layout_constraintTop_toTopOf="@id/eightPlace" />
 
                 <TextView
                     android:id="@+id/Name8"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep8"
                     app:layout_constraintStart_toEndOf="@+id/Rank8"
@@ -606,26 +563,22 @@
 
                 <TextView
                     android:id="@+id/Rank9"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name9"
                     app:layout_constraintStart_toStartOf="@+id/ninthPlace"
                     app:layout_constraintTop_toTopOf="@id/ninthPlace" />
 
                 <TextView
                     android:id="@+id/Name9"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep9"
                     app:layout_constraintStart_toEndOf="@+id/Rank9"
@@ -660,26 +613,22 @@
 
                 <TextView
                     android:id="@+id/Rank10"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name10"
                     app:layout_constraintStart_toStartOf="@+id/tenthPlace"
                     app:layout_constraintTop_toTopOf="@id/tenthPlace" />
 
                 <TextView
                     android:id="@+id/Name10"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep10"
                     app:layout_constraintStart_toEndOf="@+id/Rank10"
@@ -714,26 +663,22 @@
 
                 <TextView
                     android:id="@+id/Rank11"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="11"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name11"
                     app:layout_constraintStart_toStartOf="@+id/eleventhPlace"
                     app:layout_constraintTop_toTopOf="@id/eleventhPlace" />
 
                 <TextView
                     android:id="@+id/Name11"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep11"
                     app:layout_constraintStart_toEndOf="@+id/Rank11"
@@ -768,26 +713,22 @@
 
                 <TextView
                     android:id="@+id/Rank12"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name12"
                     app:layout_constraintStart_toStartOf="@+id/twelfthPlace"
                     app:layout_constraintTop_toTopOf="@id/twelfthPlace" />
 
                 <TextView
                     android:id="@+id/Name12"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep12"
                     app:layout_constraintStart_toEndOf="@+id/Rank12"
@@ -822,26 +763,22 @@
 
                 <TextView
                     android:id="@+id/Rank13"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="13"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name13"
                     app:layout_constraintStart_toStartOf="@+id/thirteenthPlace"
                     app:layout_constraintTop_toTopOf="@id/thirteenthPlace" />
 
                 <TextView
                     android:id="@+id/Name13"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep13"
                     app:layout_constraintStart_toEndOf="@+id/Rank13"
@@ -876,26 +813,22 @@
 
                 <TextView
                     android:id="@+id/Rank14"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="14"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name14"
                     app:layout_constraintStart_toStartOf="@+id/fourteenthPlace"
                     app:layout_constraintTop_toTopOf="@id/fourteenthPlace" />
 
                 <TextView
                     android:id="@+id/Name14"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep14"
                     app:layout_constraintStart_toEndOf="@+id/Rank14"
@@ -930,26 +863,22 @@
 
                 <TextView
                     android:id="@+id/Rank15"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="15"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="4"
-                    android:gravity="center"
                     app:layout_constraintEnd_toStartOf="@+id/Name15"
                     app:layout_constraintStart_toStartOf="@+id/fifteenthPlace"
                     app:layout_constraintTop_toTopOf="@id/fifteenthPlace" />
 
                 <TextView
                     android:id="@+id/Name15"
-                    android:layout_width="140dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:maxLength="10"
-                    android:ellipsize="marquee"
                     android:paddingEnd="30dp"
                     app:layout_constraintEnd_toStartOf="@+id/Rep15"
                     app:layout_constraintStart_toEndOf="@+id/Rank15"
@@ -979,7 +908,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:orientation="vertical"
@@ -990,29 +919,24 @@
 
         <TextView
             android:id="@+id/yourRank"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="inputRank"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:maxLength="4"
-
-            android:gravity="center"
             app:layout_constraintEnd_toStartOf="@+id/yourName"
             app:layout_constraintStart_toStartOf="@+id/yourPlace"
             app:layout_constraintTop_toTopOf="@id/yourPlace" />
 
         <TextView
             android:id="@+id/yourName"
-            android:layout_width="140dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="name"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:maxLength="10"
-            android:ellipsize="marquee"
             android:paddingEnd="30dp"
             app:layout_constraintEnd_toStartOf="@+id/yourRep"
             app:layout_constraintStart_toEndOf="@+id/yourRank"
@@ -1052,3 +976,4 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

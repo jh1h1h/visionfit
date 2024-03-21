@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".java.balls2.PrivacyPolicyActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/PrivacyPolicyTab"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/PrivacyPolicyTab"
+        app:layout_constraintRight_toRightOf="@+id/PrivacyPolicyTab"
+        app:layout_constraintTop_toTopOf="@+id/PrivacyPolicyTab"
+        app:layout_constraintBottom_toBottomOf="@+id/PrivacyPolicyTab" />
+
+    <ScrollView
+        android:id="@+id/scrollingSettings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/PrivacyPolicyTab" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_policy"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:paddingStart="@dimen/padding_standard"
+                android:paddingTop="@dimen/padding_standard"
+                style="@style/TextColor"
+                android:layout_marginStart="@dimen/padding_standard"
+                android:layout_marginBottom="@dimen/padding_standard" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='This privacy policy applies to the VisionFit app (hereby referred to as "Application") for mobile devices that was created by Team10 (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS"."'
+                android:textSize="15sp"
+                android:paddingStart="@dimen/padding_standard"
+                android:paddingEnd="@dimen/padding_standard"
+                android:layout_marginStart="@dimen/padding_standard"
+                android:layout_marginEnd="@dimen/padding_standard"
+                style="@style/TextColor" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bottom_background"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_menu"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

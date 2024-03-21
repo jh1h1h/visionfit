@@ -3286,6 +3286,7 @@ id Name7
 id Name8
 id Name9
 id PrivacyIcon
+id PrivacyPolicyTab
 id Rank1
 id Rank10
 id Rank11
@@ -3814,6 +3815,10 @@ id select_dialog_listview
 id select_images_from_local
 id selected
 id selection_type
+id settingGoProfile
+id settingGoResetPassword
+id settingsGoAboutUs
+id settingsGoPrivacy
 id settings_container
 id seventhPlace
 id sharedValueSet
@@ -4071,6 +4076,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_about_us
 layout activity_chooser
 layout activity_daily_challenge
 layout activity_leader_board
@@ -4078,6 +4084,7 @@ layout activity_login
 layout activity_main
 layout activity_my_rewards
 layout activity_my_statistics
+layout activity_privacy_policy
 layout activity_profile
 layout activity_register
 layout activity_settings

@@ -11,14 +11,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Settings"
-        android:layout_width="362dp"
+        android:layout_width="370dp"
         android:layout_height="55dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -114,6 +111,7 @@
                         android:layout_toEndOf="@+id/edit_profile" />
 
                     <ImageView
+                        android:id="@+id/settingGoProfile"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/right_arrow_icon"
@@ -150,6 +148,7 @@
                         android:layout_toEndOf="@+id/changePasswordIcon" />
 
                     <ImageView
+                        android:id="@+id/settingGoResetPassword"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/right_arrow_icon"
@@ -315,6 +314,7 @@
                         android:layout_toEndOf="@+id/aboutUsIcon"/>
 
                     <ImageView
+                        android:id="@+id/settingsGoAboutUs"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/right_arrow_icon"
@@ -351,6 +351,7 @@
                         android:layout_toEndOf="@+id/PrivacyIcon"/>
 
                     <ImageView
+                        android:id="@+id/settingsGoPrivacy"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/right_arrow_icon"
@@ -382,4 +383,3 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

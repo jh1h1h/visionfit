@@ -20,6 +20,10 @@
         "source": "com.teamten.visionfit.app-main-60:/layout/spinner_style.xml"
     },
     {
+        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_privacy_policy.xml",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_privacy_policy.xml"
+    },
+    {
         "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_vision_live_preview.xml",
         "source": "com.teamten.visionfit.app-main-60:/layout/activity_vision_live_preview.xml"
     },
@@ -50,6 +54,10 @@
     {
         "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_register.xml",
         "source": "com.teamten.visionfit.app-main-60:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_about_us.xml",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_about_us.xml"
     },
     {
         "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_splash.xml",

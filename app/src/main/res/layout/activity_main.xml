@@ -10,13 +10,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/greeting"
-        android:layout_width="362dp"
+        android:layout_width="370dp"
         android:layout_height="155dp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
@@ -40,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="@string/have_you_been_slacking_off"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="@+id/greeting"
             app:layout_constraintLeft_toLeftOf="@+id/greeting"
             app:layout_constraintRight_toRightOf="@+id/greeting"
@@ -50,14 +48,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/streakMessage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="370dp"
+        android:layout_height="30dp"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/light_orange"
         android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/greeting"
+        app:layout_constraintEnd_toEndOf="@id/greeting"
         app:layout_constraintTop_toBottomOf="@id/greeting" >
 
         <TextView
@@ -65,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="@string/can_you_keep_your_streak_today"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/streakMessage"
             app:layout_constraintRight_toRightOf="@+id/streakMessage"
@@ -79,19 +77,18 @@
         android:layout_width="174dp"
         android:layout_height="163dp"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:gravity="center|bottom"
         android:text="@string/daily_challenges"
         android:textStyle="bold"
-        android:textSize="17sp"
+        android:textSize="15sp"
         android:textColor="@color/black"
         android:drawableTop="@drawable/dumbbell_icon"
         android:paddingTop="@dimen/padding_standard"
         android:drawablePadding="-100dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/leaderboardButton"
         app:layout_constraintTop_toBottomOf="@id/streakMessage" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -99,19 +96,18 @@
         android:layout_width="174dp"
         android:layout_height="163dp"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:gravity="center|bottom"
         android:text="@string/leaderboard"
         android:textStyle="bold"
-        android:textSize="17sp"
+        android:textSize="15sp"
         android:textColor="@color/black"
         android:drawableTop="@drawable/leaderboard_icon"
         android:paddingTop="@dimen/padding_standard"
         android:drawablePadding="-100dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dailychallengeButton"
         app:layout_constraintTop_toBottomOf="@id/streakMessage" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -119,19 +115,18 @@
         android:layout_width="174dp"
         android:layout_height="163dp"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:gravity="center|bottom"
         android:text="@string/my_rewards"
         android:textStyle="bold"
-        android:textSize="17sp"
+        android:textSize="15sp"
         android:textColor="@color/black"
         android:drawableTop="@drawable/coin_icon"
         android:paddingTop="@dimen/padding_standard"
         android:drawablePadding="-100dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/mystatsButton"
         app:layout_constraintTop_toBottomOf="@id/dailychallengeButton" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -139,19 +134,18 @@
         android:layout_width="174dp"
         android:layout_height="163dp"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
         android:gravity="center|bottom"
         android:text="@string/my_statistics"
         android:textStyle="bold"
-        android:textSize="17sp"
+        android:textSize="15sp"
         android:textColor="@color/black"
         android:drawableTop="@drawable/statistics_icon"
         android:paddingTop="@dimen/padding_standard"
         android:drawablePadding="-100dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rewardsButton"
         app:layout_constraintTop_toBottomOf="@id/leaderboardButton" />
 
 
@@ -159,15 +153,13 @@
         android:id="@+id/cameraButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/camera"
+        android:text="camera"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/gray"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/rewardsButton"
         app:layout_constraintTop_toBottomOf="@+id/mystatsButton"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

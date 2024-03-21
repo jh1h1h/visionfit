@@ -4,7 +4,7 @@
             "outputFile": "com.teamten.visionfit.app-mergeDebugResources-56:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/mikeumali/.gradle/caches/transforms-3/88254fc55a2fcfae6d485387f196f0fd/transformed/material-1.11.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+                    "source": "C:\\Users\\edgar\\.gradle\\caches\\transforms-3\\88254fc55a2fcfae6d485387f196f0fd\\transformed\\material-1.11.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

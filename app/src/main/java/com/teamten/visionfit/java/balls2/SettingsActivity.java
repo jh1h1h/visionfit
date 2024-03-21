@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,6 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
     FirebaseAuth auth;
     SwitchCompat switchMode;
     boolean nightMode;
+
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
@@ -51,6 +53,44 @@ public class SettingsActivity extends AppCompatActivity {
                 editor.apply();
             }
         });
+
+        final ImageView settingsToProfile = (ImageView) findViewById(R.id.settingGoProfile);
+        settingsToProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        final ImageView settingsToReset = (ImageView) findViewById(R.id.settingGoResetPassword);
+        settingsToReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), com.firebaseAuthentication.Login.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        final ImageView settingsToAboutUs = (ImageView) findViewById(R.id.settingsGoAboutUs);
+        settingsToAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AboutUsActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        final ImageView settingsToPrivacy = (ImageView) findViewById(R.id.settingsGoPrivacy);
+        settingsToPrivacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), PrivacyPolicyActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_settings);

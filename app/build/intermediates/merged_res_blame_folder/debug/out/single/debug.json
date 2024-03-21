@@ -20,6 +20,10 @@
         "source": "com.teamten.visionfit.app-main-60:/drawable/visionfit.png"
     },
     {
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_about_us.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_about_us.xml"
+    },
+    {
         "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_my_statistics.xml.flat",
         "source": "com.teamten.visionfit.app-main-60:/layout/activity_my_statistics.xml"
     },
@@ -114,6 +118,10 @@
     {
         "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_night_mode_icon.xml.flat",
         "source": "com.teamten.visionfit.app-main-60:/drawable/night_mode_icon.xml"
+    },
+    {
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_privacy_policy.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_privacy_policy.xml"
     },
     {
         "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_vision_live_preview.xml.flat",

@@ -1,0 +1,4 @@
+com.teamten.visionfit.test.app-androidTest-0 /Users/mikeumali/Desktop/fitness-pose-estimation/app/build/generated/res/resValues/androidTest/debug
+com.teamten.visionfit.test.app-mergeDebugAndroidTestResources-1 /Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.teamten.visionfit.test.app-mergeDebugAndroidTestResources-2 /Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.teamten.visionfit.test.app-merged_res-3 /Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/merged_res/debugAndroidTest

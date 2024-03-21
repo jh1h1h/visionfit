@@ -176,6 +176,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="camera">Camera</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -241,5 +242,7 @@
     <string name="add_payment_method">Add Payment Method</string>
     <string name="about_us">About Us</string>
     <string name="privacy_policy">Privacy Policy</string>
+
+    <string name="class_type">ClassType</string>
 
 </resources>

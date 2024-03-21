@@ -22,6 +22,7 @@
       app:layout_constraintTop_toTopOf="@id/preview_view"
       app:layout_constraintBottom_toBottomOf="@id/preview_view"/>
 
+  <!--
   <include
       android:id="@+id/settings_button2"
       layout="@layout/settings_style"
@@ -30,13 +31,15 @@
       app:layout_constraintRight_toRightOf="@id/preview_view"
       app:layout_constraintTop_toTopOf="@id/preview_view"
       />
+   -->
 
   <LinearLayout
       android:id="@id/control"
       android:layout_width="match_parent"
-      android:layout_height="60dp"
+      android:layout_height="120dp"
       app:layout_constraintBottom_toBottomOf="parent"
-      android:background="#000"
+      android:background="#FFF"
+      android:backgroundTint="@color/orange"
       android:orientation="horizontal">
 
     <ToggleButton
@@ -49,12 +52,23 @@
         android:textOff=""
         android:textOn=""/>
 
+    <TextView
+        android:id="@+id/exercise_count_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text=""
+        android:textSize="35dp" />
+    <!--
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
+    -->
 
   </LinearLayout>
 

@@ -79,27 +79,6 @@ public class DailyChallengeActivity extends AppCompatActivity{
             }
         });
 
-
-
-
-
-        //Button startButton = (Button) findViewById(R.id.startButton);
-        //TextView timer = (TextView) findViewById(R.id.timer);
-        //startButton.setOnClickListener(new View.OnClickListener()
-        //{
-            //@Override
-            //public void onClick(View v) {
-                //new CountDownTimer(3000, 1000){
-                    //public void onTick(long millisUntilFinished){
-
-                        //timer.setText(String.valueOf(counter));
-                        //counter--;
-                    //}
-                    //public  void onFinish(){
-                        //timer.setText("FINISH!!");
-                    //}
-                //}.start();
-            //}
-        //});
     }
 }
+

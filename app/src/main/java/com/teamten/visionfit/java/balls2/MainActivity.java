@@ -11,10 +11,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebaseAuthentication.Login;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.teamten.visionfit.R;
+import com.teamten.visionfit.java.LivePreviewActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -78,6 +80,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return false;
         });
 
+        // CAMERA BUTTON
+        Button cameraButton = (Button) findViewById(R.id.cameraButton);
+        cameraButton.setOnClickListener(this);
+
+
     }
 
     // FUNCTIONS FOR THE BUTTONS
@@ -102,6 +109,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    public void openCamera() {
+        //Intent intent = new Intent(this, LivePreviewActivity.class);
+        Intent intent = new Intent(this, LivePreviewActivity.class);
+        intent.putExtra("ClassType", "Free Style");
+        startActivity(intent);
+    }
+
 
     // LOGIC CHECKS FOR WHAT BUTTON IS PRESSED
     @Override
@@ -119,15 +133,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.mystatsButton) {
             Log.d("Button Check", "Clicked Successfully");
             openMyStats();
-//        } else if(v.getId() == R.id.logout) {
-//            Toast.makeText(MainActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
-//            FirebaseAuth.getInstance().signOut();
-//            Intent intent = new Intent(MainActivity.this, com.firebaseAuthentication.Login.class);
-//            startActivity(intent);
-//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//            SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
-//            sharedPreferences.edit().clear().commit();
-//            finish();
+        } else if (v.getId() == R.id.cameraButton) {
+            Log.d("Button Check", "Clicked Successfully");
+            openCamera();
+
+        } else if (v.getId() == R.id.layout) {
+            Toast.makeText(MainActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
+            finish();
         }
     }
 }

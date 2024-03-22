@@ -3547,6 +3547,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id exercise_count_text
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3813,10 +3814,6 @@ id select_dialog_listview
 id select_images_from_local
 id selected
 id selection_type
-id settingsGoProfile
-id settingsGoResetPassword
-id settings_button
-id settings_button2
 id settings_container
 id seventhPlace
 id sharedValueSet
@@ -3842,7 +3839,6 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
-id spinner
 id spline
 id split_action_bar
 id spread
@@ -4222,11 +4218,13 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string camera
 string can_you_keep_your_streak_today
 string change_password
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string class_type
 string clear_text_end_icon_content_description
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text

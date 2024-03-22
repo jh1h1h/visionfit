@@ -1,510 +1,506 @@
 [
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_icon_user.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\icon_user.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_spinner_style.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/spinner_style.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xhdpi_visionfitlogo.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xhdpi\\visionfitlogo.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_shadow_button_layout.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/shadow_button_layout.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\anim_slide_out_left.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\anim\\slide_out_left.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-mdpi_visionfitlogo_foreground.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-mdpi/visionfitlogo_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_chooser.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_chooser.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_profile.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_profile.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_visionfit.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/visionfit.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_register.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_register.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_my_statistics.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_my_statistics.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-hdpi_visionfitlogo.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-hdpi\\visionfitlogo.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout-land_activity_vision_live_preview.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout-land/activity_vision_live_preview.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_right_arrow_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\right_arrow_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_baseline_lock_reset_24.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/baseline_lock_reset_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_icon_setting.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\icon_setting.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_visionfitlogo_background.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/visionfitlogo_background.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout-land_activity_vision_live_preview.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout-land\\activity_vision_live_preview.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-hdpi_visionfitlogo_foreground.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-hdpi/visionfitlogo_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xxxhdpi_visionfitlogo_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xxxhdpi\\visionfitlogo_round.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_round_back_notifications.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\round_back_notifications.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_ic_switch_camera_white_48dp_inset.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\ic_switch_camera_white_48dp_inset.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_vision_entry_choice.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_vision_entry_choice.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_toolbar.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\toolbar.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_toggle_style.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/toggle_style.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xxxhdpi_visionfitlogo_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xxxhdpi\\visionfitlogo_foreground.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_login.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-mdpi_visionfitlogo_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-mdpi\\visionfitlogo_round.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_change_password_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/change_password_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_statistics_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\statistics_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-mdpi_visionfitlogo_round.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-mdpi/visionfitlogo_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_vision_live_preview.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_vision_live_preview.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_profile_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/profile_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\navigation\\nav_graph.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_daily_challenge.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_daily_challenge.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_splashscreen.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\splashscreen.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_squats_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/squats_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_dumbbell_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\dumbbell_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_round_back_notifications.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/round_back_notifications.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_icon_logout.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\icon_logout.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-hdpi_visionfitlogo.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-hdpi/visionfitlogo.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xxhdpi_ic_switch_camera_white_48dp_inset.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xxhdpi\\ic_switch_camera_white_48dp_inset.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xxxhdpi_ic_switch_camera_white_48dp_inset.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xxxhdpi/ic_switch_camera_white_48dp_inset.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_visionfit_logo.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\visionfit_logo.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_about_us_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/about_us_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_my_statistics.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_my_statistics.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/xml_preference_live_preview_quickstart.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/xml/preference_live_preview_quickstart.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xxhdpi_visionfitlogo.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xxhdpi\\visionfitlogo.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_right_arrow_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/right_arrow_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_visionfitlogo_background.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\visionfitlogo_background.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-mdpi_visionfitlogo.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-mdpi/visionfitlogo.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_weightlift_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\weightlift_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_main.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_dialog_forgot.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\dialog_forgot.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_night_mode_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/night_mode_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_leaderboard_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\leaderboard_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_vision_live_preview.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_vision_live_preview.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_splashscreen.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\splashscreen.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xxhdpi_ic_switch_camera_white_48dp_inset.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xxhdpi/ic_switch_camera_white_48dp_inset.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xhdpi_ic_settings_white_24dp.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xhdpi\\ic_settings_white_24dp.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_item_selector.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/item_selector.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-mdpi_visionfitlogo_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-mdpi\\visionfitlogo_foreground.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_settings.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_settings.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xxhdpi_ic_settings_white_24dp.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xxhdpi/ic_settings_white_24dp.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-hdpi_visionfitlogo_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-hdpi\\visionfitlogo_foreground.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-mdpi_visionfitlogo_round.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-mdpi/visionfitlogo_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xxxhdpi_ic_settings_white_24dp.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xxxhdpi\\ic_settings_white_24dp.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-mdpi_ic_switch_camera_white_48dp_inset.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-mdpi/ic_switch_camera_white_48dp_inset.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_push_up_mini.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\push_up_mini.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xxxhdpi_visionfitlogo_foreground.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xxxhdpi/visionfitlogo_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_user_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\user_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_mybutton.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/mybutton.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\ic_launcher_foreground.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xhdpi_visionfitlogo.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xhdpi/visionfitlogo.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_squats_mini.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\squats_mini.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_my_rewards.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_my_rewards.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-mdpi_ic_switch_camera_white_48dp.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-mdpi\\ic_switch_camera_white_48dp.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xxxhdpi_ic_settings_white_24dp.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xxxhdpi/ic_settings_white_24dp.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\xml\\backup_rules.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_round_back_editprofile.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/round_back_editprofile.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_coin_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\coin_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_round_back_night_mode.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/round_back_night_mode.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_visionfit.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\visionfit.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_payment_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/payment_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xxhdpi_ic_settings_white_24dp.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xxhdpi\\ic_settings_white_24dp.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xhdpi_ic_switch_camera_white_48dp_inset.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xhdpi/ic_switch_camera_white_48dp_inset.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_night_mode_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\night_mode_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_mybutton.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/mybutton.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_my_rewards.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_my_rewards.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_settings_style.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/settings_style.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_list_item_background.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\list_item_background.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_checkform.jpg.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/checkform.jpg"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_profile.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_profile.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_splashscreen.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/splashscreen.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_profile_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\profile_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_dumbel.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/dumbel.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xxhdpi_visionfitlogo_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xxhdpi\\visionfitlogo_foreground.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xxhdpi_visionfitlogo_foreground.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xxhdpi/visionfitlogo_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xhdpi_ic_switch_camera_white_48dp_inset.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xhdpi\\ic_switch_camera_white_48dp_inset.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_squats_mini.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/squats_mini.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_settings.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_settings.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/menu_bottom_menu.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/menu/bottom_menu.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\font_anton.ttf.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\font\\anton.ttf"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_leader_board.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_leader_board.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_test_firestore.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_test_firestore.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_logo_mlkit.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\logo_mlkit.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_ic_launcher_foreground.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_visionfitlogo_background.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\visionfitlogo_background.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_ic_password_visible.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/ic_password_visible.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_logo_mlkit.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/logo_mlkit.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_privacy_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\privacy_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xxhdpi_ic_switch_camera_white_48dp.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xxhdpi/ic_switch_camera_white_48dp.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_weightlift_mini.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\weightlift_mini.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_list_item_background.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/list_item_background.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-mdpi_ic_switch_camera_white_48dp_inset.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-mdpi\\ic_switch_camera_white_48dp_inset.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_weightlift_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/weightlift_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_visionfit_logo.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\visionfit_logo.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-anydpi-v26_visionfitlogo.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-anydpi-v26/visionfitlogo.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_item_selector.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\item_selector.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_dialog_forgot.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/dialog_forgot.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_toolbar.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_sit_up_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\sit_up_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_coin_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/coin_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_about_us_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\about_us_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/font_anton.ttf.flat",
+        "source": "com.teamten.visionfit.app-main-60:/font/anton.ttf"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-mdpi_visionfitlogo.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-mdpi\\visionfitlogo.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xhdpi_ic_switch_camera_white_48dp.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xhdpi/ic_switch_camera_white_48dp.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_push_up_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\push_up_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_visionfit_logo.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/visionfit_logo.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_shadow_button_layout.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\shadow_button_layout.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/menu_camera_button_menu.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/menu/camera_button_menu.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-mdpi_visionfitlogo.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-mdpi\\visionfitlogo.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_statistics_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/statistics_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\ic_launcher_background.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_icon_logout.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/icon_logout.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_notifications_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\notifications_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_visionfitlogo_background.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/visionfitlogo_background.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\anim_left_to_right.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\anim\\left_to_right.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/xml_data_extraction_rules.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_toggle_style.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\toggle_style.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xxxhdpi_visionfitlogo.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xxxhdpi/visionfitlogo.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xxxhdpi_ic_switch_camera_white_48dp_inset.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xxxhdpi\\ic_switch_camera_white_48dp_inset.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-mdpi_visionfitlogo.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-mdpi/visionfitlogo.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_dumbel.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\dumbel.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-hdpi_visionfitlogo_round.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-hdpi/visionfitlogo_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_settings_style.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\settings_style.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_splash.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xhdpi_visionfitlogo_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xhdpi\\visionfitlogo_foreground.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_visionfit.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/visionfit.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_round_back_night_mode.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\round_back_night_mode.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_round_view.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/round_view.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-mdpi_ic_settings_white_24dp.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-mdpi\\ic_settings_white_24dp.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-mdpi_ic_switch_camera_white_48dp.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-mdpi/ic_switch_camera_white_48dp.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_add_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\add_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_push_up_mini.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/push_up_mini.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_login.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_ic_switch_camera_white_48dp.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/ic_switch_camera_white_48dp.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_mybutton.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\mybutton.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/anim_slide_in_right.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/anim/slide_in_right.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-merged_res-5:/layout_activity_settings.xml.flat",
-        "source": "com.teamten.visionfit.app-main-7:/layout/activity_settings.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_ic_launcher_background.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\navigation_nav_graph2.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\navigation\\nav_graph2.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_weightlift_mini.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/weightlift_mini.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_ic_settings_white_24dp.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/ic_settings_white_24dp.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\xml\\data_extraction_rules.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_icon_user.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/icon_user.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_checkform.jpg.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\checkform.jpg"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_icon_mainpage.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/icon_mainpage.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xhdpi_ic_switch_camera_white_48dp.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xhdpi\\ic_switch_camera_white_48dp.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_sit_up_mini.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/sit_up_mini.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xhdpi_visionfitlogo_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xhdpi\\visionfitlogo_round.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_test_firestore.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_test_firestore.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xxhdpi_ic_switch_camera_white_48dp.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xxhdpi\\ic_switch_camera_white_48dp.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_add_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/add_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_white_box.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\white_box.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_sit_up_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/sit_up_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xxhdpi_visionfitlogo_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xxhdpi\\visionfitlogo_round.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xxxhdpi_visionfitlogo_round.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xxxhdpi/visionfitlogo_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_round_view.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\round_view.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_dumbbell_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/dumbbell_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_spinner_style.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\spinner_style.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_icon_setting.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/icon_setting.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_ic_switch_camera_white_48dp.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\ic_switch_camera_white_48dp.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_leaderboard_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/leaderboard_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\anim_slide_in_right.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\anim\\slide_in_right.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-mdpi_visionfitlogo_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-mdpi\\visionfitlogo_foreground.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_chooser.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_chooser.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_mybutton.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\mybutton.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/navigation_nav_graph2.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/navigation/nav_graph2.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-xxxhdpi_ic_switch_camera_white_48dp.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-xxxhdpi\\ic_switch_camera_white_48dp.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xxxhdpi_ic_switch_camera_white_48dp.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xxxhdpi/ic_switch_camera_white_48dp.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_daily_challenge.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_daily_challenge.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_user_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/user_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_change_password_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\change_password_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-mdpi_visionfitlogo_foreground.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-mdpi/visionfitlogo_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_leader_board.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_leader_board.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-xhdpi_ic_settings_white_24dp.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-xhdpi/ic_settings_white_24dp.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/anim_left_to_right.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/anim/left_to_right.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_vision_entry_choice.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_vision_entry_choice.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_visionfit_new.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/visionfit_new.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_bottom_background.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\bottom_background.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_ic_password_visible.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\ic_password_visible.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_activity_register.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_sit_up_mini.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\sit_up_mini.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/anim_slide_out_left.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/anim/slide_out_left.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_visionfit_new.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\visionfit_new.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xhdpi_visionfitlogo_foreground.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xhdpi/visionfitlogo_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-anydpi-v26_visionfitlogo_round.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-anydpi-v26\\visionfitlogo_round.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_round_back_white.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/round_back_white.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_squats_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\squats_icon.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_bottom_background.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/bottom_background.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\menu_camera_button_menu.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\menu\\camera_button_menu.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/navigation_nav_graph.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/navigation/nav_graph.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\menu_bottom_menu.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\menu\\bottom_menu.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_white_box.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/white_box.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_visionfit.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\visionfit.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_privacy_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/privacy_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_main.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xxhdpi_visionfitlogo.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xxhdpi/visionfitlogo.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_round_back_editprofile.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\round_back_editprofile.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-xxxhdpi_visionfitlogo.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-xxxhdpi\\visionfitlogo.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_push_up_icon.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/push_up_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-anydpi-v26_visionfitlogo.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-anydpi-v26\\visionfitlogo.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-mdpi_ic_settings_white_24dp.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-mdpi/ic_settings_white_24dp.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\layout_activity_splash.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\layout\\activity_splash.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_visionfit_logo.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/visionfit_logo.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\xml_preference_live_preview_quickstart.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\xml\\preference_live_preview_quickstart.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_notifications_icon.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable/notifications_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_icon_mainpage.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\icon_mainpage.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xxhdpi_visionfitlogo_round.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xxhdpi/visionfitlogo_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-mdpi_visionfitlogo_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-mdpi\\visionfitlogo_round.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-anydpi-v26_visionfitlogo_round.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-anydpi-v26/visionfitlogo_round.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\mipmap-hdpi_visionfitlogo_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\mipmap-hdpi\\visionfitlogo_round.webp"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/mipmap-xhdpi_visionfitlogo_round.webp.flat",
+        "source": "com.teamten.visionfit.app-main-60:/mipmap-xhdpi/visionfitlogo_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_baseline_lock_reset_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\baseline_lock_reset_24.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_splashscreen.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/splashscreen.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable-hdpi_ic_settings_white_24dp.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable-hdpi\\ic_settings_white_24dp.png"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/drawable-hdpi_ic_switch_camera_white_48dp_inset.png.flat",
+        "source": "com.teamten.visionfit.app-main-60:/drawable-hdpi/ic_switch_camera_white_48dp_inset.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_round_back_white.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\round_back_white.xml"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-5:\\drawable_payment_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-7:\\drawable\\payment_icon.xml"
+        "merged": "com.teamten.visionfit.app-merged_res-58:/xml_backup_rules.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/xml/backup_rules.xml"
     }
 ]

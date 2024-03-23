@@ -35,7 +35,7 @@
         android:id="@+id/userImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/profile_icon"
+        android:src="@drawable/icon_profile"
         app:layout_constraintTop_toBottomOf="@id/Settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -59,8 +59,16 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_settings" >
-
+        app:layout_constraintTop_toBottomOf="@id/username_settings"
+        android:overScrollMode="always"
+        android:isScrollContainer="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="15dp"
+        android:scrollbarThumbVertical="@color/orange"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -131,7 +139,7 @@
                         android:id="@+id/changePasswordIcon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/change_password_icon"
+                        android:src="@drawable/icon_change_password"
                         android:layout_marginStart="10dp"
                         android:layout_centerVertical="true"
                         android:padding="8dp" />
@@ -168,7 +176,7 @@
                         android:id="@+id/paymentIcon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/payment_icon"
+                        android:src="@drawable/icon_payment"
                         android:layout_marginStart="10dp"
                         android:layout_centerVertical="true"
                         android:padding="8dp" />
@@ -187,7 +195,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/add_icon"
+                        android:src="@drawable/icon_add"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="17dp"/>
@@ -204,7 +212,7 @@
                         android:id="@+id/nightModeIcon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/night_mode_icon"
+                        android:src="@drawable/icon_night_mode"
                         android:layout_marginStart="10dp"
                         android:layout_centerVertical="true"
                         android:padding="8dp" />
@@ -242,7 +250,7 @@
                         android:id="@+id/notificationIcon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/notifications_icon"
+                        android:src="@drawable/icon_notifications"
                         android:layout_marginStart="10dp"
                         android:layout_centerVertical="true"
                         android:padding="8dp" />
@@ -297,7 +305,7 @@
                         android:id="@+id/aboutUsIcon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/about_us_icon"
+                        android:src="@drawable/icon_about_us"
                         android:layout_marginStart="10dp"
                         android:layout_centerVertical="true"
                         android:padding="8dp" />
@@ -334,7 +342,7 @@
                         android:id="@+id/PrivacyIcon"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/privacy_icon"
+                        android:src="@drawable/icon_privacy"
                         android:layout_marginStart="10dp"
                         android:layout_centerVertical="true"
                         android:padding="8dp" />

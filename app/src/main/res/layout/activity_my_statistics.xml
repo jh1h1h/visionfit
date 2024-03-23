@@ -114,7 +114,7 @@
         <ImageView
             android:layout_width="117dp"
             android:layout_height="106dp"
-            android:src="@drawable/sit_up_icon"
+            android:src="@drawable/exercise_icon_situp"
             android:paddingTop="@dimen/padding_standard"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="@id/sitUpsTab"
@@ -151,7 +151,7 @@
         <ImageView
             android:layout_width="117dp"
             android:layout_height="106dp"
-            android:src="@drawable/push_up_icon"
+            android:src="@drawable/exercise_icon_pushup"
             android:paddingTop="@dimen/padding_standard"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="@id/pushUpsTab"
@@ -188,7 +188,7 @@
         <ImageView
             android:layout_width="127dp"
             android:layout_height="121dp"
-            android:src="@drawable/squats_icon"
+            android:src="@drawable/exercise_icon_squats"
             android:paddingTop="@dimen/padding_standard"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="@id/squatsTab"
@@ -225,7 +225,7 @@
         <ImageView
             android:layout_width="92dp"
             android:layout_height="92dp"
-            android:src="@drawable/weightlift_icon"
+            android:src="@drawable/exercise_icon_weight"
             android:paddingTop="10dp"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="@id/weightliftTab"

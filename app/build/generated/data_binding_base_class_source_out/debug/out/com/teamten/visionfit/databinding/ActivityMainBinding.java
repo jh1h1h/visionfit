@@ -4,7 +4,6 @@ package com.teamten.visionfit.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,9 +28,6 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView bottomText;
 
   @NonNull
-  public final Button cameraButton;
-
-  @NonNull
   public final AppCompatButton dailychallengeButton;
 
   @NonNull
@@ -54,14 +50,13 @@ public final class ActivityMainBinding implements ViewBinding {
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
       @NonNull BottomNavigationView bottomNavigation, @NonNull TextView bottomText,
-      @NonNull Button cameraButton, @NonNull AppCompatButton dailychallengeButton,
-      @NonNull ConstraintLayout greeting, @NonNull AppCompatButton leaderboardButton,
-      @NonNull AppCompatButton mystatsButton, @NonNull AppCompatButton rewardsButton,
-      @NonNull ConstraintLayout streakMessage, @NonNull TextView userDetails) {
+      @NonNull AppCompatButton dailychallengeButton, @NonNull ConstraintLayout greeting,
+      @NonNull AppCompatButton leaderboardButton, @NonNull AppCompatButton mystatsButton,
+      @NonNull AppCompatButton rewardsButton, @NonNull ConstraintLayout streakMessage,
+      @NonNull TextView userDetails) {
     this.rootView = rootView;
     this.bottomNavigation = bottomNavigation;
     this.bottomText = bottomText;
-    this.cameraButton = cameraButton;
     this.dailychallengeButton = dailychallengeButton;
     this.greeting = greeting;
     this.leaderboardButton = leaderboardButton;
@@ -110,12 +105,6 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cameraButton;
-      Button cameraButton = ViewBindings.findChildViewById(rootView, id);
-      if (cameraButton == null) {
-        break missingId;
-      }
-
       id = R.id.dailychallengeButton;
       AppCompatButton dailychallengeButton = ViewBindings.findChildViewById(rootView, id);
       if (dailychallengeButton == null) {
@@ -159,8 +148,8 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, bottomNavigation, bottomText,
-          cameraButton, dailychallengeButton, greeting, leaderboardButton, mystatsButton,
-          rewardsButton, streakMessage, userDetails);
+          dailychallengeButton, greeting, leaderboardButton, mystatsButton, rewardsButton,
+          streakMessage, userDetails);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

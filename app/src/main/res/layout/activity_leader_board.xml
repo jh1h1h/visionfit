@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".java.balls2.LeaderBoardActivity">
+    tools:context="Team10_VisionFit.UI.LeaderBoardActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/leaderboardTitle"
@@ -39,7 +39,7 @@
         android:layout_marginTop="7dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
-        android:drawableTop="@drawable/sit_up_mini"
+        android:drawableTop="@drawable/exercise_icon_situp_mini"
         app:layout_constraintStart_toStartOf="@id/leaderboardTitle"
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
         app:layout_constraintEnd_toStartOf="@id/pushUpLeaderBoardBtn"/>
@@ -51,7 +51,7 @@
         android:layout_marginTop="7dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
-        android:drawableTop="@drawable/push_up_mini"
+        android:drawableTop="@drawable/exercise_icon_pushup_mini"
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
         app:layout_constraintStart_toEndOf="@id/sitUpLeaderBoardBtn"
         app:layout_constraintEnd_toStartOf="@id/squatsLeaderBoardBtn"/>
@@ -63,7 +63,7 @@
         android:layout_marginTop="7dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
-        android:drawableTop="@drawable/squats_mini"
+        android:drawableTop="@drawable/exercise_icons_squats_mini"
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
         app:layout_constraintStart_toEndOf="@id/pushUpLeaderBoardBtn"
         app:layout_constraintEnd_toStartOf="@id/weightliftLeaderBoardBtn"/>
@@ -75,7 +75,7 @@
         android:layout_marginTop="7dp"
         android:background="@drawable/round_view"
         android:backgroundTint="@color/orange"
-        android:drawableTop="@drawable/weightlift_mini"
+        android:drawableTop="@drawable/exercise_icon_weight_mini"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/leaderboardTitle"
         app:layout_constraintStart_toEndOf="@id/squatsLeaderBoardBtn"
@@ -141,7 +141,15 @@
         app:layout_constraintBottom_toTopOf="@id/yourPlace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTab" >
+        app:layout_constraintTop_toBottomOf="@id/titleTab"
+        android:overScrollMode="always"
+        android:isScrollContainer="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="15dp"
+        android:scrollbarThumbVertical="@color/orange">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

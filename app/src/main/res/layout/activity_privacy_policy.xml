@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".java.balls2.PrivacyPolicyActivity">
+    tools:context="Team10_VisionFit.UI.PrivacyPolicyActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/PrivacyPolicyTab"
@@ -47,7 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/privacy_policy"
+                android:text="Introduction"
                 android:textStyle="bold"
                 android:textSize="15sp"
                 android:paddingStart="@dimen/padding_standard"
@@ -59,7 +59,60 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text='This privacy policy applies to the VisionFit app (hereby referred to as "Application") for mobile devices that was created by Team10 (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS"."'
+                android:text=
+                    "- This privacy policy applies to the VisionFit app (hereby referred to as 'Application') for mobile devices that was created by Team10 (hereby referred to as 'Service Provider') as a Free service.
+                    \n- This service is intended for use 'AS IS'"
+                android:textSize="15sp"
+                android:paddingStart="@dimen/padding_standard"
+                android:paddingEnd="@dimen/padding_standard"
+                android:layout_marginStart="@dimen/padding_standard"
+                android:layout_marginEnd="@dimen/padding_standard"
+                style="@style/TextColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Information Collection"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:paddingStart="@dimen/padding_standard"
+                android:paddingTop="@dimen/padding_standard"
+                style="@style/TextColor"
+                android:layout_marginStart="@dimen/padding_standard"
+                android:layout_marginBottom="@dimen/padding_standard" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-Account Information: Email address and password (stored securely).
+\n- Health and Fitness Data: Weight data.\nDevice Information: When you interact with our app, we may automatically collect information about your device, such as its IP address, operating system, and browser type.
+\n- Usage Information: We may collect data on how you use our app, including features used, time spent on the app, and actions taken within the app."
+                android:textSize="15sp"
+                android:paddingStart="@dimen/padding_standard"
+                android:paddingEnd="@dimen/padding_standard"
+                android:layout_marginStart="@dimen/padding_standard"
+                android:layout_marginEnd="@dimen/padding_standard"
+                style="@style/TextColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Information Usage"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:paddingStart="@dimen/padding_standard"
+                android:paddingTop="@dimen/padding_standard"
+                style="@style/TextColor"
+                android:layout_marginStart="@dimen/padding_standard"
+                android:layout_marginBottom="@dimen/padding_standard" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Provide Services: Create and manage your user account, track your exercise progress, and personalize your experience.
+\n- Communicate With You: Send notifications related to your account or the app, provide updates, and offer support.
+\n- Improvement: Analyze usage patterns to enhance our app's functionality and user experience.
+\n- Security: Protect our app and users from fraud and unauthorized access."
                 android:textSize="15sp"
                 android:paddingStart="@dimen/padding_standard"
                 android:paddingEnd="@dimen/padding_standard"

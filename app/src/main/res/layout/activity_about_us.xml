@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".java.balls2.AboutUsActivity">
+    tools:context="Team10_VisionFit.UI.AboutUsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/myProfile"
@@ -16,7 +16,8 @@
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        />
 
     <TextView
         android:layout_width="wrap_content"

@@ -1,7 +1,7 @@
-#Thu Mar 21 17:26:41 SGT 2024
-base.0=/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
-base.1=/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
-base.2=/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/7/classes.dex
+#Fri Mar 22 20:48:27 SGT 2024
+base.0=C\:\\SUTD Academics\\2024_Term4\\InfoSys\\fitness-pose-estimation\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=C\:\\SUTD Academics\\2024_Term4\\InfoSys\\fitness-pose-estimation\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.2=C\:\\SUTD Academics\\2024_Term4\\InfoSys\\fitness-pose-estimation\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\7\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=7/classes.dex

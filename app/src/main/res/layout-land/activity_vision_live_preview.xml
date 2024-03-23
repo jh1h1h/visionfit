@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true">
 
-  <com.teamten.visionfit.CameraSourcePreview
+  <Team10_VisionFit.PoseDetector.CameraSourcePreview
       android:id="@+id/preview_view"
       android:layout_width="0dp"
       android:layout_height="match_parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toStartOf="@+id/control"/>
 
-  <com.teamten.visionfit.GraphicOverlay
+  <Team10_VisionFit.PoseDetector.GraphicOverlay
       android:id="@+id/graphic_overlay"
       android:layout_width="0dp"
       android:layout_height="match_parent"

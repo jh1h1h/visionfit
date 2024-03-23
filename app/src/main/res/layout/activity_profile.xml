@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    android:orientation="vertical"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/myProfile"
+        android:id="@+id/Settings"
         android:layout_width="370dp"
         android:layout_height="55dp"
         android:background="@drawable/round_view"
@@ -21,14 +22,168 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/my_profile"
+        android:text="Profile"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="@+id/myProfile"
-        app:layout_constraintRight_toRightOf="@+id/myProfile"
-        app:layout_constraintTop_toTopOf="@+id/myProfile"
-        app:layout_constraintBottom_toBottomOf="@+id/myProfile" />
+        app:layout_constraintLeft_toLeftOf="@+id/Settings"
+        app:layout_constraintRight_toRightOf="@+id/Settings"
+        app:layout_constraintTop_toTopOf="@+id/Settings"
+        app:layout_constraintBottom_toBottomOf="@+id/Settings" />
+
+    <ImageButton
+        android:id="@+id/userImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_profile"
+        app:layout_constraintTop_toBottomOf="@id/Settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/username_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THE ROCK"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        style="@style/TextColor"
+        app:layout_constraintTop_toBottomOf="@id/userImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollingSettings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username_settings"
+        android:overScrollMode="always"
+        android:isScrollContainer="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="15dp"
+        android:scrollbarThumbVertical="@color/orange"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/round_back_white"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    style="@style/TextColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_standard"
+                    android:text="Name"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="THE ROCK"
+                    android:id="@+id/edit_name"
+                    android:inputType="textPersonName|textCapWords"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    style="@style/TextColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_standard"
+                    android:text="Email"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="therock@gmail.com"
+                    android:id="@+id/edit_email"
+                    android:inputType="textPersonName|textCapWords"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    style="@style/TextColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_standard"
+                    android:text="Password"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="***************"
+                    android:id="@+id/edit_password"
+                    android:inputType="textPersonName|textCapWords"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    style="@style/TextColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_standard"
+                    android:text="Date of Birth"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="29/05/1997"
+                    android:id="@+id/edit_DOB"
+                    android:inputType="textPersonName|textCapWords"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    style="@style/TextColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_standard"
+                    android:text="Country/Region"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Singapore"
+                    android:id="@+id/edit_country"
+                    android:inputType="textPersonName|textCapWords"
+                    android:textSize="14dp"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/save_changes_button"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/round_view"
+                    android:backgroundTint="@color/light_green_700"
+                    android:text="Save changes" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

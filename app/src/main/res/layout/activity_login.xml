@@ -8,14 +8,14 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context="com.firebaseAuthentication.Login">
+    tools:context="Team10_VisionFit.Backend.firebaseAuthentication.Login">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView"
         android:layout_width="325dp"
         android:layout_height="325dp"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/visionfit_new" />
+        app:srcCompat="@mipmap/visionfitlogo_round" />
 
     <TextView
         android:text="@string/Log_in"

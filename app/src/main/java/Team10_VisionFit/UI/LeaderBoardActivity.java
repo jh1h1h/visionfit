@@ -38,8 +38,6 @@ public class LeaderBoardActivity extends AppCompatActivity {
         CollectionReference users = db.collection("users");
         Query query = users.orderBy("repsToday", Query.Direction.DESCENDING);
 
-
-
         int[] nameRows = {R.id.Name1, R.id.Name2, R.id.Name3, R.id.Name4,
                 R.id.Name5, R.id.Name6, R.id.Name7, R.id.Name8, R.id.Name9,
                 R.id.Name10, R.id.Name11, R.id.Name12, R.id.Name13, R.id.Name14,
@@ -47,54 +45,54 @@ public class LeaderBoardActivity extends AppCompatActivity {
         int[] repRows = {R.id.Rep1, R.id.Rep2, R.id.Rep3, R.id.Rep4, R.id.Rep5,
                 R.id.Rep6, R.id.Rep7, R.id.Rep8, R.id.Rep9, R.id.Rep10, R.id.Rep11,
                 R.id.Rep12, R.id.Rep13, R.id.Rep14, R.id.Rep15,};
-        //query will return reps of ALL** users sorted by highest first
 
-        Task<QuerySnapshot> querySnapshotTask =query.get();
+        Task<QuerySnapshot> querySnapshotTask = query.get();
 
         querySnapshotTask
                 .addOnSuccessListener(result -> {
                     QuerySnapshot qsnapshot = result;
                     ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
-                    DocumentSnapshot currentUser = null; //Store current user doc Snapshot if found
+                    DocumentSnapshot currentUser = null;
 
                     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                    for (int i = 0; i < 15; i++) {
-                        TextView name = (TextView) findViewById(nameRows[i]);
-                        TextView reps = (TextView) findViewById(repRows[i]);
+                    for (int i = 0; i < Math.min(15, userArrList.size()); i++) {
+                        TextView name = findViewById(nameRows[i]);
+                        TextView reps = findViewById(repRows[i]);
                         DocumentSnapshot userDoc = userArrList.get(i);
 
-                        String username = userDoc.getId();
-                        String repsAmt = userDoc.get("repsToday", Long.class).toString();
-                        name.setText(username);
-                        reps.setText(repsAmt);
-                    }
-                    for (DocumentSnapshot doc : userArrList) {
-
-                        if (doc.get("userUID", String.class).equals(uid)) {
-                            currentUser = doc;
-
+                        if (userDoc != null) {
+                            String username = userDoc.getId();
+                            Long repsLong = userDoc.get("repsToday", Long.class);
+                            String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
+                            name.setText(username);
+                            reps.setText(repsAmt);
+                        } else {
+                            name.setText("");
+                            reps.setText("");
                         }
                     }
-                    //last entry on the board, either cfm is user, determine rank
-                    //TODO: update rank and entries dynamically to display beyond 15 users
-                    //TODO: add 3 other leaderboards for other exercises
-                        //user is beyond #15
-                        TextView yourRank = (TextView) findViewById(R.id.yourRank);
-                        yourRank.setText(userArrList.indexOf(currentUser)+"");//set to string
+                    for (DocumentSnapshot doc : userArrList) {
+                        if (doc.get("userUID", String.class).equals(uid)) {
+                            currentUser = doc;
+                            break;
+                        }
+                    }
 
-                    TextView yourName = findViewById(R.id.yourName);
-                    TextView yourRep = findViewById(R.id.yourRep);
-                    yourName.setText(currentUser.getId());
-                    yourRep.setText(currentUser.get("repsToday", Long.class).toString());
+                    if (currentUser != null) {
+                        TextView yourRank = findViewById(R.id.yourRank);
+                        yourRank.setText(String.valueOf(userArrList.indexOf(currentUser) + 1));
+
+                        TextView yourName = findViewById(R.id.yourName);
+                        TextView yourRep = findViewById(R.id.yourRep);
+                        yourName.setText(currentUser.getId());
+                        Long currentUserReps = currentUser.get("repsToday", Long.class);
+                        yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
+                    }
                 })
                 .addOnFailureListener(e -> {
-                    // now do something with the exception
+                    // Handle the exception
                 });
         setContentView(R.layout.activity_leader_board);
-        /*
-         TextView tv=findViewById(R.id.leaderboardTitle);
-        YoYo.with(Techniques.SlideInRight).duration(2000).playOn(tv);
-        */
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -139,3 +137,4 @@ public class LeaderBoardActivity extends AppCompatActivity {
         });
     }
 }
+

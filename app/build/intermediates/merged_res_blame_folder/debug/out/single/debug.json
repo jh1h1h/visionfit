@@ -112,6 +112,10 @@
         "source": "com.teamten.visionfit.app-main-60:/layout/activity_splash.xml"
     },
     {
+        "merged": "com.teamten.visionfit.app-merged_res-58:/layout_dialog_change_password.xml.flat",
+        "source": "com.teamten.visionfit.app-main-60:/layout/dialog_change_password.xml"
+    },
+    {
         "merged": "com.teamten.visionfit.app-merged_res-58:/drawable_round_view.xml.flat",
         "source": "com.teamten.visionfit.app-main-60:/drawable/round_view.xml"
     },

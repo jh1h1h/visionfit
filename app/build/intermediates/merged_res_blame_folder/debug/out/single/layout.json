@@ -28,6 +28,10 @@
         "source": "com.teamten.visionfit.app-main-60:/layout/dialog_forgot.xml"
     },
     {
+        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/dialog_change_password.xml",
+        "source": "com.teamten.visionfit.app-main-60:/layout/dialog_change_password.xml"
+    },
+    {
         "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_vision_entry_choice.xml",
         "source": "com.teamten.visionfit.app-main-60:/layout/activity_vision_entry_choice.xml"
     },

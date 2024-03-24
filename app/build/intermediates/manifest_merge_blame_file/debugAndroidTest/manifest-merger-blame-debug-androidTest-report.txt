@@ -3,24 +3,24 @@
 3    package="com.teamten.visionfit.test" >
 4
 5    <uses-sdk
-5-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:5:5-74
+5-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:5:5-74
 6        android:minSdkVersion="21"
-6-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:5:15-41
+6-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:5:15-41
 7        android:targetSdkVersion="34" />
-7-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:5:42-71
+7-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:5:42-71
 8
 9    <instrumentation
-9-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:11:5-15:71
+9-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:11:5-15:71
 10        android:name="android.test.InstrumentationTestRunner"
-10-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:11:22-75
+10-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:11:22-75
 11        android:functionalTest="false"
-11-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:14:22-52
+11-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:14:22-52
 12        android:handleProfiling="false"
-12-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:13:22-53
+12-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:13:22-53
 13        android:label="Tests for com.teamten.visionfit"
-13-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:15:22-69
+13-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:15:22-69
 14        android:targetPackage="com.teamten.visionfit" />
-14-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:12:22-67
+14-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:12:22-67
 15
 16    <uses-permission android:name="android.permission.REORDER_TASKS" />
 16-->[androidx.test:core:1.5.0] /Users/mikeumali/.gradle/caches/transforms-3/6563edd0f7cc68cfb84c5e9fd311b13d/transformed/jetified-core-1.5.0/AndroidManifest.xml:24:5-72
@@ -40,12 +40,12 @@
 22    </queries>
 23
 24    <application
-24-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:7:5-9:19
+24-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:7:5-9:19
 25        android:debuggable="true"
 26        android:extractNativeLibs="true" >
 27        <uses-library android:name="android.test.runner" />
-27-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:8:9-60
-27-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2602691157782148091.xml:8:23-57
+27-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:8:9-60
+27-->/Users/mikeumali/Desktop/fitness-pose-estimation/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest15831581337954594035.xml:8:23-57
 28
 29        <activity
 29-->[androidx.test:core:1.5.0] /Users/mikeumali/.gradle/caches/transforms-3/6563edd0f7cc68cfb84c5e9fd311b13d/transformed/jetified-core-1.5.0/AndroidManifest.xml:27:9-34:20

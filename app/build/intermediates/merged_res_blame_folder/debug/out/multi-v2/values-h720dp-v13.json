@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-3:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-56:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\65c537492e87794166ab77ed6005aaa6\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\edgar\\.gradle\\caches\\transforms-3\\65c537492e87794166ab77ed6005aaa6\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

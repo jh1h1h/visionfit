@@ -1,70 +1,78 @@
 [
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_login.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_login.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_vision_entry_choice.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_vision_entry_choice.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_leader_board.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_leader_board.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_my_statistics.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_my_statistics.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_my_statistics.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_my_statistics.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_test_firestore.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_test_firestore.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_settings.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_settings.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_settings.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_privacy_policy.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_privacy_policy.xml"
+        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/dialog_change_password.xml",
+        "source": "com.teamten.visionfit.app-main-60:/layout/dialog_change_password.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_vision_live_preview.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_vision_live_preview.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_my_rewards.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_my_rewards.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/dialog_forgot.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/dialog_forgot.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\dialog_forgot.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\dialog_forgot.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_vision_entry_choice.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_vision_entry_choice.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_vision_live_preview.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_vision_live_preview.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_my_rewards.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_my_rewards.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_leader_board.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_leader_board.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_register.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_register.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_daily_challenge.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_daily_challenge.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_about_us.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_about_us.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_about_us.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_about_us.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/logout_dialog_box.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/logout_dialog_box.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_register.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_register.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_splash.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_splash.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\logout_dialog_box.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\logout_dialog_box.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_daily_challenge.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_daily_challenge.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_main.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_main.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_test_firestore.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_test_firestore.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\dialog_change_password.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\dialog_change_password.xml"
     },
     {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-57:/layout/activity_profile.xml",
-        "source": "com.teamten.visionfit.app-main-60:/layout/activity_profile.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_privacy_policy.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_privacy_policy.xml"
+    },
+    {
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-57:\\layout\\activity_profile.xml",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-60:\\layout\\activity_profile.xml"
     }
 ]

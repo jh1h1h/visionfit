@@ -70,6 +70,20 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        SwitchCompat notificationSwitch = findViewById(R.id.switchNotifications);
+
+        // Get the last switch state from SharedPreferences
+        boolean isNotificationEnabled = getNotificationSwitchState();
+
+        // Set the switch state
+        notificationSwitch.setChecked(isNotificationEnabled);
+
+        // Set a listener to handle the switch state changes
+        notificationSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // Update the switch state in SharedPreferences
+            setNotificationSwitchState(isChecked);
+        });
+
         final ImageView settingsToProfile = (ImageView) findViewById(R.id.settingGoProfile);
         settingsToProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -231,5 +245,21 @@ public class SettingsActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
+
+    private void setNotificationSwitchState(boolean isChecked) {
+        // Save the switch state to SharedPreferences
+        // Replace "notificationSwitchState" with your preference key
+        getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                .edit()
+                .putBoolean("notificationSwitchState", isChecked)
+                .apply();
+    }
+
+    private boolean getNotificationSwitchState() {
+        // Retrieve the last switch state from SharedPreferences
+        // Replace "notificationSwitchState" with your preference key
+        return getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                .getBoolean("notificationSwitchState", true); // Default value is true
     }
 }

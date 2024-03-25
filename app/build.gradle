@@ -86,16 +86,20 @@ dependencies {
     // -------------------------------------------------------
     implementation 'com.google.auth:google-auth-library-oauth2-http:1.23.0'
 
-
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.google.guava:guava:27.1-android'
+
+    // firebase authentication - login and register
     implementation 'com.google.firebase:firebase-auth:22.3.1'
+
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.navigation:navigation-fragment:2.7.7'
     implementation 'androidx.navigation:navigation-ui:2.7.7'
     implementation 'androidx.activity:activity:1.8.2'
     implementation 'com.daimajia.easing:library:2.4@aar'
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
+
+    // firebase cloud messaging
     implementation 'com.google.firebase:firebase-messaging:23.4.1'
 
     // For how to setup gradle dependencies in Android X, see:
@@ -126,6 +130,12 @@ dependencies {
 
     // On Device Machine Learnings
     implementation "com.google.android.odml:image:1.0.0-beta1"
+
+    // update profile picture in settings
+    //implementation 'com.theartofdev.edmodo:android-image-cropper:2.4.+'
+    //implementation 'de.hdodenhof:circleimageview:3.0.0'
+    //implementation 'com.google.firebase:firebase-storage:11.0.4'
+    //implementation 'com.squareup.picasso:picaso:2.71828'
 }
 
 

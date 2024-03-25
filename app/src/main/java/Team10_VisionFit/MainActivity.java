@@ -1,21 +1,30 @@
 package Team10_VisionFit;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.Manifest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.teamten.visionfit.R;
+
+import java.util.ArrayList;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
@@ -33,6 +42,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textView;
     FirebaseUser user;
 
+    private static final int PERMISSION_REQUESTS = 1; //Its just a request code, arbitrary
+    private static final String[] REQUIRED_RUNTIME_PERMISSIONS = {
+            Manifest.permission.CAMERA,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +58,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         auth = FirebaseAuth.getInstance();
         textView = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
+
+        //Get Permissions from user
+        if (!allRuntimePermissionsGranted()) {
+            getRuntimePermissions();
+        }
 
 
         // DAILY CHALLENGE BUTTON
@@ -78,7 +99,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     finish();
                     return true;
                 case R.id.cameraButton:
-                    startActivity(new Intent(getApplicationContext(), LivePreviewActivity.class));
+                    Intent intent = new Intent(getApplicationContext(), LivePreviewActivity.class);
+                    intent.putExtra("ClassType", "Free Style");
+                    startActivity(intent);
                     Log.d("Button Check", "Camera Button Clicked");
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
@@ -113,7 +136,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    // FUNCTIONS FOR THE BUTTONS
+    //To confirm that it permission is given, close the app otherwise
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == PERMISSION_REQUESTS) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted
+                Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
+            } else {
+                // Permission denied
+                Toast.makeText(this, "Permission denied. App will now close.", Toast.LENGTH_LONG).show();
+                new AlertDialog.Builder(this)
+                        .setTitle("Permission Denied")
+                        .setMessage("You have denied the required permission. The app will now close.")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                finish();
+                            }
+                        })
+                        .setCancelable(false)
+                        .show();
+            }
+        }
+    }
 
     public  void customExitDialog()
     {
@@ -215,5 +263,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             finish();
         }
+    }
+
+    //To check and get permissions
+    //Converted and adapted from Kotlin version given in Google ML Kit Demo App
+    private boolean allRuntimePermissionsGranted() {
+        for (String permission : REQUIRED_RUNTIME_PERMISSIONS) {
+            if (permission != null) {
+                if (!isPermissionGranted(this, permission)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void getRuntimePermissions() {
+        ArrayList<String> permissionsToRequest = new ArrayList<>();
+        for (String permission : REQUIRED_RUNTIME_PERMISSIONS) {
+            if (permission != null) {
+                if (!isPermissionGranted(this, permission)) {
+                    permissionsToRequest.add(permission);
+                }
+            }
+        }
+        if (!permissionsToRequest.isEmpty()) {
+            ActivityCompat.requestPermissions(
+                    this,
+                    permissionsToRequest.toArray(new String[0]),
+                    PERMISSION_REQUESTS //Request code
+            );
+        }
+    }
+
+    private boolean isPermissionGranted(Context context, String permission) {
+        if (ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED) {
+            Log.i("MyMessage", "Permission granted: " + permission);
+            return true;
+        }
+        Log.i("MyMessage", "Permission NOT granted: " + permission);
+        return false;
     }
 }

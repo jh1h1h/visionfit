@@ -12,6 +12,12 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.teamten.visionfit.R;
 
+import android.content.SharedPreferences;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 public class PushNotificationService extends FirebaseMessagingService {
 
     @Override
@@ -35,5 +41,15 @@ public class PushNotificationService extends FirebaseMessagingService {
         // Replace "notificationSwitchState" with your preference key
         return getSharedPreferences("MyPrefs", MODE_PRIVATE)
                 .getBoolean("notificationSwitchState", true); // Default value is true
+    }
+
+    // Method to update the notification state in SharedPreferences
+    private void setNotificationEnabled(boolean isEnabled) {
+        // Save the switch state to SharedPreferences
+        // Replace "notificationSwitchState" with your preference key
+        getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                .edit()
+                .putBoolean("notificationSwitchState", isEnabled)
+                .apply();
     }
 }

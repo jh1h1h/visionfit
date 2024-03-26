@@ -3874,6 +3874,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id switchMode
+id switchNotifications
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -4270,6 +4271,7 @@ string fab_transformation_sheet_behavior
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
+string fcm_fallback_notification_channel_label
 string fight_on
 string first_fragment_label
 string forgot_password

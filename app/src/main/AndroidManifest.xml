@@ -22,6 +22,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <queries>
         <intent>
@@ -66,27 +67,35 @@
         -->
         <activity
             android:name="Team10_VisionFit.UI.MyStatisticsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.UI.MyRewardsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.UI.LeaderBoardActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.UI.DailyChallengeActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.UI.SettingsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.UI.ProfileActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.UI.SplashActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -96,13 +105,16 @@
         </activity>
         <activity
             android:name="Team10_VisionFit.Backend.firebaseAuthentication.EditProfile"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.Backend.firebaseAuthentication.Login"
+            android:screenOrientation="portrait"
             android:exported="false">
         </activity>
         <activity
             android:name="Team10_VisionFit.Backend.firebaseAuthentication.Register"
+            android:screenOrientation="portrait"
             android:exported="false">
         </activity>
         <meta-data
@@ -128,14 +140,23 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name="Team10_VisionFit.Backend.preference.SettingsActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             tools:ignore="MissingClass" />
         <activity
             android:name="Team10_VisionFit.UI.AboutUsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="Team10_VisionFit.UI.PrivacyPolicyActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
+        <service android:name="Team10_VisionFit.Backend.firebaseCloudFireStore.PushNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

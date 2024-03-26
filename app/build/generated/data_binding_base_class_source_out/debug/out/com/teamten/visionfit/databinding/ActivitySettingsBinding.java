@@ -72,6 +72,9 @@ public final class ActivitySettingsBinding implements ViewBinding {
   public final SwitchCompat switchMode;
 
   @NonNull
+  public final SwitchCompat switchNotifications;
+
+  @NonNull
   public final ImageView userImage;
 
   @NonNull
@@ -86,7 +89,8 @@ public final class ActivitySettingsBinding implements ViewBinding {
       @NonNull ImageView settingGoProfile, @NonNull ImageView settingGoResetPassword,
       @NonNull ConstraintLayout settingsContainer, @NonNull ImageView settingsGoAboutUs,
       @NonNull ImageView settingsGoPrivacy, @NonNull SwitchCompat switchMode,
-      @NonNull ImageView userImage, @NonNull TextView usernameSettings) {
+      @NonNull SwitchCompat switchNotifications, @NonNull ImageView userImage,
+      @NonNull TextView usernameSettings) {
     this.rootView = rootView;
     this.PrivacyIcon = PrivacyIcon;
     this.Settings = Settings;
@@ -104,6 +108,7 @@ public final class ActivitySettingsBinding implements ViewBinding {
     this.settingsGoAboutUs = settingsGoAboutUs;
     this.settingsGoPrivacy = settingsGoPrivacy;
     this.switchMode = switchMode;
+    this.switchNotifications = switchNotifications;
     this.userImage = userImage;
     this.usernameSettings = usernameSettings;
   }
@@ -227,6 +232,12 @@ public final class ActivitySettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.switchNotifications;
+      SwitchCompat switchNotifications = ViewBindings.findChildViewById(rootView, id);
+      if (switchNotifications == null) {
+        break missingId;
+      }
+
       id = R.id.userImage;
       ImageView userImage = ViewBindings.findChildViewById(rootView, id);
       if (userImage == null) {
@@ -243,7 +254,7 @@ public final class ActivitySettingsBinding implements ViewBinding {
           aboutUsIcon, bottomNavigation, changePasswordIcon, editProfile, nightModeIcon,
           notificationIcon, paymentIcon, scrollingSettings, settingGoProfile,
           settingGoResetPassword, settingsContainer, settingsGoAboutUs, settingsGoPrivacy,
-          switchMode, userImage, usernameSettings);
+          switchMode, switchNotifications, userImage, usernameSettings);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

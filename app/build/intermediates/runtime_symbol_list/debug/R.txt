@@ -3873,6 +3873,7 @@ int id submenuarrow 0x7f0a0268
 int id submit_area 0x7f0a0269
 int id supportScrollUp 0x7f0a026a
 int id switchMode 0x7f0a026b
+int id switchNotifications 0x7f0a02c7
 int id tabMode 0x7f0a026c
 int id tag_accessibility_actions 0x7f0a026d
 int id tag_accessibility_clickable_spans 0x7f0a026e
@@ -4269,6 +4270,7 @@ int string fab_transformation_sheet_behavior 0x7f130051
 int string fallback_menu_item_copy_link 0x7f130052
 int string fallback_menu_item_open_in_browser 0x7f130053
 int string fallback_menu_item_share_link 0x7f130054
+int string fcm_fallback_notification_channel_label 0x7f130161
 int string fight_on 0x7f130055
 int string first_fragment_label 0x7f130056
 int string forgot_password 0x7f130057

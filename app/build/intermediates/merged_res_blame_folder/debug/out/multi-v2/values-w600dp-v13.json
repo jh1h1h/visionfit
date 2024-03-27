@@ -4,7 +4,7 @@
             "outputFile": "com.teamten.visionfit.app-mergeDebugResources-58:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "D:\\SUTD\\TERM_4\\001_INFOSYS_AND_PROG\\1D\\fitness-pose-estimation\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
+                    "source": "C:\\Users\\edgar\\Documents\\SUTD\\Term_4\\Info_Sys_Prog\\fitness-pose-estimation\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

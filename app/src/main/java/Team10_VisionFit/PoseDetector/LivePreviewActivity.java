@@ -38,6 +38,7 @@ import com.teamten.visionfit.R;
 import java.io.IOException;
 
 import Team10_VisionFit.Backend.preference.PreferenceUtils;
+import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.classification.PoseClassifierProcessor;
 import Team10_VisionFit.UI.DailyChallengeActivity;
 
@@ -86,8 +87,9 @@ public final class LivePreviewActivity extends AppCompatActivity
             counter++;
           }
           public void onFinish(){
-            Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
+            Intent intent = new Intent(LivePreviewActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
 //            timer_text.setText("End");
           }
         }.start();

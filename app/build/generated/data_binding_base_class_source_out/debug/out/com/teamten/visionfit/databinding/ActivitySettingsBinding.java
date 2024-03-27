@@ -15,6 +15,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teamten.visionfit.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -75,7 +76,7 @@ public final class ActivitySettingsBinding implements ViewBinding {
   public final SwitchCompat switchNotifications;
 
   @NonNull
-  public final ImageView userImage;
+  public final CircleImageView userImage;
 
   @NonNull
   public final TextView usernameSettings;
@@ -89,7 +90,7 @@ public final class ActivitySettingsBinding implements ViewBinding {
       @NonNull ImageView settingGoProfile, @NonNull ImageView settingGoResetPassword,
       @NonNull ConstraintLayout settingsContainer, @NonNull ImageView settingsGoAboutUs,
       @NonNull ImageView settingsGoPrivacy, @NonNull SwitchCompat switchMode,
-      @NonNull SwitchCompat switchNotifications, @NonNull ImageView userImage,
+      @NonNull SwitchCompat switchNotifications, @NonNull CircleImageView userImage,
       @NonNull TextView usernameSettings) {
     this.rootView = rootView;
     this.PrivacyIcon = PrivacyIcon;
@@ -239,7 +240,7 @@ public final class ActivitySettingsBinding implements ViewBinding {
       }
 
       id = R.id.userImage;
-      ImageView userImage = ViewBindings.findChildViewById(rootView, id);
+      CircleImageView userImage = ViewBindings.findChildViewById(rootView, id);
       if (userImage == null) {
         break missingId;
       }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-57:/values-sl/values-sl.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-58:/values-sl/values-sl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\edgar\\.gradle\\caches\\transforms-3\\ad5fc966009a9778bb832cd674f25b0c\\transformed\\jetified-play-services-base-18.3.0\\res\\values-sl\\values.xml",

@@ -13,7 +13,7 @@ VisionFit 2.0
 
 ✅Check Pose/ Camera button added to nav bar  --> help me test if can launch from every page when yall pull
 
-✅Changed icons to more consistent looking ones
+✅Changed icons to more consistent looking ones 
 
 ✅Buttons in navbar will light up if you at the particular page ( i didnt do this though so idk how)
 

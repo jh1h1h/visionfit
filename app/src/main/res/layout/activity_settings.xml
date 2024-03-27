@@ -31,10 +31,11 @@
         app:layout_constraintTop_toTopOf="@+id/Settings"
         app:layout_constraintBottom_toBottomOf="@+id/Settings" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="@dimen/padding_standard"
         android:src="@drawable/icon_profile"
         app:layout_constraintTop_toBottomOf="@id/Settings"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,15 +43,15 @@
 
     <TextView
         android:id="@+id/username_settings"
+        style="@style/TextColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="THE ROCK"
-        android:textStyle="bold"
         android:textSize="25sp"
-        style="@style/TextColor"
-        app:layout_constraintTop_toBottomOf="@id/userImage"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/userImage" />
 
     <ScrollView
         android:id="@+id/scrollingSettings"

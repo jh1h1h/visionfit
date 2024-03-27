@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-57:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-58:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\edgar\\.gradle\\caches\\transforms-3\\65c537492e87794166ab77ed6005aaa6\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",

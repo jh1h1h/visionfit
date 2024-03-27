@@ -26,11 +26,13 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 import com.teamten.visionfit.R;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
 import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SettingsActivity extends AppCompatActivity {
     FirebaseAuth auth;
@@ -44,6 +46,16 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        SharedPreferences prefs = getSharedPreferences("UserProfile", MODE_PRIVATE);
+        String profileImageUri = prefs.getString("profileImageUri", "");
+
+        CircleImageView userImage = findViewById(R.id.userImage);
+        if (!profileImageUri.isEmpty()) {
+            Picasso.get().load(profileImageUri).into(userImage);
+        } else {
+            userImage.setImageResource(R.drawable.icon_profile);
+        }
 
         switchMode = findViewById(R.id.switchMode);
 

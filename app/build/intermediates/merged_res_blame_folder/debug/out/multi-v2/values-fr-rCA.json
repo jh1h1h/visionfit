@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-57:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "com.teamten.visionfit.app-mergeDebugResources-58:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "C:\\Users\\edgar\\.gradle\\caches\\transforms-3\\bd4dfd6c13fbd6ca39766869c60f1c3a\\transformed\\jetified-play-services-basement-18.3.0\\res\\values-fr-rCA\\values.xml",

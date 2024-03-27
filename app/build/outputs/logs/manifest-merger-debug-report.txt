@@ -84,6 +84,7 @@ MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\edgar\.
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\edgar\.gradle\caches\transforms-3\bd4dfd6c13fbd6ca39766869c60f1c3a\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\edgar\.gradle\caches\transforms-3\39019d80836bd969ddb72a0a2c34ec1b\transformed\fragment-1.6.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.8.2] C:\Users\edgar\.gradle\caches\transforms-3\be532c3295e5e0f0b59ba9273c3dffa9\transformed\jetified-activity-1.8.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:2:1-14:12
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\edgar\.gradle\caches\transforms-3\81e2aea80db7ba4f2fe39ef52f229d46\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\edgar\.gradle\caches\transforms-3\d6dce25a718e70dc54d560aac3778d15\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\edgar\.gradle\caches\transforms-3\f2eaaac9988a25d5d05e48e1811ed41f\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -111,6 +112,7 @@ MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\edgar\.gradle\caches\transfor
 MERGED from [com.daimajia.easing:library:2.4] C:\Users\edgar\.gradle\caches\transforms-3\a09f6fd57811a24bb7d9fad6816f916a\transformed\jetified-library-2.4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.daimajia.androidanimations:library:2.4] C:\Users\edgar\.gradle\caches\transforms-3\69997bce44d1f1be6e7ff48ad8105490\transformed\jetified-library-2.4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\edgar\.gradle\caches\transforms-3\562a651dd8c6e398b1c3534beaf92f01\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:2:1-9:12
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\edgar\.gradle\caches\transforms-3\29e9326728c770909edaf8f29b4e1ad8\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\edgar\.gradle\caches\transforms-3\61a45d9e8d985e9a6384a155690a24b4\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 	package
 		INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml
@@ -237,6 +239,8 @@ MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\edgar\.
 MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\edgar\.gradle\caches\transforms-3\1287df717879dc6c97dc97491ba34813\transformed\jetified-play-services-tasks-18.1.0\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\edgar\.gradle\caches\transforms-3\bd4dfd6c13fbd6ca39766869c60f1c3a\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\edgar\.gradle\caches\transforms-3\bd4dfd6c13fbd6ca39766869c60f1c3a\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\edgar\.gradle\caches\transforms-3\93a44033f5088023c66f783a0db227f3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\edgar\.gradle\caches\transforms-3\93a44033f5088023c66f783a0db227f3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\edgar\.gradle\caches\transforms-3\3bdce397d4873855238d692595ce3045\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
@@ -253,6 +257,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ed
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\edgar\.gradle\caches\transforms-3\2263db735e78743d53830645cb1fc45a\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\edgar\.gradle\caches\transforms-3\562a651dd8c6e398b1c3534beaf92f01\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\edgar\.gradle\caches\transforms-3\562a651dd8c6e398b1c3534beaf92f01\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:7:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\edgar\.gradle\caches\transforms-3\29e9326728c770909edaf8f29b4e1ad8\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\edgar\.gradle\caches\transforms-3\29e9326728c770909edaf8f29b4e1ad8\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 	android:extractNativeLibs
 		INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
@@ -605,6 +611,8 @@ MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\edgar\.gradle\caches\tra
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\edgar\.gradle\caches\transforms-3\39019d80836bd969ddb72a0a2c34ec1b\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.8.2] C:\Users\edgar\.gradle\caches\transforms-3\be532c3295e5e0f0b59ba9273c3dffa9\transformed\jetified-activity-1.8.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.8.2] C:\Users\edgar\.gradle\caches\transforms-3\be532c3295e5e0f0b59ba9273c3dffa9\transformed\jetified-activity-1.8.2\AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\edgar\.gradle\caches\transforms-3\81e2aea80db7ba4f2fe39ef52f229d46\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\edgar\.gradle\caches\transforms-3\81e2aea80db7ba4f2fe39ef52f229d46\transformed\jetified-firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\edgar\.gradle\caches\transforms-3\d6dce25a718e70dc54d560aac3778d15\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
@@ -659,6 +667,8 @@ MERGED from [com.daimajia.androidanimations:library:2.4] C:\Users\edgar\.gradle\
 MERGED from [com.daimajia.androidanimations:library:2.4] C:\Users\edgar\.gradle\caches\transforms-3\69997bce44d1f1be6e7ff48ad8105490\transformed\jetified-library-2.4\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\edgar\.gradle\caches\transforms-3\562a651dd8c6e398b1c3534beaf92f01\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\edgar\.gradle\caches\transforms-3\562a651dd8c6e398b1c3534beaf92f01\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:5:5-44
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\edgar\.gradle\caches\transforms-3\29e9326728c770909edaf8f29b4e1ad8\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\edgar\.gradle\caches\transforms-3\29e9326728c770909edaf8f29b4e1ad8\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\edgar\.gradle\caches\transforms-3\61a45d9e8d985e9a6384a155690a24b4\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\edgar\.gradle\caches\transforms-3\61a45d9e8d985e9a6384a155690a24b4\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
@@ -1235,6 +1245,14 @@ uses-permission#com.teamten.visionfit.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] C:\Users\edgar\.gradle\caches\transforms-3\8da31d6ae29e0057b9f579c25280191c\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.9.0] C:\Users\edgar\.gradle\caches\transforms-3\8da31d6ae29e0057b9f579c25280191c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\edgar\.gradle\caches\transforms-3\49607c8146b65b3442a9530dbecfcaaf\transformed\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\edgar\.gradle\caches\transforms-3\93a44033f5088023c66f783a0db227f3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
 	android:value

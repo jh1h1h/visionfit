@@ -69,6 +69,8 @@ android {
 repositories {
     // Depending on AndroidX Snapshot Builds to get the latest CameraX libs.
     maven { url 'https://androidx.dev/snapshots/builds/6787662/artifacts/repository/' }
+    mavenCentral()
+    maven {url "https://jitpack.io"}
 
 }
 
@@ -132,10 +134,8 @@ dependencies {
     implementation "com.google.android.odml:image:1.0.0-beta1"
 
     // update profile picture in settings
-    //implementation 'com.theartofdev.edmodo:android-image-cropper:2.4.+'
-    //implementation 'de.hdodenhof:circleimageview:3.0.0'
-    //implementation 'com.google.firebase:firebase-storage:11.0.4'
-    //implementation 'com.squareup.picasso:picaso:2.71828'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
 
 

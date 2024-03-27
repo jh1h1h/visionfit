@@ -1,5 +1,6 @@
 package Team10_VisionFit.UI;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,6 +31,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.teamten.visionfit.R;
 
@@ -45,34 +47,61 @@ public class SettingsActivity extends AppCompatActivity {
     private CircleImageView settingsImageView;
     EditText emailBox, editTextPwdCurr, editTextPwdNew, editTextPwdConfirmNew;
     SharedPreferences sharedPreferences;
-    TextView usernameSettings;
+    TextView displayNameTextView;
     SharedPreferences.Editor editor;
+
+    private FirebaseFirestore firestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid);
 
-
-        usernameSettings = findViewById(R.id.username_settings);
-        userRef.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                DocumentSnapshot document = task.getResult();
-                if (document != null && document.exists()) {
-                    String displayName = document.getString("username");
-                    usernameSettings.setText(displayName);}
-            }
-        });
-        SharedPreferences prefs = getSharedPreferences("UserProfile", MODE_PRIVATE);
-        String profileImageUri = prefs.getString("profileImageUri", "");
-
+        displayNameTextView = findViewById(R.id.username_settings);
         settingsImageView = findViewById(R.id.userImage);
-        if (!profileImageUri.isEmpty()) {
-            Picasso.get().load(profileImageUri).into(settingsImageView);
-        } else {
-            settingsImageView.setImageResource(R.drawable.icon_profile);
+        firestore = FirebaseFirestore.getInstance();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            String userId = user.getUid();
+            String email=user.getEmail();
+
+            DocumentReference userRef = firestore.collection("users").document(userId);
+
+            // Fetch user data from Firestore
+            userRef.get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document != null && document.exists()) {
+                        // Get profile picture URL and display name
+                        String profilePicUrl = document.getString("photo_url");
+                        String displayName = document.getString("username");
+
+                        displayNameTextView.setText(displayName);
+
+                        if (profilePicUrl != null) {
+                            // Load profile picture using Picasso with error handling
+                            Picasso.get().load(profilePicUrl).into(settingsImageView, new Callback() {
+                                @Override
+                                public void onSuccess() {
+                                    // Image loaded successfully, do nothing
+                                }
+
+                                @Override
+                                public void onError(Exception e) {
+                                    // Error loading image, set default image
+                                    settingsImageView.setImageResource(R.drawable.icon_profile);
+                                }
+                            });
+                        } else {
+                            // User doesn't have a profile picture, set default image
+                            settingsImageView.setImageResource(R.drawable.icon_profile);
+                        }
+                    }
+                }
+            });
         }
 
         switchMode = findViewById(R.id.switchMode);
@@ -262,19 +291,56 @@ public class SettingsActivity extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.bottom_logout:
-                    Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
                     Log.d("Button Check", "Logout Button Clicked");
-                    FirebaseAuth.getInstance().signOut();
-                    Intent intent = new Intent(getApplicationContext(), Login.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
-                    sharedPreferences.edit().clear().commit();
-                    finish();
+                    customExitDialog();
                     return true;
             }
             return false;
         });
+    }
+
+    public  void customExitDialog()
+    {
+        // creating custom dialog
+        final Dialog dialog = new Dialog(SettingsActivity.this);
+
+        // setting content view to dialog
+        dialog.setContentView(R.layout.logout_dialog_box);
+
+        // getting reference of TextView
+        TextView dialogButtonYes = (TextView) dialog.findViewById(R.id.textViewYes);
+        TextView dialogButtonNo = (TextView) dialog.findViewById(R.id.textViewNo);
+
+        // click listener for No
+        dialogButtonNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // dismiss the dialog
+                dialog.dismiss();
+
+            }
+        });
+        // click listener for Yes
+        dialogButtonYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // dismiss the dialog and exit the exit
+                dialog.dismiss();
+
+                Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
+                sharedPreferences.edit().clear().commit();
+                finish();
+
+            }
+        });
+
+        // show the exit dialog
+        dialog.show();
     }
 
     private void setNotificationSwitchState(boolean isChecked) {
@@ -291,5 +357,10 @@ public class SettingsActivity extends AppCompatActivity {
         // Replace "notificationSwitchState" with your preference key
         return getSharedPreferences("MyPrefs", MODE_PRIVATE)
                 .getBoolean("notificationSwitchState", true); // Default value is true
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do nothing (disable back button functionality)
     }
 }

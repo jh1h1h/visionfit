@@ -30,7 +30,6 @@ import com.teamten.visionfit.R;
 import java.util.ArrayList;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
-import Team10_VisionFit.Backend.firebaseAuthentication.User;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 import Team10_VisionFit.UI.DailyChallengeActivity;
 import Team10_VisionFit.UI.LeaderBoardActivity;
@@ -133,25 +132,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case R.id.bottom_logout:
                     Log.d("Button Check", "Logout Button Clicked");
                     customExitDialog();
-
-//                    Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
-//                    FirebaseAuth.getInstance().signOut();
-//                    Intent intent = new Intent(getApplicationContext(), Login.class);
-//                    startActivity(intent);
-//                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//                    SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
-//                    sharedPreferences.edit().clear().commit();
-//                    finish();
                     return true;
             }
             return false;
         });
-
-        // CAMERA BUTTON
-//        Button cameraButton = (Button) findViewById(R.id.cameraButton);
-//        cameraButton.setOnClickListener(this);
-
-
     }
 
     //To confirm that it permission is given, close the app otherwise
@@ -216,7 +200,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
                 sharedPreferences.edit().clear().commit();
-                finish();
                 finish();
 
             }
@@ -321,5 +304,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         Log.i("MyMessage", "Permission NOT granted: " + permission);
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do nothing (disable back button functionality)
     }
 }

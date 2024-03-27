@@ -8,6 +8,10 @@
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\layout\\activity_test_firestore.xml"
     },
     {
+        "merged": "com.teamten.visionfit.app-mergeDebugResources-59:/layout/activity_vision_live_preview.xml",
+        "source": "com.teamten.visionfit.app-main-62:/layout/activity_vision_live_preview.xml"
+    },
+    {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-59:\\layout\\activity_profile.xml",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\layout\\activity_profile.xml"
     },
@@ -62,10 +66,6 @@
     {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-59:\\layout\\activity_splash.xml",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\layout\\activity_splash.xml"
-    },
-    {
-        "merged": "com.teamten.visionfit.app-mergeDebugResources-59:/layout/activity_test_firestore.xml",
-        "source": "com.teamten.visionfit.app-main-62:/layout/activity_test_firestore.xml"
     },
     {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-mergeDebugResources-59:\\layout\\activity_my_statistics.xml",

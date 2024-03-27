@@ -101,6 +101,20 @@
         app:layout_constraintEnd_toStartOf="@id/pushUpsTab">
 
         <TextView
+            android:id="@+id/situps_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/situp_img"
+            app:layout_constraintLeft_toLeftOf="@+id/sitUpsTab"
+            app:layout_constraintRight_toRightOf="@+id/sitUpsTab"
+            app:layout_constraintBottom_toTopOf="@+id/situp_text" />
+
+        <TextView
+            android:id="@+id/situp_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sit_ups"
@@ -112,8 +126,9 @@
             app:layout_constraintBottom_toBottomOf="@+id/sitUpsTab" />
 
         <ImageView
-            android:layout_width="117dp"
-            android:layout_height="106dp"
+            android:id="@+id/situp_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/exercise_icon_situp"
             android:paddingTop="@dimen/padding_standard"
             app:layout_constraintHorizontal_bias="0.5"
@@ -137,6 +152,20 @@
         app:layout_constraintTop_toBottomOf="@id/allTime">
 
         <TextView
+            android:id="@+id/pushups_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/pushup_img"
+            app:layout_constraintLeft_toLeftOf="@+id/pushUpsTab"
+            app:layout_constraintRight_toRightOf="@+id/pushUpsTab"
+            app:layout_constraintBottom_toTopOf="@+id/pushup_text" />
+
+        <TextView
+            android:id="@+id/pushup_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -149,8 +178,9 @@
             app:layout_constraintBottom_toBottomOf="@+id/pushUpsTab" />
 
         <ImageView
-            android:layout_width="117dp"
-            android:layout_height="106dp"
+            android:id="@+id/pushup_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/exercise_icon_pushup"
             android:paddingTop="@dimen/padding_standard"
             app:layout_constraintHorizontal_bias="0.5"
@@ -174,6 +204,20 @@
         app:layout_constraintTop_toBottomOf="@id/sitUpsTab">
 
         <TextView
+            android:id="@+id/squats_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/squats_img"
+            app:layout_constraintLeft_toLeftOf="@+id/squatsTab"
+            app:layout_constraintRight_toRightOf="@+id/squatsTab"
+            app:layout_constraintBottom_toTopOf="@+id/squats_text" />
+
+        <TextView
+            android:id="@+id/squats_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -186,8 +230,9 @@
             app:layout_constraintBottom_toBottomOf="@+id/squatsTab" />
 
         <ImageView
-            android:layout_width="127dp"
-            android:layout_height="121dp"
+            android:id="@+id/squats_img"
+            android:layout_width="100dp"
+            android:layout_height="95dp"
             android:src="@drawable/exercise_icon_squats"
             android:paddingTop="@dimen/padding_standard"
             app:layout_constraintHorizontal_bias="0.5"
@@ -211,6 +256,20 @@
         app:layout_constraintTop_toBottomOf="@id/pushUpsTab" >
 
         <TextView
+            android:id="@+id/weightlift_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/weightlift_img"
+            app:layout_constraintLeft_toLeftOf="@+id/weightliftTab"
+            app:layout_constraintRight_toRightOf="@+id/weightliftTab"
+            app:layout_constraintBottom_toTopOf="@+id/weightlift_text" />
+
+        <TextView
+            android:id="@+id/weightlift_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -223,8 +282,9 @@
             app:layout_constraintBottom_toBottomOf="@+id/weightliftTab"/>
 
         <ImageView
-            android:layout_width="92dp"
-            android:layout_height="92dp"
+            android:id="@+id/weightlift_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/exercise_icon_weight"
             android:paddingTop="10dp"
             app:layout_constraintHorizontal_bias="0.5"

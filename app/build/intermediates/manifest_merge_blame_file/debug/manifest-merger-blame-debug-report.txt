@@ -301,7 +301,7 @@
 180            <intent-filter>
 180-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:13-159:29
 181                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-181-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:17-85
+181-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:17-78
 181-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:25-75
 182            </intent-filter>
 183        </service>
@@ -563,7 +563,7 @@
 323            <intent-filter android:priority="-500" >
 323-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:13-159:29
 324                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-324-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:17-85
+324-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:17-78
 324-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:25-75
 325            </intent-filter>
 326        </service>

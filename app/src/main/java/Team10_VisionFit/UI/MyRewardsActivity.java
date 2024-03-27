@@ -1,9 +1,12 @@
 package Team10_VisionFit.UI;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,18 +55,60 @@ public class MyRewardsActivity extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.bottom_logout:
-                    Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
                     Log.d("Button Check", "Logout Button Clicked");
-                    FirebaseAuth.getInstance().signOut();
-                    Intent intent = new Intent(getApplicationContext(), Login.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
-                    sharedPreferences.edit().clear().commit();
-                    finish();
+                    customExitDialog();
                     return true;
             }
             return false;
         });
+    }
+
+    public  void customExitDialog()
+    {
+        // creating custom dialog
+        final Dialog dialog = new Dialog(MyRewardsActivity.this);
+
+        // setting content view to dialog
+        dialog.setContentView(R.layout.logout_dialog_box);
+
+        // getting reference of TextView
+        TextView dialogButtonYes = (TextView) dialog.findViewById(R.id.textViewYes);
+        TextView dialogButtonNo = (TextView) dialog.findViewById(R.id.textViewNo);
+
+        // click listener for No
+        dialogButtonNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // dismiss the dialog
+                dialog.dismiss();
+
+            }
+        });
+        // click listener for Yes
+        dialogButtonYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // dismiss the dialog and exit the exit
+                dialog.dismiss();
+
+                Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
+                sharedPreferences.edit().clear().commit();
+                finish();
+
+            }
+        });
+
+        // show the exit dialog
+        dialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do nothing (disable back button functionality)
     }
 }

@@ -3264,6 +3264,7 @@ id BOTTOM_START
 id CTRL
 id Country_register
 id DOB_register
+id Exit_button
 id FUNCTION
 id META
 id MyRewardsTitle
@@ -3778,6 +3779,9 @@ id progress_horizontal
 id pushUpButton
 id pushUpLeaderBoardBtn
 id pushUpsTab
+id pushup_img
+id pushup_text
+id pushups_num
 id radio
 id ratio
 id rectangles
@@ -3840,6 +3844,9 @@ id sin
 id sitUpButton
 id sitUpLeaderBoardBtn
 id sitUpsTab
+id situp_img
+id situp_text
+id situps_num
 id sixthPlace
 id skipCollapsed
 id skipped
@@ -3862,6 +3869,9 @@ id square
 id squatsButton
 id squatsLeaderBoardBtn
 id squatsTab
+id squats_img
+id squats_num
+id squats_text
 id src_atop
 id src_in
 id src_over
@@ -3961,6 +3971,9 @@ id wallet
 id weightliftButton
 id weightliftLeaderBoardBtn
 id weightliftTab
+id weightlift_img
+id weightlift_num
+id weightlift_text
 id west
 id wide
 id withText

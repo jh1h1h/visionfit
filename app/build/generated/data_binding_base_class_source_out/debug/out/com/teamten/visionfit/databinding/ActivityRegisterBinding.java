@@ -24,6 +24,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final TextInputEditText CountryRegister;
+
+  @NonNull
+  public final TextInputEditText DOBRegister;
+
+  @NonNull
   public final AppCompatButton btnRegister;
 
   @NonNull
@@ -41,17 +47,25 @@ public final class ActivityRegisterBinding implements ViewBinding {
   @NonNull
   public final ProgressBar progressBar;
 
+  @NonNull
+  public final TextInputEditText usernameRegister;
+
   private ActivityRegisterBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull TextInputEditText CountryRegister, @NonNull TextInputEditText DOBRegister,
       @NonNull AppCompatButton btnRegister, @NonNull TextInputEditText email,
       @NonNull AppCompatImageView imageView, @NonNull TextView loginNow,
-      @NonNull TextInputEditText password, @NonNull ProgressBar progressBar) {
+      @NonNull TextInputEditText password, @NonNull ProgressBar progressBar,
+      @NonNull TextInputEditText usernameRegister) {
     this.rootView = rootView;
+    this.CountryRegister = CountryRegister;
+    this.DOBRegister = DOBRegister;
     this.btnRegister = btnRegister;
     this.email = email;
     this.imageView = imageView;
     this.loginNow = loginNow;
     this.password = password;
     this.progressBar = progressBar;
+    this.usernameRegister = usernameRegister;
   }
 
   @Override
@@ -81,6 +95,18 @@ public final class ActivityRegisterBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.Country_register;
+      TextInputEditText CountryRegister = ViewBindings.findChildViewById(rootView, id);
+      if (CountryRegister == null) {
+        break missingId;
+      }
+
+      id = R.id.DOB_register;
+      TextInputEditText DOBRegister = ViewBindings.findChildViewById(rootView, id);
+      if (DOBRegister == null) {
+        break missingId;
+      }
+
       id = R.id.btn_register;
       AppCompatButton btnRegister = ViewBindings.findChildViewById(rootView, id);
       if (btnRegister == null) {
@@ -117,8 +143,15 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((LinearLayoutCompat) rootView, btnRegister, email,
-          imageView, loginNow, password, progressBar);
+      id = R.id.username_register;
+      TextInputEditText usernameRegister = ViewBindings.findChildViewById(rootView, id);
+      if (usernameRegister == null) {
+        break missingId;
+      }
+
+      return new ActivityRegisterBinding((LinearLayoutCompat) rootView, CountryRegister,
+          DOBRegister, btnRegister, email, imageView, loginNow, password, progressBar,
+          usernameRegister);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

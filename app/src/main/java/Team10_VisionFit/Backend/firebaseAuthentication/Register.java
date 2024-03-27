@@ -15,13 +15,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.teamten.visionfit.R;
 
 
 public class Register extends AppCompatActivity {
 
     private FirebaseAuth auth;
-    private EditText signupEmail, signupPassword;
+    private EditText signupEmail, signupPassword, signupUsername, signupDOB, signupCountry;
     private Button signupButton;
     private TextView loginRedirectText;
     @Override
@@ -31,6 +32,9 @@ public class Register extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         signupEmail = findViewById(R.id.email);
         signupPassword = findViewById(R.id.password);
+        signupUsername = findViewById(R.id.username_register);
+        signupDOB = findViewById(R.id.DOB_register);
+        signupCountry = findViewById(R.id.Country_register);
         signupButton = findViewById(R.id.btn_register);
         loginRedirectText = findViewById(R.id.loginNow);
 
@@ -50,6 +54,12 @@ public class Register extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(Register.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
+                                FirebaseUser user=auth.getCurrentUser();
+                                String uid=user.getUid();
+                                String dob=signupDOB.getText().toString().trim();
+                                String username=signupUsername.getText().toString();
+                                String country=signupCountry.getText().toString();
+                                TestFirestoreActivity.addDataToFirestore(uid, username,country,dob, 0,0,0,0,0,0,0,0,0);
                                 startActivity(new Intent(Register.this, Login.class));
                             } else {
                                 Toast.makeText(Register.this, "SignUp Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

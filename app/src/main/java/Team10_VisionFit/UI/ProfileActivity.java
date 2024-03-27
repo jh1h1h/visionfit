@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -49,9 +50,13 @@ public class ProfileActivity extends AppCompatActivity {
     private CircleImageView profileImageView;
     private TextView displayNameTextView;
     private EditText editName;
+    private EditText editEmail;
+    private EditText editPw;
+    private EditText editDob;
+    private EditText editCountry;
     private FirebaseFirestore firestore;
     private Uri photoUri;
-
+    private AppCompatButton saveChanges;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +67,11 @@ public class ProfileActivity extends AppCompatActivity {
         profileImageView = findViewById(R.id.userImage);
         displayNameTextView = findViewById(R.id.username_profile);
         editName = findViewById(R.id.edit_name);
+
+        editEmail=findViewById(R.id.edit_email);
+        editDob=findViewById(R.id.edit_DOB);
+        editCountry=findViewById(R.id.edit_country);
+        saveChanges=findViewById(R.id.save_changes_button);
         ImageView takePhotoButton = findViewById(R.id.edit_profile_pic);
 
         takePhotoButton.setOnClickListener(v -> {
@@ -73,6 +83,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         if (user != null) {
             String userId = user.getUid();
+            String email=user.getEmail();
+
             DocumentReference userRef = firestore.collection("users").document(userId);
 
             // Fetch user data from Firestore
@@ -82,8 +94,9 @@ public class ProfileActivity extends AppCompatActivity {
                     if (document != null && document.exists()) {
                         // Get profile picture URL and display name
                         String profilePicUrl = document.getString("photo_url");
-                        String displayName = document.getString("display_name");
-
+                        String displayName = document.getString("username");
+                        String country=document.getString("country");
+                        String dob=document.getString("dob");
                         // Load profile picture using Picasso with error handling
                         Picasso.get().load(profilePicUrl).into(profileImageView, new Callback() {
                             @Override
@@ -99,11 +112,29 @@ public class ProfileActivity extends AppCompatActivity {
 
                         displayNameTextView.setText(displayName);
                         editName.setText(displayName);
+                        editEmail.setText(email);
+                        editCountry.setText(country);
+                        editDob.setText(dob);
                     }
                 }
             });
         }
         initBottomNavigation();
+        saveChanges.setOnClickListener(v -> {
+            //submit changes made to email,name,dob,country
+        String username=editName.getText().toString();
+        String email=editEmail.getText().toString();
+        String dob=editDob.getText().toString();
+        String country=editCountry.getText().toString();
+        String userId = user.getUid();
+        DocumentReference userRef = firestore.collection("users").document(userId);
+        userRef.update("username",username);
+            user.verifyBeforeUpdateEmail(email);
+            //user.updatePassword(password) edgar i dunno how do this u continue can ma haha
+            userRef.update("dob",dob);
+            userRef.update("country",country);
+
+        });
     }
 
     // Method to show dialog for choosing image source (camera or gallery)
@@ -177,6 +208,7 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             }
         }
+
     }
 
     // Method to convert bitmap to URI
@@ -207,6 +239,7 @@ public class ProfileActivity extends AppCompatActivity {
                             Picasso.get().load(photoUrl).into(profileImageView);
                         } else {
                             // Failed to update profile photo URL
+                            profileImageView.setImageResource(R.drawable.icon_profile);
                             Toast.makeText(getApplicationContext(), "Failed to update profile photo", Toast.LENGTH_SHORT).show();
                         }
                     });

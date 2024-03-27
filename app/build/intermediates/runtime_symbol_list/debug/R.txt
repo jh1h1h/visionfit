@@ -3261,6 +3261,8 @@ int id ALT 0x7f0a0000
 int id BOTTOM_END 0x7f0a0001
 int id BOTTOM_START 0x7f0a0002
 int id CTRL 0x7f0a0003
+int id Country_register 0x7f0a02ca
+int id DOB_register 0x7f0a02cb
 int id FUNCTION 0x7f0a0004
 int id META 0x7f0a0005
 int id MyRewardsTitle 0x7f0a0006
@@ -3943,6 +3945,7 @@ int id useLogo 0x7f0a02aa
 int id userImage 0x7f0a02ab
 int id user_details 0x7f0a02ac
 int id username_profile 0x7f0a02ad
+int id username_register 0x7f0a02cc
 int id username_settings 0x7f0a02ae
 int id vertical_only 0x7f0a02af
 int id view_offset_helper 0x7f0a02b0
@@ -4259,8 +4262,10 @@ int string common_open_on_phone 0x7f13003f
 int string common_signin_button_text 0x7f130040
 int string common_signin_button_text_long 0x7f130041
 int string copy_toast_msg 0x7f130042
+int string country_of_residence 0x7f130162
 int string custom_object_detection 0x7f130043
 int string daily_challenges 0x7f130044
+int string date_of_birth 0x7f130163
 int string desc_camera_source_activity 0x7f130045
 int string desc_camerax_live_preview_activity 0x7f130046
 int string desc_cameraxsource_demo_activity 0x7f130047

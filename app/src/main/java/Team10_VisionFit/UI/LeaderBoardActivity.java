@@ -36,7 +36,7 @@ public class LeaderBoardActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         // asynchronously retrieve all users
         CollectionReference users = db.collection("users");
-        Query query = users.orderBy("repsToday", Query.Direction.DESCENDING);
+        Query query = users.orderBy("pushupAllTime", Query.Direction.DESCENDING);
 
         int[] nameRows = {R.id.Name1, R.id.Name2, R.id.Name3, R.id.Name4,
                 R.id.Name5, R.id.Name6, R.id.Name7, R.id.Name8, R.id.Name9,
@@ -61,10 +61,10 @@ public class LeaderBoardActivity extends AppCompatActivity {
                         DocumentSnapshot userDoc = userArrList.get(i);
 
                         if (userDoc != null) {
-                            String username = userDoc.getId();
-                            Long repsLong = userDoc.get("repsToday", Long.class);
+
+                            Long repsLong = userDoc.get("pushupAllTime", Long.class);
                             String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
-                            name.setText(username);
+                            name.setText(userDoc.get("username",String.class));
                             reps.setText(repsAmt);
                         } else {
                             name.setText("");
@@ -72,7 +72,8 @@ public class LeaderBoardActivity extends AppCompatActivity {
                         }
                     }
                     for (DocumentSnapshot doc : userArrList) {
-                        if (doc.get("userUID", String.class).equals(uid)) {
+                        Log.d("uid:",doc.getId());
+                        if (doc.getId().equals(uid)) {
                             currentUser = doc;
                             break;
                         }
@@ -84,8 +85,8 @@ public class LeaderBoardActivity extends AppCompatActivity {
 
                         TextView yourName = findViewById(R.id.yourName);
                         TextView yourRep = findViewById(R.id.yourRep);
-                        yourName.setText(currentUser.getId());
-                        Long currentUserReps = currentUser.get("repsToday", Long.class);
+                        yourName.setText(currentUser.get("username",String.class));
+                        Long currentUserReps = currentUser.get("pushupToday", Long.class);
                         yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
                     }
                 })

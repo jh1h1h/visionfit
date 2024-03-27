@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-162:12
-INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-162:12
-INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-162:12
-INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-162:12
+ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-163:12
+INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-163:12
+INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-163:12
+INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:2:1-163:12
 MERGED from [androidx.databinding:viewbinding:8.2.1] C:\Users\edgar\.gradle\caches\transforms-3\8f237888c8b151f3dc5a57106cd261f7\transformed\jetified-viewbinding-8.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-firestore:24.10.3] C:\Users\edgar\.gradle\caches\transforms-3\9cbdf5fbc7852564f350a1b7e7d032f1\transformed\jetified-firebase-firestore-24.10.3\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\edgar\.gradle\caches\transforms-3\14cf0e7ca3e624968b08167991f031aa\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
@@ -175,8 +175,8 @@ ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estim
 	android:name
 		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:29:21-70
 application
-ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:33:5-160:19
-INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:33:5-160:19
+ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:33:5-161:19
+INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:33:5-161:19
 MERGED from [com.google.firebase:firebase-firestore:24.10.3] C:\Users\edgar\.gradle\caches\transforms-3\9cbdf5fbc7852564f350a1b7e7d032f1\transformed\jetified-firebase-firestore-24.10.3\AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:24.10.3] C:\Users\edgar\.gradle\caches\transforms-3\9cbdf5fbc7852564f350a1b7e7d032f1\transformed\jetified-firebase-firestore-24.10.3\AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\edgar\.gradle\caches\transforms-3\14cf0e7ca3e624968b08167991f031aa\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
@@ -283,7 +283,7 @@ MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\edgar\.gradle\caches\t
 		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:36:9-65
 	android:name
 		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:34:9-61
-activity#Team10_VisionFit.Backend.firebaseCloudFireStore.TestFirestoreActivity
+activity#Team10_VisionFit.Backend.firebaseAuthentication.TestFirestoreActivity
 ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:44:9-46:40
 	android:exported
 		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:46:13-37
@@ -436,17 +436,17 @@ ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estim
 	android:name
 		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:151:13-69
 service#Team10_VisionFit.Backend.firebaseCloudFireStore.PushNotificationService
-ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:154:9-159:19
+ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:155:9-160:19
 	android:exported
-		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:155:13-37
+		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:156:13-37
 	android:name
-		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:154:18-104
+		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:155:18-104
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:156:13-158:29
+ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:13-159:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:17-85
+ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:17-85
 	android:name
-		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:25-75
+		ADDED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:25-75
 uses-sdk
 INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml

@@ -85,7 +85,7 @@
 52-->[androidx.core:core:1.9.0] C:\Users\edgar\.gradle\caches\transforms-3\8da31d6ae29e0057b9f579c25280191c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 53
 54    <application
-54-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:33:5-160:19
+54-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:33:5-161:19
 55        android:name="androidx.multidex.MultiDexApplication"
 55-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:34:9-61
 56        android:allowBackup="true"
@@ -111,7 +111,7 @@
 67-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:42:9-49
 68        <activity
 68-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:44:9-46:40
-69            android:name="Team10_VisionFit.Backend.firebaseCloudFireStore.TestFirestoreActivity"
+69            android:name="Team10_VisionFit.Backend.firebaseAuthentication.TestFirestoreActivity"
 69-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:45:13-97
 70            android:exported="false" />
 70-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:46:13-37
@@ -293,16 +293,16 @@
 175-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:152:13-49
 176
 177        <service
-177-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:154:9-159:19
+177-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:155:9-160:19
 178            android:name="Team10_VisionFit.Backend.firebaseCloudFireStore.PushNotificationService"
-178-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:154:18-104
+178-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:155:18-104
 179            android:exported="false" >
-179-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:155:13-37
+179-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:156:13-37
 180            <intent-filter>
-180-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:156:13-158:29
+180-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:13-159:29
 181                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-181-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:17-85
-181-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:25-75
+181-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:17-85
+181-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:25-75
 182            </intent-filter>
 183        </service>
 184        <service
@@ -561,10 +561,10 @@
 322            android:exported="false" >
 322-->[com.google.firebase:firebase-messaging:23.4.1] C:\Users\edgar\.gradle\caches\transforms-3\e8729d23f0824af151413d5d4dbf70fe\transformed\jetified-firebase-messaging-23.4.1\AndroidManifest.xml:49:13-37
 323            <intent-filter android:priority="-500" >
-323-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:156:13-158:29
+323-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:13-159:29
 324                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-324-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:17-85
-324-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:157:25-75
+324-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:17-85
+324-->C:\Users\edgar\Documents\SUTD\Term_4\Info_Sys_Prog\fitness-pose-estimation\app\src\main\AndroidManifest.xml:158:25-75
 325            </intent-filter>
 326        </service>
 327        <service

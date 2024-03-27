@@ -13,8 +13,8 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView"
         android:contentDescription="@string/app_name"
-        android:layout_width="325dp"
-        android:layout_height="325dp"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
         app:srcCompat="@mipmap/visionfitlogo_round" />
 
     <TextView
@@ -26,6 +26,20 @@
         android:layout_marginBottom="@dimen/padding_standard"
         android:gravity="center"
         style="@style/TextColor" />
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_register"
+            android:hint="@string/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -41,7 +55,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
@@ -49,6 +64,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/DOB_register"
+            android:hint="@string/date_of_birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Country_register"
+            android:hint="@string/country_of_residence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ProgressBar

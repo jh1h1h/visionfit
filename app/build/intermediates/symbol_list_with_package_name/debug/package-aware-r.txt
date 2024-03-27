@@ -3262,6 +3262,8 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id Country_register
+id DOB_register
 id FUNCTION
 id META
 id MyRewardsTitle
@@ -3944,6 +3946,7 @@ id useLogo
 id userImage
 id user_details
 id username_profile
+id username_register
 id username_settings
 id vertical_only
 id view_offset_helper
@@ -4260,8 +4263,10 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
+string country_of_residence
 string custom_object_detection
 string daily_challenges
+string date_of_birth
 string desc_camera_source_activity
 string desc_camerax_live_preview_activity
 string desc_cameraxsource_demo_activity

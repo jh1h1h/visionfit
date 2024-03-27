@@ -22,11 +22,15 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.teamten.visionfit.R;
 
 import java.util.ArrayList;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
+import Team10_VisionFit.Backend.firebaseAuthentication.User;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 import Team10_VisionFit.UI.DailyChallengeActivity;
 import Team10_VisionFit.UI.LeaderBoardActivity;
@@ -51,12 +55,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        // FIREBASE STUFF
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
         auth = FirebaseAuth.getInstance();
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid);
+
+
         textView = findViewById(R.id.user_details);
+        userRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document != null && document.exists()) {
+                    String displayName = document.getString("username");
+                    textView.setText("Hello, "+displayName+"!");}
+            }
+        });
+        // FIREBASE STUFF
+
         user = auth.getCurrentUser();
 
         //Get Permissions from user

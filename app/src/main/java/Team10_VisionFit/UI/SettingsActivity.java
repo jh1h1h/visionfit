@@ -11,6 +11,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,9 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 import com.teamten.visionfit.R;
 
@@ -38,23 +42,37 @@ public class SettingsActivity extends AppCompatActivity {
     FirebaseAuth auth;
     SwitchCompat switchMode;
     boolean nightMode;
+    private CircleImageView settingsImageView;
     EditText emailBox, editTextPwdCurr, editTextPwdNew, editTextPwdConfirmNew;
     SharedPreferences sharedPreferences;
+    TextView usernameSettings;
     SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid);
 
+
+        usernameSettings = findViewById(R.id.username_settings);
+        userRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document != null && document.exists()) {
+                    String displayName = document.getString("username");
+                    usernameSettings.setText(displayName);}
+            }
+        });
         SharedPreferences prefs = getSharedPreferences("UserProfile", MODE_PRIVATE);
         String profileImageUri = prefs.getString("profileImageUri", "");
 
-        CircleImageView userImage = findViewById(R.id.userImage);
+        settingsImageView = findViewById(R.id.userImage);
         if (!profileImageUri.isEmpty()) {
-            Picasso.get().load(profileImageUri).into(userImage);
+            Picasso.get().load(profileImageUri).into(settingsImageView);
         } else {
-            userImage.setImageResource(R.drawable.icon_profile);
+            settingsImageView.setImageResource(R.drawable.icon_profile);
         }
 
         switchMode = findViewById(R.id.switchMode);

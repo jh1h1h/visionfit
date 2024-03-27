@@ -1,4 +1,4 @@
-package Team10_VisionFit.Backend.firebaseCloudFireStore;
+package Team10_VisionFit.Backend.firebaseAuthentication;
 //This is an activity that shows how test/data from the view is sent to firebase
 //implementation of reading/writing data might looks like this:
 /*
@@ -43,7 +43,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class TestFirestoreActivity extends AppCompatActivity {
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    static FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,29 +82,43 @@ public class TestFirestoreActivity extends AppCompatActivity {
 
                 } else {
                     // calling method to add data to Firebase Firestore.
-                    addDataToFirestore(username,country,streak,repsToday,repsAllTime);
+                    //addDataToFirestore(username,country,streak,repsToday,repsAllTime);
                 }
             }
         });
     }
 
-    public void addDataToFirestore(String username, String country, int streak, int repsToday, int repsAllTime) {
+    public static void addDataToFirestore(String uid, String username, String country, String dob, int streak, int pushupToday,
+                                   int pushupAllTime,
+                                   int situpToday,
+                                   int situpAllTime,
+                                   int squatToday,
+                                   int squatAllTime,
+                                   int weightliftToday,
+                                   int weightliftAllTime) {
 
         // creating a collection reference
         // for our Firebase Firestore database.
-        User user=new User(country,streak,repsToday,repsAllTime);
-        db.collection("users").document(username)
+        User user=new User(username,country,dob,streak,pushupToday,
+         pushupAllTime,
+         situpToday,
+        situpAllTime,
+        squatToday,
+         squatAllTime,
+        weightliftToday,
+         weightliftAllTime);
+        db.collection("users").document(uid)
                 .set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(TestFirestoreActivity.this,"User successfully added!", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(TestFirestoreActivity.this,"User successfully added!", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(TestFirestoreActivity.this, "Fail to add user \n" + e, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(TestFirestoreActivity.this, "Fail to add user \n" + e, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -147,12 +161,12 @@ public class TestFirestoreActivity extends AppCompatActivity {
         switch(caseId) {
             case 0://update username
                 User user=getDataFromFirestore(username);
-                if(user.repsAllTime==-1){//username not found in db
+                if(user.streak==-1){//username not found in db
                     Log.d(TAG, "User does not exist");
                 }
                 else{
                     deleteDataInFirestore(username);
-                    addDataToFirestore(value,user.country,user.streak,user.repsToday,user.repsAllTime);
+                    //addDataToFirestore(value,user.country,user.streak,user.repsToday,user.repsAllTime);
                 }
 
             case 1://update country

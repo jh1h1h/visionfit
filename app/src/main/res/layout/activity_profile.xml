@@ -31,17 +31,28 @@
         app:layout_constraintTop_toTopOf="@+id/Settings"
         app:layout_constraintBottom_toBottomOf="@+id/Settings" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="@dimen/padding_standard"
         android:src="@drawable/icon_profile"
         app:layout_constraintTop_toBottomOf="@id/Settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/edit_profile_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_edit_profile_pic"
+        app:layout_constraintEnd_toEndOf="@id/userImage"
+        app:layout_constraintBottom_toBottomOf="@id/userImage"
+        tools:layout_editor_absoluteY="183dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
-        android:id="@+id/username_settings"
+        android:id="@+id/username_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="THE ROCK"
@@ -59,7 +70,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_settings"
+        app:layout_constraintTop_toBottomOf="@id/username_profile"
         android:overScrollMode="always"
         android:isScrollContainer="true"
         android:scrollbarAlwaysDrawVerticalTrack="true"

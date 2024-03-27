@@ -38,10 +38,11 @@ import com.teamten.visionfit.R;
 import java.io.IOException;
 
 import Team10_VisionFit.Backend.preference.PreferenceUtils;
+import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.classification.PoseClassifierProcessor;
 import Team10_VisionFit.UI.DailyChallengeActivity;
 
-/** Live preview visionfit for ML Kit APIs. */
+
 @KeepName
 public final class LivePreviewActivity extends AppCompatActivity
     implements OnItemSelectedListener, CompoundButton.OnCheckedChangeListener {
@@ -86,8 +87,9 @@ public final class LivePreviewActivity extends AppCompatActivity
             counter++;
           }
           public void onFinish(){
-            Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
+            Intent intent = new Intent(LivePreviewActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
 //            timer_text.setText("End");
           }
         }.start();
@@ -212,31 +214,24 @@ public final class LivePreviewActivity extends AppCompatActivity
     }
 
     try {
-      switch (model) {
 
-        case POSE_DETECTION:
-          PoseDetectorOptionsBase poseDetectorOptions =
-              PreferenceUtils.getPoseDetectorOptionsForLivePreview(this);
-          Log.i(TAG, "Using Pose Detector with options " + poseDetectorOptions);
-          boolean shouldShowInFrameLikelihood =
-              PreferenceUtils.shouldShowPoseDetectionInFrameLikelihoodLivePreview(this);
-          boolean visualizeZ = PreferenceUtils.shouldPoseDetectionVisualizeZ(this);
-          boolean rescaleZ = PreferenceUtils.shouldPoseDetectionRescaleZForVisualization(this);
-          boolean runClassification = PreferenceUtils.shouldPoseDetectionRunClassification(this);
-          cameraSource.setMachineLearningFrameProcessor(
-              new PoseDetectorProcessor(
-                  this,
-                  poseDetectorOptions,
-                  shouldShowInFrameLikelihood,
-                  visualizeZ,
-                  rescaleZ,
-                  runClassification,
-                  /* isStreamMode = */ true));
-          break;
-
-        default:
-          Log.e(TAG, "Unknown model: " + model);
-      }
+        PoseDetectorOptionsBase poseDetectorOptions =
+            PreferenceUtils.getPoseDetectorOptionsForLivePreview(this);
+        Log.i(TAG, "Using Pose Detector with options " + poseDetectorOptions);
+        boolean shouldShowInFrameLikelihood =
+            PreferenceUtils.shouldShowPoseDetectionInFrameLikelihoodLivePreview(this);
+        boolean visualizeZ = PreferenceUtils.shouldPoseDetectionVisualizeZ(this);
+        boolean rescaleZ = PreferenceUtils.shouldPoseDetectionRescaleZForVisualization(this);
+        boolean runClassification = PreferenceUtils.shouldPoseDetectionRunClassification(this);
+        cameraSource.setMachineLearningFrameProcessor(
+            new PoseDetectorProcessor(
+                this,
+                poseDetectorOptions,
+                shouldShowInFrameLikelihood,
+                visualizeZ,
+                rescaleZ,
+                runClassification,
+                /* isStreamMode = */ true));
     } catch (RuntimeException e) {
       Log.e(TAG, "Can not create image processor: " + model, e);
       Toast.makeText(

@@ -12,8 +12,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView"
-        android:layout_width="325dp"
-        android:layout_height="325dp"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
         android:contentDescription="@string/app_name"
         app:srcCompat="@mipmap/visionfitlogo_round" />
 

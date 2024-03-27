@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true">
 
+  <Button
+      android:id="@+id/start_button"
+      android:text="START!"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="158dp"
+      android:textAppearance="?android:attr/textAppearanceLarge"
+      android:textStyle="bold|italic"
+      android:gravity="center"
+      tools:ignore="MissingConstraints" />
+
   <Team10_VisionFit.PoseDetector.CameraSourcePreview
       android:id="@+id/preview_view"
       android:layout_width="0dp"

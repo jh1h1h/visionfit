@@ -176,22 +176,22 @@ public class SettingsActivity extends AppCompatActivity {
                         String confirmNewPassword = editTextPwdConfirmNew.getText().toString();
 
                         if (TextUtils.isEmpty(userEmail) || !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
-                            emailBox.setError("Valid email required");
+                            emailBox.setError("Please enter registered email");
                             return;
                         }
 
                         if (TextUtils.isEmpty(oldPassword)) {
-                            editTextPwdCurr.setError("Old password required");
+                            editTextPwdCurr.setError("Please enter old password");
                             return;
                         }
 
                         if (TextUtils.isEmpty(newPassword)) {
-                            editTextPwdNew.setError("New password required");
+                            editTextPwdNew.setError("Please enter new password");
                             return;
                         }
 
                         if (newPassword.equals(oldPassword)) {
-                            editTextPwdNew.setError("New password should be different from the old one");
+                            editTextPwdNew.setError("New password should be different from old password");
                             return;
                         }
 

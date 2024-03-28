@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.teamten.visionfit.R;
 import Team10_VisionFit.MainActivity;
 
@@ -64,18 +65,19 @@ public class Login extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "Login Failed. Invalid email and/or password.", Toast.LENGTH_SHORT).show();
                             }
                         });
             } else {
-                loginPassword.setError("Empty fields are not allowed");
+                loginPassword.setError("Email cannot be empty");
             }
         } else if (email.isEmpty()) {
-            loginEmail.setError("Empty fields are not allowed");
+            loginEmail.setError("Email cannot be empty");
         } else {
             loginEmail.setError("Please enter correct email");
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +97,7 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 loginFunc();
             }
         });
@@ -144,7 +147,7 @@ public class Login extends AppCompatActivity {
                                     Toast.makeText(Login.this, "Check your email", Toast.LENGTH_SHORT).show();
                                     dialog.dismiss();
                                 } else {
-                                    Toast.makeText(Login.this, "Unable to send, failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Login.this, "Unable to send reset email, failed to reset password", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

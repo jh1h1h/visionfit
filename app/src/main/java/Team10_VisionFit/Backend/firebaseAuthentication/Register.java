@@ -81,14 +81,14 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(Register.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
                             FirebaseUser user=auth.getCurrentUser();
                             String uid=user.getUid();
                             // No need to validate dob and country again here
                             TestFirestoreActivity.addDataToFirestore(uid, username, country, dob, 0,0,0,0,0,0,0,0,0);
                             startActivity(new Intent(Register.this, Login.class));
                         } else {
-                            Toast.makeText(Register.this, "SignUp Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "Failed to Register" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

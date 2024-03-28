@@ -151,6 +151,7 @@ public class ProfileActivity extends AppCompatActivity {
                         Toast.makeText(ProfileActivity.this, "Changes saved successfully", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                         startActivity(intent);
+                        Log.d("Button Check", "Save Changes Button Clicked");
                     })
                     .addOnFailureListener(e -> {
                         // Failed to update user data

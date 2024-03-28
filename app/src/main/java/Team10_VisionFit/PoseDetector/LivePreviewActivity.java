@@ -87,7 +87,12 @@ public final class LivePreviewActivity extends AppCompatActivity
             counter++;
           }
           public void onFinish(){
+            repCountText = findViewById(R.id.exercise_count_text);
+            String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
+            int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
             Intent intent = new Intent(LivePreviewActivity.this, MainActivity.class);
+            intent.putExtra("repCount", count);
+            intent.putExtra("ClassType", classType);
             startActivity(intent);
             finish();
 //            timer_text.setText("End");

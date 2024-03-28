@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textView;
     FirebaseUser user;
 
+    public static int repCount;
+    public static String classType;
+
     private static final int PERMISSION_REQUESTS = 1; //Its just a request code, arbitrary
     private static final String[] REQUIRED_RUNTIME_PERMISSIONS = {
             Manifest.permission.CAMERA,
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid);
 
+        repCount = getIntent().getIntExtra("repCount",0);
+        classType = getIntent().getStringExtra("ClassType");
 
         textView = findViewById(R.id.user_details);
         userRef.get().addOnCompleteListener(task -> {
@@ -70,6 +75,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (document != null && document.exists()) {
                     String displayName = document.getString("username");
                     textView.setText("Hello, "+displayName+"!");}
+
+                if (repCount != 0 && classType != null && classType != "Free Style") {
+                    if (classType.equals("Push Ups")) {
+                        classType = "pushup";
+                    }
+                    if (classType.equals("Squats")) {
+                        classType = "squat";
+                    }
+                    Log.d("cyril",classType + "Today");
+                    long prevToday = document.getLong(classType + "Today");
+                    userRef.update(classType + "Today", prevToday + repCount);
+
+                    long prevAllTime = document.getLong(classType + "AllTime");
+                    userRef.update(classType + "AllTime", prevAllTime + repCount);
+                    Toast.makeText(this,"You have logged "+repCount+" "+classType+"s!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         // FIREBASE STUFF

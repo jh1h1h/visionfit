@@ -8,12 +8,12 @@
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\icon_logout.png"
     },
     {
-        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_icon_github.png.flat",
-        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\icon_github.png"
-    },
-    {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_icon_mainpage.xml.flat",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\icon_mainpage.xml"
+    },
+    {
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_icon_github.png.flat",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\icon_github.png"
     },
     {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\mipmap_visionfitlogo_foreground.webp.flat",
@@ -68,20 +68,16 @@
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\layout\\activity_privacy_policy.xml"
     },
     {
-        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_exercise_icon_squats.png.flat",
-        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\exercise_icon_squats.png"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_user_icon.xml.flat",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\user_icon.xml"
     },
     {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_icon_see_password.png.flat",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\icon_see_password.png"
     },
     {
-        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_user_icon.xml.flat",
-        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\user_icon.xml"
-    },
-    {
-        "merged": "com.teamten.visionfit.app-merged_res-60:/layout-land_activity_vision_live_preview.xml.flat",
-        "source": "com.teamten.visionfit.app-main-62:/layout-land/activity_vision_live_preview.xml"
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_exercise_icon_squats.png.flat",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\drawable\\exercise_icon_squats.png"
     },
     {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\drawable_white_box.xml.flat",
@@ -252,16 +248,20 @@
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\font\\anton.ttf"
     },
     {
-        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\layout_activity_register.xml.flat",
-        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\layout\\activity_register.xml"
-    },
-    {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\xml\\backup_rules.xml"
     },
     {
+        "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\layout\\activity_register.xml"
+    },
+    {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\layout_dialog_forgot.xml.flat",
         "source": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-main-62:\\layout\\dialog_forgot.xml"
+    },
+    {
+        "merged": "com.teamten.visionfit.app-merged_res-60:/layout_activity_profile.xml.flat",
+        "source": "com.teamten.visionfit.app-main-62:/layout/activity_profile.xml"
     },
     {
         "merged": "C:\\Users\\edgar\\.gradle\\daemon\\8.4\\com.teamten.visionfit.app-merged_res-60:\\layout_activity_test_firestore.xml.flat",

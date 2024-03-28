@@ -3542,7 +3542,6 @@ id edit_DOB
 id edit_country
 id edit_email
 id edit_name
-id edit_password
 id edit_profile
 id edit_profile_pic
 id edit_query

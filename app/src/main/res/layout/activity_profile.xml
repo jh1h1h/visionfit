@@ -66,23 +66,25 @@
         android:id="@+id/scrollingSettings"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fadeScrollbars="false"
+        android:isScrollContainer="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="15dp"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbarThumbVertical="@color/orange"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/username_profile"
-        android:overScrollMode="always"
-        android:isScrollContainer="true"
-        android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:scrollbarStyle="outsideInset"
-        android:scrollbars="vertical"
-        android:fadeScrollbars="false"
-        android:scrollbarSize="15dp"
-        android:scrollbarThumbVertical="@color/orange"
-        >
+        app:layout_constraintVertical_bias="0.0">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -104,12 +106,12 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/edit_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="THE ROCK"
-                    android:id="@+id/edit_name"
                     android:inputType="textPersonName|textCapWords"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp" />
 
                 <TextView
                     style="@style/TextColor"
@@ -121,13 +123,14 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="therock@gmail.com"
-                    android:id="@+id/edit_email"
                     android:inputType="textPersonName|textCapWords"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp" />
 
+                <!--
                 <TextView
                     style="@style/TextColor"
                     android:layout_width="match_parent"
@@ -138,12 +141,13 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/edit_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="***************"
-                    android:id="@+id/edit_password"
                     android:inputType="textPersonName|textCapWords"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp" />
+                -->
 
                 <TextView
                     style="@style/TextColor"
@@ -155,12 +159,12 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/edit_DOB"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="29/05/1997"
-                    android:id="@+id/edit_DOB"
                     android:inputType="textPersonName|textCapWords"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp" />
 
                 <TextView
                     style="@style/TextColor"
@@ -172,12 +176,12 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/edit_country"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Singapore"
-                    android:id="@+id/edit_country"
                     android:inputType="textPersonName|textCapWords"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp" />
 
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -186,7 +190,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@drawable/round_view"
-                    android:backgroundTint="@color/light_green_700"
+                    android:backgroundTint="@color/orange"
                     android:text="Save changes" />
 
             </LinearLayout>

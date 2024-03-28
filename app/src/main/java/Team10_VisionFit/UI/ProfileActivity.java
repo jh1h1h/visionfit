@@ -69,11 +69,10 @@ public class ProfileActivity extends AppCompatActivity {
         profileImageView = findViewById(R.id.userImage);
         displayNameTextView = findViewById(R.id.username_profile);
         editName = findViewById(R.id.edit_name);
-
-        editEmail=findViewById(R.id.edit_email);
-        editDob=findViewById(R.id.edit_DOB);
-        editCountry=findViewById(R.id.edit_country);
-        saveChanges=findViewById(R.id.save_changes_button);
+        editEmail = findViewById(R.id.edit_email);
+        editDob = findViewById(R.id.edit_DOB);
+        editCountry = findViewById(R.id.edit_country);
+        saveChanges = findViewById(R.id.save_changes_button);
         ImageView takePhotoButton = findViewById(R.id.edit_profile_pic);
 
         takePhotoButton.setOnClickListener(v -> {
@@ -85,7 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         if (user != null) {
             String userId = user.getUid();
-            String email=user.getEmail();
+            String email = user.getEmail();
 
             DocumentReference userRef = firestore.collection("users").document(userId);
 
@@ -128,21 +127,39 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             });
         }
-        initBottomNavigation();
+
         saveChanges.setOnClickListener(v -> {
-            //submit changes made to email, name, dob, country
+            // Get the updated user data from input fields
             String username = editName.getText().toString();
             String email = editEmail.getText().toString();
             String dob = editDob.getText().toString();
             String country = editCountry.getText().toString();
-            String userId = user.getUid();
-            DocumentReference userRef = firestore.collection("users").document(userId);
-            userRef.update("username", username);
-            user.verifyBeforeUpdateEmail(email);
-            userRef.update("dob", dob);
-            userRef.update("country", country);
+            String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+            // Create a map to update user data in Firestore
+            Map<String, Object> updatedUserData = new HashMap<>();
+            updatedUserData.put("username", username);
+            updatedUserData.put("email", email);
+            updatedUserData.put("dob", dob);
+            updatedUserData.put("country", country);
+
+            // Update user data in Firestore
+            DocumentReference userRef = firestore.collection("users").document(userId);
+            userRef.update(updatedUserData)
+                    .addOnSuccessListener(aVoid -> {
+                        // User data updated successfully
+                        Toast.makeText(ProfileActivity.this, "Changes saved successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                        startActivity(intent);
+                    })
+                    .addOnFailureListener(e -> {
+                        // Failed to update user data
+                        Toast.makeText(ProfileActivity.this, "Failed to save changes", Toast.LENGTH_SHORT).show();
+                        Log.e("ProfileActivity", "Error updating user data", e);
+                    });
         });
+
+        initBottomNavigation();
     }
 
     // Method to show dialog for choosing image source (camera or gallery)

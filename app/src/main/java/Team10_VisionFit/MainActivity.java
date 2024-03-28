@@ -83,12 +83,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (classType.equals("Squats")) {
                         classType = "squat";
                     }
-                    Log.d("cyril",classType + "Today");
                     long prevToday = document.getLong(classType + "Today");
                     userRef.update(classType + "Today", prevToday + repCount);
 
                     long prevAllTime = document.getLong(classType + "AllTime");
-                    userRef.update(classType + "AllTime", prevAllTime + repCount);
+                    if (repCount > prevAllTime){
+                        userRef.update(classType + "AllTime", repCount);
+                    }
                     Toast.makeText(this,"You have logged "+repCount+" "+classType+"s!", Toast.LENGTH_SHORT).show();
                 }
             }

@@ -7,11 +7,26 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true">
 
+  <TextView
+      android:id="@+id/exercise_count_text"
+      android:layout_width="match_parent"
+      android:layout_height="120dp"
+      android:background="@color/black"
+      android:textColor="@color/white"
+      android:layout_gravity="center_vertical"
+      android:gravity="center"
+      android:text=""
+      android:textSize="35dp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      tools:ignore="MissingConstraints" />
+
   <Team10_VisionFit.PoseDetector.CameraSourcePreview
       android:id="@+id/preview_view"
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/exercise_count_text"
       app:layout_constraintBottom_toTopOf="@+id/control"/>
 
   <Team10_VisionFit.PoseDetector.GraphicOverlay
@@ -23,48 +38,70 @@
       app:layout_constraintTop_toTopOf="@id/preview_view"
       app:layout_constraintBottom_toBottomOf="@id/preview_view"/>
 
-  <!--
-  <include
-      android:id="@+id/settings_button2"
-      layout="@layout/settings_style"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintRight_toRightOf="@id/preview_view"
+  <TextView
+      android:id="@+id/timer_text"
+      android:layout_width="120dp"
+      android:layout_height="120dp"
+      android:textColor="@color/black"
+      android:text=""
+      android:textSize="100dp"
       app:layout_constraintTop_toTopOf="@id/preview_view"
-      />
-   -->
+      app:layout_constraintRight_toRightOf="@id/preview_view"/>
 
-  <LinearLayout
+  <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@id/control"
       android:layout_width="match_parent"
       android:layout_height="120dp"
       app:layout_constraintBottom_toBottomOf="parent"
-      android:background="#FFF"
-      android:backgroundTint="@color/orange"
+      android:background="@color/black"
       android:orientation="horizontal">
 
-    <ToggleButton
-        android:id="@+id/facing_switch"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_vertical"
-        android:background="@drawable/toggle_style"
-        android:checked="false"
-        android:textOff=""
-        android:textOn=""/>
+      <androidx.appcompat.widget.AppCompatToggleButton
+          android:id="@+id/facing_switch"
+          android:layout_width="70dp"
+          android:layout_height="70dp"
+          android:background="@drawable/toggle_style"
+          android:checked="false"
+          android:textOff=""
+          android:textOn=""
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintBottom_toBottomOf="@id/control"
+          app:layout_constraintTop_toTopOf="@id/control"
+          app:layout_constraintEnd_toStartOf="@id/start_button"/>
 
-    <TextView
-        android:id="@+id/exercise_count_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:text=""
-        android:textSize="35dp" />
+      <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/start_button"
+          android:text="START!"
+          android:layout_width="130dp"
+          android:layout_height="70dp"
+          android:background="@drawable/round_view"
+          android:backgroundTint="@color/orange"
+          android:textColor="@color/black"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:textStyle="bold|italic"
+          android:gravity="center"
+          tools:ignore="MissingConstraints"
+          app:layout_constraintTop_toTopOf="@id/control"
+          app:layout_constraintStart_toEndOf="@id/facing_switch"
+          app:layout_constraintBottom_toBottomOf="@id/control"
+          app:layout_constraintEnd_toStartOf="@id/Exit_button"/>
 
-
-
+      <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/Exit_button"
+          android:text="Exit"
+          android:layout_width="130dp"
+          android:layout_height="70dp"
+          android:background="@drawable/round_view"
+          android:backgroundTint="@color/orange"
+          android:textColor="@color/black"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:textStyle="bold|italic"
+          android:gravity="center"
+          tools:ignore="MissingConstraints"
+          app:layout_constraintTop_toTopOf="@id/control"
+          app:layout_constraintStart_toEndOf="@id/start_button"
+          app:layout_constraintBottom_toBottomOf="@id/control"
+          app:layout_constraintEnd_toEndOf="parent"/>
 
     <!--
     <Spinner
@@ -75,27 +112,5 @@
         android:layout_gravity="center"/>
     -->
 
-  </LinearLayout>
-
-  <Button
-      android:id="@+id/start_button"
-      android:text="START!"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="158dp"
-      android:textAppearance="?android:attr/textAppearanceLarge"
-      android:textStyle="bold|italic"
-      android:gravity="center"
-      tools:ignore="MissingConstraints" />
-
-  <TextView
-      android:id="@+id/timer_text"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_gravity="center_vertical"
-      android:gravity="center"
-      android:textColor="@color/white"
-      android:text=""
-      android:textSize="35dp" />
-
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

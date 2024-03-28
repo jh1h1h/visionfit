@@ -41,6 +41,7 @@ import Team10_VisionFit.Backend.preference.PreferenceUtils;
 import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.classification.PoseClassifierProcessor;
 import Team10_VisionFit.UI.DailyChallengeActivity;
+import Team10_VisionFit.UI.ProfileActivity;
 
 
 @KeepName
@@ -71,7 +72,6 @@ public final class LivePreviewActivity extends AppCompatActivity
     Log.d(TAG, "onCreate");
 
     setContentView(R.layout.activity_vision_live_preview);
-
 
     // TIMING STUFF
 
@@ -175,6 +175,17 @@ public final class LivePreviewActivity extends AppCompatActivity
       }
     };
     thread.start();
+
+    Button exitButton = findViewById(R.id.Exit_button);
+    exitButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(LivePreviewActivity.this, MainActivity.class));
+        Log.d("Button Check", "Exit Button Clicked");
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        finish();
+      }
+    });
   }
 
   @Override
@@ -286,5 +297,10 @@ public final class LivePreviewActivity extends AppCompatActivity
     if (cameraSource != null) {
       cameraSource.release();
     }
+  }
+
+  @Override
+  public void onBackPressed() {
+    // Do nothing to disable the back button functionality
   }
 }

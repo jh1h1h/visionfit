@@ -1,7 +1,12 @@
 package Team10_VisionFit.Backend.firebaseAuthentication;
 
+import java.util.Locale;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,37 +48,94 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 String user = signupEmail.getText().toString().trim();
                 String pass = signupPassword.getText().toString().trim();
-                if (user.isEmpty()){
+                String dob = signupDOB.getText().toString().trim();
+                String username = signupUsername.getText().toString();
+                String country = signupCountry.getText().toString();
+
+                // Validate email
+                if (user.isEmpty()) {
                     signupEmail.setError("Email cannot be empty");
+                    return;
                 }
-                if (pass.isEmpty()){
+
+                // Validate password
+                if (pass.isEmpty()) {
                     signupPassword.setError("Password cannot be empty");
-                } else{
-                    auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(Register.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
-                                FirebaseUser user=auth.getCurrentUser();
-                                String uid=user.getUid();
-                                String dob=signupDOB.getText().toString().trim();
-                                String username=signupUsername.getText().toString();
-                                String country=signupCountry.getText().toString();
-                                TestFirestoreActivity.addDataToFirestore(uid, username,country,dob, 0,0,0,0,0,0,0,0,0);
-                                startActivity(new Intent(Register.this, Login.class));
-                            } else {
-                                Toast.makeText(Register.this, "SignUp Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+                    return;
                 }
+
+                // Validate date of birth
+                if (!isValidDateFormat(dob)) {
+                    signupDOB.setError("Invalid date format. Use DD/MM/YYYY");
+                    return;
+                }
+
+                // Validate country of residence (you can implement your own validation logic)
+                if (!isValidCountry(country)) {
+                    signupCountry.setError("Invalid country");
+                    return;
+                }
+
+                // Proceed with user registration
+                auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Register.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
+                            FirebaseUser user=auth.getCurrentUser();
+                            String uid=user.getUid();
+                            // No need to validate dob and country again here
+                            TestFirestoreActivity.addDataToFirestore(uid, username, country, dob, 0,0,0,0,0,0,0,0,0);
+                            startActivity(new Intent(Register.this, Login.class));
+                        } else {
+                            Toast.makeText(Register.this, "SignUp Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
+        
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Register.this, Login.class));
             }
         });
+
+        signupCountry.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
+                //If the keyevent is a key-down event on the "enter" button
+                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Trigger the signupButton click listener action
+                    signupButton.performClick();
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+
+    private boolean isValidDateFormat(String dob) {
+        // Regular expression to match DD/MM/YYYY format
+        String regex = "\\d{2}/\\d{2}/\\d{4}";
+        return dob.matches(regex);
+    }
+
+    private boolean isValidCountry(String country) {
+        // Convert the entered country to uppercase for case-insensitive comparison
+        country = country.trim().toUpperCase();
+
+        // Iterate through the available locales to check if the entered country matches any
+        for (String countryCode : Locale.getISOCountries()) {
+            Locale locale = new Locale("", countryCode);
+            String countryName = locale.getDisplayCountry().toUpperCase();
+
+            // Check if the entered country matches the name of the current locale
+            if (countryName.equals(country)) {
+                return true; // Valid country
+            }
+        }
+
+        return false; // Invalid country
     }
 }

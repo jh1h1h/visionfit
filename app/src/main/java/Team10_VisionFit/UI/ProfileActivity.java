@@ -1,6 +1,7 @@
 package Team10_VisionFit.UI;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -9,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -95,44 +97,50 @@ public class ProfileActivity extends AppCompatActivity {
                         // Get profile picture URL and display name
                         String profilePicUrl = document.getString("photo_url");
                         String displayName = document.getString("username");
-                        String country=document.getString("country");
-                        String dob=document.getString("dob");
-                        // Load profile picture using Picasso with error handling
-                        Picasso.get().load(profilePicUrl).into(profileImageView, new Callback() {
-                            @Override
-                            public void onSuccess() {
-                                // Image loaded successfully, do nothing
-                            }
-
-                            @Override
-                            public void onError(Exception e) {
-                                Toast.makeText(getApplicationContext(), "Error loading profile picture: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        String country = document.getString("country");
+                        String dob = document.getString("dob");
 
                         displayNameTextView.setText(displayName);
                         editName.setText(displayName);
                         editEmail.setText(email);
                         editCountry.setText(country);
                         editDob.setText(dob);
+
+                        if (profilePicUrl != null) {
+                            // Load profile picture using Picasso with error handling
+                            Picasso.get().load(profilePicUrl).into(profileImageView, new Callback() {
+                                @Override
+                                public void onSuccess() {
+                                    // Image loaded successfully, do nothing
+                                }
+
+                                @Override
+                                public void onError(Exception e) {
+                                    // Error loading image, set default image
+                                    profileImageView.setImageResource(R.drawable.icon_profile);
+                                }
+                            });
+                        } else {
+                            // User doesn't have a profile picture, set default image
+                            profileImageView.setImageResource(R.drawable.icon_profile);
+                        }
                     }
                 }
             });
         }
         initBottomNavigation();
         saveChanges.setOnClickListener(v -> {
-            //submit changes made to email,name,dob,country
-        String username=editName.getText().toString();
-        String email=editEmail.getText().toString();
-        String dob=editDob.getText().toString();
-        String country=editCountry.getText().toString();
-        String userId = user.getUid();
-        DocumentReference userRef = firestore.collection("users").document(userId);
-        userRef.update("username",username);
+            //submit changes made to email, name, dob, country
+            String username = editName.getText().toString();
+            String email = editEmail.getText().toString();
+            String dob = editDob.getText().toString();
+            String country = editCountry.getText().toString();
+            String userId = user.getUid();
+            DocumentReference userRef = firestore.collection("users").document(userId);
+            userRef.update("username", username);
             user.verifyBeforeUpdateEmail(email);
-            //user.updatePassword(password) edgar i dunno how do this u continue can ma haha
-            userRef.update("dob",dob);
-            userRef.update("country",country);
+            userRef.update("dob", dob);
+            userRef.update("country", country);
 
         });
     }
@@ -295,18 +303,60 @@ public class ProfileActivity extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.bottom_logout:
-                    Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
                     Log.d("Button Check", "Logout Button Clicked");
-                    FirebaseAuth.getInstance().signOut();
-                    Intent intent = new Intent(getApplicationContext(), Login.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
-                    sharedPreferences.edit().clear().commit();
-                    finish();
+                    customExitDialog();
                     return true;
             }
             return false;
         });
+    }
+
+    public  void customExitDialog()
+    {
+        // creating custom dialog
+        final Dialog dialog = new Dialog(ProfileActivity.this);
+
+        // setting content view to dialog
+        dialog.setContentView(R.layout.logout_dialog_box);
+
+        // getting reference of TextView
+        TextView dialogButtonYes = (TextView) dialog.findViewById(R.id.textViewYes);
+        TextView dialogButtonNo = (TextView) dialog.findViewById(R.id.textViewNo);
+
+        // click listener for No
+        dialogButtonNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // dismiss the dialog
+                dialog.dismiss();
+
+            }
+        });
+        // click listener for Yes
+        dialogButtonYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // dismiss the dialog and exit the exit
+                dialog.dismiss();
+
+                Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
+                sharedPreferences.edit().clear().commit();
+                finish();
+
+            }
+        });
+
+        // show the exit dialog
+        dialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do nothing (disable back button functionality)
     }
 }

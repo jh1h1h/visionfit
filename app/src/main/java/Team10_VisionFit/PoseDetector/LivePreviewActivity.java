@@ -159,18 +159,19 @@ public final class LivePreviewActivity extends AppCompatActivity
             runOnUiThread(new Runnable() {
               @Override
               public void run() {
-                repCountStr = PoseClassifierProcessor.repCountForText;
-                exerciseTypeStr = PoseClassifierProcessor.exerciseTypeForText;
-                if ((repCountStr != null) && (exerciseTypeStr != null)) {
-                  //If they are doing a specific type of exercise (not freestyle), then only consider reps of that exercise
-                  if (classType.equals("Free Style")) {
-                    repCountText.setText(exerciseTypeStr+"\nReps:"+repCountStr);
-                  } else if (classType.equals(exerciseTypeStr)) {
-                    repCountText.setText(exerciseTypeStr+"\nReps:"+repCountStr);
+                  repCountStr = PoseClassifierProcessor.repCountForText;
+                  exerciseTypeStr = PoseClassifierProcessor.exerciseTypeForText;
+                  if ((repCountStr != null) && (exerciseTypeStr != null)) {
+                      //If they are doing a specific type of exercise (not freestyle), then only consider reps of that exercise
+                      if (classType.equals("Free Style")) {
+                          repCountText.setText(exerciseTypeStr + "\nReps:" + repCountStr);
+                      } else if (classType.equals(exerciseTypeStr)) {
+                          repCountText.setText(exerciseTypeStr + "\nReps:" + repCountStr);
+//                          Log.d("cyril", repCountStr);
+                      }
+                  } else {
+                      Log.d("MyMessage", "rep count and/or exercise type is null");
                   }
-                } else {
-                  Log.d("MyMessage", "rep count and/or exercise type is null");
-                }
               }
             });
           }

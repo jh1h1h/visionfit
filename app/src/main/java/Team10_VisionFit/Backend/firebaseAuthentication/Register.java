@@ -51,9 +51,9 @@ public class Register extends AppCompatActivity {
                 if (keyCode == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
                     // Show DatePicker dialog
                     showDatePickerDialog();
-                    return true; // Consume the event
+                    return true;
                 }
-                return false; // Allow normal key handling
+                return false;
             }
         });
 

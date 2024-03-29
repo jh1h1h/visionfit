@@ -1,14 +1,15 @@
 package Team10_VisionFit.Backend.firebaseAuthentication;
 
+import java.util.Calendar;
 import java.util.Locale;
+
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,19 @@ public class Register extends AppCompatActivity {
         signupCountry = findViewById(R.id.Country_register);
         signupButton = findViewById(R.id.btn_register);
         loginRedirectText = findViewById(R.id.loginNow);
+
+        signupPassword.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                // If Enter key is pressed and it's an action_down event
+                if (keyCode == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+                    // Show DatePicker dialog
+                    showDatePickerDialog();
+                    return true; // Consume the event
+                }
+                return false; // Allow normal key handling
+            }
+        });
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +127,24 @@ public class Register extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void showDatePickerDialog() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(Register.this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        // Set the selected date to the signupDOB EditText
+                        String dateOfBirth = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        signupDOB.setText(dateOfBirth);
+                    }
+                }, year, month, day);
+        datePickerDialog.show();
     }
 
     private boolean isValidDateFormat(String dob) {

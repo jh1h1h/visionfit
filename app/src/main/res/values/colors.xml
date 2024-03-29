@@ -26,7 +26,7 @@
 
     <!-- specific colour mode -->
     <color name="night_mode">#AEAEAE</color>
-    <color name="notification">#13B2C3</color>
+    <color name="flipped">#13B2C3</color>
 
 </resources>
 

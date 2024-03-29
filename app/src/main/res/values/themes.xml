@@ -18,14 +18,14 @@
 
     <!-- Theme style for night switch -->
     <style name="nightModeSwitch" parent="Theme.AppCompat.Light" >
-        <item name = "colorControlActivated">@color/night_mode</item>
+        <item name = "colorControlActivated">@color/flipped</item>
         <item name = "colorSwitchThumbNormal">@color/darkGray</item>
 
     </style>
 
     <!-- Theme style for notifications switch-->
     <style name="notificationSwitch" parent="Theme.AppCompat.Light" >
-        <item name = "colorControlActivated">@color/notification</item>
+        <item name = "colorControlActivated">@color/flipped</item>
         <item name = "colorSwitchThumbNormal">@color/darkGray</item>
 
     </style>

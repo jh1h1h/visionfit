@@ -59,6 +59,7 @@ public final class LivePreviewActivity extends AppCompatActivity
 
   private TextView repCountText;
   private String repCountStr;
+
   //exerciseTypeStr and classType should be the same, will need to do comparisons between them to check for matching classes
   private String exerciseTypeStr;
   public static String classType;
@@ -102,8 +103,6 @@ public final class LivePreviewActivity extends AppCompatActivity
     });
 
 
-
-    // TIMING STUFF
     //Get intent to retrieve class type (determine which entrypoint)
     Intent intent = getIntent();
     classType = intent.getStringExtra("ClassType");
@@ -117,31 +116,8 @@ public final class LivePreviewActivity extends AppCompatActivity
       Log.d(TAG, "graphicOverlay is null");
     }
 
-
-
-//    Spinner spinner = findViewById(R.id.spinner);
-//    List<String> options = new ArrayList<>();
-//    options.add(POSE_DETECTION);
-//
-//    // Creating adapter for spinner
-//    ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, R.layout.spinner_style, options);
-//    // Drop down layout style - list view with radio button
-//    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//    // attaching data adapter to spinner
-//    spinner.setAdapter(dataAdapter);
-//    spinner.setOnItemSelectedListener(this);
-
     ToggleButton facingSwitch = findViewById(R.id.facing_switch);
     facingSwitch.setOnCheckedChangeListener(this);
-
-//    ImageView settingsButton = findViewById(R.id.settings_button);
-//    settingsButton.setOnClickListener(
-//        v -> {
-//          Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-//          intent.putExtra(
-//              SettingsActivity.EXTRA_LAUNCH_SOURCE, SettingsActivity.LaunchSource.LIVE_PREVIEW);
-//          startActivity(intent);
-//        });
 
     createCameraSource(selectedModel);
 
@@ -170,7 +146,7 @@ public final class LivePreviewActivity extends AppCompatActivity
 //                          Log.d("cyril", repCountStr);
                       }
                   } else {
-                      Log.d("MyMessage", "rep count and/or exercise type is null");
+                      //Log.d("MyMessage", "rep count and/or exercise type is null, This is NORMAL at start up, because the model has not been loaded in yet");
                   }
               }
             });
@@ -186,7 +162,12 @@ public final class LivePreviewActivity extends AppCompatActivity
     exitButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        startActivity(new Intent(LivePreviewActivity.this, MainActivity.class));
+        Intent intent2 = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
+        //Get the number of reps completed for the particular exercise
+        String label = classType + " Reps";
+        intent2.putExtra(label,repCountStr);
+
+        startActivity(intent2);
         Log.d("Button Check", "Exit Button Clicked");
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();

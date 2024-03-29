@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_main);
         auth = FirebaseAuth.getInstance();
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid);
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
+        DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid); //Using that ID, get the user's data from firestore
 
         repCount = getIntent().getIntExtra("repCount",0);
         classType = getIntent().getStringExtra("ClassType");
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String displayName = document.getString("username");
                     textView.setText("Hello, "+displayName+"!");}
 
-                if (repCount != 0 && classType != null && classType != "Free Style") {
+                if (repCount != 0 && classType != null && !classType.equals("Free Style")) {
                     if (classType.equals("Push Ups")) {
                         classType = "pushup";
                     }
@@ -94,8 +94,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
-        // FIREBASE STUFF
 
+        // FIREBASE STUFF
         user = auth.getCurrentUser();
 
         //Get Permissions from user

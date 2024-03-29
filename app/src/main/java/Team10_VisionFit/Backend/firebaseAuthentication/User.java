@@ -15,6 +15,10 @@ public class User {
     public int squatAllTime;
     public int weightliftToday;
     public int weightliftAllTime;
+    public int numSquatsChallengeCompleted;
+    public int numPushupsChallengeCompleted;
+    public boolean hasCompletedSquatsChallengeToday;
+    public boolean hasCompletedPushupsChallengeToday;
 
 
 
@@ -38,7 +42,11 @@ public class User {
             int squatToday,
             int squatAllTime,
             int weightliftToday,
-            int weightliftAllTime
+            int weightliftAllTime,
+            int numSquatsChallengeCompleted,
+            int numPushupsChallengeCompleted,
+            boolean hasCompletedSquatsChallengeToday,
+            boolean hasCompletedPushupsChallengeToday
     ) {
         this.country=country;
         this.streak=streak;
@@ -52,5 +60,9 @@ public class User {
         this.squatAllTime=squatAllTime;
         this.weightliftToday=weightliftToday;
         this.weightliftAllTime=weightliftAllTime;
+        this.numSquatsChallengeCompleted=numSquatsChallengeCompleted;
+        this.numPushupsChallengeCompleted=numPushupsChallengeCompleted;
+        this.hasCompletedSquatsChallengeToday=hasCompletedSquatsChallengeToday;
+        this.hasCompletedPushupsChallengeToday=hasCompletedPushupsChallengeToday;
     }
 }

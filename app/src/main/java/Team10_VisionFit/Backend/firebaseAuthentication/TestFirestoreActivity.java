@@ -95,7 +95,11 @@ public class TestFirestoreActivity extends AppCompatActivity {
                                    int squatToday,
                                    int squatAllTime,
                                    int weightliftToday,
-                                   int weightliftAllTime) {
+                                   int weightliftAllTime,
+                                   int numSquatsChallengeCompleted,
+                                   int numPushupsChallengeCompleted,
+                                   boolean hasCompletedSquatsChallengeToday,
+                                   boolean hasCompletedPushupsChallengeToday) {
 
         // creating a collection reference
         // for our Firebase Firestore database.
@@ -106,7 +110,11 @@ public class TestFirestoreActivity extends AppCompatActivity {
         squatToday,
          squatAllTime,
         weightliftToday,
-         weightliftAllTime);
+         weightliftAllTime,
+        numSquatsChallengeCompleted,
+        numPushupsChallengeCompleted,
+        hasCompletedSquatsChallengeToday,
+        hasCompletedPushupsChallengeToday);
         db.collection("users").document(uid)
                 .set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

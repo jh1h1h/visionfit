@@ -75,19 +75,36 @@ public final class LivePreviewActivity extends AppCompatActivity
     setContentView(R.layout.activity_vision_live_preview);
 
     // TIMING STUFF
+    TextView timerText = findViewById(R.id.timer_text);
+    Button startButton = findViewById(R.id.start_button);
 
-    TextView timer_text = (TextView) findViewById(R.id.timer_text);
-    Button start_button = (Button) findViewById(R.id.start_button);
-    start_button.setOnClickListener(new View.OnClickListener() {
+    startButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         Log.d("Button Check", "Start Button Clicked");
-        new CountDownTimer(5000, 1000){
-          public void onTick(long millisUntilFinished){
-            timer_text.setText(String.valueOf(counter));
-            counter++;
+
+        // Adjust countdown duration (in milliseconds)
+        long countdownDurationMillis = 5000;
+
+        new CountDownTimer(countdownDurationMillis, 1000) {
+          public void onTick(long millisUntilFinished) {
+            // Calculate remaining time in seconds
+            long secondsRemaining = millisUntilFinished / 1000;
+
+            // Convert remaining time to minutes and seconds
+            long minutes = secondsRemaining / 60;
+            long seconds = secondsRemaining % 60;
+
+            // Format the remaining time as a string in MM:SS format
+            String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
+
+            // Update the countdown timer TextView
+            timerText.setText(timeLeftFormatted);
           }
-          public void onFinish(){
+
+          public void onFinish() {
+            // Countdown finished, handle onFinish event here
+            // For example, start a new activity
             repCountText = findViewById(R.id.exercise_count_text);
             String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
             int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
@@ -96,7 +113,6 @@ public final class LivePreviewActivity extends AppCompatActivity
             intent.putExtra("ClassType", classType);
             startActivity(intent);
             finish();
-//            timer_text.setText("End");
           }
         }.start();
       }

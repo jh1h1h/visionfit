@@ -139,8 +139,12 @@ public class Register extends AppCompatActivity {
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        // Format day and month with leading zeros if needed
+                        String dayOfMonthString = (dayOfMonth < 10) ? "0" + dayOfMonth : String.valueOf(dayOfMonth);
+                        String monthOfYearString = ((monthOfYear + 1) < 10) ? "0" + (monthOfYear + 1) : String.valueOf(monthOfYear + 1);
+
                         // Set the selected date to the signupDOB EditText
-                        String dateOfBirth = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        String dateOfBirth = dayOfMonthString + "/" + monthOfYearString + "/" + year;
                         signupDOB.setText(dateOfBirth);
                     }
                 }, year, month, day);

@@ -38,6 +38,7 @@ public class DailyChallengeActivity extends AppCompatActivity {
     boolean hasCompletedPushupsChallengeToday = false;
     String LOGLABEL = "DailyChallengeActivity";
     int baseReps = 5; //"Starting" number of reps
+    int maxReps = 60;
     int numSquatsRepsToDo;
     int numPushupsRepsToDo;
     TextView challengeStreakMessage;
@@ -78,9 +79,11 @@ public class DailyChallengeActivity extends AppCompatActivity {
                             ", Squats today=" + hasCompletedSquatsChallengeToday +
                             ", Pushups today=" + hasCompletedPushupsChallengeToday);
 
-                    // Calculate the number of reps to do based on number of daily challenges completed
-                    numSquatsRepsToDo = baseReps + ((numSquatsChallengeCompleted / 5) * 2);
-                    numPushupsRepsToDo = baseReps + ((numPushupsChallengeCompleted / 5) * 2);
+                    //the divide will give an int, so its basically integer divide, then I multiply that by 2 because I want to add 2 to each increment of 3 days
+                    numSquatsRepsToDo = baseReps + ((numSquatsChallengeCompleted / 3) * 2);
+                    numSquatsRepsToDo = Math.min(numSquatsRepsToDo, maxReps);
+                    numPushupsRepsToDo = baseReps + ((numPushupsChallengeCompleted / 3) * 2);
+                    numPushupsRepsToDo = Math.min(numPushupsRepsToDo, maxReps);
 
                     // Update UI based on completion status
                     updateUI(numPushupsRepsToDo, numSquatsRepsToDo);
@@ -140,18 +143,18 @@ public class DailyChallengeActivity extends AppCompatActivity {
     private void completeChallenge(boolean hasCompleted, int repsToDo, String completionField, String countField) {
         if (!hasCompleted) {
             // Simulate completion (replace with actual logic to determine completion)
-            int numRepsCompleted = repsToDo; // Placeholder for actual logic
+            int numRepsCompleted; // Placeholder for actual logic
             if (numRepsCompleted >= repsToDo) {
                 Log.d(LOGLABEL, "Challenge completed");
 
                 // Update completion status and count
-                userRef.update(completionField, true).addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Log.i(LOGLABEL, "Update to Firestore successful");
-                        // Increment challenge completed count
-                        userRef.update(countField, FieldValue.increment(1));
-                    }
-                });
+                userRef.update(completionField, true);
+                if (numRepsCompleted >= repsToDo) {
+                    Log.i(LOGLABEL, "Update to Firestore successful");
+                    // Increment challenge completed count
+                    userRef.update(countField, FieldValue.increment(1));
+                }
+
 
                 // Increment streak field if any challenge is completed
                 userRef.get().addOnSuccessListener(documentSnapshot -> {
@@ -163,17 +166,17 @@ public class DailyChallengeActivity extends AppCompatActivity {
                             streak = (streak == null ? 0 : streak) + 1;
                             userRef.update("streak", streak);
                             userRef.update("lastCompletedDate", currentDate);
-                            if (streak % 3 == 0) {
-                                baseReps += 1;
-                                userRef.update("baseReps", baseReps);
-                            }
+                            //if (streak % 3 == 0) {
+                                //baseReps += 1;
+                                //userRef.update("baseReps", baseReps);
+                            //}
                         }
                         updateStreakUI();
                     }
                 });
 
                 // Update UI - Change button color to green
-                updateUI(numPushupsRepsToDo, numSquatsRepsToDo);
+                //updateUI(numPushupsRepsToDo, numSquatsRepsToDo);
             }
         }
     }

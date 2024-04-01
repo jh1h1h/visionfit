@@ -111,6 +111,7 @@
         app:layout_constraintTop_toBottomOf="@id/pushUpButton" />
 
     <TextView
+        android:id="@+id/challengeStreakMessage"
         style="@style/TextColor"
         android:layout_width="362dp"
         android:layout_height="wrap_content"

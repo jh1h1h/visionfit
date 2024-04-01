@@ -23,6 +23,9 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.teamten.visionfit.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
 import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
@@ -37,14 +40,18 @@ public class DailyChallengeActivity extends AppCompatActivity {
     int baseReps = 5; //"Starting" number of reps
     int numSquatsRepsToDo;
     int numPushupsRepsToDo;
+    TextView challengeStreakMessage;
     TextView timer_text;
     Button pushUpButton;
     Button squatsButton;
+    DocumentReference userRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_challenge);
+
+        challengeStreakMessage = findViewById(R.id.challengeStreakMessage);
 
         // Initialize UI elements
         pushUpButton = findViewById(R.id.pushUpButton);
@@ -53,7 +60,7 @@ public class DailyChallengeActivity extends AppCompatActivity {
         //Getting the user's number of completed challenges to decide on the new challenge, and whether the user has completed today's challenges
         auth = FirebaseAuth.getInstance();
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
-        DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid); //Using that ID, get the user's data from firestore
+        userRef = FirebaseFirestore.getInstance().collection("users").document(uid); //Using that ID, get the user's data from firestore
 
         // Retrieve user data from Firestore
         userRef.get().addOnCompleteListener(task -> {
@@ -76,9 +83,11 @@ public class DailyChallengeActivity extends AppCompatActivity {
                     numPushupsRepsToDo = baseReps + ((numPushupsChallengeCompleted / 5) * 2);
 
                     // Update UI based on completion status
-                    updateUI();
+                    updateUI(numPushupsRepsToDo, numSquatsRepsToDo);
+                    updateStreakUI();
                 }
             }
+
         });
 
         // Setup bottom navigation
@@ -114,7 +123,7 @@ public class DailyChallengeActivity extends AppCompatActivity {
             Intent intent = new Intent(DailyChallengeActivity.this, LivePreviewActivity.class);
             intent.putExtra("ClassType", "Push Ups");
             startActivity(intent);
-            completeChallenge(hasCompletedPushupsChallengeToday, numPushupsRepsToDo, userRef, "hasCompletedPushupsChallengeToday", "numPushupsChallengeCompleted");
+            completeChallenge(hasCompletedPushupsChallengeToday, numPushupsRepsToDo, "hasCompletedPushupsChallengeToday", "numPushupsChallengeCompleted");
         });
 
         // Setup onClickListeners for squatsButton
@@ -123,12 +132,12 @@ public class DailyChallengeActivity extends AppCompatActivity {
             Intent intent = new Intent(DailyChallengeActivity.this, LivePreviewActivity.class);
             intent.putExtra("ClassType", "Squats");
             startActivity(intent);
-            completeChallenge(hasCompletedSquatsChallengeToday, numSquatsRepsToDo, userRef, "hasCompletedSquatsChallengeToday", "numSquatsChallengeCompleted");
+            completeChallenge(hasCompletedSquatsChallengeToday, numSquatsRepsToDo, "hasCompletedSquatsChallengeToday", "numSquatsChallengeCompleted");
         });
     }
 
     // Method to handle completing a challenge and updating Firestore
-    private void completeChallenge(boolean hasCompleted, int repsToDo, DocumentReference userRef, String completionField, String countField) {
+    private void completeChallenge(boolean hasCompleted, int repsToDo, String completionField, String countField) {
         if (!hasCompleted) {
             // Simulate completion (replace with actual logic to determine completion)
             int numRepsCompleted = repsToDo; // Placeholder for actual logic
@@ -145,20 +154,32 @@ public class DailyChallengeActivity extends AppCompatActivity {
                 });
 
                 // Increment streak field if any challenge is completed
-                userRef.update("streak", FieldValue.increment(1)).addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Log.i(LOGLABEL, "Streak incremented in Firestore");
+                userRef.get().addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        Date lastCompletedDate = documentSnapshot.getDate("lastCompletedDate");
+                        Date currentDate = new Date();
+                        Long streak = documentSnapshot.getLong("streak");
+                        if (lastCompletedDate == null || !isSameDay(lastCompletedDate, currentDate)) {
+                            streak = (streak == null ? 0 : streak) + 1;
+                            userRef.update("streak", streak);
+                            userRef.update("lastCompletedDate", currentDate);
+                            if (streak % 3 == 0) {
+                                baseReps += 1;
+                                userRef.update("baseReps", baseReps);
+                            }
+                        }
+                        updateStreakUI();
                     }
                 });
 
                 // Update UI - Change button color to green
-                updateUI();
+                updateUI(numPushupsRepsToDo, numSquatsRepsToDo);
             }
         }
     }
 
     // Method to update UI based on completion status
-    private void updateUI() {
+    private void updateUI(int numPushupsRepsToDo, int numSquatsRepsToDo) {
         int[][] states = new int[][] {
                 new int[] { android.R.attr.state_enabled } // enabled
         };
@@ -208,5 +229,23 @@ public class DailyChallengeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Do nothing (disable back button functionality)
+    }
+
+    // Method to update streak UI
+    private void updateStreakUI() {
+        userRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.getResult() != null) {
+                DocumentSnapshot document = task.getResult();
+                Long streak = document.getLong("streak");
+                streak = streak != null ? streak : 0;
+                challengeStreakMessage.setText("Current streak: " + streak + " days");
+            }
+        });
+    }
+
+    // Method to check if two dates are the same day
+    private boolean isSameDay(Date date1, Date date2) {
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+        return fmt.format(date1).equals(fmt.format(date2));
     }
 }

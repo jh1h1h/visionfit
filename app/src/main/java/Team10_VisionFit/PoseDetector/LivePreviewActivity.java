@@ -84,7 +84,7 @@ public final class LivePreviewActivity extends AppCompatActivity
         Log.d("Button Check", "Start Button Clicked");
 
         // Adjust countdown duration (in milliseconds)
-        long countdownDurationMillis = 5000;
+        long countdownDurationMillis = 30000;
 
         new CountDownTimer(countdownDurationMillis, 1000) {
           public void onTick(long millisUntilFinished) {

@@ -16,6 +16,7 @@
 
 package Team10_VisionFit.PoseDetector.classification;
 
+
 /**
  * Counts reps for the give class.
  */
@@ -73,4 +74,9 @@ public class RepetitionCounter {
   public int getNumRepeats() {
     return numRepeats;
   }
+
+  public void setNumRepeats(int num) {
+    numRepeats = num;
+  }
+
 }

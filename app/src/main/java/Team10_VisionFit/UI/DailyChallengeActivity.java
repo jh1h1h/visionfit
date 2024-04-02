@@ -37,6 +37,8 @@ public class DailyChallengeActivity extends AppCompatActivity{
     int baseReps = 5; //"Starting" number of reps
     int numSquatsRepsToDo;
     int numPushupsRepsToDo;
+    int repCount;
+    String classType;
     TextView timer_text;
 
 
@@ -116,6 +118,26 @@ public class DailyChallengeActivity extends AppCompatActivity{
 
                     //Get intent to retrieve if we are returning from live preview activity
                     Intent intent = getIntent();
+                    repCount = intent.getIntExtra("repCount",0);
+                    classType = intent.getStringExtra("ClassType");
+
+                    if (repCount != 0 && classType != null && !classType.equals("Free Style")) {
+                        if (classType.equals("Push Ups")) {
+                            classType = "pushup";
+                        }
+                        if (classType.equals("Squats")) {
+                            classType = "squat";
+                        }
+                        long prevToday = document.getLong(classType + "Today");
+                        userRef.update(classType + "Today", prevToday + repCount);
+
+                        long prevAllTime = document.getLong(classType + "AllTime");
+                        if (repCount > prevAllTime){
+                            userRef.update(classType + "AllTime", repCount);
+                        }
+                        Toast.makeText(this,"You have logged "+repCount+" "+classType+"s!", Toast.LENGTH_SHORT).show();
+                    }
+
                     if (intent.getStringExtra("Push Ups Reps") != null) {
                         int numReps = Integer.parseInt(intent.getStringExtra("Push Ups Reps"));
 

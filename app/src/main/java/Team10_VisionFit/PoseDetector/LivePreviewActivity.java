@@ -40,6 +40,7 @@ import java.io.IOException;
 import Team10_VisionFit.Backend.preference.PreferenceUtils;
 import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.classification.PoseClassifierProcessor;
+import Team10_VisionFit.PoseDetector.classification.RepetitionCounter;
 import Team10_VisionFit.UI.DailyChallengeActivity;
 import Team10_VisionFit.UI.ProfileActivity;
 
@@ -65,6 +66,8 @@ public final class LivePreviewActivity extends AppCompatActivity
   public static String classType;
   public int counter;
 
+  public static boolean startClicked = false;
+
   TextView timer_text;
 
   @Override
@@ -82,6 +85,8 @@ public final class LivePreviewActivity extends AppCompatActivity
       @Override
       public void onClick(View v) {
         Log.d("Button Check", "Start Button Clicked");
+        resetRepCounters(); //Reset counters to 0 when start is pressed.
+        PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
         new CountDownTimer(5000, 1000){
           public void onTick(long millisUntilFinished){
             timer_text.setText(String.valueOf(counter));
@@ -91,9 +96,14 @@ public final class LivePreviewActivity extends AppCompatActivity
             repCountText = findViewById(R.id.exercise_count_text);
             String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
             int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
-            Intent intent = new Intent(LivePreviewActivity.this, MainActivity.class);
+            Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
             intent.putExtra("repCount", count);
             intent.putExtra("ClassType", classType);
+            String label = classType + " Reps";
+            intent.putExtra(label,repCountStr);
+
+            resetRepCounters(); //Reset the counters to 0 before finish and exiting
+
             startActivity(intent);
             finish();
 //            timer_text.setText("End");
@@ -125,11 +135,13 @@ public final class LivePreviewActivity extends AppCompatActivity
     //Get the rep counter to update every 0.2 seconds
     repCountText = findViewById(R.id.exercise_count_text);
     repCountText.setText(classType+"\nRep:0");
+    PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
 
     Thread thread = new Thread() {
       @Override
       public void run() {
         try {
+          resetRepCounters();
           while (!isInterrupted()) {
             Thread.sleep(200);
             runOnUiThread(new Runnable() {
@@ -165,7 +177,9 @@ public final class LivePreviewActivity extends AppCompatActivity
         Intent intent2 = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
         //Get the number of reps completed for the particular exercise
         String label = classType + " Reps";
-        intent2.putExtra(label,repCountStr);
+        intent2.putExtra(label,"0"); //If user quit by exiting, means forfeit the challenge, so 0
+        resetRepCounters(); //Reset reps to zero
+
 
         startActivity(intent2);
         Log.d("Button Check", "Exit Button Clicked");
@@ -289,5 +303,21 @@ public final class LivePreviewActivity extends AppCompatActivity
   @Override
   public void onBackPressed() {
     // Do nothing to disable the back button functionality
+  }
+
+  public void resetRepCounters() {
+    try {
+      //To reset all rep counters to 0 when exit or when start is clicked
+      for (RepetitionCounter repCounter : PoseClassifierProcessor.repCounters) {
+//        Log.d("MyMessage", "Before: " + (repCounter.getNumRepeats()));
+        repCounter.setNumRepeats(0);
+//        Log.d("MyMessage", "After: " + (repCounter.getNumRepeats()));
+
+
+      }
+    } catch (NullPointerException e) {
+      Log.d("MyMessage", "Pose Classifier is still loading, be patient");
+    }
+
   }
 }

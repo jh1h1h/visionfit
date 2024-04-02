@@ -19,8 +19,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.teamten.visionfit.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
 import Team10_VisionFit.MainActivity;
@@ -31,6 +35,7 @@ public class DailyChallengeActivity extends AppCompatActivity{
     FirebaseAuth auth;
     int numSquatsChallengeCompleted;
     int numPushupsChallengeCompleted;
+    int streakCount = 0;
     boolean hasCompletedSquatsChallengeToday;
     boolean hasCompletedPushupsChallengeToday;
     String LOGLABEL = "DailyChallengeActivity";
@@ -40,12 +45,16 @@ public class DailyChallengeActivity extends AppCompatActivity{
     int repCount;
     String classType;
     TextView timer_text;
+    TextView challengeStreakMessage;
+    boolean streakChange;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_challenge);
+
+        challengeStreakMessage = findViewById(R.id.challengeStreakMessage);
 
         //Getting the user's number of completed challenges to decide on the new challenge, and whether the user has completed today's challenges
         auth = FirebaseAuth.getInstance();
@@ -62,6 +71,8 @@ public class DailyChallengeActivity extends AppCompatActivity{
                     numPushupsChallengeCompleted = document.getLong("numPushupsChallengeCompleted").intValue();
                     hasCompletedSquatsChallengeToday = document.getBoolean("hasCompletedSquatsChallengeToday");
                     hasCompletedPushupsChallengeToday = document.getBoolean("hasCompletedPushupsChallengeToday");
+                    streakCount = document.getLong("streak").intValue();
+                    streakChange = document.getBoolean("streakChange");
 
                     Log.d(LOGLABEL, "INSIDE: " + String.valueOf(numSquatsChallengeCompleted) + " " + String.valueOf(numPushupsChallengeCompleted) + " "
                             + String.valueOf(hasCompletedSquatsChallengeToday) + " " + String.valueOf(hasCompletedPushupsChallengeToday));
@@ -224,17 +235,25 @@ public class DailyChallengeActivity extends AppCompatActivity{
                             startActivity(intent);
                         }
                     });
+
+                    if ((hasCompletedPushupsChallengeToday || hasCompletedSquatsChallengeToday) && (!streakChange)) {
+                        streakCount++;
+                        userRef.update("streakChange", true);
+                        userRef.update("streak", streakCount);
+                        String streakText = "Your current streak: " + streakCount + "!";
+                        challengeStreakMessage.setText(streakText);
+                    } else {
+                        String streakText = "Your current streak: " + streakCount + "!";
+                        if (challengeStreakMessage != null) {
+                            challengeStreakMessage.setText(streakText);
+                        }
+                    }
                 }
             }
         });
-
-
-
-
     }
 
-    public  void customExitDialog()
-    {
+    public  void customExitDialog() {
         // creating custom dialog
         final Dialog dialog = new Dialog(DailyChallengeActivity.this);
 

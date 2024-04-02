@@ -66,9 +66,7 @@ public final class LivePreviewActivity extends AppCompatActivity
   public static String classType;
   public int counter;
 
-  public static boolean startClicked = false;
-
-  TextView timer_text;
+  TextView timerText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -79,34 +77,49 @@ public final class LivePreviewActivity extends AppCompatActivity
 
     // TIMING STUFF
 
-    TextView timer_text = (TextView) findViewById(R.id.timer_text);
-    Button start_button = (Button) findViewById(R.id.start_button);
-    start_button.setOnClickListener(new View.OnClickListener() {
+    TextView timerText = (TextView) findViewById(R.id.timer_text);
+    Button startButton = (Button) findViewById(R.id.start_button);
+    startButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         Log.d("Button Check", "Start Button Clicked");
         resetRepCounters(); //Reset counters to 0 when start is pressed.
         PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
-        new CountDownTimer(5000, 1000){
+        // Adjust countdown duration (in milliseconds)
+        long countdownDurationMillis = 30000;
+
+        new CountDownTimer(countdownDurationMillis, 1000){
           public void onTick(long millisUntilFinished){
-            timer_text.setText(String.valueOf(counter));
-            counter++;
+            // Calculate remaining time in seconds
+            long secondsRemaining = millisUntilFinished / 1000;
+
+            // Convert remaining time to minutes and seconds
+            long minutes = secondsRemaining / 60;
+            long seconds = secondsRemaining % 60;
+
+            // Format the remaining time as a string in MM:SS format
+            String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
+
+            // Update the countdown timer TextView
+            timerText.setText(timeLeftFormatted);
           }
           public void onFinish(){
+            // Countdown finished, handle onFinish event here
+            // For example, start a new activity
             repCountText = findViewById(R.id.exercise_count_text);
             String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
             int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
             Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
-            intent.putExtra("repCount", count);
-            intent.putExtra("ClassType", classType);
             String label = classType + " Reps";
             intent.putExtra(label,repCountStr);
-
+            intent.putExtra("repCount", count);
+            intent.putExtra("ClassType", classType);
             resetRepCounters(); //Reset the counters to 0 before finish and exiting
 
             startActivity(intent);
             finish();
-//            timer_text.setText("End");
+//            timerText.setText("End");
+
           }
         }.start();
       }

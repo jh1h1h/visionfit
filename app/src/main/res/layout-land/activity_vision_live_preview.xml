@@ -37,13 +37,16 @@
 
     <TextView
         android:id="@+id/timer_text"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:textColor="@color/black"
-        android:text=""
-        android:textSize="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/digital_7"
+        android:textColor="@color/darkGray"
+        android:text="00:00"
+        android:textSize="110sp"
         app:layout_constraintTop_toTopOf="@id/preview_view"
-        app:layout_constraintRight_toRightOf="@id/preview_view"/>
+        app:layout_constraintEnd_toEndOf="@id/preview_view"
+        app:layout_constraintStart_toStartOf="@id/preview_view"
+        android:layout_marginTop="@dimen/padding_standard"/>
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@id/control"

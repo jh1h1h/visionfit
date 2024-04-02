@@ -5,6 +5,7 @@ public class User {
     public String country;
     public String username;
     public String dob;
+    public boolean streakChange;
     public int streak;
     //pushup,situp,squats,weightlift
     public int pushupToday;
@@ -46,9 +47,11 @@ public class User {
             int numSquatsChallengeCompleted,
             int numPushupsChallengeCompleted,
             boolean hasCompletedSquatsChallengeToday,
-            boolean hasCompletedPushupsChallengeToday
+            boolean hasCompletedPushupsChallengeToday,
+            boolean streakChange
     ) {
         this.country=country;
+        this.streakChange=streakChange;
         this.streak=streak;
         this.username=username;
         this.dob=dob;

@@ -44,7 +44,7 @@ public class DailyChallengeActivity extends AppCompatActivity{
     int numPushupsRepsToDo;
     TextView timer_text;
     TextView challengeStreakMessage;
-    boolean streakChange = false;
+    boolean streakChange;
 
 
     @Override
@@ -70,6 +70,7 @@ public class DailyChallengeActivity extends AppCompatActivity{
                     hasCompletedSquatsChallengeToday = document.getBoolean("hasCompletedSquatsChallengeToday");
                     hasCompletedPushupsChallengeToday = document.getBoolean("hasCompletedPushupsChallengeToday");
                     streakCount = document.getLong("streak").intValue();
+                    streakChange = document.getBoolean("streakChange");
 
                     Log.d(LOGLABEL, "INSIDE: " + String.valueOf(numSquatsChallengeCompleted) + " " + String.valueOf(numPushupsChallengeCompleted) + " "
                             + String.valueOf(hasCompletedSquatsChallengeToday) + " " + String.valueOf(hasCompletedPushupsChallengeToday));
@@ -213,14 +214,14 @@ public class DailyChallengeActivity extends AppCompatActivity{
                         }
                     });
 
-                    if ((hasCompletedPushupsChallengeToday || hasCompletedSquatsChallengeToday) && (streakChange == false)) {
+                    if ((hasCompletedPushupsChallengeToday || hasCompletedSquatsChallengeToday) && (!streakChange)) {
                         streakCount++;
-                        streakChange = true;
+                        userRef.update("streakChange", true);
                         userRef.update("streak", streakCount);
-                        String streakText = "Current streak: " + streakCount + " !";
+                        String streakText = "Your current streak: " + streakCount + "!";
                         challengeStreakMessage.setText(streakText);
                     } else {
-                        String streakText = "Current streak: " + streakCount + " !";
+                        String streakText = "Your current streak: " + streakCount + "!";
                         if (challengeStreakMessage != null) {
                             challengeStreakMessage.setText(streakText);
                         }

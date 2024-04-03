@@ -8,10 +8,12 @@
         android:id="@+id/bottom_home"
         android:icon="@drawable/icon_homepage"
         android:title="Main" />
+    <!--
     <item
         android:id="@+id/cameraButton"
         android:icon="@drawable/icon_camera"
         android:title="Settings" />
+        -->
     <item
         android:id="@+id/bottom_settings"
         android:icon="@drawable/icon_settings"

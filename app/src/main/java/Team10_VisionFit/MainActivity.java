@@ -137,14 +137,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
-                case R.id.cameraButton:
-                    Intent intent = new Intent(getApplicationContext(), LivePreviewActivity.class);
-                    intent.putExtra("ClassType", "Free Style");
-                    startActivity(intent);
-                    Log.d("Button Check", "Camera Button Clicked");
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
+
+                //case R.id.cameraButton:
+                    //Intent intent = new Intent(getApplicationContext(), LivePreviewActivity.class);
+                    //intent.putExtra("ClassType", "Free Style");
+                    //startActivity(intent);
+                    //Log.d("Button Check", "Camera Button Clicked");
+                    //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    //finish();
+                    //return true;
+
                 case R.id.bottom_userProfile:
                     startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                     Log.d("Button Check", "Profile Button Clicked");

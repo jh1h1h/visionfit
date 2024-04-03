@@ -95,12 +95,14 @@ public class DailyChallengeActivity extends AppCompatActivity{
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 finish();
                                 return true;
-                            case R.id.cameraButton:
-                                startActivity(new Intent(getApplicationContext(), LivePreviewActivity.class));
-                                Log.d("Button Check", "Camera Button Clicked");
-                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                finish();
-                                return true;
+
+                            //case R.id.cameraButton:
+                                //startActivity(new Intent(getApplicationContext(), LivePreviewActivity.class));
+                                //Log.d("Button Check", "Camera Button Clicked");
+                                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                                //finish();
+                                //return true;
+
                             case R.id.bottom_userProfile:
                                 startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                                 Log.d("Button Check", "Profile Button Clicked");
@@ -240,10 +242,10 @@ public class DailyChallengeActivity extends AppCompatActivity{
                         streakCount++;
                         userRef.update("streakChange", true);
                         userRef.update("streak", streakCount);
-                        String streakText = "Your current streak: " + streakCount + "!";
+                        String streakText = "Your current streak is " + streakCount + " days!" + "\n" +"Fight on!";
                         challengeStreakMessage.setText(streakText);
                     } else {
-                        String streakText = "Your current streak: " + streakCount + "!";
+                        String streakText = "Your current streak is " + streakCount + " days!" + "\n" +"Fight on!";
                         if (challengeStreakMessage != null) {
                             challengeStreakMessage.setText(streakText);
                         }

@@ -50,7 +50,7 @@ public class PoseClassifierProcessor {
   private final boolean isStreamMode;
 
   private EMASmoothing emaSmoothing;
-  private List<RepetitionCounter> repCounters;
+  public static List<RepetitionCounter> repCounters;
   private PoseClassifier poseClassifier;
   private String lastRepResult;
 

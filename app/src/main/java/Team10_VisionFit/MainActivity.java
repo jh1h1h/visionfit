@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
         DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid); //Using that ID, get the user's data from firestore
 
-        repCount = getIntent().getIntExtra("repCount",0);
-        classType = getIntent().getStringExtra("ClassType");
+//        repCount = getIntent().getIntExtra("repCount",0);
+//        classType = getIntent().getStringExtra("ClassType");
 
         textView = findViewById(R.id.user_details);
         userRef.get().addOnCompleteListener(task -> {
@@ -76,22 +76,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String displayName = document.getString("username");
                     textView.setText("Hello, "+displayName+"!");}
 
-                if (repCount != 0 && classType != null && !classType.equals("Free Style")) {
-                    if (classType.equals("Push Ups")) {
-                        classType = "pushup";
-                    }
-                    if (classType.equals("Squats")) {
-                        classType = "squat";
-                    }
-                    long prevToday = document.getLong(classType + "Today");
-                    userRef.update(classType + "Today", prevToday + repCount);
-
-                    long prevAllTime = document.getLong(classType + "AllTime");
-                    if (repCount > prevAllTime){
-                        userRef.update(classType + "AllTime", repCount);
-                    }
-                    Toast.makeText(this,"You have logged "+repCount+" "+classType+"s!", Toast.LENGTH_SHORT).show();
-                }
+//                if (repCount != 0 && classType != null && !classType.equals("Free Style")) {
+//                    if (classType.equals("Push Ups")) {
+//                        classType = "pushup";
+//                    }
+//                    if (classType.equals("Squats")) {
+//                        classType = "squat";
+//                    }
+//                    long prevToday = document.getLong(classType + "Today");
+//                    userRef.update(classType + "Today", prevToday + repCount);
+//
+//                    long prevAllTime = document.getLong(classType + "AllTime");
+//                    if (repCount > prevAllTime){
+//                        userRef.update(classType + "AllTime", repCount);
+//                    }
+//                    Toast.makeText(this,"You have logged "+repCount+" "+classType+"s!", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 

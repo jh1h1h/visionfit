@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Today is your 8th day in a row!\nFight on!"
-        android:textSize="25sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintHorizontal_bias="0.666"

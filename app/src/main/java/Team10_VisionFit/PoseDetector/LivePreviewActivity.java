@@ -32,6 +32,10 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.common.annotation.KeepName;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.mlkit.vision.pose.PoseDetectorOptionsBase;
 import com.teamten.visionfit.R;
 
@@ -49,10 +53,15 @@ import Team10_VisionFit.UI.ProfileActivity;
 public final class LivePreviewActivity extends AppCompatActivity
     implements OnItemSelectedListener, CompoundButton.OnCheckedChangeListener {
 
+  FirebaseAuth auth;
+  int numSquatsChallengeCompleted;
+  int numPushupsChallengeCompleted;
+  long countdownDurationMillis = 10000;
+  long countdownSquats;
+  long countdownPushups;
+
   private static final String POSE_DETECTION = "Pose Detection";
-
   private static final String TAG = "LivePreviewActivity";
-
   private CameraSource cameraSource = null;
   private CameraSourcePreview preview;
   private GraphicOverlay graphicOverlay;
@@ -65,8 +74,7 @@ public final class LivePreviewActivity extends AppCompatActivity
   private String exerciseTypeStr;
   public static String classType;
   public int counter;
-
-  TextView timerText;
+  private TextView timerText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -77,54 +85,43 @@ public final class LivePreviewActivity extends AppCompatActivity
 
     // TIMING STUFF
 
-    TextView timerText = (TextView) findViewById(R.id.timer_text);
-    Button startButton = (Button) findViewById(R.id.start_button);
+    timerText =  findViewById(R.id.timer_text);
+    Button startButton = findViewById(R.id.start_button);
+
+    //Getting the user's number of completed challenges to decide on the new challenge, and whether the user has completed today's challenges
+    auth = FirebaseAuth.getInstance();
+    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
+    DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid); //Using that ID, get the user's data from firestore
+
+    userRef.get().addOnCompleteListener(task -> {
+              if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document != null && document.exists()) {
+                  //Get the current status of whether challenge has been completed and total challenges completed
+                  numSquatsChallengeCompleted = document.getLong("numSquatsChallengeCompleted").intValue();
+                  numPushupsChallengeCompleted = document.getLong("numPushupsChallengeCompleted").intValue();
+
+                  //The idea is that every 5 days, increment the timer by 2s
+                  countdownSquats = countdownDurationMillis + ((numSquatsChallengeCompleted / 5) * 2000L); //the divide will give an int, so its basically integer divide, then I multiply that by 2 because I want to add 2 to each increment of 5 days
+                  countdownPushups = countdownDurationMillis + ((numPushupsChallengeCompleted / 5) * 2000L); //the divide will give an int, so its basically integer divide, then I multiply that by 2 because I want to add 2 to each increment of 5 days
+                }
+              }
+            });
+
     startButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         Log.d("Button Check", "Start Button Clicked");
         resetRepCounters(); //Reset counters to 0 when start is pressed.
         PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
-        // Adjust countdown duration (in milliseconds)
-        long countdownDurationMillis = 30000;
 
-        new CountDownTimer(countdownDurationMillis, 1000){
-          public void onTick(long millisUntilFinished){
-            // Calculate remaining time in seconds
-            long secondsRemaining = millisUntilFinished / 1000;
-
-            // Convert remaining time to minutes and seconds
-            long minutes = secondsRemaining / 60;
-            long seconds = secondsRemaining % 60;
-
-            // Format the remaining time as a string in MM:SS format
-            String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
-
-            // Update the countdown timer TextView
-            timerText.setText(timeLeftFormatted);
-          }
-          public void onFinish(){
-            // Countdown finished, handle onFinish event here
-            // For example, start a new activity
-            repCountText = findViewById(R.id.exercise_count_text);
-            String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
-            int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
-            Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
-            String label = classType + " Reps";
-            intent.putExtra(label,repCountStr);
-            intent.putExtra("repCount", count);
-            intent.putExtra("ClassType", classType);
-            resetRepCounters(); //Reset the counters to 0 before finish and exiting
-
-            startActivity(intent);
-            finish();
-//            timerText.setText("End");
-
-          }
-        }.start();
+        if (classType.equals("Push Ups")) {
+          startCountdownTimer(countdownPushups);
+        } else if (classType.equals("Squats")) {
+          startCountdownTimer(countdownSquats);
+        }
       }
     });
-
 
     //Get intent to retrieve class type (determine which entrypoint)
     Intent intent = getIntent();
@@ -200,6 +197,42 @@ public final class LivePreviewActivity extends AppCompatActivity
         finish();
       }
     });
+  }
+
+  private void startCountdownTimer(long durationMillis) {
+    new CountDownTimer(durationMillis, 1000) {
+      public void onTick(long millisUntilFinished) {
+        // Calculate remaining time in seconds
+        long secondsRemaining = millisUntilFinished / 1000;
+
+        // Convert remaining time to minutes and seconds
+        long minutes = secondsRemaining / 60;
+        long seconds = secondsRemaining % 60;
+
+        // Format the remaining time as a string in MM:SS format
+        String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
+
+        // Update the countdown timer TextView
+        timerText.setText(timeLeftFormatted);
+      }
+
+      public void onFinish() {
+        // Countdown finished, handle onFinish event here
+        // For example, start a new activity
+        repCountText = findViewById(R.id.exercise_count_text);
+        String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
+        int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
+        Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
+        String label = classType + " Reps";
+        intent.putExtra(label, repCountStr);
+        intent.putExtra("repCount", count);
+        intent.putExtra("ClassType", classType);
+        resetRepCounters(); // Reset the counters to 0 before finish and exiting
+
+        startActivity(intent);
+        finish();
+      }
+    }.start();
   }
 
   @Override

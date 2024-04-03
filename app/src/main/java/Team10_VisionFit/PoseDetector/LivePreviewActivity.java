@@ -57,6 +57,7 @@ public final class LivePreviewActivity extends AppCompatActivity
   int numSquatsChallengeCompleted;
   int numPushupsChallengeCompleted;
   long countdownDurationMillis = 10000;
+  private CountDownTimer countdownTimer;
   long countdownSquats;
   long countdownPushups;
 
@@ -184,6 +185,11 @@ public final class LivePreviewActivity extends AppCompatActivity
     exitButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+        // Cancel the countdown timer if it's running
+        if (countdownTimer != null) {
+          countdownTimer.cancel();
+        }
+
         Intent intent2 = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
         //Get the number of reps completed for the particular exercise
         String label = classType + " Reps";
@@ -200,7 +206,7 @@ public final class LivePreviewActivity extends AppCompatActivity
   }
 
   private void startCountdownTimer(long durationMillis) {
-    new CountDownTimer(durationMillis, 1000) {
+    countdownTimer = new CountDownTimer(durationMillis, 1000) {
       public void onTick(long millisUntilFinished) {
         // Calculate remaining time in seconds
         long secondsRemaining = millisUntilFinished / 1000;

@@ -134,781 +134,792 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ScrollView
-        android:id="@+id/scrollingLeaderboard"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/leaderboard"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/yourPlace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTab"
-        android:overScrollMode="always"
-        android:isScrollContainer="true"
-        android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:scrollbarStyle="outsideInset"
-        android:scrollbars="vertical"
-        android:fadeScrollbars="false"
-        android:scrollbarSize="15dp"
-        android:scrollbarThumbVertical="@color/orange">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/firstPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/scrollingLeaderboard" >
-
-                <TextView
-                    android:id="@+id/Rank1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name1"
-                    app:layout_constraintStart_toStartOf="@+id/firstPlace"
-                    app:layout_constraintTop_toTopOf="@id/firstPlace" />
-
-                <TextView
-                    android:id="@+id/Name1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep1"
-                    app:layout_constraintStart_toEndOf="@+id/Rank1"
-                    app:layout_constraintTop_toTopOf="@id/firstPlace" />
-
-                <TextView
-                    android:id="@+id/Rep1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/firstPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name1"
-                    app:layout_constraintTop_toTopOf="@+id/firstPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/secondPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/firstPlace" >
-
-                <TextView
-                    android:id="@+id/Rank2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name2"
-                    app:layout_constraintStart_toStartOf="@+id/secondPlace"
-                    app:layout_constraintTop_toTopOf="@id/secondPlace" />
-
-                <TextView
-                    android:id="@+id/Name2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep2"
-                    app:layout_constraintStart_toEndOf="@+id/Rank2"
-                    app:layout_constraintTop_toTopOf="@id/secondPlace" />
-
-                <TextView
-                    android:id="@+id/Rep2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/secondPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name2"
-                    app:layout_constraintTop_toTopOf="@+id/secondPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/thirdPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/secondPlace" >
-
-                <TextView
-                    android:id="@+id/Rank3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name3"
-                    app:layout_constraintStart_toStartOf="@+id/thirdPlace"
-                    app:layout_constraintTop_toTopOf="@id/thirdPlace" />
-
-                <TextView
-                    android:id="@+id/Name3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep3"
-                    app:layout_constraintStart_toEndOf="@+id/Rank3"
-                    app:layout_constraintTop_toTopOf="@id/thirdPlace" />
-
-                <TextView
-                    android:id="@+id/Rep3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/thirdPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name3"
-                    app:layout_constraintTop_toTopOf="@+id/thirdPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fourthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/thirdPlace" >
-
-                <TextView
-                    android:id="@+id/Rank4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name4"
-                    app:layout_constraintStart_toStartOf="@+id/fourthPlace"
-                    app:layout_constraintTop_toTopOf="@id/fourthPlace" />
-
-                <TextView
-                    android:id="@+id/Name4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep4"
-                    app:layout_constraintStart_toEndOf="@+id/Rank4"
-                    app:layout_constraintTop_toTopOf="@id/fourthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/fourthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name4"
-                    app:layout_constraintTop_toTopOf="@+id/fourthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fifthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fourthPlace" >
-
-                <TextView
-                    android:id="@+id/Rank5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name5"
-                    app:layout_constraintStart_toStartOf="@+id/fifthPlace"
-                    app:layout_constraintTop_toTopOf="@id/fifthPlace" />
-
-                <TextView
-                    android:id="@+id/Name5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep5"
-                    app:layout_constraintStart_toEndOf="@+id/Rank5"
-                    app:layout_constraintTop_toTopOf="@id/fifthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/fifthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name5"
-                    app:layout_constraintTop_toTopOf="@+id/fifthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/sixthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fifthPlace" >
-
-                <TextView
-                    android:id="@+id/Rank6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name6"
-                    app:layout_constraintStart_toStartOf="@+id/sixthPlace"
-                    app:layout_constraintTop_toTopOf="@id/sixthPlace" />
-
-                <TextView
-                    android:id="@+id/Name6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep6"
-                    app:layout_constraintStart_toEndOf="@+id/Rank6"
-                    app:layout_constraintTop_toTopOf="@id/sixthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/sixthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name6"
-                    app:layout_constraintTop_toTopOf="@+id/sixthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/seventhPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sixthPlace" >
-
-                <TextView
-                    android:id="@+id/Rank7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="7"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name7"
-                    app:layout_constraintStart_toStartOf="@+id/seventhPlace"
-                    app:layout_constraintTop_toTopOf="@id/seventhPlace" />
-
-                <TextView
-                    android:id="@+id/Name7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep7"
-                    app:layout_constraintStart_toEndOf="@+id/Rank7"
-                    app:layout_constraintTop_toTopOf="@id/seventhPlace" />
-
-                <TextView
-                    android:id="@+id/Rep7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/seventhPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name7"
-                    app:layout_constraintTop_toTopOf="@+id/seventhPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/eightPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/seventhPlace" >
-
-                <TextView
-                    android:id="@+id/Rank8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name8"
-                    app:layout_constraintStart_toStartOf="@+id/eightPlace"
-                    app:layout_constraintTop_toTopOf="@id/eightPlace" />
-
-                <TextView
-                    android:id="@+id/Name8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep8"
-                    app:layout_constraintStart_toEndOf="@+id/Rank8"
-                    app:layout_constraintTop_toTopOf="@id/eightPlace" />
-
-                <TextView
-                    android:id="@+id/Rep8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/eightPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name8"
-                    app:layout_constraintTop_toTopOf="@+id/eightPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/ninthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/eightPlace" >
-
-                <TextView
-                    android:id="@+id/Rank9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="9"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name9"
-                    app:layout_constraintStart_toStartOf="@+id/ninthPlace"
-                    app:layout_constraintTop_toTopOf="@id/ninthPlace" />
-
-                <TextView
-                    android:id="@+id/Name9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep9"
-                    app:layout_constraintStart_toEndOf="@+id/Rank9"
-                    app:layout_constraintTop_toTopOf="@id/ninthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/ninthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name9"
-                    app:layout_constraintTop_toTopOf="@+id/ninthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/tenthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ninthPlace" >
-
-                <TextView
-                    android:id="@+id/Rank10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name10"
-                    app:layout_constraintStart_toStartOf="@+id/tenthPlace"
-                    app:layout_constraintTop_toTopOf="@id/tenthPlace" />
-
-                <TextView
-                    android:id="@+id/Name10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep10"
-                    app:layout_constraintStart_toEndOf="@+id/Rank10"
-                    app:layout_constraintTop_toTopOf="@id/tenthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/tenthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name10"
-                    app:layout_constraintTop_toTopOf="@+id/tenthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/eleventhPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tenthPlace" >
-
-                <TextView
-                    android:id="@+id/Rank11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="11"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name11"
-                    app:layout_constraintStart_toStartOf="@+id/eleventhPlace"
-                    app:layout_constraintTop_toTopOf="@id/eleventhPlace" />
-
-                <TextView
-                    android:id="@+id/Name11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep11"
-                    app:layout_constraintStart_toEndOf="@+id/Rank11"
-                    app:layout_constraintTop_toTopOf="@id/eleventhPlace" />
-
-                <TextView
-                    android:id="@+id/Rep11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/eleventhPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name11"
-                    app:layout_constraintTop_toTopOf="@+id/eleventhPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/twelfthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/eleventhPlace" >
-
-                <TextView
-                    android:id="@+id/Rank12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name12"
-                    app:layout_constraintStart_toStartOf="@+id/twelfthPlace"
-                    app:layout_constraintTop_toTopOf="@id/twelfthPlace" />
-
-                <TextView
-                    android:id="@+id/Name12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep12"
-                    app:layout_constraintStart_toEndOf="@+id/Rank12"
-                    app:layout_constraintTop_toTopOf="@id/twelfthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/twelfthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name12"
-                    app:layout_constraintTop_toTopOf="@+id/twelfthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/thirteenthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/twelfthPlace" >
-
-                <TextView
-                    android:id="@+id/Rank13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="13"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name13"
-                    app:layout_constraintStart_toStartOf="@+id/thirteenthPlace"
-                    app:layout_constraintTop_toTopOf="@id/thirteenthPlace" />
-
-                <TextView
-                    android:id="@+id/Name13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep13"
-                    app:layout_constraintStart_toEndOf="@+id/Rank13"
-                    app:layout_constraintTop_toTopOf="@id/thirteenthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/thirteenthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name13"
-                    app:layout_constraintTop_toTopOf="@+id/thirteenthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fourteenthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/thirteenthPlace" >
-
-                <TextView
-                    android:id="@+id/Rank14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name14"
-                    app:layout_constraintStart_toStartOf="@+id/fourteenthPlace"
-                    app:layout_constraintTop_toTopOf="@id/fourteenthPlace" />
-
-                <TextView
-                    android:id="@+id/Name14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep14"
-                    app:layout_constraintStart_toEndOf="@+id/Rank14"
-                    app:layout_constraintTop_toTopOf="@id/fourteenthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/fourteenthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name14"
-                    app:layout_constraintTop_toTopOf="@+id/fourteenthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fifteenthPlace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_view"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical"
-                android:padding="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fourteenthPlace" >
-
-                <TextView
-                    android:id="@+id/Rank15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="15"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/Name15"
-                    app:layout_constraintStart_toStartOf="@+id/fifteenthPlace"
-                    app:layout_constraintTop_toTopOf="@id/fifteenthPlace" />
-
-                <TextView
-                    android:id="@+id/Name15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:paddingEnd="30dp"
-                    app:layout_constraintEnd_toStartOf="@+id/Rep15"
-                    app:layout_constraintStart_toEndOf="@+id/Rank15"
-                    app:layout_constraintTop_toTopOf="@id/fifteenthPlace" />
-
-                <TextView
-                    android:id="@+id/Rep15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="inputReps"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/fifteenthPlace"
-                    app:layout_constraintStart_toEndOf="@+id/Name15"
-                    app:layout_constraintTop_toTopOf="@+id/fifteenthPlace" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
-
+        app:layout_constraintTop_toBottomOf="@id/titleTab" />
+
+    <!-- Old Scrolling Leaderboard -->
+<!--    <ScrollView-->
+<!--        android:id="@+id/scrollingLeaderboard"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/yourPlace"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/titleTab"-->
+<!--        android:overScrollMode="always"-->
+<!--        android:isScrollContainer="true"-->
+<!--        android:scrollbarAlwaysDrawVerticalTrack="true"-->
+<!--        android:scrollbarStyle="outsideInset"-->
+<!--        android:scrollbars="vertical"-->
+<!--        android:fadeScrollbars="false"-->
+<!--        android:scrollbarSize="15dp"-->
+<!--        android:scrollbarThumbVertical="@color/orange">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/firstPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/scrollingLeaderboard" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="1"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name1"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/firstPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/firstPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep1"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank1"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/firstPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/firstPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name1"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/firstPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/secondPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/firstPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="2"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name2"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/secondPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/secondPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep2"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank2"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/secondPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/secondPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name2"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/secondPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/thirdPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/secondPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="3"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name3"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/thirdPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/thirdPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep3"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank3"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/thirdPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/thirdPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name3"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/thirdPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/fourthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/thirdPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="4"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name4"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/fourthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/fourthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep4"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank4"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/fourthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/fourthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name4"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/fourthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/fifthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/fourthPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank5"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="5"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name5"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/fifthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/fifthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name5"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep5"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank5"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/fifthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep5"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/fifthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name5"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/fifthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/sixthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/fifthPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank6"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="6"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name6"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/sixthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/sixthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name6"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep6"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank6"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/sixthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep6"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/sixthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name6"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/sixthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/seventhPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/sixthPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank7"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="7"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name7"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/seventhPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/seventhPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name7"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep7"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank7"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/seventhPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep7"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/seventhPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name7"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/seventhPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/eightPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/seventhPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank8"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="8"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name8"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/eightPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/eightPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name8"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep8"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank8"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/eightPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep8"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/eightPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name8"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/eightPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/ninthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/eightPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank9"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="9"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name9"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/ninthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/ninthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name9"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep9"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank9"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/ninthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep9"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/ninthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name9"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/ninthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/tenthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/ninthPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank10"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="10"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name10"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/tenthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/tenthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name10"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep10"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank10"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/tenthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep10"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/tenthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name10"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/tenthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/eleventhPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tenthPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank11"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="11"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name11"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/eleventhPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/eleventhPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name11"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep11"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank11"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/eleventhPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep11"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/eleventhPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name11"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/eleventhPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/twelfthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/eleventhPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank12"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="12"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name12"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/twelfthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/twelfthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name12"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep12"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank12"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/twelfthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep12"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/twelfthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name12"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/twelfthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/thirteenthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/twelfthPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank13"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="13"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name13"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/thirteenthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/thirteenthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name13"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep13"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank13"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/thirteenthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep13"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/thirteenthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name13"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/thirteenthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/fourteenthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/thirteenthPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank14"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="14"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name14"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/fourteenthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/fourteenthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name14"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep14"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank14"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/fourteenthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep14"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/fourteenthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name14"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/fourteenthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/fifteenthPlace"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/round_view"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="7dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/fourteenthPlace" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rank15"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="15"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Name15"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/fifteenthPlace"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/fifteenthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Name15"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:paddingEnd="30dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/Rep15"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Rank15"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/fifteenthPlace" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Rep15"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="inputReps"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/fifteenthPlace"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/Name15"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/fifteenthPlace" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </ScrollView>-->
+
+    <!-- Your Place -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/yourPlace"
         android:layout_width="match_parent"

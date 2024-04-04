@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -40,62 +42,75 @@ public class LeaderBoardActivity extends AppCompatActivity {
         CollectionReference users = db.collection("users");
         Query query = users.orderBy("pushupAllTime", Query.Direction.DESCENDING);
 
-        int[] nameRows = {R.id.Name1, R.id.Name2, R.id.Name3, R.id.Name4,
-                R.id.Name5, R.id.Name6, R.id.Name7, R.id.Name8, R.id.Name9,
-                R.id.Name10, R.id.Name11, R.id.Name12, R.id.Name13, R.id.Name14,
-                R.id.Name15};
-        int[] repRows = {R.id.Rep1, R.id.Rep2, R.id.Rep3, R.id.Rep4, R.id.Rep5,
-                R.id.Rep6, R.id.Rep7, R.id.Rep8, R.id.Rep9, R.id.Rep10, R.id.Rep11,
-                R.id.Rep12, R.id.Rep13, R.id.Rep14, R.id.Rep15,};
+//        int[] nameRows = {R.id.Name1, R.id.Name2, R.id.Name3, R.id.Name4,
+//                R.id.Name5, R.id.Name6, R.id.Name7, R.id.Name8, R.id.Name9,
+//                R.id.Name10, R.id.Name11, R.id.Name12, R.id.Name13, R.id.Name14,
+//                R.id.Name15};
+//        int[] repRows = {R.id.Rep1, R.id.Rep2, R.id.Rep3, R.id.Rep4, R.id.Rep5,
+//                R.id.Rep6, R.id.Rep7, R.id.Rep8, R.id.Rep9, R.id.Rep10, R.id.Rep11,
+//                R.id.Rep12, R.id.Rep13, R.id.Rep14, R.id.Rep15,};
+//
+//        // Fetch user's leaderboard info
+//        Task<QuerySnapshot> querySnapshotTask = query.get();
+//        querySnapshotTask
+//                .addOnSuccessListener(result -> {
+//                    QuerySnapshot qsnapshot = result;
+//                    ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
+//                    DocumentSnapshot currentUser = null;
+//
+//                    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//                    for (int i = 0; i < Math.min(15, userArrList.size()); i++) {
+//                        TextView name = findViewById(nameRows[i]);
+//                        TextView reps = findViewById(repRows[i]);
+//                        DocumentSnapshot userDoc = userArrList.get(i);
+//
+//                        if (userDoc != null) {
+//
+//                            Long repsLong = userDoc.get("pushupAllTime", Long.class);
+//                            String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
+//                            name.setText(userDoc.get("username",String.class));
+//                            reps.setText(repsAmt);
+//                        } else {
+//                            name.setText("");
+//                            reps.setText("");
+//                        }
+//                    }
+//                    for (DocumentSnapshot doc : userArrList) {
+//                        Log.d("uid:",doc.getId());
+//                        if (doc.getId().equals(uid)) {
+//                            currentUser = doc;
+//                            break;
+//                        }
+//                    }
+//
+//                    if (currentUser != null) {
+//                        TextView yourRank = findViewById(R.id.yourRank);
+//                        yourRank.setText(String.valueOf(userArrList.indexOf(currentUser) + 1));
+//
+//                        TextView yourName = findViewById(R.id.yourName);
+//                        TextView yourRep = findViewById(R.id.yourRep);
+//                        yourName.setText(currentUser.get("username",String.class));
+//                        Long currentUserReps = currentUser.get("pushupToday", Long.class);
+//                        yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
+//                    }
+//                })
+//                .addOnFailureListener(e -> {
+//                    // Handle the exception
+//                });
 
-        Task<QuerySnapshot> querySnapshotTask = query.get();
 
-        querySnapshotTask
-                .addOnSuccessListener(result -> {
-                    QuerySnapshot qsnapshot = result;
-                    ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
-                    DocumentSnapshot currentUser = null;
-
-                    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                    for (int i = 0; i < Math.min(15, userArrList.size()); i++) {
-                        TextView name = findViewById(nameRows[i]);
-                        TextView reps = findViewById(repRows[i]);
-                        DocumentSnapshot userDoc = userArrList.get(i);
-
-                        if (userDoc != null) {
-
-                            Long repsLong = userDoc.get("pushupAllTime", Long.class);
-                            String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
-                            name.setText(userDoc.get("username",String.class));
-                            reps.setText(repsAmt);
-                        } else {
-                            name.setText("");
-                            reps.setText("");
-                        }
-                    }
-                    for (DocumentSnapshot doc : userArrList) {
-                        Log.d("uid:",doc.getId());
-                        if (doc.getId().equals(uid)) {
-                            currentUser = doc;
-                            break;
-                        }
-                    }
-
-                    if (currentUser != null) {
-                        TextView yourRank = findViewById(R.id.yourRank);
-                        yourRank.setText(String.valueOf(userArrList.indexOf(currentUser) + 1));
-
-                        TextView yourName = findViewById(R.id.yourName);
-                        TextView yourRep = findViewById(R.id.yourRep);
-                        yourName.setText(currentUser.get("username",String.class));
-                        Long currentUserReps = currentUser.get("pushupToday", Long.class);
-                        yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
-                    }
-                })
-                .addOnFailureListener(e -> {
-                    // Handle the exception
-                });
         setContentView(R.layout.activity_leader_board);
+
+        // RecyclerView
+        RecyclerView leaderboard = findViewById(R.id.leaderboard);
+        ArrayList<String> dataSource = new ArrayList<>();
+        dataSource.add("a");
+        dataSource.add("b");
+
+        RecyclerView.Adapter<LeaderBoardAdapter.LeaderBoardHolder> adapter
+                = new LeaderBoardAdapter(this, dataSource);
+        leaderboard.setAdapter( adapter );
+        leaderboard.setLayoutManager( new LinearLayoutManager(this));
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnItemSelectedListener(item -> {

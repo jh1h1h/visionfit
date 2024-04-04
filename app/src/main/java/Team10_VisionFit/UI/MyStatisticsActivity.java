@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class MyStatisticsActivity extends AppCompatActivity {
 
 
     private FirebaseFirestore firestore;
+    int streakCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,16 @@ public class MyStatisticsActivity extends AppCompatActivity {
                                 num_of_pushups.setText(pushup_alltime.toString());
                                 num_of_squats.setText(squat_alltime.toString());
                                 num_of_weightlift.setText(weightlift_alltime.toString());
+
+                                streakCount = document.getLong("streak").intValue();
+
+                                final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+                                final TextView streakText = (TextView) findViewById(R.id.streakText);
+
+                                progressBar.setProgress(Integer.parseInt(String.valueOf(streakCount)));
+                                String streak = streakCount + " days";
+                                streakText.setText(streak);
+
                             } else {
                                 // Handle the case where user data is not available
                                 Log.d("MyStatisticsActivity", "No such document");

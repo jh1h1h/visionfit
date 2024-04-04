@@ -30,6 +30,7 @@ import Team10_VisionFit.MainActivity;
 
 public class Login extends AppCompatActivity {
 
+    // Declaring class variables
     private EditText loginEmail, loginPassword;
     private TextView signupRedirectText;
     private Button loginButton;
@@ -41,23 +42,24 @@ public class Login extends AppCompatActivity {
     CheckBox savelogindetails;
 
 
+    // Method to handle login functionality
     public void loginFunc(){
         String email = loginEmail.getText().toString();
         String pass = loginPassword.getText().toString();
         if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             if (!pass.isEmpty()) {
-                auth.signInWithEmailAndPassword(email, pass)
+                auth.signInWithEmailAndPassword(email, pass) // Attempting to sign in with provided email and password
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
                                 Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                if(savelogindetails.isChecked()) {
+                                if(savelogindetails.isChecked()) { // Saving login details in shared preference if checkbox is checked
                                     editor.putBoolean("savelogin", true);
                                     editor.putString("email", email);
                                     editor.putString("password", pass);
                                     editor.commit();
                                 }
-                                Intent intent = new Intent(Login.this, MainActivity.class);
+                                Intent intent = new Intent(Login.this, MainActivity.class); // Log in successful, transit to Main Activity xml
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 finish();
@@ -82,14 +84,14 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // Initializing UI components and Firebase authentication
         loginEmail = findViewById(R.id.email);
         loginPassword = findViewById(R.id.password);
-
         loginButton = findViewById(R.id.btn_login);
         signupRedirectText = findViewById(R.id.registerNow);
         forgotPassword = findViewById(R.id.txtForgotPassword);
         auth = FirebaseAuth.getInstance();
-
         sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
         savelogindetails = (CheckBox) findViewById(R.id.checkBoxRememberMe);
         editor = sharedPreferences.edit();
@@ -101,12 +103,15 @@ public class Login extends AppCompatActivity {
                 loginFunc();
             }
         });
+
+        // Restoring saved login details if available
         savelogin=sharedPreferences.getBoolean("savelogin", true);
         if(savelogin==true) {
             loginEmail.setText(sharedPreferences.getString("email", null));
             loginPassword.setText(sharedPreferences.getString("password", null));
         }
 
+        // Setting listener for the 'Enter' key to trigger login
         loginPassword.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
                 //If the keyevent is a key-down event on the "enter" button
@@ -118,12 +123,16 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
+        // Redirecting to registration activity when 'registerNow' text is clicked
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login.this, Register.class));
             }
         });
+
+        // Handling 'Forgot Password' functionality
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

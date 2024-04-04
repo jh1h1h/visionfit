@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.Manifest;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button button;
     TextView textView;
     FirebaseUser user;
+    int streakCount;
 
     public static int repCount;
     public static String classType;
@@ -57,10 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+
         auth = FirebaseAuth.getInstance();
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
         DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid); //Using that ID, get the user's data from firestore
@@ -74,6 +75,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 DocumentSnapshot document = task.getResult();
                 if (document != null && document.exists()) {
                     String displayName = document.getString("username");
+                    streakCount = document.getLong("streak").intValue();
+
+                    final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+                    final TextView streakText = (TextView) findViewById(R.id.streakText);
+
+                    progressBar.setProgress(Integer.parseInt(String.valueOf(streakCount)));
+                    String streak = streakCount + " days";
+                    streakText.setText(streak);
+
                     textView.setText("Hello, "+displayName+"!");}
 
 //                if (repCount != 0 && classType != null && !classType.equals("Free Style")) {

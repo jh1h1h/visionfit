@@ -148,14 +148,14 @@ public class DailyChallengeActivity extends AppCompatActivity{
                         if (repCount > prevAllTime){
                             userRef.update(classType + "AllTime", repCount);
                         }
-                        Toast.makeText(this,"You have logged "+repCount+" "+classType+"s!", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(this,"You have logged "+repCount+" "+classType+"s!", Toast.LENGTH_SHORT).show(); // change to dialog pop up instead
                     }
 
                     if (intent.getStringExtra("Push Ups Reps") != null) {
                         int numReps = Integer.parseInt(intent.getStringExtra("Push Ups Reps"));
 
                         //Check if it exceeds the number of reps required to pass the challenge
-                        if (numReps >= numPushupsRepsToDo) {
+                        if ((numReps >= numPushupsRepsToDo) && (!(hasCompletedPushupsChallengeToday))){
                             hasCompletedPushupsChallengeToday = true;
                             numPushupsChallengeCompleted++;
 
@@ -178,7 +178,7 @@ public class DailyChallengeActivity extends AppCompatActivity{
                         int numReps = Integer.parseInt(intent.getStringExtra("Squats Reps"));
 
                         //Check if it exceeds the number of reps required to pass the challenge
-                        if (numReps >= numSquatsRepsToDo) {
+                        if ((numReps >= numSquatsRepsToDo) && (!(hasCompletedSquatsChallengeToday))){
                             hasCompletedSquatsChallengeToday = true;
                             numSquatsChallengeCompleted++;
 
@@ -202,20 +202,19 @@ public class DailyChallengeActivity extends AppCompatActivity{
                     if (hasCompletedSquatsChallengeToday) {
                         //If yes, change button colour to green
                         squatsButton.setBackgroundTintList(new ColorStateList(states, colors));
-                    } else {
-                        //Add the number to the text in the button
-                        String challengeText = String.valueOf(numSquatsRepsToDo) + " SQUATS";
-                        squatsButton.setText(challengeText);
                     }
+                    //Add the number to the text in the button
+                    String challengeText = String.valueOf(numSquatsRepsToDo) + " SQUATS";
+                    squatsButton.setText(challengeText);
+
 
                     if (hasCompletedPushupsChallengeToday) {
                         //If yes, change button colour to green
                         pushUpButton.setBackgroundTintList(new ColorStateList(states, colors));
-                    } else {
-                        //Add the number to the text in the button
-                        String challengeText = String.valueOf(numPushupsRepsToDo) + " PUSH UPS";
-                        pushUpButton.setText(challengeText);
                     }
+                    //Add the number to the text in the button
+                    challengeText = String.valueOf(numPushupsRepsToDo) + " PUSH UPS";
+                    pushUpButton.setText(challengeText);
 
                     //Setup on click listeners
                     pushUpButton.setOnClickListener(new View.OnClickListener() {

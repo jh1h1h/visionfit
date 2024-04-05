@@ -27,8 +27,6 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
     @NonNull
     @Override
     public LeaderBoardHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        /** this is pretty much standard code so we will leave it here
-         *  inflates the xml layout for each list item and is ready for the data to be added */
         View itemView = mInflater.inflate(R.layout.frag_leaderboard_row, parent, false);
         return new LeaderBoardHolder(itemView);
     }

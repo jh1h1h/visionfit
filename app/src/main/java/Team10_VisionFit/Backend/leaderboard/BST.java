@@ -1,8 +1,11 @@
 package Team10_VisionFit.Backend.leaderboard;
 
+import android.content.res.Resources;
+import android.util.Log;
+
 public class BST extends Node{
 
-    private Node root; // Initialize BST root node
+    public Node root; // Initialize BST root node
 
     // Constructor
     public BST() {
@@ -17,23 +20,39 @@ public class BST extends Node{
         }
     }
 
-    public Node tree_insert(Node x, int key) {
-        if (x == null) { // tree is empty
-            return new Node(key);
+    // Insert a new node n at the subtree rooted at subtreeroot
+    public void tree_insert(Node node, Node subtreeroot) {
+        if (subtreeroot == null) { // tree is empty
+            subtreeroot = node;
         }
-
         // if tree not empty, traverse the tree to insert based on key value
-        if (key < x.key) {
-            x.left = tree_insert(x.left, key);
-            x.left.parent = x; // Update parent reference
-        } else if (key > x.key) {
-            x.right = tree_insert(x.right, key);
-            x.right.parent = x; // Update parent reference
+        if (node.key < subtreeroot.key) {
+            tree_insert(node, subtreeroot.left);
+        } else {
+            tree_insert(node, subtreeroot.right);
         }
-        return x;
+        // TODO: rebalance tree since need AVL for optimal time complexity
+        // TODO: [Firebase] Upload node and update subtreeroot
     }
 
-    public Node tree_delete(Node root, int key) {
+    // Insert a new node n at the subtree rooted at subtreeroot
+    public void tree_delete(Node node, Node subtreeroot) throws Resources.NotFoundException {
+        if (subtreeroot == null) { // tree is empty
+            Log.d("ERROR","BST: Node to be deleted not found");
+            throw new Resources.NotFoundException("BST: Node to be deleted not found");
+        }
+        // TODO: Code user equate function (probably by id)
+        if (subtreeroot.user == node.user){
+            subtreeroot = null;
+            // TODO: [Firebase] Upload node and update subtreeroot
+        }
+        // if tree not empty, traverse the tree to insert based on key value
+        if (node.key < subtreeroot.key) {
+            tree_delete(node, subtreeroot.left);
+        } else {
+            tree_delete(node, subtreeroot.right);
+        }
+
         if (root == null) { // Base case: tree is empty
             return root;
         }

@@ -88,7 +88,7 @@ public class LeaderBoardActivity extends AppCompatActivity {
                         TextView yourName = findViewById(R.id.yourName);
                         TextView yourRep = findViewById(R.id.yourRep);
                         yourName.setText(currentUser.get("username",String.class));
-                        Long currentUserReps = currentUser.get("pushupToday", Long.class);
+                        Long currentUserReps = currentUser.get("pushupAllTime", Long.class);
                         yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
                     }
                 })

@@ -123,8 +123,8 @@ public final class LivePreviewActivity extends AppCompatActivity
       @Override
       public void onClick(View v) {
         Log.d("Button Check", "Start Button Clicked");
-        resetRepCounters(); //Reset counters to 0 when start is pressed.
-        PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
+        //resetRepCounters(); //Reset counters to 0 when start is pressed.
+        //PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
 
         if (classType.equals("Push Ups")) {
           startCountdownTimer(countdownPushups);
@@ -242,6 +242,8 @@ public final class LivePreviewActivity extends AppCompatActivity
 
           public void onFinish() {
             // Start the actual countdown timer after the 2-second countdown finishes
+            resetRepCounters(); //Reset counters to 0 when start is pressed.
+            PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
             countdownTimer = new CountDownTimer(durationMillis, 1000) {
               public void onTick(long millisUntilFinished) {
                 // Calculate remaining time in seconds

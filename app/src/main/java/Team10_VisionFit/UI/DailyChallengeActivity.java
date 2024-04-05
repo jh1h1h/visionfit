@@ -258,7 +258,7 @@ public class DailyChallengeActivity extends AppCompatActivity{
                         }
                     }
 
-                    if (hasCompletedSquatsChallengeToday && hasCompletedPushupsChallengeToday) {
+                    if (hasCompletedSquatsChallengeToday && hasCompletedPushupsChallengeToday && streakChange) {
                         current_points += 50;
                         lifetime_points += 50;
                         userRef.update("current_points", current_points);

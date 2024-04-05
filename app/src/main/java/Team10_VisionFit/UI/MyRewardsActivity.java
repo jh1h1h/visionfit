@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.teamten.visionfit.R;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
@@ -21,49 +24,83 @@ import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 
 public class MyRewardsActivity extends AppCompatActivity {
     FirebaseAuth auth;
+    boolean hasCompletedSquatsChallengeToday;
+    boolean hasCompletedPushupsChallengeToday;
+    boolean streakChange;
+    int current_points;
+    int lifetime_points;
+    TextView my_points_now;
+    TextView my_total_points;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_rewards);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.bottom_home:
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    Log.d("Button Check", "Home Button Clicked");
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_settings:
-                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-                    Log.d("Button Check", "Settings Button Clicked");
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
+        my_points_now = findViewById(R.id.earnings);
+        my_total_points = findViewById(R.id.lifettime_earnings);
 
-                //case R.id.cameraButton:
-                //Intent intent = new Intent(getApplicationContext(), LivePreviewActivity.class);
-                //intent.putExtra("ClassType", "Free Style");
-                //startActivity(intent);
-                //Log.d("Button Check", "Camera Button Clicked");
-                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                //finish();
-                //return true;
+        //Getting the user's number of completed challenges to decide on the new challenge, and whether the user has completed today's challenges
+        auth = FirebaseAuth.getInstance();
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
+        DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid); //Using that ID, get the user's data from firestore
 
-                case R.id.bottom_userProfile:
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                    Log.d("Button Check", "Profile Button Clicked");
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_logout:
-                    Log.d("Button Check", "Logout Button Clicked");
-                    customExitDialog();
-                    return true;
+        //The task is done ASYNCHRONOUSLY, hence need to put everything inside
+        userRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document != null && document.exists()) {
+                    //Get the current status of whether challenge has been completed and total challenges completed
+                    hasCompletedSquatsChallengeToday = document.getBoolean("hasCompletedSquatsChallengeToday");
+                    hasCompletedPushupsChallengeToday = document.getBoolean("hasCompletedPushupsChallengeToday");
+                    streakChange = document.getBoolean("streakChange");
+                    current_points = document.getLong("current_points").intValue();
+                    lifetime_points = document.getLong("lifetime_points").intValue();
+
+                    // Set the text of TextViews after updating points
+                    my_points_now.setText(String.valueOf(current_points));
+                    my_total_points.setText(String.valueOf(lifetime_points));
+                }
+
+                BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+                bottomNavigationView.setOnItemSelectedListener(item -> {
+                    switch (item.getItemId()) {
+                        case R.id.bottom_home:
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            Log.d("Button Check", "Home Button Clicked");
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                            finish();
+                            return true;
+                        case R.id.bottom_settings:
+                            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                            Log.d("Button Check", "Settings Button Clicked");
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                            finish();
+                            return true;
+
+                        //case R.id.cameraButton:
+                        //Intent intent = new Intent(getApplicationContext(), LivePreviewActivity.class);
+                        //intent.putExtra("ClassType", "Free Style");
+                        //startActivity(intent);
+                        //Log.d("Button Check", "Camera Button Clicked");
+                        //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        //finish();
+                        //return true;
+
+                        case R.id.bottom_userProfile:
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            Log.d("Button Check", "Profile Button Clicked");
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                            finish();
+                            return true;
+                        case R.id.bottom_logout:
+                            Log.d("Button Check", "Logout Button Clicked");
+                            customExitDialog();
+                            return true;
+                    }
+                    return false;
+                });
             }
-            return false;
         });
     }
 

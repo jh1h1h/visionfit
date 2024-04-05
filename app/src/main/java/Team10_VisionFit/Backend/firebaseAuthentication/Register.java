@@ -27,15 +27,22 @@ import com.teamten.visionfit.R;
 
 public class Register extends AppCompatActivity {
 
+    // Firebase authentication instance
     private FirebaseAuth auth;
+
+    // UI elements
     private EditText signupEmail, signupPassword, signupUsername, signupDOB, signupCountry;
     private Button signupButton;
     private TextView loginRedirectText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        auth = FirebaseAuth.getInstance();
+
+        auth = FirebaseAuth.getInstance(); // Initialize Firebase authentication
+
+        // Bind UI elements with XML
         signupEmail = findViewById(R.id.email);
         signupPassword = findViewById(R.id.password);
         signupUsername = findViewById(R.id.username_register);
@@ -44,6 +51,7 @@ public class Register extends AppCompatActivity {
         signupButton = findViewById(R.id.btn_register);
         loginRedirectText = findViewById(R.id.loginNow);
 
+        // Show DatePicker dialog when 'Enter' key is pressed on password field
         signupPassword.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -57,9 +65,12 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        // Register the user when the signup button is clicked
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // Validate and process user input
                 String user = signupEmail.getText().toString().trim();
                 String pass = signupPassword.getText().toString().trim();
                 String dob = signupDOB.getText().toString().trim();
@@ -108,7 +119,8 @@ public class Register extends AppCompatActivity {
                 });
             }
         });
-        
+
+        // Redirect to login activity when 'Login Now' text is clicked
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,6 +128,21 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        // Trigger signupButton click listener action when click on field
+        signupDOB.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) { // If the input field gains focus
+                    String dob = signupDOB.getText().toString().trim();
+                    if (dob.isEmpty()) {
+                        // If field input is empty, show the date picker dialog
+                        showDatePickerDialog();
+                    }
+                }
+            }
+        });
+
+        // Trigger signupButton click listener action when 'Enter' key is pressed on country field
         signupCountry.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
                 //If the keyevent is a key-down event on the "enter" button
@@ -129,6 +156,7 @@ public class Register extends AppCompatActivity {
         });
     }
 
+    // Method to display DatePicker dialog
     private void showDatePickerDialog() {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -151,12 +179,14 @@ public class Register extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    // Method to validate date format (DD/MM/YYYY)
     private boolean isValidDateFormat(String dob) {
         // Regular expression to match DD/MM/YYYY format
         String regex = "\\d{2}/\\d{2}/\\d{4}";
         return dob.matches(regex);
     }
 
+    // Method to validate country name
     private boolean isValidCountry(String country) {
         // Convert the entered country to uppercase for case-insensitive comparison
         country = country.trim().toUpperCase();

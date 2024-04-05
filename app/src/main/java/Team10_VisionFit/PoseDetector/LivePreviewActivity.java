@@ -16,7 +16,11 @@
 
 package Team10_VisionFit.PoseDetector;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -41,6 +45,7 @@ import com.teamten.visionfit.R;
 
 import java.io.IOException;
 
+import Team10_VisionFit.Backend.firebaseAuthentication.Login;
 import Team10_VisionFit.Backend.preference.PreferenceUtils;
 import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.classification.PoseClassifierProcessor;
@@ -225,19 +230,9 @@ public final class LivePreviewActivity extends AppCompatActivity
 
       public void onFinish() {
         // Countdown finished, handle onFinish event here
-        // For example, start a new activity
-        repCountText = findViewById(R.id.exercise_count_text);
-        String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
-        int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
-        Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
-        String label = classType + " Reps";
-        intent.putExtra(label, repCountStr);
-        intent.putExtra("repCount", count);
-        intent.putExtra("ClassType", classType);
-        resetRepCounters(); // Reset the counters to 0 before finish and exiting
+        // For example, start a new activity after exiting pop up
+        customEndChallengeDialog();
 
-        startActivity(intent);
-        finish();
       }
     }.start();
   }
@@ -372,5 +367,51 @@ public final class LivePreviewActivity extends AppCompatActivity
       Log.d("MyMessage", "Pose Classifier is still loading, be patient");
     }
 
+  }
+
+  public  void customEndChallengeDialog() {
+    // creating custom dialog
+    final Dialog dialog = new Dialog(LivePreviewActivity.this);
+    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+    // setting content view to dialog
+    dialog.setContentView(R.layout.dialog_finish_challenge);
+    Button dialogButtonExit = dialog.findViewById(R.id.btnExit); // getting reference of Button
+    TextView endChallenge_Text = dialog.findViewById(R.id.end_challenge_message); // getting reference of TextView
+
+    if (classType.equals("Push Ups")) {
+      String end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCountStr + " push ups.";
+      endChallenge_Text.setText(end_Challenge_Text);
+    } else if (classType.equals("Squats")) {
+      String end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCountStr + " squats.";
+      endChallenge_Text.setText(end_Challenge_Text);
+    }
+
+    // click listener for Yes
+    dialogButtonExit.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        // dismiss the dialog and go to daily challenge UI
+        dialog.dismiss();
+
+        repCountText = findViewById(R.id.exercise_count_text);
+        String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
+        int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
+
+        Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
+        String label = classType + " Reps";
+        intent.putExtra(label, repCountStr);
+        intent.putExtra("repCount", count);
+        intent.putExtra("ClassType", classType);
+        resetRepCounters(); // Reset the counters to 0 before finish and exiting
+
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        startActivity(intent);
+        finish();
+      }
+    });
+    // show the exit dialog
+    dialog.show();
   }
 }

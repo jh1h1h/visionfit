@@ -44,6 +44,43 @@
             app:layout_constraintRight_toRightOf="@+id/greeting"
             app:layout_constraintTop_toTopOf="@+id/user_details" />
 
+        <TextView
+            android:id="@+id/streakText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="17dp"
+            android:text="days"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/streakIcon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/streakIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="@dimen/padding_standard"
+            app:layout_constraintEnd_toStartOf="@id/progressBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/icon_fire_streak"/>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@id/progressBar"
+            android:layout_width="235dp"
+            android:layout_height="200dp"
+            app:indicatorColor="@color/orange"
+            app:trackThickness="@dimen/padding_standard"
+            app:trackCornerRadius="15dp"
+            app:trackColor="@color/gray"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/greeting"
+            app:layout_constraintEnd_toEndOf="@id/greeting"
+            android:background="@drawable/round_view" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

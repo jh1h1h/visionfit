@@ -19,20 +19,20 @@ public class EditProfile extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_profile); //Set UI to be activity_profile xml
 
         Button save_changes_button = (Button) findViewById(R.id.save_changes_button);
         save_changes_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log Log = null;
-                Log.d("Button Check", "Squats Button Clicked");
-                savedChanges();
+                Log.d("Button Check", "Save Changes Button Clicked");
+                savedChanges(); // Call saved changes method
             }
         });
     }
     public void savedChanges(){
-        Dialog dialog = new Dialog(this);
+        Dialog dialog = new Dialog(this); // Create dialog instance
         dialog.setContentView(R.layout.activity_profile);
         dialog.show();
         }

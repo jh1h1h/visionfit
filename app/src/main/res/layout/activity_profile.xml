@@ -191,7 +191,9 @@
                     android:layout_gravity="center"
                     android:background="@drawable/round_view"
                     android:backgroundTint="@color/orange"
-                    android:text="Save changes" />
+                    android:text="Save changes"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 

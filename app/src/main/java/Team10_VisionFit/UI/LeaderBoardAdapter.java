@@ -16,12 +16,17 @@ import java.util.ArrayList;
 public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.LeaderBoardHolder>{
     LayoutInflater mInflater;
     Context context;
-    ArrayList<String> data;
+    // TODO: store all 3 in one array for standardisation, though not very important
+    ArrayList<String> names;
+    ArrayList<String> ranks;
+    ArrayList<String> reps;
 
-    LeaderBoardAdapter(Context context, ArrayList<String> dataSource){
+    LeaderBoardAdapter(Context context, ArrayList<String> names, ArrayList<String> ranks, ArrayList<String> reps){
         mInflater = LayoutInflater.from( context);
         this.context = context;
-        data = dataSource;
+        this.names = names;
+        this.ranks = ranks;
+        this.reps = reps;
     }
 
     @NonNull
@@ -33,21 +38,26 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull LeaderBoardHolder holder, int position) {
-        holder.getNameView().setText(data.get(position));
+        holder.getNameView().setText(names.get(position));
+        holder.getRankView().setText(ranks.get(position));
+        holder.getRepsView().setText(reps.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return names.size();
     }
 
     class LeaderBoardHolder extends RecyclerView.ViewHolder{
 
         private TextView nameView;
+        private TextView repsView;
+        private TextView rankView;
         public LeaderBoardHolder(@NonNull View itemView) {
             super(itemView);
             nameView = itemView.findViewById(R.id.Name);
-
+            repsView = itemView.findViewById(R.id.Reps);
+            rankView = itemView.findViewById(R.id.Rank);
             // TODO: Write code to detect a long click to for more user options
             /*** detecting a longClick and deleting the list item
              * 1 call setOnLongClickListener on itemView
@@ -58,6 +68,14 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
 
         public TextView getNameView() {
             return nameView;
+        }
+
+        public TextView getRankView() {
+            return rankView;
+        }
+
+        public TextView getRepsView() {
+            return repsView;
         }
     }
 }

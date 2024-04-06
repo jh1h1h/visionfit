@@ -41,6 +41,11 @@ public class LeaderBoardActivity extends AppCompatActivity {
         // asynchronously retrieve all users
         CollectionReference users = db.collection("users");
         Query query = users.orderBy("pushupAllTime", Query.Direction.DESCENDING);
+        setContentView(R.layout.activity_leader_board);
+
+        ArrayList<String> names = new ArrayList<>();
+        ArrayList<String> ranks = new ArrayList<>();
+        ArrayList<String> reps = new ArrayList<>();
 
 //        int[] nameRows = {R.id.Name1, R.id.Name2, R.id.Name3, R.id.Name4,
 //                R.id.Name5, R.id.Name6, R.id.Name7, R.id.Name8, R.id.Name9,
@@ -50,67 +55,66 @@ public class LeaderBoardActivity extends AppCompatActivity {
 //                R.id.Rep6, R.id.Rep7, R.id.Rep8, R.id.Rep9, R.id.Rep10, R.id.Rep11,
 //                R.id.Rep12, R.id.Rep13, R.id.Rep14, R.id.Rep15,};
 //
-//        // Fetch user's leaderboard info
-//        Task<QuerySnapshot> querySnapshotTask = query.get();
-//        querySnapshotTask
-//                .addOnSuccessListener(result -> {
-//                    QuerySnapshot qsnapshot = result;
-//                    ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
-//                    DocumentSnapshot currentUser = null;
-//
-//                    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//                    for (int i = 0; i < Math.min(15, userArrList.size()); i++) {
+        // Fetch user's leaderboard info
+        Task<QuerySnapshot> querySnapshotTask = query.get();
+        querySnapshotTask
+                .addOnSuccessListener(result -> {
+                    QuerySnapshot qsnapshot = result;
+                    ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
+                    DocumentSnapshot currentUser = null;
+
+                    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                    for (int i = 0; i < Math.min(15, userArrList.size()); i++) {
 //                        TextView name = findViewById(nameRows[i]);
 //                        TextView reps = findViewById(repRows[i]);
-//                        DocumentSnapshot userDoc = userArrList.get(i);
+                        DocumentSnapshot userDoc = userArrList.get(i);
 //
-//                        if (userDoc != null) {
-//
-//                            Long repsLong = userDoc.get("pushupAllTime", Long.class);
-//                            String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
+                        if (userDoc != null) {
+
+                            Long repsLong = userDoc.get("pushupAllTime", Long.class);
+                            String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
+                            names.add(userDoc.get("username",String.class));
+                            reps.add(repsAmt);
+                            ranks.add("abc");
 //                            name.setText(userDoc.get("username",String.class));
 //                            reps.setText(repsAmt);
-//                        } else {
+                        }
+//                        else {
 //                            name.setText("");
 //                            reps.setText("");
 //                        }
-//                    }
-//                    for (DocumentSnapshot doc : userArrList) {
-//                        Log.d("uid:",doc.getId());
-//                        if (doc.getId().equals(uid)) {
-//                            currentUser = doc;
-//                            break;
-//                        }
-//                    }
-//
-//                    if (currentUser != null) {
-//                        TextView yourRank = findViewById(R.id.yourRank);
-//                        yourRank.setText(String.valueOf(userArrList.indexOf(currentUser) + 1));
-//
-//                        TextView yourName = findViewById(R.id.yourName);
-//                        TextView yourRep = findViewById(R.id.yourRep);
-//                        yourName.setText(currentUser.get("username",String.class));
-//                        Long currentUserReps = currentUser.get("pushupToday", Long.class);
-//                        yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
-//                    }
-//                })
-//                .addOnFailureListener(e -> {
-//                    // Handle the exception
-//                });
+                    }
 
+                    // RecyclerView
+                    RecyclerView leaderboard = findViewById(R.id.leaderboard);
 
-        setContentView(R.layout.activity_leader_board);
+                    RecyclerView.Adapter<LeaderBoardAdapter.LeaderBoardHolder> adapter
+                            = new LeaderBoardAdapter(this, names, ranks, reps);
+                    leaderboard.setAdapter( adapter );
+                    leaderboard.setLayoutManager( new LinearLayoutManager(this));
 
-        // RecyclerView
-        RecyclerView leaderboard = findViewById(R.id.leaderboard);
-        ArrayList<String> dataSource = new ArrayList<>();
-        dataSource.add("a");
-        dataSource.add("b");
+                    for (DocumentSnapshot doc : userArrList) {
+                        Log.d("uid:",doc.getId());
+                        if (doc.getId().equals(uid)) {
+                            currentUser = doc;
+                            break;
+                        }
+                    }
 
-        RecyclerView.Adapter<LeaderBoardAdapter.LeaderBoardHolder> adapter
-                = new LeaderBoardAdapter(this, dataSource);
-        leaderboard.setAdapter( adapter );
-        leaderboard.setLayoutManager( new LinearLayoutManager(this));
+                    if (currentUser != null) {
+                        TextView yourRank = findViewById(R.id.yourRank);
+                        yourRank.setText(String.valueOf(userArrList.indexOf(currentUser) + 1));
+
+                        TextView yourName = findViewById(R.id.yourName);
+                        TextView yourRep = findViewById(R.id.yourRep);
+                        yourName.setText(currentUser.get("username",String.class));
+                        Long currentUserReps = currentUser.get("pushupToday", Long.class);
+                        yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Handle the exception
+                });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnItemSelectedListener(item -> {

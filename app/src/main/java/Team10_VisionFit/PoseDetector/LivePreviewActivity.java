@@ -16,6 +16,7 @@
 
 package Team10_VisionFit.PoseDetector;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,16 +25,20 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import com.google.android.gms.common.annotation.KeepName;
 import com.google.firebase.auth.FirebaseAuth;
@@ -119,8 +124,8 @@ public final class LivePreviewActivity extends AppCompatActivity
       @Override
       public void onClick(View v) {
         Log.d("Button Check", "Start Button Clicked");
-        resetRepCounters(); //Reset counters to 0 when start is pressed.
-        PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
+        //resetRepCounters(); //Reset counters to 0 when start is pressed.
+        //PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
 
         if (classType.equals("Push Ups")) {
           startCountdownTimer(countdownPushups);
@@ -202,7 +207,6 @@ public final class LivePreviewActivity extends AppCompatActivity
         intent2.putExtra(label,"0"); //If user quit by exiting, means forfeit the challenge, so 0
         resetRepCounters(); //Reset reps to zero
 
-
         startActivity(intent2);
         Log.d("Button Check", "Exit Button Clicked");
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -212,30 +216,64 @@ public final class LivePreviewActivity extends AppCompatActivity
   }
 
   private void startCountdownTimer(long durationMillis) {
-    countdownTimer = new CountDownTimer(durationMillis, 1000) {
+    // Countdown duration for 3 seconds
+    long countdownDuration = 3000;
+
+    // Start the countdown before the actual timing
+    new CountDownTimer(countdownDuration, 1000) {
+      int countdownValue = 3;
+
       public void onTick(long millisUntilFinished) {
-        // Calculate remaining time in seconds
-        long secondsRemaining = millisUntilFinished / 1000;
-
-        // Convert remaining time to minutes and seconds
-        long minutes = secondsRemaining / 60;
-        long seconds = secondsRemaining % 60;
-
-        // Format the remaining time as a string in MM:SS format
-        String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
-
-        // Update the countdown timer TextView
-        timerText.setText(timeLeftFormatted);
+        // Display countdown value in seconds
+        timerText.setTextColor(Color.RED); // Set color to red
+        timerText.setText(String.valueOf(countdownValue));
+        countdownValue--;
       }
 
       public void onFinish() {
-        // Countdown finished, handle onFinish event here
-        // For example, start a new activity after exiting pop up
-        customEndChallengeDialog();
+        // Update the timerText to display "START" in green color
+        timerText.setTextColor(Color.GREEN); // Set color to green
+        timerText.setText("START");
 
+        // Start a 2-second countdown to show "START" before starting the actual timer
+        new CountDownTimer(1000, 1000) {
+          public void onTick(long millisUntilFinished) {
+            // Do nothing during the 1-second countdown
+          }
+
+          public void onFinish() {
+            // Start the actual countdown timer after the 2-second countdown finishes
+            resetRepCounters(); //Reset counters to 0 when start is pressed.
+            PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
+            countdownTimer = new CountDownTimer(durationMillis, 1000) {
+              public void onTick(long millisUntilFinished) {
+                // Calculate remaining time in seconds
+                long secondsRemaining = millisUntilFinished / 1000;
+
+                // Convert remaining time to minutes and seconds
+                long minutes = secondsRemaining / 60;
+                long seconds = secondsRemaining % 60;
+
+                // Format the remaining time as a string in MM:SS format
+                String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
+
+                // Update the countdown timer TextView
+                timerText.setTextColor(Color.DKGRAY); // Set color to white for the countdown
+                timerText.setText(timeLeftFormatted);
+              }
+
+              public void onFinish() {
+                // Countdown finished, handle onFinish event here
+                // For example, start a new activity after exiting pop up
+                customEndChallengeDialog();
+              }
+            }.start();
+          }
+        }.start();
       }
     }.start();
   }
+
 
   @Override
   public synchronized void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -411,6 +449,9 @@ public final class LivePreviewActivity extends AppCompatActivity
         finish();
       }
     });
+    // Set dialog to be non-cancelable outside of button click
+    dialog.setCancelable(false);
+
     // show the exit dialog
     dialog.show();
   }

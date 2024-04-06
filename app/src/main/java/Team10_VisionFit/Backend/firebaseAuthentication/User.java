@@ -20,6 +20,8 @@ public class User {
     public int numPushupsChallengeCompleted;
     public boolean hasCompletedSquatsChallengeToday;
     public boolean hasCompletedPushupsChallengeToday;
+    public int current_points;
+    public int lifetime_points;
 
 
 
@@ -48,7 +50,9 @@ public class User {
             int numPushupsChallengeCompleted,
             boolean hasCompletedSquatsChallengeToday,
             boolean hasCompletedPushupsChallengeToday,
-            boolean streakChange
+            boolean streakChange,
+            int current_points,
+            int lifetime_points
     ) {
         this.country=country;
         this.streakChange=streakChange;
@@ -67,5 +71,7 @@ public class User {
         this.numPushupsChallengeCompleted=numPushupsChallengeCompleted;
         this.hasCompletedSquatsChallengeToday=hasCompletedSquatsChallengeToday;
         this.hasCompletedPushupsChallengeToday=hasCompletedPushupsChallengeToday;
+        this.current_points=current_points;
+        this.lifetime_points=lifetime_points;
     }
 }

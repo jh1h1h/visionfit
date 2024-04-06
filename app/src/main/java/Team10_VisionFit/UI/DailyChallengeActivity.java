@@ -38,6 +38,8 @@ public class DailyChallengeActivity extends AppCompatActivity{
     int streakCount = 0;
     boolean hasCompletedSquatsChallengeToday;
     boolean hasCompletedPushupsChallengeToday;
+    int current_points = 0;
+    int lifetime_points = 0;
     String LOGLABEL = "DailyChallengeActivity";
     int baseReps = 5; //"Starting" number of reps
     int numSquatsRepsToDo;
@@ -73,6 +75,8 @@ public class DailyChallengeActivity extends AppCompatActivity{
                     hasCompletedPushupsChallengeToday = document.getBoolean("hasCompletedPushupsChallengeToday");
                     streakCount = document.getLong("streak").intValue();
                     streakChange = document.getBoolean("streakChange");
+                    current_points = document.getLong("current_points").intValue();
+                    lifetime_points = document.getLong("lifetime_points").intValue();
 
                     Log.d(LOGLABEL, "INSIDE: " + String.valueOf(numSquatsChallengeCompleted) + " " + String.valueOf(numPushupsChallengeCompleted) + " "
                             + String.valueOf(hasCompletedSquatsChallengeToday) + " " + String.valueOf(hasCompletedPushupsChallengeToday));
@@ -239,15 +243,26 @@ public class DailyChallengeActivity extends AppCompatActivity{
 
                     if ((hasCompletedPushupsChallengeToday || hasCompletedSquatsChallengeToday) && (!streakChange)) {
                         streakCount++;
+                        current_points += 100;
+                        lifetime_points += 100;
                         userRef.update("streakChange", true);
                         userRef.update("streak", streakCount);
-                        String streakText = "Your current streak is " + streakCount + " days!" + "\n" +"Fight on!";
+                        userRef.update("current_points", current_points);
+                        userRef.update("lifetime_points", lifetime_points);
+                        String streakText = "Your current streak is " + streakCount + " days!" + "\n" +"Keep it going!";
                         challengeStreakMessage.setText(streakText);
                     } else {
-                        String streakText = "Your current streak is " + streakCount + " days!" + "\n" +"Fight on!";
+                        String streakText = "Your current streak is " + streakCount + " days!" + "\n" +"Keep it going!";
                         if (challengeStreakMessage != null) {
                             challengeStreakMessage.setText(streakText);
                         }
+                    }
+
+                    if (hasCompletedSquatsChallengeToday && hasCompletedPushupsChallengeToday && streakChange) {
+                        current_points += 50;
+                        lifetime_points += 50;
+                        userRef.update("current_points", current_points);
+                        userRef.update("lifetime_points", lifetime_points);
                     }
                 }
             }

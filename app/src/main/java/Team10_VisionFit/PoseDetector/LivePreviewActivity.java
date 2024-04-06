@@ -80,7 +80,8 @@ public final class LivePreviewActivity extends AppCompatActivity
 
   private TextView repCountText;
   private String repCountStr;
-
+  private String prevRepCountStr;
+  
   //exerciseTypeStr and classType should be the same, will need to do comparisons between them to check for matching classes
   private String exerciseTypeStr;
   public static String classType;

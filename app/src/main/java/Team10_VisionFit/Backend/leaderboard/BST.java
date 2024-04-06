@@ -20,6 +20,10 @@ public class BST extends Node{
         }
     }
 
+    public void rebalance(){
+        // TODO: rebalance tree since need AVL for optimal time complexity
+    }
+
     // Insert a new node n at the subtree rooted at subtreeroot
     public void tree_insert(Node node, Node subtreeroot) {
         if (subtreeroot == null) { // tree is empty
@@ -31,7 +35,7 @@ public class BST extends Node{
         } else {
             tree_insert(node, subtreeroot.right);
         }
-        // TODO: rebalance tree since need AVL for optimal time complexity
+        rebalance();
         // TODO: [Firebase] Upload node and update subtreeroot
     }
 
@@ -43,58 +47,85 @@ public class BST extends Node{
         }
         // TODO: Code user equate function (probably by id)
         if (subtreeroot.user == node.user){
-            subtreeroot = null;
+            // Case 1: Node has no children or only one child
+            if (subtreeroot.left == null) {
+                if (subtreeroot.parent.left == node){
+                    subtreeroot.parent.left = subtreeroot.right;
+                } else{
+                    subtreeroot.parent.right = subtreeroot.right;
+                }
+                subtreeroot = null;
+            } else if (subtreeroot.right == null) {
+                if (subtreeroot.parent.left == node){
+                    subtreeroot.parent.left = subtreeroot.left;
+                } else{
+                    subtreeroot.parent.right = subtreeroot.left;
+                }
+                subtreeroot = null;
+            }
+
+            // Case 2: Node has two children
+            // Find the inorder successor (minimum value in the right subtree)
+            Node successor = tree_min(subtreeroot.right);
+            tree_delete(successor, subtreeroot);
+            subtreeroot.key = successor.key;
+            subtreeroot.user = successor.user;
+            // TODO: asdfghjkl BST not done yet, i think there will be a problem we have to search by key and not node
+            if (root.right != null) {
+                root.right.parent = root; // Update parent reference
+            }
+            rebalance();
             // TODO: [Firebase] Upload node and update subtreeroot
         }
-        // if tree not empty, traverse the tree to insert based on key value
+        // if tree not empty and node not found, traverse the tree to insert based on key value
         if (node.key < subtreeroot.key) {
             tree_delete(node, subtreeroot.left);
         } else {
             tree_delete(node, subtreeroot.right);
         }
 
-        if (root == null) { // Base case: tree is empty
-            return root;
-        }
-
-        // Find the node to delete recursively
-        if (key < root.key) {
-            root.left = tree_delete(root.left, key);
-            if (root.left != null) {
-                root.left.parent = root; // Update parent reference
-            }
-        } else if (key > root.key) {
-            root.right = tree_delete(root.right, key);
-            if (root.right != null) {
-                root.right.parent = root; // Update parent reference
-            }
-        } else { // Node to delete found
-            // Case 1: Node has no children or only one child
-            if (root.left == null) {
-                Node temp = root.right;
-                if (temp != null) {
-                    temp.parent = root.parent; // Update parent reference
-                }
-            } else if (root.right == null) {
-                Node temp = root.left;
-                if (temp != null) {
-                    temp.parent = root.parent; // Update parent reference
-                }
-                return temp;
-            }
-
-            // Case 2: Node has two children
-            // Find the inorder successor (minimum value in the right subtree)
-            Node successor = tree_min(root.right);
-            // Copy the successor's key to the current node
-            root.key = successor.key;
-            // Delete the inorder successor from the right subtree
-            root.right = tree_delete(root.right, successor.key);
-            if (root.right != null) {
-                root.right.parent = root; // Update parent reference
-            }
-        }
-        return root;
+//        if (root == null) { // Base case: tree is empty
+//            return root;
+//        }
+//
+//        // Find the node to delete recursively
+//        if (key < root.key) {
+//            root.left = tree_delete(root.left, key);
+//            if (root.left != null) {
+//                root.left.parent = root; // Update parent reference
+//            }
+//        } else if (key > root.key) {
+//            root.right = tree_delete(root.right, key);
+//            if (root.right != null) {
+//                root.right.parent = root; // Update parent reference
+//            }
+//        } else { // Node to delete found
+//            // Case 1: Node has no children or only one child
+//            if (root.left == null) {
+//                Node temp = root.right;
+//                if (temp != null) {
+//                    temp.parent = root.parent; // Update parent reference
+//                }
+//            } else if (root.right == null) {
+//                Node temp = root.left;
+//                if (temp != null) {
+//                    temp.parent = root.parent; // Update parent reference
+//                }
+//                return temp;
+//            }
+//
+//            // Case 2: Node has two children
+//            // Find the inorder successor (minimum value in the right subtree)
+//            Node successor = tree_min(root.right);
+//            // Copy the successor's key to the current node
+//            root.key = successor.key;
+//            // Delete the inorder successor from the right subtree
+//            root.right = tree_delete(root.right, successor.key);
+//            if (root.right != null) {
+//                root.right.parent = root; // Update parent reference
+//            }
+//        }
+//        return root;
     }
 
     public Node tree_min(Node x) {

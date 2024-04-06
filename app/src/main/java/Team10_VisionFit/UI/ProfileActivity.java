@@ -43,7 +43,7 @@ import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends BaseNavActivity {
 
     private static final int CAMERA_REQUEST_CODE = 100;
     private static final int CAMERA_PERMISSION_CODE = 101;
@@ -160,7 +160,8 @@ public class ProfileActivity extends AppCompatActivity {
                     });
         });
 
-        initBottomNavigation();
+        //To setup nav bar
+        setUpBottomNavBar(R.id.bottom_userProfile);
     }
 
     // Method to show dialog for choosing image source (camera or gallery)
@@ -288,92 +289,6 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(this, "Camera and storage permissions are required", Toast.LENGTH_SHORT).show();
             }
         }
-    }
-
-    private void initBottomNavigation() {
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_userProfile);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.bottom_home:
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    Log.d("Button Check", "Home Button Clicked");
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_settings:
-                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-                    Log.d("Button Check", "Settings Button Clicked");
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-
-                //case R.id.cameraButton:
-                //Intent intent = new Intent(getApplicationContext(), LivePreviewActivity.class);
-                //intent.putExtra("ClassType", "Free Style");
-                //startActivity(intent);
-                //Log.d("Button Check", "Camera Button Clicked");
-                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                //finish();
-                //return true;
-
-                case R.id.bottom_userProfile:
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                    Log.d("Button Check", "Profile Button Clicked");
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_logout:
-                    Log.d("Button Check", "Logout Button Clicked");
-                    customExitDialog();
-                    return true;
-            }
-            return false;
-        });
-    }
-
-    public  void customExitDialog()
-    {
-        // creating custom dialog
-        final Dialog dialog = new Dialog(ProfileActivity.this);
-
-        // setting content view to dialog
-        dialog.setContentView(R.layout.logout_dialog_box);
-
-        // getting reference of TextView
-        TextView dialogButtonYes = (TextView) dialog.findViewById(R.id.textViewYes);
-        TextView dialogButtonNo = (TextView) dialog.findViewById(R.id.textViewNo);
-
-        // click listener for No
-        dialogButtonNo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // dismiss the dialog
-                dialog.dismiss();
-
-            }
-        });
-        // click listener for Yes
-        dialogButtonYes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // dismiss the dialog and exit the exit
-                dialog.dismiss();
-
-                Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), Login.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
-                sharedPreferences.edit().clear().commit();
-                finish();
-
-            }
-        });
-
-        // show the exit dialog
-        dialog.show();
     }
 
     @Override

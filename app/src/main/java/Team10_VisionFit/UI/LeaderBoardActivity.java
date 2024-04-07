@@ -90,6 +90,14 @@ public class LeaderBoardActivity extends BaseActivity {
                         names.add(node.doc.get("username",String.class));
                         reps.add(repsAmt);
                         ranks.add(String.valueOf(counter));
+                        if(node.id.equals(uid)){
+                            TextView yourRank = findViewById(R.id.yourRank);
+                            TextView yourName = findViewById(R.id.yourName);
+                            TextView yourRep = findViewById(R.id.yourRep);
+                            yourRank.setText(String.valueOf(counter));
+                            yourName.setText(node.doc.get("username",String.class));
+                            yourRep.setText(repsAmt);
+                        }
                         counter++;
                     }
 
@@ -101,24 +109,24 @@ public class LeaderBoardActivity extends BaseActivity {
                     leaderboard.setAdapter( adapter );
                     leaderboard.setLayoutManager( new LinearLayoutManager(this));
 
-                    for (DocumentSnapshot doc : userArrList) {
-                        Log.d("uid:",doc.getId());
-                        if (doc.getId().equals(uid)) {
-                            currentUser = doc;
-                            break;
-                        }
-                    }
-
-                    if (currentUser != null) {
-                        TextView yourRank = findViewById(R.id.yourRank);
-                        yourRank.setText(String.valueOf(userArrList.indexOf(currentUser) + 1));
-
-                        TextView yourName = findViewById(R.id.yourName);
-                        TextView yourRep = findViewById(R.id.yourRep);
-                        yourName.setText(currentUser.get("username",String.class));
-                        Long currentUserReps = currentUser.get(classType+"AllTime", Long.class);
-                        yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
-                    }
+//                    for (DocumentSnapshot doc : userArrList) {
+//                        Log.d("uid:",doc.getId());
+//                        if (doc.getId().equals(uid)) {
+//                            currentUser = doc;
+//                            break;
+//                        }
+//                    }
+//
+//                    if (currentUser != null) {
+//                        TextView yourRank = findViewById(R.id.yourRank);
+//                        yourRank.setText(String.valueOf(userArrList.indexOf(currentUser) + 1));
+//
+//                        TextView yourName = findViewById(R.id.yourName);
+//                        TextView yourRep = findViewById(R.id.yourRep);
+//                        yourName.setText(currentUser.get("username",String.class));
+//                        Long currentUserReps = currentUser.get(classType+"AllTime", Long.class);
+//                        yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
+//                    }
                 })
                 .addOnFailureListener(e -> {
                     // Handle the exception

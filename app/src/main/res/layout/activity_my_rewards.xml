@@ -69,7 +69,7 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:background="@drawable/shadow_button_layout"
-            android:text="Redeem"
+            android:text="My e-vouchers"
             android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="bold"

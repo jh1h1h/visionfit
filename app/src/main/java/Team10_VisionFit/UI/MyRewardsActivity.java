@@ -1,22 +1,29 @@
 package Team10_VisionFit.UI;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.teamten.visionfit.R;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MyRewardsActivity extends BaseActivity {
     FirebaseAuth auth;
@@ -31,7 +38,10 @@ public class MyRewardsActivity extends BaseActivity {
     ConstraintLayout rewards_2;
     ConstraintLayout rewards_3;
     ConstraintLayout rewards_4;
-
+    List<String> purchaseHistory = new ArrayList<>(); // List to store purchase history
+    Button purchaseHistoryButton;
+    Button myVouchers;
+    Map<String, Integer> redeemedRewards = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +54,8 @@ public class MyRewardsActivity extends BaseActivity {
         rewards_2 = findViewById(R.id.constraint_2);
         rewards_3 = findViewById(R.id.constraint_3);
         rewards_4 = findViewById(R.id.constraint_4);
+        purchaseHistoryButton = findViewById(R.id.rewards_history_button);
+        myVouchers = findViewById(R.id.redeem_button);
 
         //Getting the user's number of completed challenges to decide on the new challenge, and whether the user has completed today's challenges
         auth = FirebaseAuth.getInstance();
@@ -70,42 +82,64 @@ public class MyRewardsActivity extends BaseActivity {
                 //To setup nav bar
                 setUpBottomNavBar(R.id.bottom_logout);
 
-                rewards_1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Log.d("Button Check", "Rewards 1 Clicked");
-                        confirmPurchaseDialog(10000); // Deduct 10000 points for rewards_1
-                    }
+                rewards_1.setOnClickListener(v -> {
+                    Log.d("Button Check", "Rewards 1 Clicked");
+                    confirmPurchaseDialog(10000, "3 Days Data Roaming"); // Deduct 10000 points for rewards_1
                 });
 
-                rewards_2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Log.d("Button Check", "Rewards 2 Clicked");
-                        confirmPurchaseDialog(7500); // Deduct 7500 points for rewards_2
-                    }
+                rewards_2.setOnClickListener(v -> {
+                    Log.d("Button Check", "Rewards 2 Clicked");
+                    confirmPurchaseDialog(7500, "1 Days Data Roaming"); // Deduct 7500 points for rewards_2
                 });
 
-                rewards_3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Log.d("Button Check", "Rewards 3 Clicked");
-                        confirmPurchaseDialog(5000); // Deduct 5000 points for rewards_3
-                    }
+                rewards_3.setOnClickListener(v -> {
+                    Log.d("Button Check", "Rewards 3 Clicked");
+                    confirmPurchaseDialog(5000, "$5 Phone Bill Voucher"); // Deduct 5000 points for rewards_3
                 });
 
-                rewards_4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Log.d("Button Check", "Rewards 4 Clicked");
-                        confirmPurchaseDialog(3000); // Deduct 3000 points for rewards_4
-                    }
+                rewards_4.setOnClickListener(v -> {
+                    Log.d("Button Check", "Rewards 4 Clicked");
+                    confirmPurchaseDialog(3000, "$3 Phone Bill Voucher"); // Deduct 3000 points for rewards_4
+                });
+
+                purchaseHistoryButton.setOnClickListener(v -> {
+                    displayPurchaseHistory();
+                });
+
+                myVouchers.setOnClickListener(v -> {
+                    displayRedeemedRewards();
                 });
             }
         });
     }
 
-    public void confirmPurchaseDialog(final int pointsToDeduct) {
+    public void displayRedeemedRewards() {
+        // Creating a custom dialog
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_redeemed_rewards);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        // Getting reference to RecyclerView in dialog layout
+        RecyclerView recyclerView = dialog.findViewById(R.id.redeemed_rewards_recycler_view);
+
+        // Setting up RecyclerView
+        RedeemedRewardsAdapter adapter = new RedeemedRewardsAdapter(redeemedRewards);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Getting reference to Close button in dialog layout
+        Button closeButton = dialog.findViewById(R.id.close_button);
+        closeButton.setOnClickListener(v -> {
+            dialog.dismiss(); // Dismiss the dialog when Close button is clicked
+        });
+
+        // Set dialog to be non-cancelable outside of button click
+        dialog.setCancelable(false);
+        // Showing the dialog
+        dialog.show();
+    }
+
+    public void confirmPurchaseDialog(final int pointsToDeduct, final String rewardName) {
         // creating custom dialog
         final Dialog dialog = new Dialog(MyRewardsActivity.this);
 
@@ -113,56 +147,87 @@ public class MyRewardsActivity extends BaseActivity {
         dialog.setContentView(R.layout.dialog_confirmation);
 
         // getting reference of TextView
-        TextView dialogButtonYes = (TextView) dialog.findViewById(R.id.textViewYes);
-        TextView dialogButtonNo = (TextView) dialog.findViewById(R.id.textViewNo);
+        TextView dialogButtonYes = dialog.findViewById(R.id.textViewYes);
+        TextView dialogButtonNo = dialog.findViewById(R.id.textViewNo);
 
         // click listener for No
-        dialogButtonNo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // dismiss the dialog
-                dialog.dismiss();
-            }
+        dialogButtonNo.setOnClickListener(v -> {
+            // dismiss the dialog
+            dialog.dismiss();
         });
 
         // click listener for Yes
-        dialogButtonYes.setOnClickListener(new View.OnClickListener() {
+        dialogButtonYes.setOnClickListener(v -> {
             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); // Get the current logged in User's ID
             DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid); // Using that ID, get the user's data from firestore
 
-            @Override
-            public void onClick(View v) {
-                // dismiss the dialog and process the purchase
-                dialog.dismiss();
+            // dismiss the dialog and process the purchase
+            dialog.dismiss();
 
-                // Check if the user has sufficient points to make the purchase
-                if (current_points >= pointsToDeduct) {
-                    // Deduct points from current_points in Firestore
-                    current_points -= pointsToDeduct;
-                    userRef.update("current_points", current_points)
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    // Points deducted successfully
-                                    my_points_now.setText(String.valueOf(current_points));
-                                    Toast.makeText(getApplicationContext(), "Points deducted successfully", Toast.LENGTH_SHORT).show();
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    // Failed to deduct points
-                                    Toast.makeText(getApplicationContext(), "Failed to deduct points", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                } else {
-                    // Insufficient points
-                    Toast.makeText(getApplicationContext(), "Failed to purchase. Insufficient points", Toast.LENGTH_SHORT).show();
-                }
+            // Check if the user has sufficient points to make the purchase
+            if (current_points >= pointsToDeduct) {
+                // Deduct points from current_points in Firestore
+                current_points -= pointsToDeduct;
+                userRef.update("current_points", current_points)
+                        .addOnSuccessListener(aVoid -> {
+                            // Points deducted successfully
+                            my_points_now.setText(String.valueOf(current_points));
+                            Toast.makeText(getApplicationContext(), "Points deducted successfully", Toast.LENGTH_SHORT).show();
+                            // Add reward to history
+                            purchaseHistory.add(rewardName);
+                        })
+                        .addOnFailureListener(e -> {
+                            // Failed to deduct points
+                            Toast.makeText(getApplicationContext(), "Failed to deduct points", Toast.LENGTH_SHORT).show();
+                        });
+            } else {
+                // Insufficient points
+                Toast.makeText(getApplicationContext(), "Failed to purchase. Insufficient points", Toast.LENGTH_SHORT).show();
+            }
+
+            // Check if the reward is already redeemed
+            if (redeemedRewards.containsKey(rewardName)) {
+                // Increment count for the redeemed reward
+                int count = redeemedRewards.get(rewardName);
+                redeemedRewards.put(rewardName, count + 1);
+            } else {
+                // Add the reward to redeemed rewards with count 1
+                redeemedRewards.put(rewardName, 1);
             }
         });
 
         // show the exit dialog
+        dialog.show();
+    }
+
+    // Method to display purchase history in reverse order
+    public void displayPurchaseHistory() {
+        // Creating a custom dialog
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_purchase_history);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        // Getting reference to RecyclerView in dialog layout
+        RecyclerView recyclerView = dialog.findViewById(R.id.purchase_history_recycler_view);
+
+        // Reverse the purchase history list
+        List<String> reversedPurchaseHistory = new ArrayList<>(purchaseHistory);
+        Collections.reverse(reversedPurchaseHistory);
+
+        // Setting up RecyclerView
+        PurchaseHistoryAdapter adapter = new PurchaseHistoryAdapter(reversedPurchaseHistory);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Getting reference to Close button in dialog layout
+        Button closeButton = dialog.findViewById(R.id.close_button);
+        closeButton.setOnClickListener(v -> {
+            dialog.dismiss(); // Dismiss the dialog when Close button is clicked
+        });
+
+        // Set dialog to be non-cancelable outside of button click
+        dialog.setCancelable(false);
+        // Showing the dialog
         dialog.show();
     }
 
@@ -172,3 +237,4 @@ public class MyRewardsActivity extends BaseActivity {
         // Do nothing (disable back button functionality)
     }
 }
+

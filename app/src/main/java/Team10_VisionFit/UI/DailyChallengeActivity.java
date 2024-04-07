@@ -17,16 +17,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.teamten.visionfit.R;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
+import Team10_VisionFit.Backend.leaderboard.BST;
 import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 
@@ -139,6 +144,7 @@ public class DailyChallengeActivity extends AppCompatActivity{
                     classType = intent.getStringExtra("ClassType");
 
                     if (repCount != 0 && classType != null && !classType.equals("Free Style")) {
+                        CollectionReference leaderboardRef = FirebaseFirestore.getInstance().collection("leaderboard");
                         if (classType.equals("Push Ups")) {
                             classType = "pushup";
                         }
@@ -152,7 +158,17 @@ public class DailyChallengeActivity extends AppCompatActivity{
                         if (repCount > prevAllTime){
                             userRef.update(classType + "AllTime", repCount);
                         }
-                        //Toast.makeText(this,"You have logged "+repCount+" "+classType+"s!", Toast.LENGTH_SHORT).show(); // change to dialog pop up instead
+                        leaderboardRef.get().addOnCompleteListener(task1 -> {
+                            if (task1.isSuccessful()) {
+                                QuerySnapshot lb = task1.getResult();
+                                BST lbBST = new BST();
+                                ArrayList<DocumentSnapshot> lbList = new ArrayList<>(lb.getDocuments());
+                                for (DocumentSnapshot lbNode: lbList) {
+                                    BST
+                                    Log.d("leaderboard", lbNode.getData().toString());
+                                }
+                            }
+                        });
                     }
 
                     if (intent.getStringExtra("Push Ups Reps") != null) {

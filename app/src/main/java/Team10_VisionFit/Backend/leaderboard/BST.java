@@ -3,20 +3,31 @@ package Team10_VisionFit.Backend.leaderboard;
 import android.content.res.Resources;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.Map;
+
 public class BST extends Node{
 
     public Node root; // Initialize BST root node
+    public Hashtable<String, Node> nodes;
 
     // Constructor
     public BST() {
         this.root = null;
+        this.nodes = new Hashtable<>();
+    }
+
+    public void populate_node(Node node){
+        this.nodes.put(node.id, node);
     }
 
     public void inorder_traverse(Node root) {
         if (root != null) { // the tree does not exist
-            inorder_traverse(root.left); // traverse the left subtree first
+            inorder_traverse(nodes.get(root.left)); // traverse the left subtree first
             System.out.print(root.key + " ");
-            inorder_traverse(root.right); // traverse the right subtree next
+            inorder_traverse(nodes.get(root.right)); // traverse the right subtree next
         }
     }
 
@@ -31,9 +42,9 @@ public class BST extends Node{
         }
         // if tree not empty, traverse the tree to insert based on key value
         if (node.key < subtreeroot.key) {
-            tree_insert(node, subtreeroot.left);
+            tree_insert(node, nodes.get(subtreeroot.left));
         } else {
-            tree_insert(node, subtreeroot.right);
+            tree_insert(node, nodes.get(subtreeroot.right));
         }
         rebalance();
         // TODO: [Firebase] Upload node and update subtreeroot
@@ -45,99 +56,54 @@ public class BST extends Node{
             Log.d("ERROR","BST: Node to be deleted not found");
             throw new Resources.NotFoundException("BST: Node to be deleted not found");
         }
-        // TODO: Code user equate function (probably by id)
         if (subtreeroot.user == node.user){
             // Case 1: Node has no children or only one child
             if (subtreeroot.left == null) {
-                if (subtreeroot.parent.left == node){
-                    subtreeroot.parent.left = subtreeroot.right;
+                if (nodes.get(subtreeroot.parent).left.equals(node.id)){
+                    nodes.get(subtreeroot.parent).left = subtreeroot.right;
                 } else{
-                    subtreeroot.parent.right = subtreeroot.right;
+                    nodes.get(subtreeroot.parent).right = subtreeroot.right;
                 }
-                subtreeroot = null;
+                nodes.remove(subtreeroot.id);
+                // TODO: Update subtreeroot.parent on firestore and delete subtreeroot node
             } else if (subtreeroot.right == null) {
-                if (subtreeroot.parent.left == node){
-                    subtreeroot.parent.left = subtreeroot.left;
+                if (nodes.get(subtreeroot.parent).left.equals(node.id)){
+                    nodes.get(subtreeroot.parent).left = subtreeroot.left;
                 } else{
-                    subtreeroot.parent.right = subtreeroot.left;
+                    nodes.get(subtreeroot.parent).right = subtreeroot.left;
                 }
-                subtreeroot = null;
+                nodes.remove(subtreeroot.id);
+                // TODO: Update subtreeroot.parent on firestore and delete subtreeroot node
             }
 
             // Case 2: Node has two children
             // Find the inorder successor (minimum value in the right subtree)
-            Node successor = tree_min(subtreeroot.right);
+            Node successor = tree_min(nodes.get(subtreeroot.right));
             tree_delete(successor, subtreeroot);
+            Log.d("leaderboardsuccessor", String.valueOf(successor.key));
             subtreeroot.key = successor.key;
             subtreeroot.user = successor.user;
-            // TODO: asdfghjkl BST not done yet, i think there will be a problem we have to search by key and not node
-            if (root.right != null) {
-                root.right.parent = root; // Update parent reference
-            }
-            rebalance();
-            // TODO: [Firebase] Upload node and update subtreeroot
+            nodes.get(successor.parent).left = successor.right;
+            // TODO: [Firebase] Upload node and update subtreeroot and parent
         }
         // if tree not empty and node not found, traverse the tree to insert based on key value
         if (node.key < subtreeroot.key) {
-            tree_delete(node, subtreeroot.left);
+            tree_delete(node, nodes.get(subtreeroot.left));
         } else {
-            tree_delete(node, subtreeroot.right);
+            tree_delete(node, nodes.get(subtreeroot.right));
         }
-
-//        if (root == null) { // Base case: tree is empty
-//            return root;
-//        }
-//
-//        // Find the node to delete recursively
-//        if (key < root.key) {
-//            root.left = tree_delete(root.left, key);
-//            if (root.left != null) {
-//                root.left.parent = root; // Update parent reference
-//            }
-//        } else if (key > root.key) {
-//            root.right = tree_delete(root.right, key);
-//            if (root.right != null) {
-//                root.right.parent = root; // Update parent reference
-//            }
-//        } else { // Node to delete found
-//            // Case 1: Node has no children or only one child
-//            if (root.left == null) {
-//                Node temp = root.right;
-//                if (temp != null) {
-//                    temp.parent = root.parent; // Update parent reference
-//                }
-//            } else if (root.right == null) {
-//                Node temp = root.left;
-//                if (temp != null) {
-//                    temp.parent = root.parent; // Update parent reference
-//                }
-//                return temp;
-//            }
-//
-//            // Case 2: Node has two children
-//            // Find the inorder successor (minimum value in the right subtree)
-//            Node successor = tree_min(root.right);
-//            // Copy the successor's key to the current node
-//            root.key = successor.key;
-//            // Delete the inorder successor from the right subtree
-//            root.right = tree_delete(root.right, successor.key);
-//            if (root.right != null) {
-//                root.right.parent = root; // Update parent reference
-//            }
-//        }
-//        return root;
     }
 
     public Node tree_min(Node x) {
         while (x.left != null) {
-            x = x.left; // update x to be left child of x
+            x = nodes.get(x.left); // update x to be left child of x
         }
         return x;
     }
 
     public Node tree_max(Node x) {
         while (x.right != null) {
-            x = x.right; // update x to be right child of x
+            x = nodes.get(x.right); // update x to be right child of x
         }
         return x;
     }
@@ -145,9 +111,9 @@ public class BST extends Node{
     public Node tree_search(Node x, int key) {
         while (x != null && key != x.key) { // if node exist and key value is not key
             if (key < x.key) { // check if k is less than key value
-                x = x.left; // if it is then continue to find left node
+                x = nodes.get(x.left); // if it is then continue to find left node
             } else { // check if k is more than key value
-                x = x.right; // if it is then continue to find right node
+                x = nodes.get(x.right); // if it is then continue to find right node
             }
         }
         return x;
@@ -155,32 +121,32 @@ public class BST extends Node{
 
     public Node successor(Node x) {
         if (x.right != null) { // check if right node exist
-            return tree_min(x.right); // if it does, find the last left node of that subtree
+            return tree_min(nodes.get(x.right)); // if it does, find the last left node of that subtree
         }
 
         Node y = null;
         while (x != null) {
-            if (x == x.parent.left) { // continue to loop as long as x is the y.right
-                y = x.parent;
+            if (nodes.get(x.parent).left.equals(x.id)) { // continue to loop as long as x is the y.right
+                y = nodes.get(x.parent);
                 break;
             }
-            x = x.parent;
+            x = nodes.get(x.parent);
         }
         return y;
     }
 
     public Node predecessor(Node x) {
         if (x.left != null) { // check if left node exist
-            return tree_max(x.left); // if it does, find the last right node of that subtree
+            return tree_max(nodes.get(x.left)); // if it does, find the last right node of that subtree
         }
 
         Node y = null;
         while (x != null) {
-            if (x == x.parent.right) { // continue to loop as long as x is the y.right node
-                y = x.parent;
+            if (nodes.get(x.parent).right.equals(x.id)) { // continue to loop as long as x is the y.right node
+                y = nodes.get(x.parent);
                 break;
             }
-            x = x.parent;
+            x = nodes.get(x.parent);
         }
         return y;
     }

@@ -145,7 +145,6 @@ public class DailyChallengeActivity extends AppCompatActivity{
                     classType = intent.getStringExtra("ClassType");
 
                     if (repCount != 0 && classType != null && !classType.equals("Free Style")) {
-                        CollectionReference leaderboardRef = FirebaseFirestore.getInstance().collection("leaderboard");
                         if (classType.equals("Push Ups")) {
                             classType = "pushup";
                         }
@@ -156,26 +155,33 @@ public class DailyChallengeActivity extends AppCompatActivity{
                         userRef.update(classType + "Today", prevToday + repCount);
 
                         long prevAllTime = document.getLong(classType + "AllTime");
-                        if (repCount > prevAllTime){
+//                        if (repCount > prevAllTime){
+                        if (true){ // TODO: Please change after done debugging
                             userRef.update(classType + "AllTime", repCount);
-                        }
-                        leaderboardRef.get().addOnCompleteListener(task1 -> {
-                            if (task1.isSuccessful()) {
-                                QuerySnapshot lb = task1.getResult();
-                                BST lbBST = new BST();
-                                ArrayList<DocumentSnapshot> lbList = new ArrayList<>(lb.getDocuments());
-                                for (DocumentSnapshot lbNode: lbList) {
-                                    lbBST.populate_node(new Node(
-                                            lbNode.get("pts",Integer.class),
-                                            lbNode.get("left",String.class),
-                                            lbNode.get("right",String.class),
-                                            lbNode.get("parent",String.class),
-                                            lbNode.get("userid",String.class),
-                                            lbNode.getId()
-                                    ));
+                            CollectionReference usersRef = FirebaseFirestore.getInstance().collection("users");
+                            usersRef.get().addOnCompleteListener(task1 -> {
+                                if (task1.isSuccessful()) {
+                                    QuerySnapshot lb = task1.getResult();
+                                    BST lbBST = new BST(usersRef, classType);
+                                    ArrayList<DocumentSnapshot> lbList = new ArrayList<>(lb.getDocuments());
+                                    for (DocumentSnapshot lbNode: lbList) {
+                                        if (lbNode.get(classType+"BSTparent",String.class) != null){
+                                            lbBST.populate_node(new Node(
+                                                    lbNode.getLong(classType + "AllTime"),
+                                                    lbNode.get(classType+"BSTleft",String.class),
+                                                    lbNode.get(classType+"BSTright",String.class),
+                                                    lbNode.get(classType+"BSTparent",String.class),
+                                                    lbNode.getId()
+                                            ));
+                                        }
+                                    }
+                                    if (document.get(classType+"BSTparent",String.class) != null){
+                                        lbBST.tree_delete(new Node((long) repCount, uid),lbBST.root);
+                                    }
+                                    lbBST.tree_insert(new Node((long) repCount, uid),lbBST.root,"root");
                                 }
-                            }
-                        });
+                            });
+                        }
                     }
 
                     if (intent.getStringExtra("Push Ups Reps") != null) {

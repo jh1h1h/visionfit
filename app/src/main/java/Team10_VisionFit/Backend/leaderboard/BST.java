@@ -3,6 +3,8 @@ package Team10_VisionFit.Backend.leaderboard;
 import android.content.res.Resources;
 import android.util.Log;
 
+import com.google.firebase.firestore.CollectionReference;
+
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -12,15 +14,22 @@ public class BST extends Node{
 
     public Node root; // Initialize BST root node
     public Hashtable<String, Node> nodes;
+    private CollectionReference dbRef;
+    private String classType;
 
     // Constructor
-    public BST() {
+    public BST(CollectionReference dbRef, String classType) {
         this.root = null;
         this.nodes = new Hashtable<>();
+        this.dbRef = dbRef;
+        this.classType = classType;
     }
 
     public void populate_node(Node node){
         this.nodes.put(node.id, node);
+        if (node.parent.equals("root")){
+            this.root = node;
+        }
     }
 
     public void inorder_traverse(Node root) {
@@ -36,18 +45,40 @@ public class BST extends Node{
     }
 
     // Insert a new node n at the subtree rooted at subtreeroot
-    public void tree_insert(Node node, Node subtreeroot) {
+    public Node tree_insert(Node node, Node subtreeroot, String parentid) {
         if (subtreeroot == null) { // tree is empty
-            subtreeroot = node;
+            node.parent = parentid;
+            this.nodes.put(node.id, node);
+            dbRef.document(node.id).update(classType+"BSTparent",parentid);
+            rebalance();
+            return node;
         }
         // if tree not empty, traverse the tree to insert based on key value
+//        Node subtreeroot = nodes.get(subtreerootid);
         if (node.key.compareTo(subtreeroot.key) < 0) {
-            tree_insert(node, nodes.get(subtreeroot.left));
+            Node left;
+            if (subtreeroot.left != null){
+                left = nodes.get(subtreeroot.left);
+            }else{
+                left = null;
+            }
+            if (tree_insert(node, left, subtreeroot.id) != null){
+                subtreeroot.left = node.id;
+                dbRef.document(subtreeroot.id).update(classType+"BSTleft",node.id);
+            }
         } else {
-            tree_insert(node, nodes.get(subtreeroot.right));
+            Node right;
+            if (subtreeroot.right != null){
+                right = nodes.get(subtreeroot.right);
+            }else{
+                right = null;
+            }
+            if (tree_insert(node, right, subtreeroot.id) != null){
+                subtreeroot.right = node.id;
+                dbRef.document(subtreeroot.id).update(classType+"BSTright",node.id);
+            }
         }
-        rebalance();
-        // TODO: [Firebase] Upload node and update subtreeroot
+        return null;
     }
 
     // Insert a new node n at the subtree rooted at subtreeroot
@@ -56,24 +87,28 @@ public class BST extends Node{
             Log.d("ERROR","BST: Node to be deleted not found");
             throw new Resources.NotFoundException("BST: Node to be deleted not found");
         }
-        if (subtreeroot.userid.equals(node.userid)){
+        if (subtreeroot.id.equals(node.id)){
             // Case 1: Node has no children or only one child
             if (subtreeroot.left == null) {
-                if (nodes.get(subtreeroot.parent).left.equals(node.id)){
+                if (nodes.get(subtreeroot.parent).left != null && nodes.get(subtreeroot.parent).left.equals(node.id)){
                     nodes.get(subtreeroot.parent).left = subtreeroot.right;
+                    dbRef.document(subtreeroot.parent).update(classType+"BSTleft",subtreeroot.right);
                 } else{
                     nodes.get(subtreeroot.parent).right = subtreeroot.right;
+                    dbRef.document(subtreeroot.parent).update(classType+"BSTright",subtreeroot.right);
                 }
                 nodes.remove(subtreeroot.id);
-                // TODO: Update subtreeroot.parent on firestore and delete subtreeroot node
+                return;
             } else if (subtreeroot.right == null) {
                 if (nodes.get(subtreeroot.parent).left.equals(node.id)){
                     nodes.get(subtreeroot.parent).left = subtreeroot.left;
+                    dbRef.document(subtreeroot.parent).update(classType+"BSTleft",subtreeroot.left);
                 } else{
                     nodes.get(subtreeroot.parent).right = subtreeroot.left;
+                    dbRef.document(subtreeroot.parent).update(classType+"BSTright",subtreeroot.left);
                 }
                 nodes.remove(subtreeroot.id);
-                // TODO: Update subtreeroot.parent on firestore and delete subtreeroot node
+                return;
             }
 
             // Case 2: Node has two children
@@ -81,10 +116,20 @@ public class BST extends Node{
             Node successor = tree_min(nodes.get(subtreeroot.right));
             tree_delete(successor, subtreeroot);
             Log.d("leaderboardsuccessor", String.valueOf(successor.key)); // TODO: make sure successor.key still exists after delete
-            subtreeroot.key = successor.key;
-            subtreeroot.userid = successor.userid;
+            if (nodes.get(subtreeroot.parent).left.equals(subtreeroot.id)){
+                nodes.get(subtreeroot.parent).left = successor.id;
+                dbRef.document(subtreeroot.parent).update(classType+"BSTleft",successor.id);
+            } else{
+                nodes.get(subtreeroot.parent).right = successor.id;
+                dbRef.document(subtreeroot.parent).update(classType+"BSTright",successor.id);
+            }
+            successor.left = subtreeroot.left;
+            dbRef.document(successor.left).update(classType+"BSTright",subtreeroot.left);
+            successor.right = subtreeroot.right;
+            dbRef.document(successor.right).update(classType+"BSTright",subtreeroot.right);
             nodes.get(successor.parent).left = successor.right;
-            // TODO: [Firebase] Upload node and update subtreeroot and parent
+            dbRef.document(nodes.get(successor.parent).left).update(classType+"BSTright",successor.right);
+            return;
         }
         // if tree not empty and node not found, traverse the tree to insert based on key value
         if (node.key.compareTo(subtreeroot.key) < 0) {

@@ -19,6 +19,9 @@ import com.teamten.visionfit.R;
 
 import java.util.ArrayList;
 
+import Team10_VisionFit.Backend.leaderboard.BST;
+import Team10_VisionFit.Backend.leaderboard.Node;
+
 public class LeaderBoardActivity extends BaseActivity {
     FirebaseAuth auth;
 
@@ -49,29 +52,43 @@ public class LeaderBoardActivity extends BaseActivity {
         querySnapshotTask
                 .addOnSuccessListener(result -> {
                     QuerySnapshot qsnapshot = result;
+                    String classType = "squat";
+                    BST lbBST = new BST(users, classType);
                     ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
                     DocumentSnapshot currentUser = null;
 
                     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                    for (int i = 0; i < Math.min(15, userArrList.size()); i++) {
+                    for (DocumentSnapshot userDoc: userArrList) {
 //                        TextView name = findViewById(nameRows[i]);
 //                        TextView reps = findViewById(repRows[i]);
-                        DocumentSnapshot userDoc = userArrList.get(i);
-//
+//                        DocumentSnapshot userDoc = userArrList.get(i);
                         if (userDoc != null) {
-
-                            Long repsLong = userDoc.get("pushupAllTime", Long.class);
-                            String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
-                            names.add(userDoc.get("username",String.class));
-                            reps.add(repsAmt);
-                            ranks.add("abc");
-//                            name.setText(userDoc.get("username",String.class));
-//                            reps.setText(repsAmt);
+                            if (userDoc.get(classType+"BSTparent",String.class) != null){
+                                lbBST.populate_node(new Node(
+                                        userDoc.getLong(classType + "AllTime"),
+                                        userDoc.get(classType+"BSTleft",String.class),
+                                        userDoc.get(classType+"BSTright",String.class),
+                                        userDoc.get(classType+"BSTparent",String.class),
+                                        userDoc.getId(),
+                                        userDoc
+                                ));
+                            }
                         }
 //                        else {
 //                            name.setText("");
 //                            reps.setText("");
 //                        }
+
+
+                    }
+
+                    ArrayList<Node> path = lbBST.inorder_path(lbBST.root);
+                    for (Node node: path){
+                        Long repsLong = node.getPoints();
+                        String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
+                        names.add(node.doc.get("username",String.class));
+                        reps.add(repsAmt);
+                        ranks.add("abc");
                     }
 
                     // RecyclerView

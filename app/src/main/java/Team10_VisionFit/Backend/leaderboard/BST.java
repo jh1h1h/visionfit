@@ -32,11 +32,21 @@ public class BST extends Node{
         }
     }
 
-    public void inorder_traverse(Node root) {
+    public ArrayList<Node> inorder_path(Node root){
+        ArrayList<Node> path = new ArrayList<>();
+        inorder_traverse_desc(root, path);
+        return path;
+    }
+
+    public void inorder_traverse_desc(Node root, ArrayList<Node> path) {
         if (root != null) { // the tree does not exist
-            inorder_traverse(nodes.get(root.left)); // traverse the left subtree first
-            System.out.print(root.key + " ");
-            inorder_traverse(nodes.get(root.right)); // traverse the right subtree next
+            if (root.right != null){
+                inorder_traverse_desc(nodes.get(root.right), path); // traverse the left subtree first
+            }
+            path.add(root);
+            if (root.left != null){
+                inorder_traverse_desc(nodes.get(root.left), path); // traverse the right subtree next
+            }
         }
     }
 

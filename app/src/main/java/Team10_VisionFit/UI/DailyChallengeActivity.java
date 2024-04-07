@@ -33,10 +33,10 @@ import java.util.Date;
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
 import Team10_VisionFit.Backend.leaderboard.BST;
 import Team10_VisionFit.Backend.leaderboard.Node;
-import Team10_VisionFit.MainActivity;
+import Team10_VisionFit.UI.BaseActivity;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 
-public class DailyChallengeActivity extends AppCompatActivity{
+public class DailyChallengeActivity extends BaseActivity {
     public int counter = 3;
     FirebaseAuth auth;
     int numSquatsChallengeCompleted;
@@ -69,7 +69,7 @@ public class DailyChallengeActivity extends AppCompatActivity{
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
         DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid); //Using that ID, get the user's data from firestore
 
-        //The task is done ASYNCHRONOUSLY, hence need to put everything inside
+        //The task is done on another thread, hence need to put everything inside
         userRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
@@ -84,48 +84,14 @@ public class DailyChallengeActivity extends AppCompatActivity{
                     current_points = document.getLong("current_points").intValue();
                     lifetime_points = document.getLong("lifetime_points").intValue();
 
-                    Log.d(LOGLABEL, "INSIDE: " + String.valueOf(numSquatsChallengeCompleted) + " " + String.valueOf(numPushupsChallengeCompleted) + " "
-                            + String.valueOf(hasCompletedSquatsChallengeToday) + " " + String.valueOf(hasCompletedPushupsChallengeToday));
+//                    Log.d(LOGLABEL, "INSIDE: " + String.valueOf(numSquatsChallengeCompleted) + " " + String.valueOf(numPushupsChallengeCompleted) + " "
+//                            + String.valueOf(hasCompletedSquatsChallengeToday) + " " + String.valueOf(hasCompletedPushupsChallengeToday));
 
                     Button pushUpButton = findViewById(R.id.pushUpButton);
                     Button squatsButton = findViewById(R.id.squatsButton);
 
-                    BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-                    bottomNavigationView.setOnItemSelectedListener(item -> {
-                        switch (item.getItemId()) {
-                            case R.id.bottom_home:
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                Log.d("Button Check", "Home Button Clicked");
-                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                finish();
-                                return true;
-                            case R.id.bottom_settings:
-                                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-                                Log.d("Button Check", "Settings Button Clicked");
-                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                finish();
-                                return true;
-
-                            //case R.id.cameraButton:
-                                //startActivity(new Intent(getApplicationContext(), LivePreviewActivity.class));
-                                //Log.d("Button Check", "Camera Button Clicked");
-                                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                //finish();
-                                //return true;
-
-                            case R.id.bottom_userProfile:
-                                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                                Log.d("Button Check", "Profile Button Clicked");
-                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                finish();
-                                return true;
-                            case R.id.bottom_logout:
-                                Log.d("Button Check", "Logout Button Clicked");
-                                customExitDialog();
-                                return true;
-                        }
-                        return false;
-                    });
+                    //To setup nav bar
+                    setUpBottomNavBar(R.id.bottom_logout);
 
                     //To set colour to green
                     int[][] states = new int[][] {
@@ -155,8 +121,7 @@ public class DailyChallengeActivity extends AppCompatActivity{
                         userRef.update(classType + "Today", prevToday + repCount);
 
                         long prevAllTime = document.getLong(classType + "AllTime");
-//                        if (repCount > prevAllTime){
-                        if (true){ // TODO: Please change after done debugging
+                        if (repCount > prevAllTime){
                             userRef.update(classType + "AllTime", repCount);
                             CollectionReference usersRef = FirebaseFirestore.getInstance().collection("users");
                             usersRef.get().addOnCompleteListener(task1 -> {
@@ -296,49 +261,6 @@ public class DailyChallengeActivity extends AppCompatActivity{
                 }
             }
         });
-    }
-
-    public  void customExitDialog() {
-        // creating custom dialog
-        final Dialog dialog = new Dialog(DailyChallengeActivity.this);
-
-        // setting content view to dialog
-        dialog.setContentView(R.layout.logout_dialog_box);
-
-        // getting reference of TextView
-        TextView dialogButtonYes = (TextView) dialog.findViewById(R.id.textViewYes);
-        TextView dialogButtonNo = (TextView) dialog.findViewById(R.id.textViewNo);
-
-        // click listener for No
-        dialogButtonNo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // dismiss the dialog
-                dialog.dismiss();
-
-            }
-        });
-        // click listener for Yes
-        dialogButtonYes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // dismiss the dialog and exit the exit
-                dialog.dismiss();
-
-                Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), Login.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                SharedPreferences sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
-                sharedPreferences.edit().clear().commit();
-                finish();
-
-            }
-        });
-
-        // show the exit dialog
-        dialog.show();
     }
 
     @Override

@@ -48,7 +48,7 @@
 
                 <meta-data
                     android:name="com.google.android.actions"
-                    android:resource="@layout/activity_main" />
+                    android:resource="@layout/activity_front_page" />
 
                 <activity
                     android:name="VisionFit2.Backend.firebaseAuthentication.Register"
@@ -82,7 +82,7 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name="Team10_VisionFit.MainActivity"
+            android:name="Team10_VisionFit.UI.FrontPageActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity

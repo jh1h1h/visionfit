@@ -26,7 +26,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.teamten.visionfit.R;
-import Team10_VisionFit.MainActivity;
+import Team10_VisionFit.UI.FrontPageActivity;
 
 public class Login extends AppCompatActivity {
 
@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity {
                                     editor.putString("password", pass);
                                     editor.commit();
                                 }
-                                Intent intent = new Intent(Login.this, MainActivity.class); // Log in successful, transit to Main Activity xml
+                                Intent intent = new Intent(Login.this, FrontPageActivity.class); // Log in successful, transit to Main Activity xml
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 finish();

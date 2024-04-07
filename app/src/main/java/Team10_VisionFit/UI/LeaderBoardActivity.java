@@ -83,12 +83,14 @@ public class LeaderBoardActivity extends BaseActivity {
                     }
 
                     ArrayList<Node> path = lbBST.inorder_path(lbBST.root);
+                    int counter = 1;
                     for (Node node: path){
                         Long repsLong = node.getPoints();
                         String repsAmt = (repsLong != null) ? repsLong.toString() : "0";
                         names.add(node.doc.get("username",String.class));
                         reps.add(repsAmt);
-                        ranks.add("abc");
+                        ranks.add(String.valueOf(counter));
+                        counter++;
                     }
 
                     // RecyclerView
@@ -114,7 +116,7 @@ public class LeaderBoardActivity extends BaseActivity {
                         TextView yourName = findViewById(R.id.yourName);
                         TextView yourRep = findViewById(R.id.yourRep);
                         yourName.setText(currentUser.get("username",String.class));
-                        Long currentUserReps = currentUser.get("pushupToday", Long.class);
+                        Long currentUserReps = currentUser.get(classType+"AllTime", Long.class);
                         yourRep.setText((currentUserReps != null) ? currentUserReps.toString() : "0");
                     }
                 })

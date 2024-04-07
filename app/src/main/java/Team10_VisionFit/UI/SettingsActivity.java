@@ -1,13 +1,11 @@
 package Team10_VisionFit.UI;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -17,13 +15,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,12 +31,9 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.teamten.visionfit.R;
 
-import Team10_VisionFit.Backend.firebaseAuthentication.Login;
-import Team10_VisionFit.MainActivity;
-import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class SettingsActivity extends BaseNavActivity {
+public class SettingsActivity extends BaseActivity {
     FirebaseAuth auth;
     SwitchCompat switchMode;
     boolean nightMode;

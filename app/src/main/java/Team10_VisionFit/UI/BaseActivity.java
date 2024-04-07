@@ -20,9 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
-import Team10_VisionFit.MainActivity;
 
-public class BaseNavActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void setContentView(int layoutResID) {
@@ -35,7 +34,7 @@ public class BaseNavActivity extends AppCompatActivity {
 //        if (view instanceof RelativeLayout) {
 //            ViewGroup parent = (ViewGroup) findViewById(R.id.main_container);
         ConstraintLayout constraintLayout = (ConstraintLayout) view;
-        View bottomNav = LayoutInflater.from(this).inflate(R.layout.activity_bottom_nav_bar, null);
+        View bottomNav = LayoutInflater.from(this).inflate(R.layout.activity_base, null);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
@@ -60,7 +59,7 @@ public class BaseNavActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.bottom_home:
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), FrontPageActivity.class));
                     Log.d("Button Check", "Home Button Clicked");
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();

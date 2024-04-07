@@ -1,7 +1,6 @@
 package Team10_VisionFit.UI;
 
 import android.Manifest;
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -10,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,12 +16,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -38,12 +34,9 @@ import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import Team10_VisionFit.Backend.firebaseAuthentication.Login;
-import Team10_VisionFit.MainActivity;
-import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProfileActivity extends BaseNavActivity {
+public class ProfileActivity extends BaseActivity {
 
     private static final int CAMERA_REQUEST_CODE = 100;
     private static final int CAMERA_PERMISSION_CODE = 101;

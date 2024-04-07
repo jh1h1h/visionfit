@@ -1,4 +1,4 @@
-package Team10_VisionFit;
+package Team10_VisionFit.UI;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -28,13 +28,8 @@ import java.util.ArrayList;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
-import Team10_VisionFit.UI.BaseNavActivity;
-import Team10_VisionFit.UI.DailyChallengeActivity;
-import Team10_VisionFit.UI.LeaderBoardActivity;
-import Team10_VisionFit.UI.MyRewardsActivity;
-import Team10_VisionFit.UI.MyStatisticsActivity;
 
-public class MainActivity extends BaseNavActivity implements View.OnClickListener {
+public class FrontPageActivity extends BaseActivity implements View.OnClickListener {
 
     FirebaseAuth auth;
     Button button;
@@ -55,7 +50,7 @@ public class MainActivity extends BaseNavActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_front_page);
 
         auth = FirebaseAuth.getInstance();
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
@@ -206,9 +201,9 @@ public class MainActivity extends BaseNavActivity implements View.OnClickListene
 //            openCamera();
 
         } else if (v.getId() == R.id.layout) {
-            Toast.makeText(MainActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(FrontPageActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(MainActivity.this, Login.class);
+            Intent intent = new Intent(FrontPageActivity.this, Login.class);
             startActivity(intent);
             finish();
         }

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.google.firebase.auth.FirebaseAuth;
 import com.teamten.visionfit.R;
 
-public class AboutUsActivity extends BaseNavActivity {
+public class AboutUsActivity extends BaseActivity {
     FirebaseAuth auth;
 
     @Override

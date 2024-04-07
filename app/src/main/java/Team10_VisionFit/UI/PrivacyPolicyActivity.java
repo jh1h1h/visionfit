@@ -1,24 +1,11 @@
 package Team10_VisionFit.UI;
 
-import android.app.Dialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.teamten.visionfit.R;
-import Team10_VisionFit.MainActivity;
-import Team10_VisionFit.Backend.firebaseAuthentication.Login;
-import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 
-public class PrivacyPolicyActivity extends BaseNavActivity {
+public class PrivacyPolicyActivity extends BaseActivity {
     FirebaseAuth auth;
 
     @Override

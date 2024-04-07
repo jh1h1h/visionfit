@@ -1,8 +1,6 @@
 package Team10_VisionFit.UI;
 
 import android.app.Dialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,23 +8,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.teamten.visionfit.R;
 
-import Team10_VisionFit.Backend.firebaseAuthentication.Login;
-import Team10_VisionFit.MainActivity;
-import Team10_VisionFit.PoseDetector.LivePreviewActivity;
-
-public class MyRewardsActivity extends BaseNavActivity {
+public class MyRewardsActivity extends BaseActivity {
     FirebaseAuth auth;
     boolean hasCompletedSquatsChallengeToday;
     boolean hasCompletedPushupsChallengeToday;

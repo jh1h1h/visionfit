@@ -1,21 +1,14 @@
 package Team10_VisionFit.UI;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -26,11 +19,7 @@ import com.teamten.visionfit.R;
 
 import java.util.ArrayList;
 
-import Team10_VisionFit.Backend.firebaseAuthentication.Login;
-import Team10_VisionFit.MainActivity;
-import Team10_VisionFit.PoseDetector.LivePreviewActivity;
-
-public class LeaderBoardActivity extends BaseNavActivity {
+public class LeaderBoardActivity extends BaseActivity {
     FirebaseAuth auth;
 
     @SuppressLint("SetTextI18n")

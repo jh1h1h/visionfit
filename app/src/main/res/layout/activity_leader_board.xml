@@ -109,13 +109,13 @@
 
         <TextView
             android:id="@+id/Username"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/username"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:paddingEnd="50dp"
             app:layout_constraintEnd_toStartOf="@+id/Ranking"
             app:layout_constraintStart_toEndOf="@+id/Repetitions"
             app:layout_constraintTop_toTopOf="@+id/titleTab" />
@@ -236,7 +236,8 @@
 
         <TextView
             android:id="@+id/yourRank"
-            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="inputRank"
             android:textColor="@color/black"
@@ -248,20 +249,21 @@
 
         <TextView
             android:id="@+id/yourName"
-            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="name"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:paddingEnd="30dp"
             app:layout_constraintEnd_toStartOf="@+id/yourRep"
             app:layout_constraintStart_toEndOf="@+id/yourRank"
             app:layout_constraintTop_toTopOf="@id/yourPlace" />
 
         <TextView
             android:id="@+id/yourRep"
-            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="inputReps"
             android:textColor="@color/black"

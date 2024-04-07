@@ -31,7 +31,8 @@
 
         <TextView
             android:id="@+id/Rank"
-            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="1"
             android:textColor="@color/black"
@@ -42,19 +43,20 @@
 
         <TextView
             android:id="@+id/Name"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="name"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:paddingEnd="30dp"
+            android:gravity="center"
             app:layout_constraintEnd_toStartOf="@+id/Reps"
             app:layout_constraintStart_toEndOf="@+id/Rank"
             app:layout_constraintTop_toTopOf="@id/leaderboardRow" />
 
         <TextView
             android:id="@+id/Reps"
-            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="inputReps"
             android:textColor="@color/black"

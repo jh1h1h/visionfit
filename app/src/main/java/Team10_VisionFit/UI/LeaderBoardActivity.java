@@ -1,8 +1,11 @@
 package Team10_VisionFit.UI;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 
 import Team10_VisionFit.Backend.leaderboard.BST;
 import Team10_VisionFit.Backend.leaderboard.Node;
+import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 
 public class LeaderBoardActivity extends BaseActivity {
     FirebaseAuth auth;
@@ -29,16 +33,33 @@ public class LeaderBoardActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        // asynchronously retrieve all users
-        CollectionReference users = db.collection("users");
-        Query query = users.orderBy("pushupAllTime", Query.Direction.DESCENDING);
         setContentView(R.layout.activity_leader_board);
+        loadLeaderboard("squat");
+        //To setup nav bar
+        setUpBottomNavBar(R.id.bottom_logout);
 
-        ArrayList<String> names = new ArrayList<>();
-        ArrayList<String> ranks = new ArrayList<>();
-        ArrayList<String> reps = new ArrayList<>();
+        Button pushUpButton = findViewById(R.id.pushUpLeaderBoardBtn);
+        Button squatsButton = findViewById(R.id.squatsLeaderBoardBtn);
 
+        pushUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Button Check", "Push Up Button Clicked");
+                loadLeaderboard("pushup");
+            }
+        });
+
+        squatsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Button Check", "Push Up Button Clicked");
+                loadLeaderboard("squat");
+            }
+        });
+    }
+
+    // Fetch user's leaderboard info - asynchronously retrieve all users
+    public void loadLeaderboard(String classType){
 //        int[] nameRows = {R.id.Name1, R.id.Name2, R.id.Name3, R.id.Name4,
 //                R.id.Name5, R.id.Name6, R.id.Name7, R.id.Name8, R.id.Name9,
 //                R.id.Name10, R.id.Name11, R.id.Name12, R.id.Name13, R.id.Name14,
@@ -46,13 +67,18 @@ public class LeaderBoardActivity extends BaseActivity {
 //        int[] repRows = {R.id.Rep1, R.id.Rep2, R.id.Rep3, R.id.Rep4, R.id.Rep5,
 //                R.id.Rep6, R.id.Rep7, R.id.Rep8, R.id.Rep9, R.id.Rep10, R.id.Rep11,
 //                R.id.Rep12, R.id.Rep13, R.id.Rep14, R.id.Rep15,};
-//
-        // Fetch user's leaderboard info
-        Task<QuerySnapshot> querySnapshotTask = query.get();
-        querySnapshotTask
+
+        ArrayList<String> names = new ArrayList<>();
+        ArrayList<String> ranks = new ArrayList<>();
+        ArrayList<String> reps = new ArrayList<>();
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference users = db.collection("users");
+//        Query query = users.orderBy("pushupAllTime", Query.Direction.DESCENDING);
+//        Task<QuerySnapshot> querySnapshotTask = query.get();
+        users.get()
                 .addOnSuccessListener(result -> {
                     QuerySnapshot qsnapshot = result;
-                    String classType = "squat";
                     BST lbBST = new BST(users, classType);
                     ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
                     DocumentSnapshot currentUser = null;
@@ -131,9 +157,6 @@ public class LeaderBoardActivity extends BaseActivity {
                 .addOnFailureListener(e -> {
                     // Handle the exception
                 });
-
-        //To setup nav bar
-        setUpBottomNavBar(R.id.bottom_logout);
     }
 
     @Override

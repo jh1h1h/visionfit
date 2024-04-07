@@ -56,7 +56,7 @@ public class BST extends Node{
             Log.d("ERROR","BST: Node to be deleted not found");
             throw new Resources.NotFoundException("BST: Node to be deleted not found");
         }
-        if (subtreeroot.user == node.user){
+        if (subtreeroot.userid.equals(node.userid)){
             // Case 1: Node has no children or only one child
             if (subtreeroot.left == null) {
                 if (nodes.get(subtreeroot.parent).left.equals(node.id)){
@@ -82,7 +82,7 @@ public class BST extends Node{
             tree_delete(successor, subtreeroot);
             Log.d("leaderboardsuccessor", String.valueOf(successor.key)); // TODO: make sure successor.key still exists after delete
             subtreeroot.key = successor.key;
-            subtreeroot.user = successor.user;
+            subtreeroot.userid = successor.userid;
             nodes.get(successor.parent).left = successor.right;
             // TODO: [Firebase] Upload node and update subtreeroot and parent
         }

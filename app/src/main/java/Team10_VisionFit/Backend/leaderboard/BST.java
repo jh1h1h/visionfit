@@ -80,7 +80,7 @@ public class BST extends Node{
             // Find the inorder successor (minimum value in the right subtree)
             Node successor = tree_min(nodes.get(subtreeroot.right));
             tree_delete(successor, subtreeroot);
-            Log.d("leaderboardsuccessor", String.valueOf(successor.key));
+            Log.d("leaderboardsuccessor", String.valueOf(successor.key)); // TODO: make sure successor.key still exists after delete
             subtreeroot.key = successor.key;
             subtreeroot.user = successor.user;
             nodes.get(successor.parent).left = successor.right;

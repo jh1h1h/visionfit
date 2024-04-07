@@ -32,6 +32,7 @@ import java.util.Date;
 
 import Team10_VisionFit.Backend.firebaseAuthentication.Login;
 import Team10_VisionFit.Backend.leaderboard.BST;
+import Team10_VisionFit.Backend.leaderboard.Node;
 import Team10_VisionFit.MainActivity;
 import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 
@@ -164,8 +165,14 @@ public class DailyChallengeActivity extends AppCompatActivity{
                                 BST lbBST = new BST();
                                 ArrayList<DocumentSnapshot> lbList = new ArrayList<>(lb.getDocuments());
                                 for (DocumentSnapshot lbNode: lbList) {
-                                    BST
-                                    Log.d("leaderboard", lbNode.getData().toString());
+                                    lbBST.populate_node(new Node(
+                                            lbNode.get("pts",Integer.class),
+                                            lbNode.get("left",String.class),
+                                            lbNode.get("right",String.class),
+                                            lbNode.get("parent",String.class),
+                                            lbNode.get("userid",String.class),
+                                            lbNode.getId()
+                                    ));
                                 }
                             }
                         });

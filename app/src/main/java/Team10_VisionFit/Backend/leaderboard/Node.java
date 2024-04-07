@@ -10,9 +10,9 @@ public class Node{
     String left;
     String right;
     String parent;
-    String user;
+    String userid;
     String id;
-    int pts;
+    int points;
 
     // No-argument constructor
     public Node() {
@@ -20,18 +20,18 @@ public class Node{
         this.left = null;
         this.right = null;
         this.parent = null;
-        this.user = null;
+        this.userid = null;
         this.id = null;
     }
 
     // A utility function to create a new BST node
-    Node(int pts, String left, String right, String parent,String user, String id) {
-        this.pts = pts;
-        this.key = String.format("%010d",pts) + id; // Append with id to resolve tiebreaks
+    public Node(int points, String left, String right, String parent,String userid, String id) {
+        this.points = points;
+        this.key = String.format("%010d",points) + userid; // Append with id to resolve tiebreaks
         this.left = left;
         this.right = right;
         this.parent = parent;
-        this.user = user;
+        this.userid = userid;
         this.id = id;
     }
 }

@@ -418,11 +418,14 @@ public final class LivePreviewActivity extends AppCompatActivity
     Button dialogButtonExit = dialog.findViewById(R.id.btnExit); // getting reference of Button
     TextView endChallenge_Text = dialog.findViewById(R.id.end_challenge_message); // getting reference of TextView
 
+    // Calculate the rep count from repCountStr
+    int repCount = Integer.parseInt(repCountStr);
+
     if (classType.equals("Push Ups")) {
-      String end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCountStr + " push ups.";
+      String end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCount + " push ups.";
       endChallenge_Text.setText(end_Challenge_Text);
     } else if (classType.equals("Squats")) {
-      String end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCountStr + " squats.";
+      String end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCount + " squats.";
       endChallenge_Text.setText(end_Challenge_Text);
     }
 
@@ -435,12 +438,12 @@ public final class LivePreviewActivity extends AppCompatActivity
 
         repCountText = findViewById(R.id.exercise_count_text);
         String[] repCountArr = String.valueOf(repCountText.getText()).split(":");
-        int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
+        // int count = Integer.parseInt(repCountArr[repCountArr.length - 1]);
 
         Intent intent = new Intent(LivePreviewActivity.this, DailyChallengeActivity.class);
         String label = classType + " Reps";
         intent.putExtra(label, repCountStr);
-        intent.putExtra("repCount", count);
+        intent.putExtra("repCount", repCount);
         intent.putExtra("ClassType", classType);
         resetRepCounters(); // Reset the counters to 0 before finish and exiting
 

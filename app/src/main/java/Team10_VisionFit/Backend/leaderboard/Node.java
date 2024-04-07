@@ -12,6 +12,7 @@ public class Node{
     String parent;
     String user;
     String id;
+    int pts;
 
     // No-argument constructor
     public Node() {
@@ -24,8 +25,9 @@ public class Node{
     }
 
     // A utility function to create a new BST node
-    Node(int key, String left, String right, String parent,String user, String id) {
-        this.key = String.format("%010d",key) + id; // Append with id to resolve tiebreaks
+    Node(int pts, String left, String right, String parent,String user, String id) {
+        this.pts = pts;
+        this.key = String.format("%010d",pts) + id; // Append with id to resolve tiebreaks
         this.left = left;
         this.right = right;
         this.parent = parent;

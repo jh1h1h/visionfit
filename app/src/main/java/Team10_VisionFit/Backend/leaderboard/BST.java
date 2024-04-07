@@ -41,7 +41,7 @@ public class BST extends Node{
             subtreeroot = node;
         }
         // if tree not empty, traverse the tree to insert based on key value
-        if (node.key < subtreeroot.key) {
+        if (node.key.compareTo(subtreeroot.key) < 0) {
             tree_insert(node, nodes.get(subtreeroot.left));
         } else {
             tree_insert(node, nodes.get(subtreeroot.right));
@@ -87,7 +87,7 @@ public class BST extends Node{
             // TODO: [Firebase] Upload node and update subtreeroot and parent
         }
         // if tree not empty and node not found, traverse the tree to insert based on key value
-        if (node.key < subtreeroot.key) {
+        if (node.key.compareTo(subtreeroot.key) < 0) {
             tree_delete(node, nodes.get(subtreeroot.left));
         } else {
             tree_delete(node, nodes.get(subtreeroot.right));
@@ -108,16 +108,16 @@ public class BST extends Node{
         return x;
     }
 
-    public Node tree_search(Node x, int key) {
-        while (x != null && key != x.key) { // if node exist and key value is not key
-            if (key < x.key) { // check if k is less than key value
-                x = nodes.get(x.left); // if it is then continue to find left node
-            } else { // check if k is more than key value
-                x = nodes.get(x.right); // if it is then continue to find right node
-            }
-        }
-        return x;
-    }
+//    public Node tree_search(Node x, int key) {
+//        while (x != null && key != x.key) { // if node exist and key value is not key
+//            if (key < x.key) { // check if k is less than key value
+//                x = nodes.get(x.left); // if it is then continue to find left node
+//            } else { // check if k is more than key value
+//                x = nodes.get(x.right); // if it is then continue to find right node
+//            }
+//        }
+//        return x;
+//    }
 
     public Node successor(Node x) {
         if (x.right != null) { // check if right node exist

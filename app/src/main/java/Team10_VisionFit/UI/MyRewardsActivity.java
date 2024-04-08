@@ -32,6 +32,10 @@ public class MyRewardsActivity extends BaseActivity {
     boolean streakChange;
     int current_points;
     int lifetime_points;
+    int rewards_1_fb;
+    int rewards_2_fb;
+    int rewards_3_fb;
+    int rewards_4_fb;
     TextView my_points_now;
     TextView my_total_points;
     ConstraintLayout rewards_1;
@@ -42,6 +46,10 @@ public class MyRewardsActivity extends BaseActivity {
     Button purchaseHistoryButton;
     Button myVouchers;
     Map<String, Integer> redeemedRewards = new HashMap<>();
+    TextView rewards1_rep;
+    TextView rewards2_rep;
+    TextView rewards3_rep;
+    TextView rewards4_rep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +81,10 @@ public class MyRewardsActivity extends BaseActivity {
                     streakChange = document.getBoolean("streakChange");
                     current_points = document.getLong("current_points").intValue();
                     lifetime_points = document.getLong("lifetime_points").intValue();
+                    rewards_1_fb = document.getLong("num_rewards1").intValue();
+                    rewards_2_fb = document.getLong("num_rewards2").intValue();
+                    rewards_3_fb = document.getLong("num_rewards3").intValue();
+                    rewards_4_fb = document.getLong("num_rewards4").intValue();
 
                     // Set the text of TextViews after updating points
                     my_points_now.setText(String.valueOf(current_points));
@@ -85,21 +97,29 @@ public class MyRewardsActivity extends BaseActivity {
                 rewards_1.setOnClickListener(v -> {
                     Log.d("Button Check", "Rewards 1 Clicked");
                     confirmPurchaseDialog(10000, "3 Days Data Roaming"); // Deduct 10000 points for rewards_1
+                    rewards_1_fb ++;
+                    userRef.update("num_rewards1", rewards_1_fb);
                 });
 
                 rewards_2.setOnClickListener(v -> {
                     Log.d("Button Check", "Rewards 2 Clicked");
                     confirmPurchaseDialog(7500, "1 Days Data Roaming"); // Deduct 7500 points for rewards_2
+                    rewards_2_fb ++;
+                    userRef.update("num_rewards2", rewards_2_fb);
                 });
 
                 rewards_3.setOnClickListener(v -> {
                     Log.d("Button Check", "Rewards 3 Clicked");
                     confirmPurchaseDialog(5000, "$5 Phone Bill Voucher"); // Deduct 5000 points for rewards_3
+                    rewards_3_fb ++;
+                    userRef.update("num_rewards3", rewards_3_fb);
                 });
 
                 rewards_4.setOnClickListener(v -> {
                     Log.d("Button Check", "Rewards 4 Clicked");
                     confirmPurchaseDialog(3000, "$3 Phone Bill Voucher"); // Deduct 3000 points for rewards_4
+                    rewards_4_fb ++;
+                    userRef.update("num_rewards4", rewards_4_fb);
                 });
 
                 purchaseHistoryButton.setOnClickListener(v -> {
@@ -119,13 +139,17 @@ public class MyRewardsActivity extends BaseActivity {
         dialog.setContentView(R.layout.dialog_redeemed_rewards);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        // Getting reference to RecyclerView in dialog layout
-        RecyclerView recyclerView = dialog.findViewById(R.id.redeemed_rewards_recycler_view);
+        // Getting references to TextViews in dialog layout
+        rewards1_rep = dialog.findViewById(R.id.reward1_count);
+        rewards2_rep = dialog.findViewById(R.id.reward2_count);
+        rewards3_rep = dialog.findViewById(R.id.reward3_count);
+        rewards4_rep = dialog.findViewById(R.id.reward4_count);
 
-        // Setting up RecyclerView
-        RedeemedRewardsAdapter adapter = new RedeemedRewardsAdapter(redeemedRewards);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // Set text for TextViews
+        rewards1_rep.setText(String.valueOf(rewards_1_fb));
+        rewards2_rep.setText(String.valueOf(rewards_2_fb));
+        rewards3_rep.setText(String.valueOf(rewards_3_fb));
+        rewards4_rep.setText(String.valueOf(rewards_4_fb));
 
         // Getting reference to Close button in dialog layout
         Button closeButton = dialog.findViewById(R.id.close_button);
@@ -138,6 +162,7 @@ public class MyRewardsActivity extends BaseActivity {
         // Showing the dialog
         dialog.show();
     }
+
 
     public void confirmPurchaseDialog(final int pointsToDeduct, final String rewardName) {
         // creating custom dialog

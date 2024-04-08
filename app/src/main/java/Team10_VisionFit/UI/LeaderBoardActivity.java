@@ -92,6 +92,7 @@ public class LeaderBoardActivity extends BaseActivity {
                     ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
                     DocumentSnapshot currentUser = null;
 
+
                     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     for (DocumentSnapshot userDoc: userArrList) {
 //                        TextView name = findViewById(nameRows[i]);
@@ -107,6 +108,8 @@ public class LeaderBoardActivity extends BaseActivity {
                                         userDoc.getId(),
                                         userDoc
                                 ));
+                            }else if (userDoc.getId().equals(uid)){
+                                currentUser = userDoc;
                             }
                         }
 //                        else {
@@ -116,6 +119,13 @@ public class LeaderBoardActivity extends BaseActivity {
 
 
                     }
+
+                    // add workout to client BST and upload to firebase
+                    // TODO: potential bug: document has outdated count and gets reflected onto node document
+                    if (currentUser != null){
+                        lbBST.tree_insert(new Node((long) 0, uid, currentUser),lbBST.root,"root");
+                    }
+
 
                     ArrayList<Node> path = lbBST.inorder_path(lbBST.root);
                     int counter = 1;

@@ -55,10 +55,14 @@ public class Register extends AppCompatActivity {
         signupPassword.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                // If Enter key is pressed and it's an action_down event
-                if (keyCode == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+                // If Enter key is pressed and it's an action_up event
+                if (keyCode == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_UP) {
                     // Show DatePicker dialog
                     showDatePickerDialog();
+
+                    // Request focus on the DOB field
+                    signupDOB.requestFocus();
+
                     return true;
                 }
                 return false;
@@ -129,15 +133,13 @@ public class Register extends AppCompatActivity {
         });
 
         // Trigger signupButton click listener action when click on field
-        signupDOB.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        signupDOB.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) { // If the input field gains focus
-                    String dob = signupDOB.getText().toString().trim();
-                    if (dob.isEmpty()) {
-                        // If field input is empty, show the date picker dialog
-                        showDatePickerDialog();
-                    }
+            public void onClick(View view) {
+                String dob = signupDOB.getText().toString().trim();
+                if (dob.isEmpty()) {
+                    // If field input is empty, show the date picker dialog
+                    showDatePickerDialog();
                 }
             }
         });

@@ -136,11 +136,22 @@ public class Register extends AppCompatActivity {
         signupDOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String dob = signupDOB.getText().toString().trim();
-                if (dob.isEmpty()) {
-                    // If field input is empty, show the date picker dialog
-                    showDatePickerDialog();
+                // Show the DatePicker dialog
+                showDatePickerDialog();
+            }
+        });
+
+        // Trigger country field focus when Enter key is pressed after entering DOB
+        signupDOB.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                // If Enter key is pressed and it's an action_up event
+                if (keyCode == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_UP) {
+                    // Move focus to the country field
+                    signupCountry.requestFocus();
+                    return true;
                 }
+                return false;
             }
         });
 

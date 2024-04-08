@@ -114,7 +114,7 @@ public class Register extends AppCompatActivity {
                             FirebaseUser user=auth.getCurrentUser();
                             String uid=user.getUid();
                             // No need to validate dob and country again here
-                            TestFirestoreActivity.addDataToFirestore(uid, username, country, dob, 0,0,0,0,0,0,0,0,0, 0, 0, false, false, false, 0, 0);
+                            TestFirestoreActivity.addDataToFirestore(uid, username, country, dob, 0,0,0,0,0,0,0,0,0, 0, 0, false, false, false, 0, 0, 0,0, 0, 0);
                             startActivity(new Intent(Register.this, Login.class));
                         } else {
                             Toast.makeText(Register.this, "Failed to Register" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

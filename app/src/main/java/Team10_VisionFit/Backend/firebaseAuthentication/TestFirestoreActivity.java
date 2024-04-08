@@ -100,7 +100,7 @@ public class TestFirestoreActivity extends AppCompatActivity {
                                    int numPushupsChallengeCompleted,
                                    boolean hasCompletedSquatsChallengeToday,
                                    boolean hasCompletedPushupsChallengeToday,
-                                          boolean streakChange, int current_points, int lifetime_points) {
+                                          boolean streakChange, int current_points, int lifetime_points, int num_rewards1, int num_rewards2, int num_rewards3, int num_rewards4) {
 
         // creating a collection reference
         // for our Firebase Firestore database.
@@ -116,7 +116,7 @@ public class TestFirestoreActivity extends AppCompatActivity {
         numPushupsChallengeCompleted,
         hasCompletedSquatsChallengeToday,
         hasCompletedPushupsChallengeToday,
-                streakChange, current_points, lifetime_points);
+                streakChange, current_points, lifetime_points, num_rewards1, num_rewards2, num_rewards3, num_rewards4);
         db.collection("users").document(uid)
                 .set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

@@ -78,6 +78,10 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
+            android:name="Team10_VisionFit.UI.LeaderBoardActivity2"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
             android:name="Team10_VisionFit.UI.DailyChallengeActivity"
             android:screenOrientation="portrait"
             android:exported="false" />

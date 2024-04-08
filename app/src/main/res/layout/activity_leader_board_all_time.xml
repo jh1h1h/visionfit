@@ -164,7 +164,7 @@
             android:id="@+id/displaytext"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Daily Leaders"
+            android:text="All Time Leaders"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"

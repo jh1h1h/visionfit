@@ -11,12 +11,10 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.teamten.visionfit.R;
 
@@ -24,16 +22,15 @@ import java.util.ArrayList;
 
 import Team10_VisionFit.Backend.leaderboard.BST;
 import Team10_VisionFit.Backend.leaderboard.Node;
-import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 
-public class LeaderBoardActivity extends BaseActivity {
+public class LeaderBoardActivity2 extends BaseActivity {
     FirebaseAuth auth;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_leader_board);
+        setContentView(R.layout.activity_leader_board_all_time);
         loadLeaderboard("squat");
         //To setup nav bar
         setUpBottomNavBar(R.id.bottom_logout);
@@ -44,7 +41,7 @@ public class LeaderBoardActivity extends BaseActivity {
         toggleLb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LeaderBoardActivity.this, LeaderBoardActivity2.class);
+                Intent intent = new Intent(LeaderBoardActivity2.this, LeaderBoardActivity.class);
                 startActivity(intent);
             }
         });

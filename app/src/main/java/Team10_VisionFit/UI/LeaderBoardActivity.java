@@ -28,13 +28,16 @@ import Team10_VisionFit.PoseDetector.LivePreviewActivity;
 
 public class LeaderBoardActivity extends BaseActivity {
     FirebaseAuth auth;
+    String lbType;
+    String classType;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leader_board);
-        loadLeaderboard("squat");
+        lbType = "AllTime"; classType = "squat";
+        loadLeaderboard(classType,lbType);
         //To setup nav bar
         setUpBottomNavBar(R.id.bottom_logout);
 
@@ -44,8 +47,12 @@ public class LeaderBoardActivity extends BaseActivity {
         toggleLb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LeaderBoardActivity.this, LeaderBoardActivity2.class);
-                startActivity(intent);
+                if (lbType == "AllTime"){
+                    lbType = "Today";
+                }else{
+                    lbType = "AllTime";
+                }
+                loadLeaderboard(classType,lbType);
             }
         });
 
@@ -53,7 +60,8 @@ public class LeaderBoardActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Log.d("Button Check", "Push Up Button Clicked");
-                loadLeaderboard("pushup");
+                classType = "pushup";
+                loadLeaderboard(classType,lbType);
             }
         });
 
@@ -61,14 +69,21 @@ public class LeaderBoardActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Log.d("Button Check", "Push Up Button Clicked");
-                loadLeaderboard("squat");
+                classType = "squat";
+                loadLeaderboard(classType,lbType);
             }
         });
     }
 
 
     // Fetch user's leaderboard info - asynchronously retrieve all users
-    public void loadLeaderboard(String classType){
+    public void loadLeaderboard(String classType, String lbType){
+        TextView displayText = findViewById(R.id.displaytext);
+        if (lbType == "AllTime"){
+            displayText.setText("All Time Leaders (" + classType +")");
+        }else{
+            displayText.setText("Daily Leaders (" + classType +")");
+        }
 //        int[] nameRows = {R.id.Name1, R.id.Name2, R.id.Name3, R.id.Name4,
 //                R.id.Name5, R.id.Name6, R.id.Name7, R.id.Name8, R.id.Name9,
 //                R.id.Name10, R.id.Name11, R.id.Name12, R.id.Name13, R.id.Name14,

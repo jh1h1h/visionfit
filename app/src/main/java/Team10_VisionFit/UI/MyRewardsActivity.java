@@ -36,6 +36,7 @@ public class MyRewardsActivity extends BaseActivity {
     int rewards_2_fb;
     int rewards_3_fb;
     int rewards_4_fb;
+    String purchase_history;
     TextView my_points_now;
     TextView my_total_points;
     ConstraintLayout rewards_1;
@@ -86,6 +87,17 @@ public class MyRewardsActivity extends BaseActivity {
                     rewards_3_fb = document.getLong("num_rewards3").intValue();
                     rewards_4_fb = document.getLong("num_rewards4").intValue();
 
+                    Object purchaseHistoryObj = document.get("purchaseHistory");
+                    if (purchaseHistoryObj instanceof ArrayList) {
+                        purchaseHistory = (ArrayList<String>) purchaseHistoryObj;
+                    } else {
+                        Log.e("MyRewardsActivity", "purchaseHistory is not stored as ArrayList in Firestore");
+                        // Handle this situation accordingly
+                    }
+                    if (purchaseHistory == null) {
+                        purchaseHistory = new ArrayList<>();
+                    }
+
                     // Set the text of TextViews after updating points
                     my_points_now.setText(String.valueOf(current_points));
                     my_total_points.setText(String.valueOf(lifetime_points));
@@ -97,29 +109,21 @@ public class MyRewardsActivity extends BaseActivity {
                 rewards_1.setOnClickListener(v -> {
                     Log.d("Button Check", "Rewards 1 Clicked");
                     confirmPurchaseDialog(10000, "3 Days Data Roaming"); // Deduct 10000 points for rewards_1
-                    rewards_1_fb ++;
-                    userRef.update("num_rewards1", rewards_1_fb);
                 });
 
                 rewards_2.setOnClickListener(v -> {
                     Log.d("Button Check", "Rewards 2 Clicked");
-                    confirmPurchaseDialog(7500, "1 Days Data Roaming"); // Deduct 7500 points for rewards_2
-                    rewards_2_fb ++;
-                    userRef.update("num_rewards2", rewards_2_fb);
+                    confirmPurchaseDialog(7500, "1 Day Data Roaming"); // Deduct 7500 points for rewards_2
                 });
 
                 rewards_3.setOnClickListener(v -> {
                     Log.d("Button Check", "Rewards 3 Clicked");
                     confirmPurchaseDialog(5000, "$5 Phone Bill Voucher"); // Deduct 5000 points for rewards_3
-                    rewards_3_fb ++;
-                    userRef.update("num_rewards3", rewards_3_fb);
                 });
 
                 rewards_4.setOnClickListener(v -> {
                     Log.d("Button Check", "Rewards 4 Clicked");
                     confirmPurchaseDialog(3000, "$3 Phone Bill Voucher"); // Deduct 3000 points for rewards_4
-                    rewards_4_fb ++;
-                    userRef.update("num_rewards4", rewards_4_fb);
                 });
 
                 purchaseHistoryButton.setOnClickListener(v -> {
@@ -131,6 +135,24 @@ public class MyRewardsActivity extends BaseActivity {
                 });
             }
         });
+    }
+
+    // Method to update purchase history in Firestore
+    private void updatePurchaseHistoryInFirestore(List<String> updatedPurchaseHistory) {
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(uid);
+        userRef.update("purchaseHistory", updatedPurchaseHistory)
+                .addOnSuccessListener(aVoid -> Log.d("MyRewardsActivity", "Purchase history updated successfully"))
+                .addOnFailureListener(e -> Log.e("MyRewardsActivity", "Error updating purchase history", e));
+    }
+
+    // Method to add purchase to purchase history and update in Firestore
+    private void addToPurchaseHistoryAndUpdateFirestore(String rewardName) {
+        if (purchaseHistory == null) {
+            purchaseHistory = new ArrayList<>();
+        }
+        purchaseHistory.add(rewardName);
+        updatePurchaseHistoryInFirestore(purchaseHistory);
     }
 
     public void displayRedeemedRewards() {
@@ -198,26 +220,32 @@ public class MyRewardsActivity extends BaseActivity {
                             // Points deducted successfully
                             my_points_now.setText(String.valueOf(current_points));
                             Toast.makeText(getApplicationContext(), "Points deducted successfully", Toast.LENGTH_SHORT).show();
-                            // Add reward to history
-                            purchaseHistory.add(rewardName);
                         })
                         .addOnFailureListener(e -> {
                             // Failed to deduct points
                             Toast.makeText(getApplicationContext(), "Failed to deduct points", Toast.LENGTH_SHORT).show();
                         });
+
+                // Update Firestore with the purchased reward
+                addToPurchaseHistoryAndUpdateFirestore(rewardName);
+
             } else {
                 // Insufficient points
                 Toast.makeText(getApplicationContext(), "Failed to purchase. Insufficient points", Toast.LENGTH_SHORT).show();
             }
 
-            // Check if the reward is already redeemed
-            if (redeemedRewards.containsKey(rewardName)) {
-                // Increment count for the redeemed reward
-                int count = redeemedRewards.get(rewardName);
-                redeemedRewards.put(rewardName, count + 1);
-            } else {
-                // Add the reward to redeemed rewards with count 1
-                redeemedRewards.put(rewardName, 1);
+            if (rewardName == "3 Days Data Roaming") {
+                rewards_1_fb ++;
+                userRef.update("num_rewards1", rewards_1_fb);
+            } else if (rewardName == "1 Day Data Roaming") {
+                rewards_2_fb ++;
+                userRef.update("num_rewards2", rewards_2_fb);
+            } else if (rewardName == "$5 Phone Bill Voucher") {
+                rewards_3_fb ++;
+                userRef.update("num_rewards3", rewards_3_fb);
+            } else if (rewardName == "$3 Phone Bill Voucher") {
+                rewards_4_fb ++;
+                userRef.update("num_rewards4", rewards_4_fb);
             }
         });
 

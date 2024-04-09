@@ -93,8 +93,6 @@ public class BST extends Node{
 
     // Insert a new node n at the subtree rooted at subtreeroot
     public void tree_delete(Node node, Node subtreeroot) throws Resources.NotFoundException {
-        Log.d("cyril", node.key);
-        Log.d("cyril", subtreeroot.key);
         if (subtreeroot == null) { // tree is empty
             Log.d("ERROR","BST: Node to be deleted not found");
             throw new Resources.NotFoundException("BST: Node to be deleted not found");

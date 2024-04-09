@@ -249,8 +249,8 @@ public class FrontPageActivity extends BaseActivity implements View.OnClickListe
         return false;
     }
 
-    @Override
-    public void onBackPressed() {
+    //@Override
+    //public void onBackPressed() {
         // Do nothing (disable back button functionality)
-    }
+
 }

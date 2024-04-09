@@ -223,9 +223,9 @@ public class LeaderBoardActivity extends BaseActivity {
 
 
 
-    @Override
-    public void onBackPressed() {
+    //@Override
+    //public void onBackPressed() {
         // Do nothing (disable back button functionality)
-    }
+    //}
 }
 

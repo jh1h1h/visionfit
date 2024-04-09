@@ -40,29 +40,12 @@ public class LeaderBoardActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leader_board);
-        lbType = "AllTime"; classType = "squat";
-        loadLeaderboard(classType,lbType);
-        //To setup nav bar
-        setUpBottomNavBar(R.id.bottom_logout);
 
         Button pushUpButton = findViewById(R.id.pushUpLeaderBoardBtn);
         Button squatsButton = findViewById(R.id.squatsLeaderBoardBtn);
         Button toggleLb = (Button) findViewById(R.id.toggleLB);
 
         originalButtonColor = pushUpButton.getBackgroundTintList();
-
-        toggleLb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (lbType == "AllTime"){
-                    lbType = "Today";
-                }else{
-                    lbType = "AllTime";
-                }
-                loadLeaderboard(classType,lbType);
-            }
-        });
-
         //To set colour to green
         int[][] states = new int[][] {
                 new int[] { android.R.attr.state_enabled } // enabled
@@ -70,6 +53,26 @@ public class LeaderBoardActivity extends BaseActivity {
         int[] colors = new int[] {
                 Color.GREEN // tint color
         };
+
+        // Set background color of the squats button to green
+        squatsButton.setBackgroundTintList(new ColorStateList(states, colors));
+        lbType = "AllTime"; classType = "squat";
+        loadLeaderboard(classType,lbType);
+
+        //To setup nav bar
+        setUpBottomNavBar(R.id.bottom_logout);
+
+        toggleLb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lbType.equals("AllTime")){
+                    lbType = "Today";
+                }else{
+                    lbType = "AllTime";
+                }
+                loadLeaderboard(classType,lbType);
+            }
+        });
 
         pushUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,10 +107,10 @@ public class LeaderBoardActivity extends BaseActivity {
     // Fetch user's leaderboard info - asynchronously retrieve all users
     public void loadLeaderboard(String classType, String lbType){
         TextView displayText = findViewById(R.id.displaytext);
-        if (lbType == "AllTime"){
-            displayText.setText("All Time Leaders (" + classType +")");
+        if (lbType.equals("AllTime")){
+            displayText.setText("All Time Leaders");
         }else{
-            displayText.setText("Daily Leaders (" + classType +")");
+            displayText.setText("Daily Leaders");
         }
 //        int[] nameRows = {R.id.Name1, R.id.Name2, R.id.Name3, R.id.Name4,
 //                R.id.Name5, R.id.Name6, R.id.Name7, R.id.Name8, R.id.Name9,

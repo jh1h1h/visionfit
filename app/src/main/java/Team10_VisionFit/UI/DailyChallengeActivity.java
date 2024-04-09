@@ -145,7 +145,7 @@ public class DailyChallengeActivity extends BaseActivity {
                                     // add workout to client BST and upload to firebase
                                     // TODO: potential bug: document has outdated count and gets reflected onto node document
                                     if (document.get(classType+"BSTparent",String.class) != null){
-                                        lbBST.tree_delete(new Node((long) repCount, uid, document),lbBST.root);
+                                        lbBST.tree_delete(new Node(prevAllTime, uid, document),lbBST.root);
                                     }
                                     lbBST.tree_insert(new Node((long) repCount, uid, document),lbBST.root,"root");
                                 }

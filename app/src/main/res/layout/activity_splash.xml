@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     tools:context=".SplashActivity"
-    android:background="@drawable/splashscreen">
+    android:background="@drawable/splashscreen"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
 
 </RelativeLayout>

@@ -17,8 +17,8 @@ public class AboutUsActivity extends BaseActivity {
         setUpBottomNavBar(R.id.bottom_settings);
     }
 
-    @Override
-    public void onBackPressed() {
+    //@Override
+    //public void onBackPressed() {
         // Do nothing (disable back button functionality)
-    }
+    //}
 }

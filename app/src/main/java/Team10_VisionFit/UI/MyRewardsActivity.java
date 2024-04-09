@@ -285,9 +285,9 @@ public class MyRewardsActivity extends BaseActivity {
     }
 
 
-    @Override
-    public void onBackPressed() {
+    //@Override
+    //public void onBackPressed() {
         // Do nothing (disable back button functionality)
-    }
+    //}
 }
 

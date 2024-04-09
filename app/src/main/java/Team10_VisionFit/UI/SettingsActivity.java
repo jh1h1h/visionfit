@@ -275,8 +275,8 @@ public class SettingsActivity extends BaseActivity {
                 .getBoolean("notificationSwitchState", true); // Default value is true
     }
 
-    @Override
-    public void onBackPressed() {
+    //@Override
+    //public void onBackPressed() {
         // Do nothing (disable back button functionality)
-    }
+    //}
 }

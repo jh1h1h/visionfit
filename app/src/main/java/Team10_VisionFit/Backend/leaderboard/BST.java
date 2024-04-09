@@ -142,10 +142,12 @@ public class BST extends Node{
             return;
         }
         // if tree not empty and node not found, traverse the tree to insert based on key value
-        if (node.key.compareTo(subtreeroot.key) < 0) {
-            tree_delete(node, nodes.get(subtreeroot.left));
-        } else {
-            tree_delete(node, nodes.get(subtreeroot.right));
+        else {
+            if (node.key.compareTo(subtreeroot.key) < 0) {
+                tree_delete(node, nodes.get(subtreeroot.left));
+            } else {
+                tree_delete(node, nodes.get(subtreeroot.right));
+            }
         }
     }
 

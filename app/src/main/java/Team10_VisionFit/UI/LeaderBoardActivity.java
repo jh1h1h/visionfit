@@ -2,6 +2,8 @@ package Team10_VisionFit.UI;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +33,8 @@ public class LeaderBoardActivity extends BaseActivity {
     String lbType;
     String classType;
 
+    ColorStateList originalButtonColor;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,9 @@ public class LeaderBoardActivity extends BaseActivity {
         Button pushUpButton = findViewById(R.id.pushUpLeaderBoardBtn);
         Button squatsButton = findViewById(R.id.squatsLeaderBoardBtn);
         Button toggleLb = (Button) findViewById(R.id.toggleLB);
+
+        originalButtonColor = pushUpButton.getBackgroundTintList();
+
         toggleLb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,21 +63,39 @@ public class LeaderBoardActivity extends BaseActivity {
             }
         });
 
+        //To set colour to green
+        int[][] states = new int[][] {
+                new int[] { android.R.attr.state_enabled } // enabled
+        };
+        int[] colors = new int[] {
+                Color.GREEN // tint color
+        };
+
         pushUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Button Check", "Push Up Button Clicked");
+                // Set background color of the push-up button to green
+                pushUpButton.setBackgroundTintList(new ColorStateList(states, colors));
                 classType = "pushup";
-                loadLeaderboard(classType,lbType);
+                loadLeaderboard(classType, lbType);
+
+                // Reset background color of the squats button to its original color
+                squatsButton.setBackgroundTintList(originalButtonColor);
             }
         });
 
         squatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Button Check", "Push Up Button Clicked");
+                Log.d("Button Check", "Squats Button Clicked");
+                // Set background color of the squats button to green
+                squatsButton.setBackgroundTintList(new ColorStateList(states, colors));
                 classType = "squat";
-                loadLeaderboard(classType,lbType);
+                loadLeaderboard(classType, lbType);
+
+                // Reset background color of the push-up button to its original color
+                pushUpButton.setBackgroundTintList(originalButtonColor);
             }
         });
     }

@@ -1,46 +1,37 @@
-VisionFit 2.0
 
-⭐New features
-✅Profile Page (Dummy ver)
+# VisionFit
 
-✅Countdown for exercises working (refer to video demo) --> once users press start, countdown will begin and once the countdown ends they will be redirected back to daily challenges page AUTOMATICALLY
+## Description
+VisionFit is a comprehensive fitness application that integrates Google's ML Kit Pose Detection technology, offering a unique approach to maintaining correct exercise form. Designed for fitness enthusiasts of all levels, VisionFit provides real-time feedback on the execution of various exercises, including pushups, squats, and weightlifting, with ongoing development for situps and more. The application boasts an array of features aimed at enhancing user engagement and workout effectiveness: Daily Challenges, Leaderboard, My Rewards, and My Statistics.
 
-✅When logging out, users wil be prompted a confirmation (I totally didnt log out by accident too many times)
+## Installation
+The VisionFit app can be installed via a downloadable APK, created using Android Studio. Users can directly install this APK on their Android devices. Plans are in place to make VisionFit available on the Google Play Store to streamline the installation process and reach a wider audience.
 
-✅Added scrollbars to all pages with scrollview
+## Usage
+### Initial Setup
+Upon installation, users encounter the login page, where they must register by entering their username, password, email, date of birth, and country of region. Successful registration leads back to the login page for subsequent access with the registered credentials.
 
-✅Privacy Policy Page --> added fluff onto edgar's fluff
+### Homepage
+Post-login, the homepage displays the user's workout streak at the top, highlighting consecutive days of challenge completion. The page includes icons for Daily Challenges, Leaderboard, My Rewards, and My Statistics, providing swift navigation.
 
-✅Check Pose/ Camera button added to nav bar  --> help me test if can launch from every page when yall pull
+### Daily Challenges
+This feature promotes regular exercise through targeted challenges for situps, pushups, squats, and weightlifting. Each exercise is represented by an icon, clicking which activates the camera for form checking and rep counting. Users initiate sessions with a start button, facing a countdown to complete the required reps. Successful completion of challenges updates the streak count and changes the exercise icon color to green.
 
-✅Changed icons to more consistent looking ones 
+### Leaderboard
+The Leaderboard showcases user rankings based on all-time reps for each exercise. Selection of an exercise icon filters the leaderboard accordingly, presenting a competitive yet friendly environment for users to see where they stand among peers.
 
-✅Buttons in navbar will light up if you at the particular page ( i didnt do this though so idk how)
+### My Rewards (Work in Progress)
+Envisioned as a motivation tool, My Rewards will allow users to earn points per rep, which can be redeemed for various rewards, enhancing the gamification aspect of the app.
 
-✅All buttons have a logcat feature tagged to "Button Check" to detect if its being clicked or not --> go to logcat and search for "Button Check" for testing
+### My Statistics
+The statistics page offers an in-depth view of a user's performance, featuring the all-time longest streak and the best number of reps for each exercise challenge, encouraging users to break their records.
 
+### Navigation Bar
+The navigation bar at the bottom of the VisionFit app is a user-friendly interface element that provides quick access to various features of the application:
+- **Logout**: Clicking this icon securely logs the user out, redirects them to the login page, and ensures that all data and progress are saved for the next session.
+- **Home Page**: Redirects users back to the main homepage with the 4 main features of the app.
+- **Settings**: Allows users to edit their profile, change the password, add a payment method, toggle night mode, manage notifications, and access About Us and Privacy Policy.
+- **Profile Page**: Enables users to edit personal details such as name, email, add a profile picture, and change their region of residence.
 
-
-📖Renaming and Directory Changing
-Java
-⚪All Java classes are now in src/main/java/Team10_VisionFit and within this package
-⚪all app UI in "UI" package
-⚪all firebase stuff in "Backend" package
-⚪all ML kit stuff in "PoseDetector" package
-
-⚪merged Edgar's firebase's mainactivity into MainActivity, now we only have 1 MainActivity (no duplicates)
-⚪deleted all of the og ML kit stuffs like SettingsActivity (we have one too but now no more duplicates)
-
-Res
-⚪deleted all old ML kit UI stuff in res as well as all the default stuff when a new project is created --> should have no traces of ML kit UI
-⚪ deleted all duplcates of icons and logos
-⚪ visionfit logo should only be found in mipmap
-⚪renamed all icons to start with "icon"
-⚪ renamed all exercise icons to start with "exercise"
-
-❌Missing Features + Things we need discuss
-⚪Leaderboard (to show daily and cumulative)--> work in progress
-⚪Profile Page havent link to firebase
-⚪Reward System How? --> need discuss
-⚪About Us page --> not important but maybe put a pic of 7 of us
-
+## Mission Statement
+VisionFit is not just an app; it's a movement towards a healthier lifestyle, empowering users to exercise with precision and purpose. Our mission is to make fitness accessible, enjoyable, and effective for everyone, helping users to be the best version of themselves.

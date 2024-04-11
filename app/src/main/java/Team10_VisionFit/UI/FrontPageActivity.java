@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.Manifest;
+import android.os.Build.VERSION;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -213,11 +214,25 @@ public class FrontPageActivity extends BaseActivity implements View.OnClickListe
     //Converted and adapted from Kotlin version given in Google ML Kit Demo App
     private boolean allRuntimePermissionsGranted() {
         for (String permission : REQUIRED_RUNTIME_PERMISSIONS) {
-            if (permission != null) {
+
+            //Regardless of SDK level, want to get camera permission
+            if (permission.equals(Manifest.permission.CAMERA)) {
                 if (!isPermissionGranted(this, permission)) {
                     return false;
                 }
             }
+
+            //If its storage permissions, from android 11 onwards, its app scoped storage permission is given automatically, and the permission request is useless
+            //Since its the only 2 permission other than camera, I just use else
+            else {
+                //Only check for android 10 and below
+                if (VERSION.SDK_INT <= 29) {
+                    if (!isPermissionGranted(this, permission)) {
+                        return false;
+                    }
+                }
+            }
+
         }
         return true;
     }

@@ -23,7 +23,7 @@ package Team10_VisionFit.PoseDetector.classification;
 public class RepetitionCounter {
   // These thresholds can be tuned in conjunction with the Top K values in {@link PoseClassifier}.
   // The default Top K value is 10 so the range here is [0-10].
-  private static final float DEFAULT_ENTER_THRESHOLD = 9f; //Originally 6, higher means harder to enter (detect) a pose
+  private static final float DEFAULT_ENTER_THRESHOLD = 8f; //Originally 6, higher means harder to enter (detect) a pose
   private static final float DEFAULT_EXIT_THRESHOLD = 3f; //Originally 4, Only checks AFTER entered a pose, so its actually checking how unlike the entered pose is, which would mean exited the pose and completed 1 rep
 
   private final String className;

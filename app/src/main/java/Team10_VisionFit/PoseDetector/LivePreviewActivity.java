@@ -91,6 +91,8 @@ public final class LivePreviewActivity extends AppCompatActivity
 
     timerText =  findViewById(R.id.timer_text);
     Button startButton = findViewById(R.id.start_button);
+    // Set startButton as disabled initially
+    startButton.setEnabled(true);
 
     //Getting the user's number of completed challenges to decide on the new challenge, and whether the user has completed today's challenges
     auth = FirebaseAuth.getInstance();
@@ -108,6 +110,8 @@ public final class LivePreviewActivity extends AppCompatActivity
                   //The idea is that every 5 days, increment the timer by 2s
                   countdownSquats = countdownDurationMillis + ((numSquatsChallengeCompleted / 5) * 2000L); //the divide will give an int, so its basically integer divide, then I multiply that by 2 because I want to add 2 to each increment of 5 days
                   countdownPushups = countdownDurationMillis + ((numPushupsChallengeCompleted / 5) * 2000L); //the divide will give an int, so its basically integer divide, then I multiply that by 2 because I want to add 2 to each increment of 5 days
+                  // Enable the start button after user data is retrieved
+                  startButton.setEnabled(true);
                 }
               }
             });
@@ -116,6 +120,8 @@ public final class LivePreviewActivity extends AppCompatActivity
       @Override
       public void onClick(View v) {
         Log.d("Button Check", "Start Button Clicked");
+        // Disable the start button to prevent multiple clicks
+        startButton.setEnabled(false);
         //resetRepCounters(); //Reset counters to 0 when start is pressed.
         //PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
 

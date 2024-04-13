@@ -21,8 +21,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.icu.text.DateTimePatternGenerator;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -79,6 +82,7 @@ public final class LivePreviewActivity extends AppCompatActivity
   public static String classType;
   public int counter;
   private TextView timerText;
+  private TextToSpeech tts;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -190,6 +194,19 @@ public final class LivePreviewActivity extends AppCompatActivity
     };
     thread.start();
 
+    // Initialize TextToSpeech
+    tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+      @Override
+      public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
+          // TextToSpeech initialization successful
+        } else {
+          // TextToSpeech initialization failed
+          Log.e(TAG, "TextToSpeech initialization failed");
+        }
+      }
+    });
+
     Button exitButton = findViewById(R.id.Exit_button);
     exitButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -226,6 +243,9 @@ public final class LivePreviewActivity extends AppCompatActivity
         timerText.setTextColor(Color.RED); // Set color to red
         timerText.setText(String.valueOf(countdownValue));
         countdownValue--;
+
+        // Speak the countdown value synchronously
+        speakCountdown(String.valueOf(countdownValue + 1)); // Add 1 to match the visual countdown
       }
 
       public void onFinish() {
@@ -233,16 +253,14 @@ public final class LivePreviewActivity extends AppCompatActivity
         timerText.setTextColor(Color.GREEN); // Set color to green
         timerText.setText("START");
 
-        // Start a 2-second countdown to show "START" before starting the actual timer
-        new CountDownTimer(1000, 1000) {
-          public void onTick(long millisUntilFinished) {
-            // Do nothing during the 1-second countdown
-          }
+        speakStart();
 
-          public void onFinish() {
-            // Start the actual countdown timer after the 2-second countdown finishes
-            resetRepCounters(); //Reset counters to 0 when start is pressed.
-            PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
+        // Start the actual countdown timer after a brief delay
+        new Handler().postDelayed(new Runnable() {
+          @Override
+          public void run() {
+            resetRepCounters(); // Reset counters to 0 when start is pressed.
+            PoseClassifierProcessor.repCountForText = "0"; // Reset the text as well so it reflects immediately at start
             countdownTimer = new CountDownTimer(durationMillis, 1000) {
               public void onTick(long millisUntilFinished) {
                 // Calculate remaining time in seconds
@@ -267,11 +285,41 @@ public final class LivePreviewActivity extends AppCompatActivity
               }
             }.start();
           }
-        }.start();
+        }, 1000); // Wait for 1 seconds after displaying "START"
       }
     }.start();
   }
 
+  // Method to speak "START"
+  private void speakStart() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      // Use TextToSpeech API for Lollipop and above
+      String utteranceId = this.hashCode() + "";
+      float volume = 1.0f; // Adjust the volume here (range: 0.0 to 1.0)
+      tts.speak("START", TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+    } else {
+      // For versions before Lollipop, speak without utterance ID
+      tts.speak("START", TextToSpeech.QUEUE_FLUSH, null);
+    }
+  }
+
+  // Method to speak the countdown value
+  private void speakCountdown(String countdownValue) {
+    // Parse the countdown value to an integer
+    int value = Integer.parseInt(countdownValue);
+
+    // Speak only if the countdown value is greater than 0
+    if (value > 0) {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        // Use TextToSpeech API for Lollipop and above
+        String utteranceId = this.hashCode() + "";
+        tts.speak(countdownValue, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+      } else {
+        // For versions before Lollipop, speak without utterance ID
+        tts.speak(countdownValue, TextToSpeech.QUEUE_FLUSH, null);
+      }
+    }
+  }
 
   @Override
   public synchronized void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {

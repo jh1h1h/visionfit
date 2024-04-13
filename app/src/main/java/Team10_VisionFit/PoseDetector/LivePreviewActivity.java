@@ -230,13 +230,14 @@ public final class LivePreviewActivity extends AppCompatActivity
     });
   }
 
-  private void startCountdownTimer(long durationMillis) {
-    // Countdown duration for 3 seconds
-    long countdownDuration = 3000;
+  private Handler handler = new Handler();
+  private Runnable mainCountdownRunnable;
+  private long endTime;
 
-    // Start the countdown before the actual timing
-    new CountDownTimer(countdownDuration, 1000) {
-      int countdownValue = 3;
+  private void startCountdownTimer(long durationMillis) {
+    // Initial countdown for 3 seconds
+    new CountDownTimer(3000, 1000) {
+      int countdownValue = 3; // Starting from 3
 
       public void onTick(long millisUntilFinished) {
         // Display countdown value in seconds
@@ -250,51 +251,46 @@ public final class LivePreviewActivity extends AppCompatActivity
         // Update the timerText to display "START" in green color
         timerText.setTextColor(Color.GREEN); // Set color to green
         timerText.setText("START");
+        speakStart(); // Announce start
 
-        speakStart();
-
-        // Start the actual countdown timer after a brief delay
-        new Handler().postDelayed(new Runnable() {
-          @Override
-          public void run() {
-            resetRepCounters(); // Reset counters to 0 when start is pressed.
-            PoseClassifierProcessor.repCountForText = "0"; // Reset the text as well so it reflects immediately at start
-            countdownTimer = new CountDownTimer(durationMillis, 1000) {
-              public void onTick(long millisUntilFinished) {
-                // Calculate remaining time in seconds
-                long secondsRemaining = millisUntilFinished / 1000;
-
-                // Convert remaining time to minutes and seconds
-                long minutes = secondsRemaining / 60;
-                long seconds = secondsRemaining % 60;
-
-                // Format the remaining time as a string in MM:SS format
-                String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
-
-                // Update the countdown timer TextView
-                timerText.setTextColor(Color.DKGRAY); // Set color to white for the countdown
-                timerText.setText(timeLeftFormatted);
-
-                // Check if the last 3 seconds of the countdown
-                if (secondsRemaining <= 3 && secondsRemaining > 0) {
-                  // Speak the countdown value synchronously
-                  speakCountdown(String.valueOf(secondsRemaining));
-                } else if (secondsRemaining == 0) {
-                  speakStop();
-                }
-              }
-
-              public void onFinish() {
-                // Countdown finished, handle onFinish event here
-                // For example, start a new activity after exiting pop up
-                customEndChallengeDialog();
-              }
-            }.start();
-          }
-        }, 1000); // Wait for 1 second after displaying "START"
+        // Start the main countdown immediately after displaying "START"
+        startMainCountdown(durationMillis);
       }
     }.start();
   }
+
+  private void startMainCountdown(long durationMillis) {
+    endTime = System.currentTimeMillis() + durationMillis + 2000;
+    mainCountdownRunnable = new Runnable() {
+      @Override
+      public void run() {
+        long millisUntilFinished = endTime - System.currentTimeMillis();
+        if (millisUntilFinished > 0) {
+          long secondsRemaining = millisUntilFinished / 1000;
+          long minutes = secondsRemaining / 60;
+          long seconds = secondsRemaining % 60;
+          String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
+          timerText.setTextColor(Color.DKGRAY);
+          timerText.setText(timeLeftFormatted);
+          if (secondsRemaining <= 3 && secondsRemaining > 0) {
+            speakCountdown(String.valueOf(secondsRemaining));
+          } else if (secondsRemaining == 0) {
+            speakStop();
+          }
+          handler.postDelayed(this, 1000); // Schedule this runnable again one second later
+        } else {
+          // When countdown finishes, show the final time as 00:00
+          timerText.setText("00:00");
+          speakStop();
+          // Remove callbacks and handle finish
+          handler.removeCallbacks(this);
+          customEndChallengeDialog();
+        }
+      }
+    };
+    handler.postDelayed(mainCountdownRunnable, 1000);
+  }
+
 
   // Method to speak "START"
   private void speakStart() {
@@ -444,10 +440,27 @@ public final class LivePreviewActivity extends AppCompatActivity
   @Override
   public void onDestroy() {
     super.onDestroy();
+
+    // Clean up camera resources
     if (cameraSource != null) {
-      cameraSource.release();
+      cameraSource.release(); // Release the camera resource
+      cameraSource = null; // Help garbage collector by nullifying the reference
+    }
+
+    // Clean up TextToSpeech resources
+    if (tts != null) {
+      tts.stop(); // Stop any ongoing TextToSpeech playback
+      tts.shutdown(); // Release the TextToSpeech resources
+      tts = null; // Nullify the reference to help the garbage collector
+    }
+
+    // Remove any callbacks from the handler to avoid memory leaks
+    if (handler != null) {
+      handler.removeCallbacksAndMessages(null);
     }
   }
+
+
 
   @Override
   public void onBackPressed() {

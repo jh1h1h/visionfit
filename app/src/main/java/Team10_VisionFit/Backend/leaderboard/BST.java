@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.Objects;
 
 public class BST extends Node{
 
@@ -27,7 +28,7 @@ public class BST extends Node{
 
     public void populate_node(Node node){
         this.nodes.put(node.id, node);
-        if (node.parent.equals("root")){
+        if (node.getParent().equals("root")){
             this.root = node;
         }
     }
@@ -40,12 +41,12 @@ public class BST extends Node{
 
     public void inorder_traverse_desc(Node root, ArrayList<Node> path) {
         if (root != null) { // the tree does not exist
-            if (root.right != null){
-                inorder_traverse_desc(nodes.get(root.right), path); // traverse the left subtree first
+            if (root.getRight() != null){
+                inorder_traverse_desc(nodes.get(root.getRight()), path); // traverse the left subtree first
             }
             path.add(root);
-            if (root.left != null){
-                inorder_traverse_desc(nodes.get(root.left), path); // traverse the right subtree next
+            if (root.getLeft() != null){
+                inorder_traverse_desc(nodes.get(root.getLeft()), path); // traverse the right subtree next
             }
         }
     }
@@ -57,9 +58,8 @@ public class BST extends Node{
     // Insert a new node n at the subtree rooted at subtreeroot
     public Node tree_insert(Node node, Node subtreeroot, String parentid) {
         if (subtreeroot == null) { // tree is empty
-            node.parent = parentid;
+            node.setParent(parentid, dbRef, classType, this);
             this.nodes.put(node.id, node);
-            dbRef.document(node.id).update(classType+"BSTparent",parentid);
             rebalance();
             return node;
         }
@@ -67,25 +67,23 @@ public class BST extends Node{
 //        Node subtreeroot = nodes.get(subtreerootid);
         if (node.key.compareTo(subtreeroot.key) < 0) {
             Node left;
-            if (subtreeroot.left != null){
-                left = nodes.get(subtreeroot.left);
+            if (subtreeroot.getLeft() != null){
+                left = nodes.get(subtreeroot.getLeft());
             }else{
                 left = null;
             }
             if (tree_insert(node, left, subtreeroot.id) != null){
-                subtreeroot.left = node.id;
-                dbRef.document(subtreeroot.id).update(classType+"BSTleft",node.id);
+                subtreeroot.setLeft(node.id, dbRef, classType);
             }
         } else {
             Node right;
-            if (subtreeroot.right != null){
-                right = nodes.get(subtreeroot.right);
+            if (subtreeroot.getRight() != null){
+                right = nodes.get(subtreeroot.getRight());
             }else{
                 right = null;
             }
             if (tree_insert(node, right, subtreeroot.id) != null){
-                subtreeroot.right = node.id;
-                dbRef.document(subtreeroot.id).update(classType+"BSTright",node.id);
+                subtreeroot.setRight(node.id, dbRef, classType);
             }
         }
         return null;
@@ -99,68 +97,71 @@ public class BST extends Node{
         }
         if (subtreeroot.id.equals(node.id)){
             // Case 1: Node has no children or only one child
-            if (subtreeroot.left == null) {
-                if (nodes.get(subtreeroot.parent).left != null && nodes.get(subtreeroot.parent).left.equals(node.id)){
-                    nodes.get(subtreeroot.parent).left = subtreeroot.right;
-                    dbRef.document(subtreeroot.parent).update(classType+"BSTleft",subtreeroot.right);
-                } else{
-                    nodes.get(subtreeroot.parent).right = subtreeroot.right;
-                    dbRef.document(subtreeroot.parent).update(classType+"BSTright",subtreeroot.right);
+            if (subtreeroot.getLeft() == null) {
+                if(!Objects.equals(subtreeroot.getParent(), "root")){
+                    if (nodes.get(subtreeroot.getParent()).getLeft() != null && nodes.get(subtreeroot.getParent()).getLeft().equals(node.id)){
+                        nodes.get(subtreeroot.getParent()).setLeft(subtreeroot.getRight(), dbRef, classType);
+                    } else{
+                        nodes.get(subtreeroot.getParent()).setRight(subtreeroot.getRight(), dbRef, classType);
+                    }
                 }
-                nodes.remove(subtreeroot.id);
-                return;
-            } else if (subtreeroot.right == null) {
-                if (nodes.get(subtreeroot.parent).left.equals(node.id)){
-                    nodes.get(subtreeroot.parent).left = subtreeroot.left;
-                    dbRef.document(subtreeroot.parent).update(classType+"BSTleft",subtreeroot.left);
-                } else{
-                    nodes.get(subtreeroot.parent).right = subtreeroot.left;
-                    dbRef.document(subtreeroot.parent).update(classType+"BSTright",subtreeroot.left);
+                if (subtreeroot.getRight() != null){
+                    nodes.get(subtreeroot.getRight()).setParent(subtreeroot.getParent(), dbRef, classType, this);
                 }
-                nodes.remove(subtreeroot.id);
-                return;
-            }
-
-            // Case 2: Node has two children
-            // Find the inorder successor (minimum value in the right subtree)
-            Node successor = tree_min(nodes.get(subtreeroot.right));
-            tree_delete(successor, subtreeroot);
-            Log.d("leaderboardsuccessor", String.valueOf(successor.key)); // TODO: make sure successor.key still exists after delete
-            if (nodes.get(subtreeroot.parent).left.equals(subtreeroot.id)){
-                nodes.get(subtreeroot.parent).left = successor.id;
-                dbRef.document(subtreeroot.parent).update(classType+"BSTleft",successor.id);
+            } else if (subtreeroot.getRight() == null) {
+                if (!Objects.equals(subtreeroot.getParent(), "root")){
+                    if (nodes.get(subtreeroot.getParent()).getLeft().equals(node.id)){
+                        nodes.get(subtreeroot.getParent()).setLeft(subtreeroot.getLeft(), dbRef, classType);
+                    } else{
+                        nodes.get(subtreeroot.getParent()).setRight(subtreeroot.getLeft(), dbRef, classType);
+                    }
+                }
+                nodes.get(subtreeroot.getLeft()).setParent(subtreeroot.getParent(), dbRef, classType, this);
             } else{
-                nodes.get(subtreeroot.parent).right = successor.id;
-                dbRef.document(subtreeroot.parent).update(classType+"BSTright",successor.id);
+                // Case 2: Node has two children
+                // Find the inorder successor (minimum value in the right subtree)
+                Node successor = tree_min(nodes.get(subtreeroot.getRight()));
+                tree_delete(successor, subtreeroot);
+                this.nodes.put(successor.id, successor);
+                if (!Objects.equals(subtreeroot.getParent(), "root")){
+                    if (nodes.get(subtreeroot.getParent()).getLeft().equals(subtreeroot.id)){
+                        nodes.get(subtreeroot.getParent()).setLeft(successor.id, dbRef, classType);
+                    } else{
+                        nodes.get(subtreeroot.getParent()).setRight(successor.id, dbRef, classType);
+                    }
+                }
+                successor.setParent(subtreeroot.getParent(), dbRef, classType, this);
+                successor.setLeft(subtreeroot.getLeft(), dbRef, classType);
+                successor.setRight(subtreeroot.getRight(), dbRef, classType);
+                if (!Objects.equals(successor.getParent(), "root")){
+                    nodes.get(successor.getParent()).setLeft(successor.getRight(), dbRef, classType);
+                }
+                if (successor.getRight() != null){
+                    nodes.get(successor.getRight()).setParent(successor.getParent(), dbRef, classType, this);
+                }
             }
-            successor.left = subtreeroot.left;
-            dbRef.document(successor.left).update(classType+"BSTright",subtreeroot.left);
-            successor.right = subtreeroot.right;
-            dbRef.document(successor.right).update(classType+"BSTright",subtreeroot.right);
-            nodes.get(successor.parent).left = successor.right;
-            dbRef.document(nodes.get(successor.parent).left).update(classType+"BSTright",successor.right);
-            return;
+            subtreeroot.delete(dbRef, classType, this);
         }
         // if tree not empty and node not found, traverse the tree to insert based on key value
         else {
             if (node.key.compareTo(subtreeroot.key) < 0) {
-                tree_delete(node, nodes.get(subtreeroot.left));
+                tree_delete(node, nodes.get(subtreeroot.getLeft()));
             } else {
-                tree_delete(node, nodes.get(subtreeroot.right));
+                tree_delete(node, nodes.get(subtreeroot.getRight()));
             }
         }
     }
 
     public Node tree_min(Node x) {
-        while (x.left != null) {
-            x = nodes.get(x.left); // update x to be left child of x
+        while (x.getLeft() != null) {
+            x = nodes.get(x.getLeft()); // update x to be left child of x
         }
         return x;
     }
 
     public Node tree_max(Node x) {
-        while (x.right != null) {
-            x = nodes.get(x.right); // update x to be right child of x
+        while (x.getRight() != null) {
+            x = nodes.get(x.getRight()); // update x to be right child of x
         }
         return x;
     }
@@ -177,33 +178,33 @@ public class BST extends Node{
 //    }
 
     public Node successor(Node x) {
-        if (x.right != null) { // check if right node exist
-            return tree_min(nodes.get(x.right)); // if it does, find the last left node of that subtree
+        if (x.getRight() != null) { // check if right node exist
+            return tree_min(nodes.get(x.getRight())); // if it does, find the last left node of that subtree
         }
 
         Node y = null;
         while (x != null) {
-            if (nodes.get(x.parent).left.equals(x.id)) { // continue to loop as long as x is the y.right
-                y = nodes.get(x.parent);
+            if (nodes.get(x.getParent()).getLeft().equals(x.id)) { // continue to loop as long as x is the y.right
+                y = nodes.get(x.getParent());
                 break;
             }
-            x = nodes.get(x.parent);
+            x = nodes.get(x.getParent());
         }
         return y;
     }
 
     public Node predecessor(Node x) {
-        if (x.left != null) { // check if left node exist
-            return tree_max(nodes.get(x.left)); // if it does, find the last right node of that subtree
+        if (x.getLeft() != null) { // check if left node exist
+            return tree_max(nodes.get(x.getLeft())); // if it does, find the last right node of that subtree
         }
 
         Node y = null;
         while (x != null) {
-            if (nodes.get(x.parent).right.equals(x.id)) { // continue to loop as long as x is the y.right node
-                y = nodes.get(x.parent);
+            if (nodes.get(x.getParent()).getRight().equals(x.id)) { // continue to loop as long as x is the y.right node
+                y = nodes.get(x.getParent());
                 break;
             }
-            x = nodes.get(x.parent);
+            x = nodes.get(x.getParent());
         }
         return y;
     }

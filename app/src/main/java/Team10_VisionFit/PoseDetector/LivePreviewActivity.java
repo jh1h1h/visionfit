@@ -242,10 +242,8 @@ public final class LivePreviewActivity extends AppCompatActivity
         // Display countdown value in seconds
         timerText.setTextColor(Color.RED); // Set color to red
         timerText.setText(String.valueOf(countdownValue));
+        speakCountdown(String.valueOf(countdownValue)); // Speak the countdown value synchronously
         countdownValue--;
-
-        // Speak the countdown value synchronously
-        speakCountdown(String.valueOf(countdownValue + 1)); // Add 1 to match the visual countdown
       }
 
       public void onFinish() {
@@ -276,6 +274,14 @@ public final class LivePreviewActivity extends AppCompatActivity
                 // Update the countdown timer TextView
                 timerText.setTextColor(Color.DKGRAY); // Set color to white for the countdown
                 timerText.setText(timeLeftFormatted);
+
+                // Check if the last 3 seconds of the countdown
+                if (secondsRemaining <= 3 && secondsRemaining > 0) {
+                  // Speak the countdown value synchronously
+                  speakCountdown(String.valueOf(secondsRemaining));
+                } else if (secondsRemaining == 0) {
+                  speakStop();
+                }
               }
 
               public void onFinish() {
@@ -285,7 +291,7 @@ public final class LivePreviewActivity extends AppCompatActivity
               }
             }.start();
           }
-        }, 1000); // Wait for 1 seconds after displaying "START"
+        }, 1000); // Wait for 1 second after displaying "START"
       }
     }.start();
   }
@@ -295,11 +301,22 @@ public final class LivePreviewActivity extends AppCompatActivity
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
       // Use TextToSpeech API for Lollipop and above
       String utteranceId = this.hashCode() + "";
-      float volume = 1.0f; // Adjust the volume here (range: 0.0 to 1.0)
       tts.speak("START", TextToSpeech.QUEUE_FLUSH, null, utteranceId);
     } else {
       // For versions before Lollipop, speak without utterance ID
       tts.speak("START", TextToSpeech.QUEUE_FLUSH, null);
+    }
+  }
+
+  // Method to speak "STOP"
+  private void speakStop() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      // Use TextToSpeech API for Lollipop and above
+      String utteranceId = this.hashCode() + "";
+      tts.speak("STOP", TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+    } else {
+      // For versions before Lollipop, speak without utterance ID
+      tts.speak("STOP", TextToSpeech.QUEUE_FLUSH, null);
     }
   }
 

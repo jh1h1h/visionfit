@@ -466,14 +466,21 @@ public final class LivePreviewActivity extends AppCompatActivity
 
     // Calculate the rep count from repCountStr
     int repCount = Integer.parseInt(repCountStr);
+    String end_Challenge_Text;
 
     if (classType.equals("Push Ups")) {
-      String end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCount + " push ups.";
-      endChallenge_Text.setText(end_Challenge_Text);
+      end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCount + " push ups.";
     } else if (classType.equals("Squats")) {
-      String end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCount + " squats.";
-      endChallenge_Text.setText(end_Challenge_Text);
+      end_Challenge_Text = "Good job!" + "\n" + "You have completed " + repCount + " squats.";
+    } else {
+      end_Challenge_Text = "Challenge completed!";
     }
+
+    // Set the text in the dialog
+    endChallenge_Text.setText(end_Challenge_Text);
+
+    // Speak the text
+    speakText(end_Challenge_Text);
 
     // click listener for Yes
     dialogButtonExit.setOnClickListener(new View.OnClickListener() {
@@ -503,5 +510,17 @@ public final class LivePreviewActivity extends AppCompatActivity
 
     // show the exit dialog
     dialog.show();
+  }
+
+  // Method to speak the provided text
+  private void speakText(String text) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      // Use TextToSpeech API for Lollipop and above
+      String utteranceId = this.hashCode() + "";
+      tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+    } else {
+      // For versions before Lollipop, speak without utterance ID
+      tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
   }
 }

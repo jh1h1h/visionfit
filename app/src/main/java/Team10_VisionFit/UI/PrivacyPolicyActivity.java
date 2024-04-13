@@ -26,7 +26,9 @@ public class PrivacyPolicyActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         String classType = "pushup"; // "pushup" or "squat"
-        int repCount = 24;
+        int repCount = 7;
+//        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
+        String uid = "2KYSIeejD6NpI0Jf3JrZDIVBoR73";
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy);
@@ -40,8 +42,6 @@ public class PrivacyPolicyActivity extends BaseActivity {
 
             @Override
             public void onClick(View view) {
-                auth = FirebaseAuth.getInstance();
-                String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
                 CollectionReference usersRef = FirebaseFirestore.getInstance().collection("users");
                 usersRef.get().addOnCompleteListener(task1 -> {
                     if (task1.isSuccessful()) {
@@ -72,7 +72,7 @@ public class PrivacyPolicyActivity extends BaseActivity {
                         // add workout to client BST and upload to firebase
                         // TODO: potential bug: document has outdated count and gets reflected onto node document
                         if (currentUser != null){
-                            lbBST.tree_insert(new Node((long) 0, uid, currentUser),lbBST.root,"root");
+                            lbBST.tree_insert(new Node((long) prevAllTime, uid, currentUser),lbBST.root,"root");
                         }
                         lbBST.tree_delete(new Node(prevAllTime, uid, null),lbBST.root);
                         lbBST.tree_insert(new Node((long) repCount, uid, null),lbBST.root,"root");

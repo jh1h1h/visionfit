@@ -20,11 +20,11 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.icu.text.DateTimePatternGenerator;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
@@ -52,7 +52,6 @@ import Team10_VisionFit.Backend.preference.PreferenceUtils;
 import Team10_VisionFit.PoseDetector.classification.PoseClassifierProcessor;
 import Team10_VisionFit.PoseDetector.classification.RepetitionCounter;
 import Team10_VisionFit.UI.DailyChallengeActivity;
-
 
 @KeepName
 public final class LivePreviewActivity extends AppCompatActivity
@@ -83,6 +82,10 @@ public final class LivePreviewActivity extends AppCompatActivity
   public int counter;
   private TextView timerText;
   private TextToSpeech tts;
+  private Handler handler = new Handler();
+  private Runnable mainCountdownRunnable;
+  private long endTime;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -230,65 +233,64 @@ public final class LivePreviewActivity extends AppCompatActivity
     });
   }
 
-  private Handler handler = new Handler();
-  private Runnable mainCountdownRunnable;
-  private long endTime;
-
   private void startCountdownTimer(long durationMillis) {
-    // Initial countdown for 3 seconds
     new CountDownTimer(3000, 1000) {
       int countdownValue = 3; // Starting from 3
 
       public void onTick(long millisUntilFinished) {
-        // Display countdown value in seconds
-        timerText.setTextColor(Color.RED); // Set color to red
+        Log.d(TAG, "Initial countdown tick: " + countdownValue + " seconds remaining");
+        timerText.setTextColor(Color.RED);
         timerText.setText(String.valueOf(countdownValue));
-        speakCountdown(String.valueOf(countdownValue)); // Speak the countdown value synchronously
+        speakCountdown(String.valueOf(countdownValue));
         countdownValue--;
       }
 
       public void onFinish() {
-        // Update the timerText to display "START" in green color
-        timerText.setTextColor(Color.GREEN); // Set color to green
+        Log.d(TAG, "Initial countdown finished, starting main countdown");
+        timerText.setTextColor(Color.GREEN);
         timerText.setText("START");
-        speakStart(); // Announce start
+        speakStart();
+        handler.postDelayed(() -> startMainCountdown(durationMillis), 1000);
 
-        // Start the main countdown immediately after displaying "START"
-        startMainCountdown(durationMillis);
       }
     }.start();
   }
 
   private void startMainCountdown(long durationMillis) {
-    endTime = System.currentTimeMillis() + durationMillis + 2000;
+    // Start with a slight delay to compensate for any immediate overhead
+    endTime = SystemClock.elapsedRealtime() + durationMillis + 100;
+
     mainCountdownRunnable = new Runnable() {
       @Override
       public void run() {
-        long millisUntilFinished = endTime - System.currentTimeMillis();
+        long millisUntilFinished = endTime - SystemClock.elapsedRealtime();
         if (millisUntilFinished > 0) {
           long secondsRemaining = millisUntilFinished / 1000;
           long minutes = secondsRemaining / 60;
           long seconds = secondsRemaining % 60;
           String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
+
           timerText.setTextColor(Color.DKGRAY);
           timerText.setText(timeLeftFormatted);
+
+          // Check if there are 3 seconds or less remaining and speak the countdown
           if (secondsRemaining <= 3 && secondsRemaining > 0) {
             speakCountdown(String.valueOf(secondsRemaining));
-          } else if (secondsRemaining == 0) {
-            speakStop();
           }
-          handler.postDelayed(this, 1000); // Schedule this runnable again one second later
+
+          handler.postDelayed(this, 1000); // Schedule the next update after 1 second
         } else {
-          // When countdown finishes, show the final time as 00:00
+          // Once the timer finishes, set the final text, speak "Stop", and handle any end of countdown processes
           timerText.setText("00:00");
           speakStop();
-          // Remove callbacks and handle finish
           handler.removeCallbacks(this);
           customEndChallengeDialog();
         }
       }
     };
-    handler.postDelayed(mainCountdownRunnable, 1000);
+
+    // Start the countdown immediately
+    handler.post(mainCountdownRunnable);
   }
 
 

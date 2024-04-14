@@ -130,6 +130,12 @@ public class BST extends Node{
                         nodes.get(subtreeroot.getParent()).setRight(successor.id, dbRef, classType);
                     }
                 }
+                if (!Objects.equals(successor.getParent(), "root") && nodes.get(successor.getParent()).getLeft().equals(successor.id)){
+                    nodes.get(successor.getParent()).setLeft(successor.getRight(), dbRef, classType);
+                }
+                if (successor.getRight() != null){
+                    nodes.get(successor.getRight()).setParent(successor.getParent(), dbRef, classType, this);
+                }
                 successor.setParent(subtreeroot.getParent(), dbRef, classType, this);
                 successor.setLeft(subtreeroot.getLeft(), dbRef, classType);
                 successor.setRight(subtreeroot.getRight(), dbRef, classType);
@@ -138,12 +144,6 @@ public class BST extends Node{
                 }
                 if (subtreeroot.getRight() != null){
                     nodes.get(subtreeroot.getRight()).setParent(successor.id, dbRef, classType, this);
-                }
-                if (!Objects.equals(successor.getParent(), "root")){
-                    nodes.get(successor.getParent()).setLeft(successor.getRight(), dbRef, classType);
-                }
-                if (successor.getRight() != null){
-                    nodes.get(successor.getRight()).setParent(successor.getParent(), dbRef, classType, this);
                 }
             }
             subtreeroot.delete(dbRef, classType, this);

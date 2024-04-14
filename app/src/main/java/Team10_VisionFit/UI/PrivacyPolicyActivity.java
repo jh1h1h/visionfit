@@ -26,9 +26,9 @@ public class PrivacyPolicyActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         String classType = "pushup"; // "pushup" or "squat"
-        int repCount = 7;
+        int repCount = 90;
 //        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid(); //Get the current logged in User's ID
-        String uid = "2KYSIeejD6NpI0Jf3JrZDIVBoR73";
+        String uid = "FjKiZ8YY6Jhj4eneDAETq8L5feL2";
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy);

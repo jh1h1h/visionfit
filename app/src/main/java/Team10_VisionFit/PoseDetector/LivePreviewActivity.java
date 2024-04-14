@@ -276,13 +276,12 @@ public final class LivePreviewActivity extends AppCompatActivity
           // Check if there are 3 seconds or less remaining and speak the countdown
           if (secondsRemaining <= 3 && secondsRemaining > 0) {
             speakCountdown(String.valueOf(secondsRemaining));
+          } else if (secondsRemaining ==0){
+            speakStop();
           }
 
           handler.postDelayed(this, 1000); // Schedule the next update after 1 second
         } else {
-          // Once the timer finishes, set the final text, speak "Stop", and handle any end of countdown processes
-          timerText.setText("00:00");
-          speakStop();
           handler.removeCallbacks(this);
           customEndChallengeDialog();
         }

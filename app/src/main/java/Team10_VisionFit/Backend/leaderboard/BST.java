@@ -133,6 +133,12 @@ public class BST extends Node{
                 successor.setParent(subtreeroot.getParent(), dbRef, classType, this);
                 successor.setLeft(subtreeroot.getLeft(), dbRef, classType);
                 successor.setRight(subtreeroot.getRight(), dbRef, classType);
+                if (subtreeroot.getLeft() != null){
+                    nodes.get(subtreeroot.getLeft()).setParent(successor.id, dbRef, classType, this);
+                }
+                if (subtreeroot.getRight() != null){
+                    nodes.get(subtreeroot.getRight()).setParent(successor.id, dbRef, classType, this);
+                }
                 if (!Objects.equals(successor.getParent(), "root")){
                     nodes.get(successor.getParent()).setLeft(successor.getRight(), dbRef, classType);
                 }

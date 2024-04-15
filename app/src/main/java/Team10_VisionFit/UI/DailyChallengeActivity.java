@@ -27,6 +27,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.teamten.visionfit.R;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -59,6 +60,15 @@ public class DailyChallengeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        long dateTime = 10000000000L;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            Instant instant = Instant.now();
+            dateTime = instant.getEpochSecond();
+        }
+        else{
+            Log.d("ERROR","Version incompatible for class Instant. android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O");
+        }
+        long dateTime1 = dateTime;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_challenge);
 
@@ -72,6 +82,7 @@ public class DailyChallengeActivity extends BaseActivity {
         //The task is done on another thread, hence need to put everything inside
         userRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                long dateTime2 = dateTime1;
                 DocumentSnapshot document = task.getResult();
                 if (document != null && document.exists()) {
                     //Get the current status of whether challenge has been completed and total challenges completed
@@ -119,10 +130,13 @@ public class DailyChallengeActivity extends BaseActivity {
                         }
                         long prevToday = document.getLong(classType + "Today");
                         userRef.update(classType + "Today", prevToday + repCount);
+                        userRef.update(classType + "TodayTimestamp", dateTime2);
 
                         long prevAllTime = document.getLong(classType + "AllTime");
+                        long prevTimeStamp = document.getLong(classType + "AllTimeTimestamp");
                         if (repCount > prevAllTime){
                             userRef.update(classType + "AllTime", repCount);
+                            userRef.update(classType + "AllTimeTimestamp", dateTime2);
                             CollectionReference usersRef = FirebaseFirestore.getInstance().collection("users");
                             usersRef.get().addOnCompleteListener(task1 -> {
                                 if (task1.isSuccessful()) {
@@ -137,7 +151,8 @@ public class DailyChallengeActivity extends BaseActivity {
                                                     lbNode.get(classType+"BSTright",String.class),
                                                     lbNode.get(classType+"BSTparent",String.class),
                                                     lbNode.getId(),
-                                                    lbNode
+                                                    lbNode,
+                                                    lbNode.getLong(classType + "AllTimeTimestamp")
                                             ));
                                         }
                                     }
@@ -145,9 +160,9 @@ public class DailyChallengeActivity extends BaseActivity {
                                     // add workout to client BST and upload to firebase
                                     // TODO: potential bug: document has outdated count and gets reflected onto node document
                                     if (document.get(classType+"BSTparent",String.class) != null){
-                                        lbBST.tree_delete(new Node(prevAllTime, uid, document),lbBST.root);
+                                        lbBST.tree_delete(new Node(prevAllTime, uid, document, prevTimeStamp),lbBST.root);
                                     }
-                                    lbBST.tree_insert(new Node((long) repCount, uid, document),lbBST.root,"root");
+                                    lbBST.tree_insert(new Node((long) repCount, uid, document, dateTime2),lbBST.root,"root");
                                 }
                             });
                         }

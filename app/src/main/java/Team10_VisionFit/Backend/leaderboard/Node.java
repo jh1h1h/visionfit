@@ -30,24 +30,28 @@ public class Node{
     }
 
     // A utility function to create a new BST node
-    public Node(Long points, String left, String right, String parent, String id, DocumentSnapshot doc) {
+    public Node(Long points, String left, String right, String parent, String id, DocumentSnapshot doc, long DateTime) {
         this.points = points;
-        this.key = String.format("%010d",points) + id; // Append with id to resolve tiebreaks
         this.left = left;
         this.right = right;
         this.parent = parent;
         this.id = id;
         this.doc = doc;
+
+        // Append with timestamp and id to resolve tiebreaks
+        this.key = String.format("%010d",points) + String.format("%010d",10000000000L-DateTime) + id;
     }
 
-    public Node(Long points, String id, DocumentSnapshot doc){
+    public Node(Long points, String id, DocumentSnapshot doc, long DateTime){
         this.points = points;
-        this.key = String.format("%010d",points) + id; // Append with id to resolve tiebreaks
         this.left = null;
         this.right = null;
         this.parent = null;
         this.id = id;
         this.doc = doc;
+
+        // Append with timestamp and id to resolve tiebreaks
+        this.key = String.format("%010d",points) + String.format("%010d",10000000000L-DateTime) + id;
     }
 
     public Long getPoints() {

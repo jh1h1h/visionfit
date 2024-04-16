@@ -22,6 +22,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.teamten.visionfit.R;
 
+import java.time.Instant;
 import java.util.ArrayList;
 
 import Team10_VisionFit.Backend.leaderboard.BST;
@@ -106,6 +107,15 @@ public class LeaderBoardActivity extends BaseActivity {
 
     // Fetch user's leaderboard info - asynchronously retrieve all users
     public void loadLeaderboard(String classType, String lbType){
+        long dateTime = 10000000000L;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            Instant instant = Instant.now();
+            dateTime = instant.getEpochSecond();
+        }
+        else{
+            Log.d("ERROR","Version incompatible for class Instant. android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O");
+        }
+        long dateTime1 = dateTime;
         TextView displayText = findViewById(R.id.displaytext);
         if (lbType.equals("AllTime")){
             displayText.setText("All Time Leaders");
@@ -135,7 +145,7 @@ public class LeaderBoardActivity extends BaseActivity {
                     ArrayList<DocumentSnapshot> userArrList = new ArrayList<>(qsnapshot.getDocuments());
                     DocumentSnapshot currentUser = null;
 
-
+                    long prevAllTime = 0L;
                     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     for (DocumentSnapshot userDoc: userArrList) {
 //                        TextView name = findViewById(nameRows[i]);
@@ -149,10 +159,12 @@ public class LeaderBoardActivity extends BaseActivity {
                                         userDoc.get(classType+"BSTright",String.class),
                                         userDoc.get(classType+"BSTparent",String.class),
                                         userDoc.getId(),
-                                        userDoc
+                                        userDoc,
+                                        userDoc.getLong(classType + "AllTimeTimestamp")
                                 ));
                             }else if (userDoc.getId().equals(uid)){
                                 currentUser = userDoc;
+                                prevAllTime = currentUser.getLong(classType + "AllTime");
                             }
                         }
 //                        else {
@@ -166,7 +178,8 @@ public class LeaderBoardActivity extends BaseActivity {
                     // add workout to client BST and upload to firebase
                     // TODO: potential bug: document has outdated count and gets reflected onto node document
                     if (currentUser != null){
-                        lbBST.tree_insert(new Node((long) 0, uid, currentUser),lbBST.root,"root");
+                        users.document(uid).update(classType + "AllTimeTimestamp", dateTime1);
+                        lbBST.tree_insert(new Node(prevAllTime, uid, currentUser, dateTime1),lbBST.root,"root");
                     }
 
 

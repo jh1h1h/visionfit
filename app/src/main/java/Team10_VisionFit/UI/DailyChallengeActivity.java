@@ -133,7 +133,11 @@ public class DailyChallengeActivity extends BaseActivity {
                         userRef.update(classType + "TodayTimestamp", dateTime2);
 
                         long prevAllTime = document.getLong(classType + "AllTime");
-                        long prevTimeStamp = document.getLong(classType + "AllTimeTimestamp");
+                        long prevTimeStamp = 0L;
+                        if (document.getLong(classType + "AllTimeTimestamp") != null){
+                            prevTimeStamp = document.getLong(classType + "AllTimeTimestamp");
+                        }
+                        long prevTimeStamp1 = prevTimeStamp;
                         if (repCount > prevAllTime){
                             userRef.update(classType + "AllTime", repCount);
                             userRef.update(classType + "AllTimeTimestamp", dateTime2);
@@ -160,7 +164,7 @@ public class DailyChallengeActivity extends BaseActivity {
                                     // add workout to client BST and upload to firebase
                                     // TODO: potential bug: document has outdated count and gets reflected onto node document
                                     if (document.get(classType+"BSTparent",String.class) != null){
-                                        lbBST.tree_delete(new Node(prevAllTime, uid, document, prevTimeStamp),lbBST.root);
+                                        lbBST.tree_delete(new Node(prevAllTime, uid, document, prevTimeStamp1),lbBST.root);
                                     }
                                     lbBST.tree_insert(new Node((long) repCount, uid, document, dateTime2),lbBST.root,"root");
                                 }

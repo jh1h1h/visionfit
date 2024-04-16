@@ -259,6 +259,7 @@ public final class LivePreviewActivity extends AppCompatActivity
   private void startMainCountdown(long durationMillis) {
     // Start with a slight delay to compensate for any immediate overhead
     endTime = SystemClock.elapsedRealtime() + durationMillis + 100;
+    resetRepCounters();
 
     mainCountdownRunnable = new Runnable() {
       @Override

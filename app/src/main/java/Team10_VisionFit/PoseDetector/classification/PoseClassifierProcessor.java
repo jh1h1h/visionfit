@@ -50,12 +50,12 @@ public class PoseClassifierProcessor {
   private final boolean isStreamMode;
 
   private EMASmoothing emaSmoothing;
-  public static List<RepetitionCounter> repCounters;
+  private static List<RepetitionCounter> repCounters;
   private PoseClassifier poseClassifier;
   private String lastRepResult;
 
-  public static String repCountForText;
-  public static String exerciseTypeForText;
+  private static String repCountForText;
+  private static String exerciseTypeForText;
   private String detectedClassName;
 
   @WorkerThread
@@ -159,6 +159,22 @@ public class PoseClassifierProcessor {
 //    }
 
     return result;
+  }
+
+  public static List<RepetitionCounter> getRepCounters() {
+    return repCounters;
+  }
+
+  public static String getRepCountForText() {
+    return repCountForText;
+  }
+
+  public static void setRepCountForText(String text) {
+    repCountForText = text;
+  }
+
+  public static String getExerciseTypeForText() {
+    return exerciseTypeForText;
   }
 
 }

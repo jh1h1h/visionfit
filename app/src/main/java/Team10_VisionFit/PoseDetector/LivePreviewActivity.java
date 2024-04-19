@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+/*
+SIGNIFICANTLY MODIFIED AND REPURPOSED BY TEAM VISIONFIT
+ */
+
 package Team10_VisionFit.PoseDetector;
 
 import android.app.Dialog;
@@ -162,7 +166,7 @@ public final class LivePreviewActivity extends AppCompatActivity
     //Get the rep counter to update every 0.2 seconds
     repCountText = findViewById(R.id.exercise_count_text);
     repCountText.setText(classType+"\nRep:0");
-    PoseClassifierProcessor.repCountForText = "0"; //Reset the text as well so it reflects immediately at start
+    PoseClassifierProcessor.setRepCountForText("0"); //Reset the text as well so it reflects immediately at start
 
     Thread thread = new Thread() {
       @Override
@@ -174,8 +178,8 @@ public final class LivePreviewActivity extends AppCompatActivity
             runOnUiThread(new Runnable() {
               @Override
               public void run() {
-                  repCountStr = PoseClassifierProcessor.repCountForText;
-                  exerciseTypeStr = PoseClassifierProcessor.exerciseTypeForText;
+                  repCountStr = PoseClassifierProcessor.getRepCountForText();
+                  exerciseTypeStr = PoseClassifierProcessor.getExerciseTypeForText();
                   if ((repCountStr != null) && (exerciseTypeStr != null)) {
                       //If they are doing a specific type of exercise (not freestyle), then only consider reps of that exercise
                       if (classType.equals("Free Style")) {
@@ -440,7 +444,7 @@ public final class LivePreviewActivity extends AppCompatActivity
   public void resetRepCounters() {
     try {
       //To reset all rep counters to 0 when exit or when start is clicked
-      for (RepetitionCounter repCounter : PoseClassifierProcessor.repCounters) {
+      for (RepetitionCounter repCounter : PoseClassifierProcessor.getRepCounters()) {
 //        Log.d("MyMessage", "Before: " + (repCounter.getNumRepeats()));
         repCounter.setNumRepeats(0);
 //        Log.d("MyMessage", "After: " + (repCounter.getNumRepeats()));

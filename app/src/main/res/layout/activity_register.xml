@@ -73,7 +73,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true" >
+                app:passwordToggleEnabled="true"
+                app:placeholderText="Min 6 Digits">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
@@ -86,25 +87,24 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:hint="@string/date_of_birth"
+                app:placeholderText="DD/MM/YYYY">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/DOB_register"
-                    android:hint="@string/date_of_birth"
-                    android:inputType="text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"/>
+                    android:inputType="date"     />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:hint="@string/country_of_residence">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/Country_register"
-                    android:hint="@string/country_of_residence"
-                    android:inputType="text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"/>

@@ -51,6 +51,9 @@ public class Register extends AppCompatActivity {
         signupButton = findViewById(R.id.btn_register);
         loginRedirectText = findViewById(R.id.loginNow);
 
+        // Default country
+        signupCountry.setText("Singapore");
+
         // Show DatePicker dialog when 'Enter' key is pressed on password field
         signupPassword.setOnKeyListener(new View.OnKeyListener() {
             @Override

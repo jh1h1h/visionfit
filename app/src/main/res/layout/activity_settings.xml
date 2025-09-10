@@ -337,7 +337,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Reset my scores"
+                        android:text="Reset My Scores"
                         android:textSize="17sp"
                         android:textColor="@color/black"
                         android:textStyle="bold"

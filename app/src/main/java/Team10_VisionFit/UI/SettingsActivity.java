@@ -97,6 +97,17 @@ public class SettingsActivity extends BaseActivity {
             });
         }
 
+        TextView btnResetScores = findViewById(R.id.btnResetScores);
+        btnResetScores.setOnClickListener(v -> {
+            new androidx.appcompat.app.AlertDialog.Builder(this)
+                    .setTitle("Reset my scores?")
+                    .setMessage("This will set all your scores and daily counts to 0. This cannot be undone.")
+                    .setPositiveButton("Reset", (d, which) -> doResetMyScores())
+                    .setNegativeButton("Cancel", null)
+                    .show();
+        });
+
+
         switchMode = findViewById(R.id.switchMode);
 
         sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
@@ -134,6 +145,41 @@ public class SettingsActivity extends BaseActivity {
         notificationSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             // Update the switch state in SharedPreferences
             setNotificationSwitchState(isChecked);
+        });
+
+
+        SwitchCompat showRankingSwitch = findViewById(R.id.switchShowRanking);
+
+        // 1) Default: true (opt-in)
+        showRankingSwitch.setChecked(getShowRankingSwitchState());
+
+        // 2) Load actual value from Firestore (if present)
+        FirebaseUser current = FirebaseAuth.getInstance().getCurrentUser();
+        if (current != null) {
+            firestore.collection("users").document(current.getUid())
+                    .get()
+                    .addOnSuccessListener(doc -> {
+                        if (doc != null && doc.exists() && doc.contains("showRanking")) {
+                            Boolean val = doc.getBoolean("showRanking");
+                            if (val != null) {
+                                showRankingSwitch.setChecked(val);
+                                setShowRankingSwitchState(val); // cache locally
+                            }
+                        }
+                    });
+        }
+
+        // 3) Save changes to Firestore + cache
+        showRankingSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            setShowRankingSwitchState(isChecked); // cache for quicker load next time
+            if (current != null) {
+                firestore.collection("users").document(current.getUid())
+                        .update("showRanking", isChecked)
+                        .addOnSuccessListener(aVoid ->
+                                Toast.makeText(this, isChecked ? "Ranking visible" : "Ranking hidden", Toast.LENGTH_SHORT).show())
+                        .addOnFailureListener(e ->
+                                Toast.makeText(this, "Failed to update: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+            }
         });
 
         final ImageView settingsToProfile = (ImageView) findViewById(R.id.settingGoProfile);
@@ -274,6 +320,62 @@ public class SettingsActivity extends BaseActivity {
         return getSharedPreferences("MyPrefs", MODE_PRIVATE)
                 .getBoolean("notificationSwitchState", true); // Default value is true
     }
+
+    private void setShowRankingSwitchState(boolean isChecked) {
+        getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                .edit()
+                .putBoolean("showRankingSwitchState", isChecked)
+                .apply();
+    }
+
+    private boolean getShowRankingSwitchState() {
+        return getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                .getBoolean("showRankingSwitchState", true); // default visible
+    }
+
+    private void doResetMyScores() {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+        if (user == null) {
+            Toast.makeText(this, "Not signed in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String uid = user.getUid();
+
+        // Build the reset payload. Use Long (not int) for Firestore numeric consistency.
+        java.util.Map<String, Object> reset = new java.util.HashMap<>();
+        reset.put("current_points", 0L);
+
+        // Daily counts
+        reset.put("pushupToday", 0L);
+        reset.put("situpToday", 0L);
+        reset.put("squatToday", 0L);
+        reset.put("weightliftToday", 0L);
+
+        // All-time counts (include these if you want true full reset)
+        reset.put("pushupAllTime", 0L);
+        reset.put("situpAllTime", 0L);
+        reset.put("squatAllTime", 0L);
+        reset.put("weightliftAllTime", 0L);
+
+        // Challenge flags & streak toggles
+        reset.put("hasCompletedSquatsChallengeToday", false);
+        reset.put("hasCompletedPushupsChallengeToday", false);
+        reset.put("streakChange", false);
+
+        // Optional: mark when reset happened
+        reset.put("ts_reset", com.google.firebase.firestore.FieldValue.serverTimestamp());
+
+        // Update Firestore
+        FirebaseFirestore.getInstance().collection("users").document(uid)
+                .update(reset)
+                .addOnSuccessListener(aVoid ->
+                        Toast.makeText(this, "Scores reset to 0", Toast.LENGTH_SHORT).show())
+                .addOnFailureListener(e ->
+                        Toast.makeText(this, "Reset failed: " + e.getMessage(), Toast.LENGTH_LONG).show());
+    }
+
 
     //@Override
     //public void onBackPressed() {
